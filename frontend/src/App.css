@@ -1,0 +1,230 @@
+/* Body styles for dark theme */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #e0e0e0;
+  background-color: #1f1f1f; /* Fallback color */
+  overflow: hidden; /* Prevent any accidental overflow */
+}
+
+/* Background container */
+.background {
+  position: fixed; /* Fix the background to the viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Ensure it is behind all other elements */
+  background: url("F:/repogit/XseLLer8/frontend/public/xseller8background.png") no-repeat center center fixed; /* Replace with your background image */
+  background-size: cover; /* Ensure the image covers the entire viewport */
+}
+
+/* Ensure the background is behind all other elements */
+.App {
+  position: relative; /* This ensures content is positioned above the background */
+  z-index: 1; /* Ensures content is above the background */
+}
+
+/* Sidebar styling with gold accents */
+.sidebar {
+  width: 250px;
+  background-color: #131313;
+  padding: 20px;
+  color: #f1c40f;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2; /* Ensure it's above the background */
+}
+
+.sidebar h1 {
+  color: #f1c40f;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  z-index: 2;
+}
+
+/* Logo styling */
+.logo {
+  width: 240px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+/* Navigation button styling */
+.sidebar nav button {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 2;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sidebar nav button.active, .sidebar nav button:hover {
+  background-color: #f1c40f;
+  color: #000;
+  z-index: 2;
+}
+
+/* Content area adjustments */
+.content-area {
+  flex: 1;
+  background-color: #1f1f1f;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 1; /* Content should be above the background but below the sidebar */
+}
+
+.content-container {
+  width: 100%;
+  max-width: 500.px;
+  background-color: #2f2f2f;
+  padding: 0%;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/* Corner logo styling */
+.corner-logo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 240px; /* Adjust size as needed */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+/* File upload container styles remain the same */
+.file-upload-container {
+  background-color: #2f2f2f;
+  padding: 0px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  margin: 0px auto;
+  text-align: center;
+  z-index: 2; /* Ensure it's above the background */
+}
+
+/* Scrollable extracted text window */
+.extracted-text {
+  margin-top: 20px;
+  background-color: #333;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  color: #e0e0e0;
+  height: 100px;   /* Set a fixed height */
+  overflow-y: auto;  /* Enable vertical scrolling */
+  word-wrap: break-word;  /* Wrap long lines */
+  z-index: 2;
+}
+
+/* Chatbox styling */
+.chatbox-container {
+  position: fixed;
+  right: 20px; /* Adjust positioning */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  max-height: 500px;
+  background-color: #2f2f2f;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatbox-header {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+  color: #e0e0e0;
+  font-weight: bold;
+}
+
+.chatbox-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  word-wrap: break-word;
+  color: #e0e0e0;
+}
+
+.chatbox-input {
+  display: flex;
+  padding: 10px;
+  background-color: #333;
+}
+
+.chatbox-input textarea {
+  flex: 1;
+  resize: none;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background-color: #444;
+  color: #e0e0e0;
+}
+
+.chatbox-input button {
+  margin-left: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f1c40f;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.react-data-grid {
+  height: 400px;
+  margin-top: 20px;
+}
+
+.inventory {
+  margin: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 180px;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  .sidebar h1 {
+    font-size: 1.5rem;
+  }
+
+  .content-container {
+    padding: 15px;
+  }
+
+  .file-upload-container {
+    padding: 15px;
+  }
+}

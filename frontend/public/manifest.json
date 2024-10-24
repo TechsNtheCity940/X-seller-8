@@ -1,0 +1,25 @@
+{
+  "short_name": "XseLLer8",
+  "name": "XseLLer8 by TECHS IN THE CITY",
+  "icons": [
+    {
+      "src": "TiTCneons.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "TECHS IN THE CITY.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#1f2937",
+  "background_color": "#ffffff"
+}

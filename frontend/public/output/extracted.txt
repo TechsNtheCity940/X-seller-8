@@ -1,0 +1,3720 @@
+     Unnamed 0                                        Unnamed 1 Unnamed 2 Unnamed 3 Unnamed 4                        Unnamed 5 Unnamed 6 Unnamed 7    Unnamed 8  Unnamed 9  Unnamed 10  Unnamed 11 Unnamed 12
+0           NaN                                               NaN        NaN        NaN        NaN                  Inventory Report        NaN        NaN           NaN         NaN          NaN          NaN         NaN
+1           NaN                                               NaN        NaN        NaN        NaN   Winstar World CasinoTraditions        NaN        NaN           NaN         NaN          NaN          NaN         NaN
+2           NaN                                               NaN        NaN        NaN        NaN  Scanned On 12312023 84920 PM        NaN        NaN           NaN         NaN          NaN          NaN         NaN
+3           NaN                                               NaN        NaN        NaN        NaN                               NaN        NaN        NaN           NaN         NaN          NaN          NaN         NaN
+4           NaN                                               NaN        NaN        NaN        NaN                               NaN        NaN        NaN           NaN         NaN          NaN          NaN         NaN
+5           NaN                                             Brand        Bin       Size       Size                       Tobys Keith     Totals  Unit Cost     Ext Value         NaN          NaN          NaN         NaN
+6           NaN                   Nestle Water btl Case 2018        NaN          0         ml                                 2          2          0             0         NaN          NaN          NaN         NaN
+7           NaN                       White claw black berry 12ml        NaN         12         ml                                24         24          0             0         NaN          NaN          NaN         NaN
+8           NaN                                        Misc Total        NaN        NaN        NaN                                26         26        NaN             0         NaN          NaN          NaN         NaN
+9           NaN                                Blue Moon Can 12oz        NaN         12         oz                                66         66          1            66         NaN          NaN      112528      import
+10          NaN                                      Coop 66 12oz        NaN         12         oz                                34         34       131         4454         NaN          NaN          NaN         NaN
+11          NaN                                      Coop F5 12oz        NaN         12         oz                                38         38       143         5434         NaN          NaN       92286    Domestic
+12          NaN                                      Coop HT 12oz        NaN         12         oz                                24         24       143         3432         NaN          NaN          NaN         NaN
+13          NaN                           Coop IPA Ice Chest 12oz        NaN         12         oz                                 9          9       114         1026         NaN          NaN          NaN         NaN
+14          NaN                                   Corona Can 12oz        NaN         12         oz                                62         62       129         7998         NaN          NaN          NaN         NaN
+15          NaN                         Dos Equis Lager Cans 12oz        NaN         12         oz                                19         19       133         2527         NaN          NaN          NaN         NaN
+16          NaN                        Estrella Jalisco Btl 12oz        NaN         12         oz                                 9          9       112         1008         NaN          NaN          NaN         NaN
+17          NaN                     Guinness Extra Stout Btl 12oz        NaN         12         oz                                 6          6       131          786         NaN          NaN          NaN         NaN
+18          NaN                                 Heineken Can 12oz        NaN         12         oz                                12         12       133         1596         NaN          NaN          NaN         NaN
+19          NaN                          Modelo Especial Can 12oz        NaN         12         oz                                57         57       118         6726         NaN          NaN          NaN         NaN
+20          NaN                                   Shiner can 16oz        NaN         16         oz                                51         51       107         5457         NaN          NaN          NaN         NaN
+21          NaN                               Shock Top Cans 12oz        NaN         12         oz                                14         14       105          147         NaN          NaN          NaN         NaN
+22          NaN                           Stella Artois Cans 12oz        NaN         12         oz                               156        156       107        16692         NaN          NaN          NaN         NaN
+23          NaN          Stella Artois Cidre Apple Cider Btl 12oz        NaN         12         oz                                10         10        15            15         NaN          NaN          NaN         NaN
+24          NaN                          Beer60 Import Subtotal        NaN        NaN        NaN                               567        567        NaN        66706         NaN          NaN          NaN         NaN
+25          NaN                                Modelo keg 155gal        NaN       155        gal                                 1          1        152           152         NaN          NaN          NaN         NaN
+26          NaN    Shock Top Belgian White Keg 12 Barrel 155gal        NaN       155        gal                               01        01         97           97         NaN          NaN          NaN         NaN
+27          NaN                                 Stella Keg 1984oz        NaN       1984         oz                                 1          1        103           103         NaN          NaN          NaN         NaN
+28          NaN                    Beer60 Import Draft Subtotal        NaN        NaN        NaN                               21        21        NaN         2647         NaN          NaN          NaN         NaN
+29          NaN                       Bud Light Aluminum Btl 16oz        NaN         16         oz                                 5          5       105          525         NaN          NaN          NaN         NaN
+30          NaN                               Bud Light cans 16oz        NaN         16         oz                                11         11       105         1155         NaN          NaN          NaN         NaN
+31          NaN                       Budweiser Aluminum can 16oz        NaN         16         oz                                69         69       105         7245         NaN          NaN          NaN         NaN
+32          NaN                                Coors Banquet 16oz        NaN         16         oz                                66         66       099         6534         NaN          NaN          NaN         NaN
+33          NaN                              Mich Ultra Cans 16oz        NaN         16         oz                                 6          6       118          708         NaN          NaN          NaN         NaN
+34          NaN                              Miller Lite Can 16oz        NaN         16         oz                                13         13       108         1404         NaN          NaN          NaN         NaN
+35          NaN                            BeerDomestic Subtotal        NaN        NaN        NaN                               170        170        NaN        17571         NaN          NaN          NaN         NaN
+36          NaN                              Bud Light Keg 1984oz        NaN       1984         oz                              325       325        103        33475         NaN          NaN          NaN         NaN
+37          NaN                  Budweiser 12 barrel Keg 155gal        NaN       155        gal                               24        24         86         2064         NaN          NaN          NaN         NaN
+38          NaN                        Michelob Ultra Keg 155gal        NaN       155        gal                                 2          2        103           206         NaN          NaN          NaN         NaN
+39          NaN                      BeerDomestic Draft Subtotal        NaN        NaN        NaN                              765       765        NaN        74715         NaN          NaN          NaN         NaN
+40          NaN                            White  Claw Mango 12oz        NaN         12         oz                                18         18       136         2448         NaN          NaN          NaN         NaN
+41          NaN                       White Claw  Blackberry 12oz        NaN         12         oz                                11         11       136         1496         NaN          NaN          NaN         NaN
+42          NaN                           BeerSparkling Subtotal        NaN        NaN        NaN                                29         29        NaN         3944         NaN          NaN          NaN         NaN
+43          NaN                                        Beer Total        NaN        NaN        NaN                            77575     77575        NaN       189406         NaN          NaN          NaN         NaN
+44          NaN                             Angostura Bitters 4oz        NaN          4         oz                                 1          1          1             1         NaN          NaN          NaN         NaN
+45          NaN                        Bluebird Grapefruit 115oz        NaN       115         oz                                 3          3       073          219         NaN          NaN          NaN         NaN
+46          NaN                    Finest Call Grenadine Syrup 1L        NaN          1        ltr                                 7          7       366         2562         NaN          NaN          NaN         NaN
+47          NaN                      Finest Call Margarita Mix 1L        NaN          1        ltr                                24         24       358         8592         NaN          NaN          NaN         NaN
+48          NaN                    Finest Call Peach Puree Mix 1L        NaN          1        ltr                                17         17       321         5457         NaN          NaN          NaN         NaN
+49          NaN                   Finest Call Watermelon Puree 1L        NaN          1        ltr                              131       131       366        47946         NaN          NaN          NaN         NaN
+50          NaN                                    Ginger Ale 8oz        NaN          8         oz                                30         30       027           81         NaN          NaN          NaN         NaN
+51          NaN                        Goslings Ginger Beer 12oz        NaN         12         oz                                37         37       087         3219         NaN          NaN          NaN         NaN
+52          NaN                Juice Sun Berry Cranberry juice 1L        NaN          1        ltr                                19         19       215         4085         NaN          NaN          NaN         NaN
+53          NaN                   Juice Sun Berry Orange juice 1L        NaN          1        ltr                                27         27       189         5103         NaN          NaN          NaN         NaN
+54          NaN                Juice Sun Berry Pineapple juice 1L        NaN          1        ltr                                39         39          2            78         NaN          NaN          NaN         NaN
+55          NaN                                  Juice Tomato 6oz        NaN          6         oz                                24         24       036          864         NaN          NaN          NaN         NaN
+56          NaN                       MIX COCKTAIL Bloody Mary 1L        NaN          1        ltr                                 4          4       385          154         NaN          NaN          NaN         NaN
+57          NaN                        MIX COCKTAIL Triple Sec 1L        NaN          1        ltr                              745       745       327       243615         NaN          NaN          NaN         NaN
+58          NaN                Mix Finest Call Pina Colada Mix 1L        NaN          1        ltr                                 9          9       301         2709         NaN          NaN          NaN         NaN
+59          NaN               Mix Finest Call Strawberry Puree 1L        NaN          1        ltr                                13         13       337         4381         NaN          NaN          NaN         NaN
+60          NaN                   Mix Finest Call Sweet  Sour 1L        NaN          1        ltr                                23         23       327         7521         NaN          NaN          NaN         NaN
+61          NaN                              Monin Spicy Mango 1L        NaN          1        ltr                                 5          5       796          398         NaN          NaN          NaN         NaN
+62          NaN                        Ronson Stuffed Olives 1gal        NaN          1        gal                                 1          1      1322         1322         NaN          NaN          NaN         NaN
+63          NaN                       White Rock Tonic Water 10oz        NaN         10         oz                                24         24       061         1464         NaN          NaN          NaN         NaN
+64          NaN           FoodBar condiments and mixers Subtotal        NaN        NaN        NaN                            32755     32755        NaN      6895875         NaN          NaN          NaN         NaN
+65          NaN                                        Food Total        NaN        NaN        NaN                            32755     32755        NaN      6895875         NaN          NaN          NaN         NaN
+66          NaN              Desert Island Long Island Ice Tea 1L        NaN          1        ltr                              525       525       719       377475         NaN          NaN          NaN         NaN
+67          NaN                            LiquorAMisc Subtotal        NaN        NaN        NaN                              525       525        NaN       377475         NaN          NaN          NaN         NaN
+68          NaN                     Bacardi Superior Light Rum 1L        NaN          1        ltr                              385       385       128         4928         NaN          NaN          NaN         NaN
+69          NaN                          Barbarossa Silver Rum 1L        NaN          1        ltr                               46        46        58         2668         NaN          NaN          NaN         NaN
+70          NaN                      Captain Morgan Spiced Rum 1L        NaN          1        ltr                               41        41      1874        76834         NaN          NaN          NaN         NaN
+71          NaN                             Malibu Coconut Rum 1L        NaN          1        ltr                               67        67       168        11256         NaN          NaN          NaN         NaN
+72          NaN                                          Myers 1L        NaN          1        ltr                              335       335      2339       783565         NaN          NaN          NaN         NaN
+73          NaN                               RumChata Liqueur 1L        NaN          1        ltr                               29        29      2166        62814         NaN          NaN          NaN         NaN
+74          NaN                             LiquorBRum Subtotal        NaN        NaN        NaN                              255       255        NaN      4065245         NaN          NaN          NaN         NaN
+75          NaN                         Basil Haydens Bourbon 1L        NaN          1        ltr                              165       165      4128        68112         NaN          NaN          NaN         NaN
+76          NaN                      Basil Haydens Bourbon 750ml        NaN        750         ml                              025       025       386          965         NaN          NaN          NaN         NaN
+77          NaN                            Bulleit Rye Whiskey 1L        NaN          1        ltr                               11        11      2474        27214         NaN          NaN          NaN         NaN
+78          NaN                         Bulleit Rye Whiskey 750ml        NaN        750         ml                              005       005      2474         1237         NaN          NaN          NaN         NaN
+79          NaN                             Canadian Club 1858 1L        NaN          1        ltr                               28        28       128         3584         NaN          NaN          NaN         NaN
+80          NaN                                    Crown Apple 1L        NaN          1        ltr                              085       085      3149       267665         NaN          NaN          NaN         NaN
+81          NaN                                    Crown Peach 1L        NaN          1        ltr                                 1          1      3149         3149         NaN          NaN          NaN         NaN
+82          NaN                    Crown Royal Canadian Whisky 1L        NaN          1        ltr                               23        23      3149        72427         NaN          NaN          NaN         NaN
+83          NaN                                  Crown Vanilla 1L        NaN          1        ltr                               25        25      3149        78725         NaN          NaN          NaN         NaN
+84          NaN                      Fireball Cinnamon Whiskey 1L        NaN          1        ltr                              135       135      1519       205065         NaN          NaN          NaN         NaN
+85          NaN                         Gentleman Jack Whiskey 1L        NaN          1        ltr                              275       275      3233       889075         NaN          NaN          NaN         NaN
+86          NaN                              Gentleman Jack 750ml        NaN        750         ml                                 1          1      2409         2409         NaN          NaN          NaN         NaN
+87          NaN                         Jack Daniels Apple 750ml        NaN        750         ml                               16        16      1839        29424         NaN          NaN          NaN         NaN
+88          NaN                 Jack Daniels Old No 7 Whiskey 1L        NaN          1        ltr                               57        57      2638       150366         NaN          NaN          NaN         NaN
+89          NaN                   Jack Daniels Tennessee Fire 1L        NaN          1        ltr                               17        17      2638        44846         NaN          NaN          NaN         NaN
+90          NaN          Jack Daniels Tennessee Honey Whiskey 1L        NaN          1        ltr                                 2          2      2638         5276         NaN          NaN          NaN         NaN
+91          NaN                             Jack Daniels Apple 1L        NaN          1        ltr                               04        04      2638        10552         NaN          NaN          NaN         NaN
+92          NaN                          Jameson Irish Whiskey 1L        NaN          1        ltr                               51        51       333        16983         NaN          NaN          NaN         NaN
+93          NaN                                 Jameson Orange 1L        NaN          1        ltr                              545       545       333       181485         NaN          NaN          NaN         NaN
+94          NaN                                       Jim Beam 1L        NaN          1        ltr                              585       585      1334        78039         NaN          NaN          NaN         NaN
+95          NaN                  Kentucky Dale Blended Whiskey 1L        NaN          1        ltr                              825       825       639       527175         NaN          NaN          NaN         NaN
+96          NaN                  Knob Creek Bourbon 9 years 750ml        NaN        750         ml                              075       075         26          195         NaN          NaN          NaN         NaN
+97          NaN                                 Knob Creek Rye 1L        NaN          1        ltr                                 1          1      3525         3525         NaN          NaN          NaN         NaN
+98          NaN                           Makers Mark Bourbon 1L        NaN          1        ltr                              135       135      2458        33183         NaN          NaN          NaN         NaN
+99          NaN                           Old Forester Bourbon 1L        NaN          1        ltr                                 1          1         17            17         NaN          NaN          NaN         NaN
+100         NaN                              Pendleton Whiskey 1L        NaN          1        ltr                              175       175      2626        45955         NaN          NaN          NaN         NaN
+101         NaN             Seagrams 7 Crown American Whiskey 1L        NaN          1        ltr                              175       175      1499       262325         NaN          NaN          NaN         NaN
+102         NaN                               Skrewball Peanut 1L        NaN          1        ltr                              105       105      2636        27678         NaN          NaN          NaN         NaN
+103         NaN                               Southern Comfort 1L        NaN          1        ltr                               07        07      1439        10073         NaN          NaN          NaN         NaN
+104         NaN                          TX Blended Whiskey 750ml        NaN        750         ml                               25        25      3519        87975         NaN          NaN          NaN         NaN
+105         NaN                       Woodford Reserve Bourbon 1L        NaN          1        ltr                              285       285      3509      1000065         NaN          NaN          NaN         NaN
+106         NaN                      LiquorBrbnWhiskey Subtotal        NaN        NaN        NaN                             6835      6835        NaN      1657838         NaN          NaN          NaN         NaN
+107         NaN                        Courvoisier VSOP Cognac 1L        NaN          1        ltr                              205       205       383        78515         NaN          NaN          NaN         NaN
+108         NaN                             Hennessy VS Cognac 1L        NaN          1        ltr                              265       265         39        10335         NaN          NaN          NaN         NaN
+109         NaN                            LiquorCognac Subtotal        NaN        NaN        NaN                               47        47        NaN       181865         NaN          NaN          NaN         NaN
+110         NaN                            Bombay Sapphire Gin 1L        NaN          1        ltr                              405       405      2239       906795         NaN          NaN          NaN         NaN
+111         NaN                                 Hendricks Gin 1L        NaN          1        ltr                               18        18       374         6732         NaN          NaN          NaN         NaN
+112         NaN                                      Taaka Gin 1L        NaN          1        ltr                               49        49       589        28861         NaN          NaN          NaN         NaN
+113         NaN                                  Tanqueray Gin 1L        NaN          1        ltr                              195       195      2474        48243         NaN          NaN          NaN         NaN
+114         NaN                               LiquorGin Subtotal        NaN        NaN        NaN                              127       127        NaN      2351035         NaN          NaN          NaN         NaN
+115         NaN                             Amaretto Disaronno 1L        NaN          1        ltr                                 1          1      3839         3839         NaN          NaN          NaN         NaN
+116         NaN                           Baileys Irish Cream 1L        NaN          1        ltr                               07        07      3384        23688         NaN          NaN          NaN         NaN
+117         NaN                                        Campari 1L        NaN          1        ltr                               36        36      3406       122616         NaN          NaN          NaN         NaN
+118         NaN                            Chambord Liqueur 750ml        NaN        750         ml                                 3          3      2799         8397         NaN          NaN          NaN         NaN
+119         NaN                                 Cointreau Liq 1L        NaN          1        ltr                              355       355      3199      1135645         NaN          NaN          NaN         NaN
+120         NaN                              DeKuyper Amaretto 1L        NaN          1        ltr                               02        02         10             2         NaN          NaN          NaN         NaN
+121         NaN                  DeKuyper Buttershots Schnapps 1L        NaN          1        ltr                                 3          3      1073         3219         NaN          NaN          NaN         NaN
+122         NaN                                 DeKuyper Melon 1L        NaN          1        ltr                               06        06      1073         6438         NaN          NaN          NaN         NaN
+123         NaN                  DeKuyper Razzamatazz Schnapps 1L        NaN          1        ltr                              955       955      1073      1024715         NaN          NaN          NaN         NaN
+124         NaN            DeKuyper Sour Apple Pucker Schnapps 1L        NaN          1        ltr                              285       285      1073       305805         NaN          NaN          NaN         NaN
+125         NaN                                    EJ  Brandy 1L        NaN          1        ltr                               29        29      1199        34771         NaN          NaN          NaN         NaN
+126         NaN                                  Frangelico 750ml        NaN        750         ml                              845       845      2479      2094755         NaN          NaN          NaN         NaN
+127         NaN                                  Grand Marnier 1L        NaN          1        ltr                               33        33      3442       113586         NaN          NaN          NaN         NaN
+128         NaN                                   Jagermeister 1L        NaN          1        ltr                              065       065      2622        17043         NaN          NaN          NaN         NaN
+129         NaN                                         Kahlua 1L        NaN          1        ltr                               05        05      2943        14715         NaN          NaN          NaN         NaN
+130         NaN                Martini  Rossi Dry Vermouth 375ml        NaN        375         ml                                 1          1        37           37         NaN          NaN          NaN         NaN
+131         NaN                                Midori Melon 750ml        NaN        750         ml                              065       065      1638        10647         NaN          NaN          NaN         NaN
+132         NaN                             Mr Boston Amaretto 1L        NaN          1        ltr                              295       295       505       148975         NaN          NaN          NaN         NaN
+133         NaN                         Mr Boston Blue Curacao 1L        NaN          1        ltr                              455       455       505       229775         NaN          NaN          NaN         NaN
+134         NaN                                Mr Boston Melon 1L        NaN          1        ltr                               15        15       592          888         NaN          NaN          NaN         NaN
+135         NaN                       Mr Boston Peach Schnapps 1L        NaN          1        ltr                               61        61       542        33062         NaN          NaN          NaN         NaN
+136         NaN                                          Tuaca 1L        NaN          1        ltr                              285       285      2213       630705         NaN          NaN          NaN         NaN
+137         NaN                          LiquorLiqueurs Subtotal        NaN        NaN        NaN                             6345      6345        NaN     11027335         NaN          NaN          NaN         NaN
+138         NaN            Chivas Regal 12yr Blended Scotch 750ml        NaN        750         ml                                 2          2       293          586         NaN          NaN          NaN         NaN
+139         NaN                     Dewars White Label Scotch 1L        NaN          1        ltr                              115       115       208         2392         NaN          NaN          NaN         NaN
+140         NaN  Glenmorangie 10yr Highland Single Malt Scotch 1L        NaN          1        ltr                              155       155      4102        63581         NaN          NaN          NaN         NaN
+141         NaN              Johnnie Walker Black Label Scotch 1L        NaN          1        ltr                              245       245      4199      1028755         NaN          NaN          NaN         NaN
+142         NaN                 Johnnie Walker Black Scotch 750ml        NaN        750         ml                              035       035      3224        11284         NaN          NaN          NaN         NaN
+143         NaN            Macallan 12yr Single Malt Scotch 750ml        NaN        750         ml                               24        24      7599       182376         NaN          NaN          NaN         NaN
+144         NaN                     Paul Masson VSOP Brandy 750ml        NaN        750         ml                               37        37      1039        38443         NaN          NaN          NaN         NaN
+145         NaN                            LiquorScotch Subtotal        NaN        NaN        NaN                              136       136        NaN      4810795         NaN          NaN          NaN         NaN
+146         NaN                          1800 Reposado Tequila 1L        NaN          1        ltr                               62        62      2959       183458         NaN          NaN          NaN         NaN
+147         NaN                            1800 Silver Tequila 1L        NaN          1        ltr                              125       125      2799       349875         NaN          NaN          NaN         NaN
+148         NaN                       Clase Azul Añejo Teq 750ml        NaN        750         ml                               11        11  36798999    404788989         NaN          NaN          NaN         NaN
+149         NaN                    Clase Azul Plata Tequila 750ml        NaN        750         ml                               11        11      9211       101321         NaN          NaN          NaN         NaN
+150         NaN                 Clase Azul Reposado Tequila 750ml        NaN        750         ml                              075       075     14917      1118775         NaN          NaN          NaN         NaN
+151         NaN                     Corralejo Anejo Tequila 750ml        NaN        750         ml                              205       205      3519       721395         NaN          NaN          NaN         NaN
+152         NaN                            Corralejo Blanco 750ml        NaN        750         ml                              055       055      2479       136345         NaN          NaN          NaN         NaN
+153         NaN                          Corralejo Reposado 750ml        NaN        750         ml                               27        27      2826        76302         NaN          NaN          NaN         NaN
+154         NaN                      El Jimador Blanco Tequila 1L        NaN          1        ltr                              415       415      1979       821285         NaN          NaN          NaN         NaN
+155         NaN                         El Toro Silver Tequila 1L        NaN          1        ltr                               47        47       876        41172         NaN          NaN          NaN         NaN
+156         NaN                       Herradura Silver Tequila 1L        NaN          1        ltr                              315       315      3919      1234485         NaN          NaN          NaN         NaN
+157         NaN             JC Reserva de la Familia Repo 750ml        NaN        750         ml                               12        12      6919        83028         NaN          NaN          NaN         NaN
+158         NaN              Jose Cuervo Especial Gold Tequila 1L        NaN          1        ltr                               36        36      2239        80604         NaN          NaN          NaN         NaN
+159         NaN                       Patron Silver Tequila 750ml        NaN        750         ml                               43        43      4159       178837         NaN          NaN          NaN         NaN
+160         NaN                           LiquorTequila Subtotal        NaN        NaN        NaN                              368       368        NaN   1587726989         NaN          NaN          NaN         NaN
+161         NaN                                        Absolut 1L        NaN          1        ltr                              125       125      1922        24025         NaN          NaN          NaN         NaN
+162         NaN                             Belvedere Vodka 750ml        NaN        750         ml                              065       065      2249       146185         NaN          NaN          NaN         NaN
+163         NaN                                Belvedere Vodka 1L        NaN          1        ltr                               17        17      2977        50609         NaN          NaN          NaN         NaN
+164         NaN                            Chopin Potato Vodka 1L        NaN          1        ltr                                 3          3      2719         8157         NaN          NaN          NaN         NaN
+165         NaN                          Deep Eddy Lemon Vodka 1L        NaN          1        ltr                               35        35      1999        69965         NaN          NaN          NaN         NaN
+166         NaN                                Deep Eddy Peach 1L        NaN          1        ltr                               41        41      1999        81959         NaN          NaN          NaN         NaN
+167         NaN                       Deep Eddy Ruby Red Vodka 1L        NaN          1        ltr                              245       245      1999       489755         NaN          NaN          NaN         NaN
+168         NaN                                Finlandia Vodka 1L        NaN          1        ltr                               12        12      1279        15348         NaN          NaN          NaN         NaN
+169         NaN                               Grey Goose Vodka 1L        NaN          1        ltr                               16        16       264         4224         NaN          NaN          NaN         NaN
+170         NaN                                Ketel One Vodka 1L        NaN          1        ltr                              105       105      2549       267645         NaN          NaN          NaN         NaN
+171         NaN                     Skyy Infusion Citrus Vodka 1L        NaN          1        ltr                               05        05      1474          737         NaN          NaN          NaN         NaN
+172         NaN                               Stoli strawberry 1L        NaN          1        ltr                               08        08      2195         1756         NaN          NaN          NaN         NaN
+173         NaN                                    Stoli Vanil 1L        NaN          1        ltr                              325       325      2125       690625         NaN          NaN          NaN         NaN
+174         NaN                              Stolichnaya Vodka 1L        NaN          1        ltr                              385       385      1999       769615         NaN          NaN          NaN         NaN
+175         NaN                                    Taaka Vodka 1L        NaN          1        ltr                              161       161       555        89355         NaN          NaN          NaN         NaN
+176         NaN                           Titos Handmade Vodka 1L        NaN          1        ltr                               42        42       213         8946         NaN          NaN          NaN         NaN
+177         NaN                             LiquorVodka Subtotal        NaN        NaN        NaN                             3471      3471        NaN       725424         NaN          NaN          NaN         NaN
+178         NaN                                      Liquor Total        NaN        NaN        NaN                            26506     26506        NaN   6416042489         NaN          NaN          NaN         NaN
+179         NaN                               Diet Pepsi BIB 5gal        NaN          5        gal                               39        39       995        38805         NaN          NaN          NaN         NaN
+180         NaN                                Dr Pepper BIB 5gal        NaN          5        gal                              385       385       995       383075         NaN          NaN          NaN         NaN
+181         NaN                             Mountain Dew BIB 5gal        NaN          5        gal                               57        57       995        56715         NaN          NaN          NaN         NaN
+182         NaN                            Mug Root Beer BIB 5gal        NaN          5        gal                               37        37       995        36815         NaN          NaN          NaN         NaN
+183         NaN                                    Pepsi BIB 5gal        NaN          5        gal                               32        32       995         3184         NaN          NaN          NaN         NaN
+184         NaN                                    Red Bull 250ml        NaN        250         ml                                35         35       163         5705         NaN          NaN          NaN         NaN
+185         NaN                       Red Bull Blue Edition 84oz        NaN        84         oz                                 9          9       175         1575         NaN          NaN          NaN         NaN
+186         NaN                            Red Bull Coconut 84oz        NaN        84         oz                                24         24       163         3912         NaN          NaN          NaN         NaN
+187         NaN                         Red Bull Sugar Free 250ml        NaN        250         ml                                27         27       175         4725         NaN          NaN          NaN         NaN
+188         NaN                         Red Bull Watermelon 84oz        NaN        84         oz                                21         21       163         3423         NaN          NaN          NaN         NaN
+189         NaN                              Sierra Mist BIB 5gal        NaN          5        gal                              255       255       995       253725         NaN          NaN          NaN         NaN
+190         NaN                          NA BevNA Bev Subtotal        NaN        NaN        NaN                             1389      1389        NaN       247195         NaN          NaN          NaN         NaN
+191         NaN                                     NA Bev Total        NaN        NaN        NaN                             1389      1389        NaN       247195         NaN          NaN          NaN         NaN
+192         NaN                        High  Noon grapefruit 12oz        NaN         12         oz                                70         70       214         1498         NaN          NaN          NaN         NaN
+193         NaN                          High Noon Pineapple 12oz        NaN         12         oz                                 2          2       214          428         NaN          NaN          NaN         NaN
+194         NaN                                  RTD Drinks Total        NaN        NaN        NaN                                72         72        NaN        15408         NaN          NaN          NaN         NaN
+195         NaN                                 Korbel Brut 375ml        NaN        375         ml                                18         18          3            54         NaN          NaN          NaN         NaN
+196         NaN                           WineChampagne Subtotal        NaN        NaN        NaN                                18         18        NaN            54         NaN          NaN          NaN         NaN
+197         NaN                       Angeline Cabernet Sauvignon        NaN        750         ml                                 2          2          5            10         NaN          NaN          NaN         NaN
+198         NaN                    Sutter Home Cabernet Sauvignon        NaN        750         ml                              555       555       525       291375         NaN          NaN          NaN         NaN
+199         NaN    Sutter Home Signature Series California Merlot        NaN        750         ml                              105       105       525        55125         NaN          NaN          NaN         NaN
+200         NaN                                 WineRed Subtotal        NaN        NaN        NaN                             1805      1805        NaN       942625         NaN          NaN          NaN         NaN
+201         NaN                               Angeline Chardonnay        NaN        750         ml                              751       751          5         3755         NaN          NaN          NaN         NaN
+202         NaN                       Angeline Rosé of Pinot Noir        NaN        750         ml                               92        92          5            46         NaN          NaN          NaN         NaN
+203         NaN                            Sutter Home Chardonnay        NaN        750         ml                                13         13       525         6825         NaN          NaN          NaN         NaN
+204         NaN                               Sutter Home Moscato        NaN        750         ml                                 5          5       525         2625         NaN          NaN          NaN         NaN
+205         NaN                          Sutter Home Pinot Grigio        NaN        750         ml                               31        31       525        16275         NaN          NaN          NaN         NaN
+206         NaN                       Sutter Home White Zinfandel        NaN        750         ml                              515       515       525       270375         NaN          NaN          NaN         NaN
+207         NaN                  Vietti Moscato dAsti Cascinetta        NaN        750         ml                              025       025          8             2         NaN          NaN          NaN         NaN
+208         NaN                               WineWhite Subtotal        NaN        NaN        NaN                             4321      4321        NaN      2233625         NaN          NaN          NaN         NaN
+209         NaN                                        Wine Total        NaN        NaN        NaN                             7926      7926        NaN       371625         NaN          NaN          NaN         NaN
+210         NaN                                      Grand Totals        NaN        NaN        NaN                           168452    168452        NaN  11997344989         NaN          NaN          NaN         NaN
+    Unnamed 0        LOCATION NAME           Unnamed 2 Unnamed 3    Unnamed 4 Unnamed 5   Unnamed 6 Unnamed 7 Unnamed 8 Unnamed 9   Unnamed 10         Unnamed 11     Unnamed 12   Unnamed 13     Unnamed 14        Unnamed 15 Unnamed 16   Unnamed 17 Unnamed 18 Unnamed 19       Unnamed 20 Unnamed 21  FLASH REPORT  Unnamed 23 Unnamed 24    Unnamed 25 Unnamed 26 Unnamed 27 20231201 000000 Unnamed 29 Unnamed 30 Unnamed 31
+0          NaN                                         NaN        NaN           NaN        NaN          NaN        NaN        NaN        NaN           NaN                 NaN             NaN           NaN             NaN                NaN         NaN           NaN         NaN         NaN               NaN         NaN                         NaN         NaN            NaN         NaN         NaN                 NaN         NaN         NaN         NaN
+1          NaN                    NaN                  NaN        NaN         SALES        NaN          NaN        NaN        NaN        NaN           NaN                 NaN        EXPENSES           NaN             NaN                NaN         NaN           NaN         NaN         NaN               NaN         NaN             NaN         NaN     COSTS             NaN         NaN         NaN                 NaN         NaN         NaN         NaN
+2          NaN                   DATE                  DAY  NET SALES  NA  BEVERAGE   32 Beer  Strong Beer       WINE     LIQUOR       FOOD  RETAIL SALES         TOTAL SALES  SUPPLIES  REC  NA BEV  REC  32 BEER  REC  Strong Beer  REC  WINE  REC  LIQUOR  REC  FOOD  REC       MISC      HOURLY LABOR     SALARY   TAXES AND BENS    NA BEV   32 BEER   STRONG BEER       WINE     LIQUOR               FOOD   SUPPLIES      LABOR    CASH FLOW
+3          NaN    20231201 000000  20231201 000000   2061047        69661     99813       46485     12463    208516   1635673             0            2072611          21795         7603             NaN                NaN         NaN           NaN     578597     451613           495513     176781         672294    1091428           0              0           0           0            0356255    0010575    0240418    1934886
+4          NaN    20231202 000000  20231202 000000   2064617        88654    121282        1328      5705    149645    168648             0            2065046           2538           NaN             NaN                NaN         NaN           NaN         NaN     451613           487381     176781         664162           0           0              0           0           0                   0    0001229    0236064    8798878
+5          NaN    20231203 000000  20231203 000000   1398418        69887     68061           83      9413      5379   1193673             0            1403124        1923264           NaN             NaN                NaN         NaN           NaN         NaN     451613           412737     176781         589518           0           0              0           0           0                   0    1375314    0295146  16249288
+6          NaN    20231204 000000  20231204 000000    870266        34574        313         581      5557     34609    762071             0             873921          91691           NaN             NaN                NaN         NaN           NaN    1151888     451613           401467     176781         578248           0           0              0           0           0            1518808     010536    0461315  14609988
+7          NaN    20231205 000000  20231205 000000    865563           363      3437          83     10034     32115    754625            35             871774          94735        25288         152632             74564         279       146172         NaN     451613           388381     176781         565162    0696639     444085      89836145    2780546    4551518                   0    0109449    0448703   7290192
+8          NaN    20231206 000000  20231206 000000    855912         3928     34308         249      6677     44978    734072             0             861805          75399           NaN             NaN                NaN         NaN           NaN     678816     451613            39929     176781         576071           0           0              0           0           0             093221    0088092    0466508   9835941
+9          NaN    20231207 000000  20231207 000000    982552           447     55697         498      4022     57138     82727             0             993807          39127           NaN             NaN                NaN         NaN           NaN         NaN     451613           369405     176781         546186           0           0              0           0           0                   0    0039822    0375965   1089926
+10         NaN    20231208 000000  20231208 000000   1488565           697     71881        1162      7133    115359    122207             0            1497763          20619         4411             NaN                NaN         NaN           NaN     863268     451613           470051     176781         646832    0632855           0              0           0           0            0711755    0013852    0315775   6025602
+11         NaN    20231209 000000  20231209 000000   2266791        87928    150293        1328      7712    234761   1769543           105            2274017             NaN           NaN             NaN                NaN         NaN           NaN         NaN     451613           452536     176781         629317           0           0              0           0           0                   0           0    0199637   11229293
+12         NaN    20231210 000000  20231210 000000      15435        68674     98731           83      1161    138746   1231098            35             155021             NaN           NaN             NaN                NaN         NaN           NaN         NaN     451613           412719     176781           5895           0           0              0           0           0                   0           0    0267392     443437
+13         NaN    20231211 000000  20231211 000000    930778           433     38412         166      4106     40522    806274             0             934274         106449           NaN             NaN                NaN         NaN           NaN     858843     451613           378113     176781         554894           0           0              0           0           0            1069839    0114366    0406233  10965104
+14         NaN    20231212 000000  20231212 000000   1055789        50087     29231         249         34     54128    932372             0            1071708          44353           NaN             NaN                NaN         NaN           NaN         NaN     451613           362566     176781         539347           0           0              0           0           0                   0    0042009    0343408    334587
+15         NaN    20231213 000000  20231213 000000    857537           414     42084         415      1825     41019     73354             0             864018          43092        12644          69076             65384      15625        77417     775784     451613           371627     176781         548408    0305411    1641384      15755181    8561644    1887345            1067017    0050251    0433366  12563468
+16         NaN    20231214 000000  20231214 000000   1181993        44287     70137         581      5805     84178    990794             0            1201011          64724           NaN             NaN                NaN         NaN           NaN         NaN     451613           378135     176781         554916           0           0              0           0           0                   0    0054758    0319913     552484
+17         NaN    20231215 000000  20231215 000000   1425381        55889     91153         913      7837     79982   1189594             0            1433585           3276        75255             NaN                NaN         NaN           NaN     800223     451613           410011     176781         586792    1346508           0              0           0           0            0677357    0002298     028765   5504572
+18         NaN    20231216 000000  20231216 000000   1931889        77228    117793         996      9081    132466   1590299             0            1936827             NaN           NaN             NaN                NaN         NaN           NaN         NaN     451613           417066     176781         593847           0           0              0           0           0                   0           0    0215885    8270443
+19         NaN    20231217 000000  20231217 000000   1372465           587     75996        1494     13563     88508   1129501             0            1381208             NaN           NaN             NaN                NaN         NaN           NaN         NaN     451613           388813     176781         565594           0           0              0           0           0                   0           0    0283295    2986986
+20         NaN    20231218 000000  20231218 000000   1184096           522     57284         332     13427     59737   1003063             0            1189031         117316         5728            1104             66964         213        85982     962777     451613              3715     176781         548281    0109732     192724       2016988    1586356    1439342            0964583    0099076    0313741  12410931
+21         NaN    20231219 000000  20231219 000000   1067576        55608     55638         249      8566     57082    900574             0            1079958          44354           NaN             NaN                NaN         NaN           NaN         NaN     451613           401248     176781         578029           0           0              0           0           0                   0    0041546     037585    642229
+22         NaN    20231220 000000  20231220 000000   1121509        52654     43706         249      6847     57716    963699             0            1127112          73511           NaN             NaN                NaN         NaN           NaN     794315     451613           405843     176781         582624           0           0              0           0           0            0829056    0065547    0361872   8388164
+23         NaN    20231221 000000  20231221 000000   1089466        47248     42469         747      2861     64001    931222             0            1095271             NaN           NaN             NaN                NaN         NaN           NaN         NaN     451613           365142     176781         541923           0           0              0           0           0                   0           0    0335157     417377
+24         NaN    20231222 000000  20231222 000000   1256647           546     65976         415      2935    117601    100555             0            1250812          94384           NaN             NaN                NaN         NaN           NaN    1147328     451613           423022     176781         599803           0           0              0           0           0            1134413    0075108    0336628  10964613
+25         NaN    20231223 000000  20231223 000000   1430275        58156     81013         747      8225     94733   1185826             0            1435423             NaN           NaN             NaN                NaN         NaN           NaN         NaN     451613           397539     176781          57432           0           0              0           0           0                   0           0    0277946      34691
+26         NaN    20231224 000000  20231224 000000   1378928        57935     66868        1162      5902     87887   1151824             0            1382036             NaN           NaN             NaN                NaN         NaN           NaN         NaN     451613           379658     176781         556439           0           0              0           0           0                   0           0    0275328    3152321
+27         NaN    20231225 000000  20231225 000000   2277549          1179     12449         498     10099    153923   1863552            70            2281944          22931        20468         124486             25668      20225        87479         NaN     451613           602024     176781         778805    0173605    0999968       5154217    2002674     056833                   0    0010068     026433    6679935
+28         NaN    20231226 000000  20231226 000000   1919801        86734     94451         581     12067    140534   1580623            70            1927219         104209           NaN             NaN                NaN         NaN           NaN     726613     451613           412083     176781         588864           0           0              0           0           0            0459822    0054281    0214649    103844
+29         NaN    20231227 000000  20231227 000000   2236608        10618    129359         996     10784    135203   1848918            55            2245904          57628         7603             NaN                NaN         NaN           NaN     910404     451613           441213     176781         617994    0716048           0              0           0           0            0493411    0025766    0197269     611396
+30         NaN    20231228 000000  20231228 000000   2413226       108887    135269         664      9385    143077   2016499            70            2426757         171644           NaN             NaN                NaN         NaN           NaN         NaN     451613           520191     176781         696972           0           0              0           0           0                   0    0071126    0215558   10232998
+31         NaN    20231229 000000  20231229 000000   2843533       110284     13592      110284     13316    239389   2341927            20             295312          65368           NaN             NaN                NaN         NaN           NaN    1419707     451613            53609     176781         712871           0           0              0           0           0            0635403    0022988     018853    1226869
+32         NaN    20231230 000000  20231230 000000   2939085       113009    148007        1328     27607    231465    241175             0            2945118             NaN           NaN             NaN                NaN         NaN           NaN         NaN     451613           537448     176781         714229           0           0              0           0           0                   0           0    0182862   17018201
+33         NaN    20231231 000000  20231231 000000   3053741       111922    151197         913     19689    242804   2520229             0            3054971             NaN           NaN             NaN                NaN         NaN           NaN         NaN     451613           474662     176781         651443           0           0              0           0           0                   0           0    0155436   18855407
+34         NaN                 Totals                  NaN  49365103      2113566   1998714      926084    267204   3415612  40914205           460           49681385        3282407       335553         456594             23258       8505        39705   11668563   14000003         13263474    5480211       18743685    0158762    0228444       0251144    0318296    0116246            0287092    0066492    0268681  17107505
+35         NaN                    NaN                  NaN        NaN           NaN        NaN          NaN        NaN        NaN        NaN           NaN                 NaN             NaN           NaN             NaN                NaN         NaN           NaN         NaN         NaN               NaN         NaN             NaN         BEV    32 BEER         S BEER        WINE         LIQ                FOOD    SUPPLIES       LABOR         NaN
+36         NaN  Beginning Inventories                  NaN        NaN           NaN        NaN          NaN        NaN        NaN        NaN           NaN  Ending Inventories             NaN           NaN      Difference                NaN         NaN           NaN         NaN         NaN       ADJ COSTS          NaN             NaN    0158762    0216806       0226027    0318296    0116246            0278153    0066492    0268681         NaN
+37         NaN               Beverage                  NaN    247195           NaN        NaN          NaN        NaN        NaN   Beverage           NaN                 NaN         247195           NaN        Beverage                NaN           0           NaN         NaN         NaN  BUDGETED COSTS          NaN             NaN         05        025           025         03        016                032        005        025         NaN
+38         NaN               32 Beer                  NaN    115546           NaN        NaN          NaN        NaN        NaN   32 Beer           NaN                 NaN          92286           NaN        32 Beer                NaN       2326           NaN         NaN         NaN      DIFFERENCE          NaN             NaN   0341238   0033194      0023973    0018296   0043754           0041847    0016492    0018681         NaN
+39         NaN               Str Beer                  NaN     63221           NaN        NaN          NaN        NaN        NaN        NaN           NaN            Str Beer         112528           NaN             NaN           Str Beer     49307           NaN         NaN         NaN               NaN         NaN             NaN         NaN         NaN            NaN         NaN         NaN                 NaN         NaN         NaN         NaN
+40         NaN                   Wine                  NaN     37163           NaN        NaN          NaN        NaN        NaN       Wine           NaN                 NaN          37163           NaN            Wine                NaN           0           NaN         NaN         NaN               NaN         NaN             NaN         NaN         NaN            NaN         NaN         NaN                 NaN         NaN         NaN         NaN
+41         NaN                 Liquor                  NaN    641604           NaN        NaN          NaN        NaN        NaN     Liquor           NaN                 NaN         641604           NaN          Liquor                NaN           0           NaN         NaN         NaN               NaN         NaN             NaN         NaN         NaN            NaN         NaN         NaN                 NaN         NaN         NaN         NaN
+42         NaN                   Food                  NaN   3550552           NaN        NaN          NaN        NaN        NaN       Food           NaN                 NaN        3187208           NaN            Food                NaN     363344           NaN         NaN         NaN               NaN         NaN             NaN         NaN         NaN            NaN         NaN         NaN                 NaN         NaN         NaN         NaN
+Sales Summary with Revenue Detail
+Processed Business Period Starting 1092024 600 AM and Ending 10102024 559 AM
+Grouped by Profit Center Meal Period
+
+Selected For Store  Traditions 2 Profit Center  Toby Keiths Bar  Grill 27
+
+Profit Center Toby Keiths Bar  Grill27
+
+STATISTICS
+
+Brunch6
+
+Dinner3
+
+Happy Hour4
+
+Lunch2
+
+Total
+
+REVENUE
+
+Brunch6
+
+Dinner3
+
+Happy Hour4
+
+Lunch2
+
+Total
+
+GROSS REVENUE
+
+Food 1
+
+Wine 3
+
+Liquor 4
+
+NonAlcoh Bev 5
+
+Domestic 60 17
+
+Miscellaneous 8
+
+Import 60 10
+
+Total Checks Refund Checks
+
+Net Checks
+
+Avg Check
+
+Net Covers
+
+Avg Cover
+
+1
+
+95
+
+49
+
+88
+
+233
+
+Receipts
+
+5850
+
+437821
+
+183963
+
+320840
+
+948474
+
+0
+
+0
+
+0
+
+0
+
+0
+
+1
+
+95
+
+49
+
+88
+
+233
+
+5850
+
+4594
+
+3754
+
+3595
+
+0
+
+147
+
+85
+
+138
+
+370
+
+000
+
+2969
+
+2164
+
+2292
+
+ Refunds
+
+ Gross Revenue
+
+000
+
+000
+
+000
+
+000
+
+000
+
+5850
+
+437821
+
+183963
+
+320840
+
+948474
+
+Brunch6
+
+Dinner3
+
+Happy Hour4
+
+Lunch2
+
+5550
+
+300
+
+360575
+
+2488
+
+25998
+
+19884
+
+27010
+
+1866
+
+149249
+
+664
+
+8875
+
+11400
+
+11323
+
+1000
+
+1452
+
+281669
+
+1328
+
+12012
+
+17699
+
+8132
+
+Total
+
+797043
+
+4480
+
+46885
+
+49283
+
+46465
+
+1000
+
+3318
+
+10102024 812 AM
+
+Executed By kbrown
+
+InfoGenesis POS Version 453320
+
+16
+
+Sales Summary with Revenue Detail
+Processed Business Period Starting 1092024 600 AM and Ending 10102024 559 AM
+Grouped by Profit Center Meal Period
+
+Subtotal
+
+DISCOUNTS
+
+Food 1
+
+Wine 3
+
+Liquor 4
+
+NonAlcoh Bev 5
+
+Domestic 60 17
+
+Miscellaneous 8
+
+Import 60 10
+
+Subtotal
+
+NET REVENUE
+
+Food 1
+
+Wine 3
+
+Liquor 4
+
+NonAlcoh Bev 5
+
+Domestic 60 17
+
+Miscellaneous 8
+
+Import 60 10
+
+Subtotal
+
+Brunch6
+
+Dinner3
+
+Happy Hour4
+
+Lunch2
+
+Total
+
+5850
+
+437821
+
+183963
+
+320840
+
+948474
+
+Brunch6
+
+Dinner3
+
+Happy Hour4
+
+Lunch2
+
+000
+
+000
+
+000
+
+1230
+
+000
+
+000
+
+120
+
+000
+
+000
+
+1350
+
+000
+
+000
+
+000
+
+000
+
+000
+
+000
+
+000
+
+000
+
+4205
+
+000
+
+000
+
+300
+
+000
+
+4505
+
+Brunch6
+
+Dinner3
+
+Happy Hour4
+
+Lunch2
+
+5550
+
+300
+
+5850
+
+359345
+
+2488
+
+25998
+
+19764
+
+27010
+
+1866
+
+436471
+
+149249
+
+664
+
+8875
+
+11400
+
+11323
+
+1000
+
+1452
+
+277464
+
+1328
+
+12012
+
+17399
+
+8132
+
+Total
+
+5435
+
+000
+
+000
+
+420
+
+000
+
+000
+
+000
+
+5855
+
+Total
+
+791608
+
+4480
+
+46885
+
+48863
+
+46465
+
+1000
+
+3318
+
+183963
+
+316335
+
+942619
+
+10102024 812 AM
+
+Executed By kbrown
+
+InfoGenesis POS Version 453320
+
+26
+
+Sales Summary with Revenue Detail
+Processed Business Period Starting 1092024 600 AM and Ending 10102024 559 AM
+Grouped by Profit Center Meal Period
+
+TAXES
+
+Brunch6
+
+Dinner3
+
+Happy Hour4
+
+Lunch2
+
+Subtotal
+
+GRATUITIES AND TIPS
+
+Brunch6
+
+Dinner3
+
+Happy Hour4
+
+Lunch2
+
+Total
+
+Brunch6
+
+Dinner3
+
+Happy Hour4
+
+Lunch2
+
+Total
+
+Brunch6
+
+Dinner3
+
+Happy Hour4
+
+Lunch2
+
+Total
+
+WS Sales Tax48LiqrTax 1350010
+
+Legend Sales Tax
+32
+
+000
+
+25202
+
+11128
+
+17609
+
+53939
+
+000
+
+7745
+
+3013
+
+2898
+
+13656
+
+410
+
+000
+
+000
+
+000
+
+410
+
+Total
+
+410
+
+32947
+
+14141
+
+20507
+
+68005
+
+Grats Service Charge
+
+Charged Tips
+
+Subtotal
+
+000
+
+12318
+
+000
+
+7729
+
+20047
+
+000
+
+000
+
+000
+
+000
+
+000
+
+1200
+
+61211
+
+26308
+
+38740
+
+1200
+
+73529
+
+26308
+
+46469
+
+127459
+
+147506
+
+GROSS RECEIPTS TOTAL
+
+7460
+
+542947
+
+224412
+
+383311
+
+1158130
+
+BREAKAGE  ROUNDING
+
+000
+
+000
+
+000
+
+000
+
+000
+
+10102024 812 AM
+
+Executed By kbrown
+
+InfoGenesis POS Version 453320
+
+36
+
+Sales Summary with Revenue Detail
+Processed Business Period Starting 1092024 600 AM and Ending 10102024 559 AM
+Grouped by Profit Center Meal Period
+
+Brunch6
+
+Dinner3
+
+Happy Hour4
+
+Lunch2
+
+Total
+
+TENDER CREDITS
+
+Brunch6
+
+Dinner3
+
+Happy Hour4
+
+Lunch2
+
+Subtotal
+
+TOTAL RECEIPTS
+
+7460
+
+542947
+
+224412
+
+383311
+
+1158130
+
+000
+
+000
+
+000
+
+000
+
+000
+
+Total
+
+000
+
+000
+
+000
+
+000
+
+000
+
+10102024 812 AM
+
+Executed By kbrown
+
+InfoGenesis POS Version 453320
+
+46
+
+Sales Summary with Revenue Detail
+Processed Business Period Starting 1092024 600 AM and Ending 10102024 559 AM
+Grouped by Profit Center Meal Period
+
+TENDERS
+
+Cash 1
+
+TS MGR Comp 26
+
+ACSC Comp WS 27
+
+Casino PointsWS 38
+
+TS MGR Meal 51
+
+American Exp EMV 66
+
+Discover EMV 67
+
+Master Card EMV 68
+
+Visa EMV 69
+
+Food Offer WS 134
+
+Subtotal
+
+Brunch6
+
+Dinner3
+
+Happy Hour4
+
+Lunch2
+
+Total
+
+Brunch6
+
+Dinner3
+
+Happy Hour4
+
+Lunch2
+
+Total
+
+16
+
+34767
+
+16
+
+2
+
+1
+
+4
+
+1
+
+3
+
+0
+
+6
+
+20
+
+12
+
+65
+
+3210
+
+3850
+
+3785
+
+749
+
+48120
+
+000
+
+35145
+
+77386
+
+17400
+
+224412
+
+0
+
+5
+
+6
+
+2
+
+5
+
+2
+
+20
+
+36
+
+22
+
+114
+
+33267
+
+000
+
+25350
+
+9145
+
+3317
+
+23228
+
+6404
+
+81099
+
+171101
+
+30400
+
+66
+
+3
+
+14
+
+24
+
+4
+
+13
+
+4
+
+43
+
+86
+
+52
+
+149393
+
+4869
+
+62100
+
+23607
+
+6066
+
+103455
+
+30362
+
+198806
+
+498672
+
+80800
+
+383311
+
+309
+
+1158130
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0
+
+1
+
+0
+
+0
+
+1
+
+000
+
+000
+
+000
+
+000
+
+000
+
+000
+
+000
+
+7460
+
+000
+
+000
+
+34
+
+1
+
+8
+
+14
+
+1
+
+5
+
+2
+
+16
+
+30
+
+18
+
+81359
+
+1659
+
+32900
+
+10677
+
+2000
+
+32107
+
+23958
+
+75102
+
+250185
+
+33000
+
+7460
+
+129
+
+542947
+
+TOTAL TENDERS
+
+7460
+
+542947
+
+224412
+
+383311
+
+1158130
+
+10102024 812 AM
+
+Executed By kbrown
+
+InfoGenesis POS Version 453320
+
+56
+
+Sales Summary with Revenue Detail
+Processed Business Period Starting 1092024 600 AM and Ending 10102024 559 AM
+Grouped by Profit Center Meal Period
+
+CASH POSITION
+
+Brunch6
+
+Dinner3
+
+Happy Hour4
+
+Late Night10
+
+Lunch2
+
+Total
+
+Total Tenders
+
+Loans
+
+Withdrawals
+
+Tips Paid
+
+
+
+Noncash Tenders
+
+ Account Cash
+
+Cash Dropped
+
+Over  Short
+
+7460
+
+542947
+
+224412
+
+000
+
+383311
+
+1158130
+
+000
+
+000
+
+000
+
+000
+
+000
+
+000
+
+000
+
+000
+
+000
+
+000
+
+000
+
+000
+
+000
+
+000
+
+61296
+
+86210
+
+7460
+
+7460
+
+542947
+
+461588
+
+163116
+
+189645
+
+86210
+
+000
+
+000
+
+383311
+
+350044
+
+147506
+
+1010624
+
+1008737
+
+000
+
+81359
+
+26529
+
+86210
+
+33267
+
+1887
+
+000
+
+000
+
+000
+
+000
+
+000
+
+000
+
+000
+
+81359
+
+26529
+
+86210
+
+33267
+
+1887
+
+10102024 812 AM
+
+Executed By kbrown
+
+InfoGenesis POS Version 453320
+
+66
+
+
+             
+             
+             
+             
+             
+Internal Transfer Requistion From             
+Venue Requesting Toby Keiths             
+Liquors Prev Ordered Pars Pricebottle Ordered Total  Signature Signature      
+WHISKEYS             
+TX Whiskey   1 3519 0 000        
+Gentleman Jack   2 2409 1 2409        
+Jack Daniels  8 2638 3 7914        
+Jack Daniels Honey  1 2638  000        
+Jack Daniels Apple  1 1839  000        
+Jack Daniels Fire  1 2638  000        
+Fireball  1 1519  000        
+Pendleton  x 2959  000        
+Seagrams 7  1 1499 1 1499        
+Screwball   x 2636  000        
+Southern Comfort  1 1199  000        
+Kentucky Dale   x 639  000        
+BOURBONS             
+Eagle Rare  x 2839  000        
+Basil Hayden  1 4128 1 4128        
+Woodford Reserve   2 3509  000        
+Jim Bean  6 1668 4 6672        
+Makers Mark  3 2900 3 8700        
+Old Forester  2 1650  000        
+RYE WHISKEYS             
+Knob Creek RYE   1 2600  000        
+Bulleit 95 RYE  x 2474  000        
+IRISH WHISKEY             
+Jameson Iris  3 3330 2 6660        
+Jamison Orange  2 3330 2 6660        
+Jamison Orange  2 3330  000        
+CANADIAN WHISKEY             
+Crown   4 2999 4 11996        
+Crown Apple   1 2999  000        
+Crown Peach  1 2399  000        
+Crown Vanilla   1 2999  000        
+Canadian Club 1858  x 1280  000        
+Old Forester  x 1650  000        
+SCOTCH             
+Macallen 12 YR  x 7599  000        
+The Glenlivet 12 YR  x 5879  000        
+Dewars White label  x 1920  000        
+JW Black  x 4199  000        
+Chivas Regal 12 YR  x 2990  000        
+VODKA             
+Chopin  x 3160  000        
+Belvedere  x 2977  000        
+Finlandia   x 1279  000        
+Grey Goose  1 2640 1 2640        
+Ketel One  x 2549  000        
+Stolichnaya  x 1999  000        
+Stolichnaya Vanilla  x 2125  000        
+Absolute Vodka  x 1922  000        
+Titos  12 2130 8 17040        
+Deep Eddys Lemon  3 1999  000        
+Deep Eddys Ruby Red  1 1999  000        
+Deep Eddys Peach  1 1999  000        
+Taaka  3 555 2 1110        
+TEQUILA             
+Clasa  Azul Anejo  x 36799  000        
+Clasa  Azul Reposado  x 14917  000        
+Clasa  Azul Plata  x 9211  000        
+Patron Silver   3 3999 2 7998        
+Corralejo Anejo  x 000  000        
+Corralejo Reposado  1 2826  000        
+Corralejo Blanco  1 2479  000        
+Herradura Silver  x 3919  000        
+1800 Reposado  6 3179 2 6358        
+1800 Silver  8 2879 7 20153        
+Jose Cuervo blue agave  x 2159  000        
+El Jimador  1 1950 1 1950        
+El Jimador  x 1950  000        
+El Toro  8 876 1 876        
+GIN             
+Hedricks  x 3740  000        
+Tanqueray  1 2399  000        
+Bombay Sapphire  x 2239  000        
+Taaka   2 589  000        
+RUM             
+Myers Mark  x 2239  000        
+Captian Morgan  2 1799 1 1799        
+Malibu  8 1680 4 6720        
+Bacardi  3 1200 1 1200        
+Barbarossa  3 580 2 1160        
+BRANDYCOGNAC             
+Hennessey VS  1 4449  000        
+Courvoisier VSOP  x 3830  000        
+Tuaca Itailian Brandy  x 2213  000        
+E  J   x 1199  000        
+Pual Mason  x 1039  000        
+LIQUEURS             
+Disaronno  1 3839  000        
+Grand Marnier  4 3442  000        
+Cointreau  4 3139  000        
+Chambord  x 2799  000        
+Frangelico  x 2479  000        
+Campari  x 3406  000        
+Kahlua  x 2698  000        
+Jagermeister  x 2622  000        
+Midori  x 208  000        
+Rum Chata  x 2166  000        
+razzmatazz  4 10 4 4000        
+MrBoston Ameretto  x 505  000        
+MrBoston Blue Curacao  5 505  000        
+Buttershots  x 1073  000        
+MrBoston Melon  1 592  000        
+MrBoston Peach Schapps  6 542 2 1084        
+MrBoston Sour Apple  1 542  000        
+Dessert LIT  4 719  000        
+Total      130726        
+Wines             
+Champaigne  Prev Order Pars Price Ordered Total  Signature Signature      
+Korbel Mini Bottles  24 300  000        
+House Wines             
+Sutter Homes Cabernet  12 525 10 5250        
+Sutter Homes Merlot  6 525  000        
+Sutter Homes  Chardonnay  12 525 4 2100        
+Sutter Homes Moscato  6 525 2 1050        
+Sutter Homes White Zin  6 525 2 1050        
+Sutter Homes Pinot Grig  8 525 1 525        
+Top shelf Wines             
+Angeline CAB  6 500  000        
+Angeline Chard  6 500  000        
+Angeline Rose  x 500  000        
+Vietti Moscato   2 800  000        
+     000        
+Total      9975        
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+Liquors
+WHISKEYS
+TX Whiskey 
+Gentleman Jack 
+Jack Daniels
+Jack Daniels Honey
+Jack Daniels Apple
+Jack Daniels Fire
+Fireball
+Pendleton
+Seagrams 7
+Screwball 
+Southern Comfort
+Kentucky Dale 
+BOURBONS
+Eagle Rare
+Basil Hayden
+Woodford Reserve 
+Jim Bean
+Makers Mark
+Old Forester
+RYE WHISKEYS
+Knob Creek RYE 
+Bulleit 95 RYE
+IRISH WHISKEY
+Jameson Iris
+Jamison Orange
+Jamison Orange
+CANADIAN WHISKEY
+Crown 
+Crown Apple 
+Crown Peach
+Crown Vanilla 
+Canadian Club 1858
+Old Forester
+SCOTCH
+Macallen 12 YR
+The Glenlivet 12 YR
+Dewars White label
+JW Black
+Chivas Regal 12 YR
+VODKA
+Chopin
+Belvedere
+Finlandia 
+Grey Goose
+
+Internal Transfer Requistion From
+Venue Requesting Toby Keiths
+
+Prev Ordered
+
+Pars
+
+Pricebottle
+
+Ordered
+
+Total 
+
+Signature
+
+Signature
+
+1
+2
+8
+1
+1
+1
+1
+x
+1
+x
+1
+x
+
+x
+1
+2
+6
+3
+2
+
+1
+x
+
+3
+2
+2
+
+4
+1
+1
+1
+x
+x
+
+x
+x
+x
+x
+x
+
+x
+x
+x
+1
+
+3519
+2409
+2638
+2638
+1839
+2638
+1519
+2959
+1499
+2636
+1199
+639
+
+2839
+4128
+3509
+1668
+2900
+1650
+
+2600
+2474
+
+3330
+3330
+3330
+
+2999
+2999
+2399
+2999
+1280
+1650
+
+7599
+5879
+1920
+4199
+2990
+
+3160
+2977
+1279
+2640
+
+0
+1
+3
+
+1
+
+1
+
+4
+3
+
+2
+2
+
+4
+
+1
+
+000
+2409
+7914
+000
+000
+000
+000
+000
+1499
+000
+000
+000
+
+000
+4128
+000
+6672
+8700
+000
+
+000
+000
+
+6660
+6660
+000
+
+11996
+000
+000
+000
+000
+000
+
+000
+000
+000
+000
+000
+
+000
+000
+000
+2640
+
+Ketel One
+Stolichnaya
+Stolichnaya Vanilla
+Absolute Vodka
+Titos
+Deep Eddys Lemon
+Deep Eddys Ruby Red
+Deep Eddys Peach
+Taaka
+TEQUILA
+Clasa  Azul Anejo
+Clasa  Azul Reposado
+Clasa  Azul Plata
+Patron Silver 
+Corralejo Anejo
+Corralejo Reposado
+Corralejo Blanco
+Herradura Silver
+1800 Reposado
+1800 Silver
+Jose Cuervo blue agave
+El Jimador
+El Jimador
+El Toro
+GIN
+Hedricks
+Tanqueray
+Bombay Sapphire
+Taaka 
+RUM
+Myers Mark
+Captian Morgan
+Malibu
+Bacardi
+Barbarossa
+BRANDYCOGNAC
+Hennessey VS
+Courvoisier VSOP
+Tuaca Itailian Brandy
+E  J 
+Pual Mason
+LIQUEURS
+Disaronno
+Grand Marnier
+Cointreau
+Chambord
+Frangelico
+Campari
+Kahlua
+Jagermeister
+Midori
+Rum Chata
+razzmatazz
+MrBoston Ameretto
+MrBoston Blue Curacao
+
+x
+x
+x
+x
+12
+3
+1
+1
+3
+
+x
+x
+x
+3
+x
+1
+1
+x
+6
+8
+x
+1
+x
+8
+
+x
+1
+x
+2
+
+x
+2
+8
+3
+3
+
+1
+x
+x
+x
+x
+
+1
+4
+4
+x
+x
+x
+x
+x
+x
+x
+4
+x
+5
+
+2549
+1999
+2125
+1922
+2130
+1999
+1999
+1999
+555
+
+36799
+14917
+9211
+3999
+000
+2826
+2479
+3919
+3179
+2879
+2159
+1950
+1950
+876
+
+3740
+2399
+2239
+589
+
+2239
+1799
+1680
+1200
+580
+
+4449
+3830
+2213
+1199
+1039
+
+3839
+3442
+3139
+2799
+2479
+3406
+2698
+2622
+208
+2166
+10
+505
+505
+
+000
+000
+000
+000
+17040
+000
+000
+000
+1110
+
+000
+000
+000
+7998
+000
+000
+000
+000
+6358
+20153
+000
+1950
+000
+876
+
+000
+000
+000
+000
+
+000
+1799
+6720
+1200
+1160
+
+000
+000
+000
+000
+000
+
+000
+000
+000
+000
+000
+000
+000
+000
+000
+000
+4000
+000
+000
+
+8
+
+2
+
+2
+
+2
+7
+
+1
+
+1
+
+1
+4
+1
+2
+
+4
+
+Buttershots
+MrBoston Melon
+MrBoston Peach Schapps
+MrBoston Sour Apple
+Dessert LIT
+Total 
+
+Champaigne 
+Korbel Mini Bottles
+House Wines
+Sutter Homes Cabernet
+Sutter Homes Merlot
+Sutter Homes  Chardonnay
+Sutter Homes Moscato
+Sutter Homes White Zin
+Sutter Homes Pinot Grig
+Top shelf Wines
+Angeline CAB
+Angeline Chard
+Angeline Rose
+Vietti Moscato 
+
+Total 
+
+x
+1
+6
+1
+4
+
+Prev Order
+
+Pars
+24
+
+12
+6
+12
+6
+6
+8
+
+6
+6
+x
+2
+
+2
+
+Ordered
+
+10
+
+4
+2
+2
+1
+
+1073
+592
+542
+542
+719
+
+Wines
+
+Price
+300
+
+525
+525
+525
+525
+525
+525
+
+500
+500
+500
+800
+
+000
+000
+1084
+000
+000
+130726
+
+Total 
+000
+
+5250
+000
+2100
+1050
+1050
+525
+
+000
+000
+000
+000
+000
+9975
+
+Signature
+
+Signature
+
+
+                             Unnamed 0     Unnamed 1 Unnamed 2    Unnamed 3 Unnamed 4 Unnamed 5 Unnamed 6 Unnamed 7
+0                                   NaN            NaN        NaN           NaN        NaN        NaN        NaN        NaN
+1                                   NaN            NaN        NaN           NaN        NaN        NaN        NaN        NaN
+2                                   NaN            NaN        NaN           NaN        NaN        NaN        NaN        NaN
+3                                   NaN            NaN        NaN           NaN        NaN        NaN        NaN        NaN
+4    Internal Transfer Requistion From            NaN        NaN           NaN        NaN        NaN        NaN        NaN
+5         Venue Requesting Toby Keiths            NaN        NaN           NaN        NaN        NaN        NaN        NaN
+6                               Liquors  Prev Ordered       Pars  Pricebottle    Ordered    Total   Signature  Signature
+7                             WHISKEYS            NaN        NaN           NaN        NaN        NaN        NaN        NaN
+8                           TX Whiskey             NaN          1         3519          0          0        NaN        NaN
+9                       Gentleman Jack             NaN          2         2409          1      2409        NaN        NaN
+10                         Jack Daniels            NaN          8         2638          3      7914        NaN        NaN
+11                   Jack Daniels Honey            NaN          1         2638        NaN          0        NaN        NaN
+12                   Jack Daniels Apple            NaN          1         1839        NaN          0        NaN        NaN
+13                    Jack Daniels Fire            NaN          1         2638        NaN          0        NaN        NaN
+14                             Fireball            NaN          1         1519        NaN          0        NaN        NaN
+15                            Pendleton            NaN          x         2959        NaN          0        NaN        NaN
+16                          Seagrams 7            NaN          1         1499          1      1499        NaN        NaN
+17                           Screwball             NaN          x         2636        NaN          0        NaN        NaN
+18                     Southern Comfort            NaN          1         1199        NaN          0        NaN        NaN
+19                       Kentucky Dale             NaN          x          639        NaN          0        NaN        NaN
+20                            BOURBONS            NaN        NaN           NaN        NaN        NaN        NaN        NaN
+21                           Eagle Rare            NaN          x         2839        NaN          0        NaN        NaN
+22                         Basil Hayden            NaN          1         4128          1      4128        NaN        NaN
+23                    Woodford Reserve             NaN          2         3509        NaN          0        NaN        NaN
+24                             Jim Bean            NaN          6         1668          4      6672        NaN        NaN
+25                          Makers Mark            NaN          3            29          3         87        NaN        NaN
+26                         Old Forester            NaN          2          165        NaN          0        NaN        NaN
+27                        RYE WHISKEYS            NaN        NaN           NaN        NaN        NaN        NaN        NaN
+28                      Knob Creek RYE             NaN          1            26        NaN          0        NaN        NaN
+29                       Bulleit 95 RYE            NaN          x         2474        NaN          0        NaN        NaN
+30                        IRISH WHISKEY            NaN        NaN           NaN        NaN        NaN        NaN        NaN
+31                         Jameson Iris            NaN          3          333          2       666        NaN        NaN
+32                       Jamison Orange            NaN          2          333          2       666        NaN        NaN
+33                       Jamison Orange            NaN          2          333        NaN          0        NaN        NaN
+34                     CANADIAN WHISKEY            NaN        NaN           NaN        NaN        NaN        NaN        NaN
+35                               Crown             NaN          4         2999          4     11996        NaN        NaN
+36                         Crown Apple             NaN          1         2999        NaN          0        NaN        NaN
+37                          Crown Peach            NaN          1         2399        NaN          0        NaN        NaN
+38                       Crown Vanilla             NaN          1         2999        NaN          0        NaN        NaN
+39                   Canadian Club 1858            NaN          x          128        NaN          0        NaN        NaN
+40                         Old Forester            NaN          x          165        NaN          0        NaN        NaN
+41                               SCOTCH            NaN        NaN           NaN        NaN        NaN        NaN        NaN
+42                       Macallen 12 YR            NaN          x         7599        NaN          0        NaN        NaN
+43                  The Glenlivet 12 YR            NaN          x         5879        NaN          0        NaN        NaN
+44                   Dewars White label            NaN          x          192        NaN          0        NaN        NaN
+45                             JW Black            NaN          x         4199        NaN          0        NaN        NaN
+46                   Chivas Regal 12 YR            NaN          x          299        NaN          0        NaN        NaN
+47                                VODKA            NaN        NaN           NaN        NaN        NaN        NaN        NaN
+48                               Chopin            NaN          x          316        NaN          0        NaN        NaN
+49                            Belvedere            NaN          x         2977        NaN          0        NaN        NaN
+50                           Finlandia             NaN          x         1279        NaN          0        NaN        NaN
+51                           Grey Goose            NaN          1          264          1       264        NaN        NaN
+52                            Ketel One            NaN          x         2549        NaN          0        NaN        NaN
+53                          Stolichnaya            NaN          x         1999        NaN          0        NaN        NaN
+54                  Stolichnaya Vanilla            NaN          x         2125        NaN          0        NaN        NaN
+55                       Absolute Vodka            NaN          x         1922        NaN          0        NaN        NaN
+56                               Titos            NaN         12          213          8      1704        NaN        NaN
+57                    Deep Eddys Lemon            NaN          3         1999        NaN          0        NaN        NaN
+58                 Deep Eddys Ruby Red            NaN          1         1999        NaN          0        NaN        NaN
+59                    Deep Eddys Peach            NaN          1         1999        NaN          0        NaN        NaN
+60                                Taaka            NaN          3          555          2       111        NaN        NaN
+61                              TEQUILA            NaN        NaN           NaN        NaN        NaN        NaN        NaN
+62                    Clasa  Azul Anejo            NaN          x        36799        NaN          0        NaN        NaN
+63                 Clasa  Azul Reposado            NaN          x        14917        NaN          0        NaN        NaN
+64                    Clasa  Azul Plata            NaN          x         9211        NaN          0        NaN        NaN
+65                       Patron Silver             NaN          3         3999          2      7998        NaN        NaN
+66                      Corralejo Anejo            NaN          x             0        NaN          0        NaN        NaN
+67                   Corralejo Reposado            NaN          1         2826        NaN          0        NaN        NaN
+68                     Corralejo Blanco            NaN          1         2479        NaN          0        NaN        NaN
+69                     Herradura Silver            NaN          x         3919        NaN          0        NaN        NaN
+70                        1800 Reposado            NaN          6         3179          2      6358        NaN        NaN
+71                          1800 Silver            NaN          8         2879          7     20153        NaN        NaN
+72             Jose Cuervo blue agave            NaN          x         2159        NaN          0        NaN        NaN
+73                           El Jimador            NaN          1          195          1       195        NaN        NaN
+74                           El Jimador            NaN          x          195        NaN          0        NaN        NaN
+75                              El Toro            NaN          8          876          1       876        NaN        NaN
+76                                  GIN            NaN        NaN           NaN        NaN        NaN        NaN        NaN
+77                             Hedricks            NaN          x          374        NaN          0        NaN        NaN
+78                            Tanqueray            NaN          1         2399        NaN          0        NaN        NaN
+79                      Bombay Sapphire            NaN          x         2239        NaN          0        NaN        NaN
+80                               Taaka             NaN          2          589        NaN          0        NaN        NaN
+81                                  RUM            NaN        NaN           NaN        NaN        NaN        NaN        NaN
+82                          Myers Mark            NaN          x         2239        NaN          0        NaN        NaN
+83                       Captian Morgan            NaN          2         1799          1      1799        NaN        NaN
+84                               Malibu            NaN          8          168          4       672        NaN        NaN
+85                              Bacardi            NaN          3            12          1         12        NaN        NaN
+86                           Barbarossa            NaN          3           58          2       116        NaN        NaN
+87                        BRANDYCOGNAC            NaN        NaN           NaN        NaN        NaN        NaN        NaN
+88                         Hennessey VS            NaN          1         4449        NaN          0        NaN        NaN
+89                     Courvoisier VSOP            NaN          x          383        NaN          0        NaN        NaN
+90                Tuaca Itailian Brandy            NaN          x         2213        NaN          0        NaN        NaN
+91                               E  J             NaN          x         1199        NaN          0        NaN        NaN
+92                           Pual Mason            NaN          x         1039        NaN          0        NaN        NaN
+93                            LIQUEURS            NaN        NaN           NaN        NaN        NaN        NaN        NaN
+94                            Disaronno            NaN          1         3839        NaN          0        NaN        NaN
+95                        Grand Marnier            NaN          4         3442        NaN          0        NaN        NaN
+96                            Cointreau            NaN          4         3139        NaN          0        NaN        NaN
+97                             Chambord            NaN          x         2799        NaN          0        NaN        NaN
+98                           Frangelico            NaN          x         2479        NaN          0        NaN        NaN
+99                              Campari            NaN          x         3406        NaN          0        NaN        NaN
+100                              Kahlua            NaN          x         2698        NaN          0        NaN        NaN
+101                        Jagermeister            NaN          x         2622        NaN          0        NaN        NaN
+102                              Midori            NaN          x          208        NaN          0        NaN        NaN
+103                           Rum Chata            NaN          x         2166        NaN          0        NaN        NaN
+104                          razzmatazz            NaN          4            10          4         40        NaN        NaN
+105                  MrBoston Ameretto            NaN          x          505        NaN          0        NaN        NaN
+106              MrBoston Blue Curacao            NaN          5          505        NaN          0        NaN        NaN
+107                         Buttershots            NaN          x         1073        NaN          0        NaN        NaN
+108                     MrBoston Melon            NaN          1          592        NaN          0        NaN        NaN
+109             MrBoston Peach Schapps            NaN          6          542          2      1084        NaN        NaN
+110                MrBoston Sour Apple            NaN          1          542        NaN          0        NaN        NaN
+111                         Dessert LIT            NaN          4          719        NaN          0        NaN        NaN
+112                              Total             NaN        NaN           NaN        NaN    130726        NaN        NaN
+113                               Wines            NaN        NaN           NaN        NaN        NaN        NaN        NaN
+114                         Champaigne     Prev Order       Pars         Price    Ordered    Total   Signature  Signature
+115                 Korbel Mini Bottles            NaN         24             3        NaN          0        NaN        NaN
+116                         House Wines            NaN        NaN           NaN        NaN        NaN        NaN        NaN
+117               Sutter Homes Cabernet            NaN         12          525         10       525        NaN        NaN
+118                 Sutter Homes Merlot            NaN          6          525        NaN          0        NaN        NaN
+119            Sutter Homes  Chardonnay            NaN         12          525          4         21        NaN        NaN
+120                Sutter Homes Moscato            NaN          6          525          2       105        NaN        NaN
+121              Sutter Homes White Zin            NaN          6          525          2       105        NaN        NaN
+122            Sutter Homes Pinot Grig            NaN          8          525          1       525        NaN        NaN
+123                     Top shelf Wines            NaN        NaN           NaN        NaN        NaN        NaN        NaN
+124                        Angeline CAB            NaN          6             5        NaN          0        NaN        NaN
+125                      Angeline Chard            NaN          6             5        NaN          0        NaN        NaN
+126                       Angeline Rose            NaN          x             5        NaN          0        NaN        NaN
+127                     Vietti Moscato             NaN          2             8        NaN          0        NaN        NaN
+128                                 NaN            NaN        NaN           NaN        NaN          0        NaN        NaN
+129                              Total             NaN        NaN           NaN        NaN      9975        NaN        NaN
+Signature
+
+Signature
+
+Internal Transfer Requistion From
+Venue Requesting  Tobys Keiths
+Date 91123
+
+Prev Order
+
+Pars
+
+Price
+
+Ordered
+
+24
+72
+24
+96
+120
+24
+12
+Pars
+x
+30
+x
+72
+24
+48
+12
+48
+24
+12
+12
+x
+x
+x
+24
+
+par
+4
+3
+5
+Pars
+2
+2
+2
+
+098
+118
+099
+104
+104
+105
+105
+
+120
+100
+101
+123
+118
+129
+129
+119
+143
+143
+143
+131
+112
+150
+133
+
+Kegs Beer
+
+8600
+10300
+10300
+
+15000
+9700
+15200
+
+0
+30
+9
+24
+120
+12
+0
+
+24
+
+60
+
+36
+
+36
+24
+
+6
+
+1
+3
+3
+
+1
+
+2
+
+Total 
+000
+
+000
+3540
+000
+2496
+12480
+1260
+000
+000
+
+000
+2400
+000
+7380
+000
+4644
+000
+4284
+3432
+000
+858
+000
+000
+000
+000
+
+8600
+30900
+30900
+
+15000
+000
+30400
+158574
+
+Commonly used Misc Supplies and NA BEV
+
+Pars
+48
+24
+24
+24
+24
+1 case
+1 Case
+
+163
+163
+163
+163
+163
+908
+908
+
+24
+24
+
+24
+1
+1
+
+3912
+3912
+000
+000
+3912
+908
+908
+13552
+
+Product Name
+DOMESTIC BEER
+Bud Light 16 oz cans
+Mich Ultra 12oz cans
+Coors Banquet 16oz cans
+Coors Light 16oz can
+Miller Lite 16 oz can
+Budweiser Cans
+Budweiser Zero Cans
+IMPORT BEER
+Stella Cans
+Blue Moon 12oz 
+Shocktop
+Dos Equis
+Modelo Especial
+Corona Extra
+Heineken
+Shiner
+Coop F5
+Coop Ice Chest
+Coop Horny Toad
+Guiness
+Estrella Jalisco
+Stella Cidar Bot
+seltzer
+
+DOMESTIC BEER
+Budweiser Keg
+Bud Light Keg
+Michelob Keg
+IMPORT BEER
+Stella Keg
+Shocktop Keg
+Modelo Keg
+Total 
+
+NA BEV
+Redbull
+Sugar Free Redbull
+Redbull Coconut
+Redbull Watermelon
+Redbull Blue
+Aquafina
+Employee Water
+Total 
+
+
+     Unnamed 0                                        Unnamed 1 Unnamed 2 Unnamed 3 Unnamed 4                        Unnamed 5 Unnamed 6 Unnamed 7 Unnamed 8
+0           NaN                                               NaN        NaN        NaN        NaN                  Inventory Report        NaN        NaN        NaN
+1           NaN                                               NaN        NaN        NaN        NaN   Winstar World CasinoTraditions        NaN        NaN        NaN
+2           NaN                                               NaN        NaN        NaN        NaN  Scanned On 12312023 84920 PM        NaN        NaN        NaN
+3           NaN                                               NaN        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+4           NaN                                               NaN        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+5           NaN                                             Brand        Bin       Size       Size                       Tobys Keith     Totals  Unit Cost  Ext Value
+6           NaN                   Nestle Water btl Case 2018        NaN          0         ml                                 2        NaN          0        NaN
+7           NaN                       White claw black berry 12ml        NaN         12         ml                                24        NaN          0        NaN
+8           NaN                                        Misc Total        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+9           NaN                                Blue Moon Can 12oz        NaN         12         oz                                66        NaN          1        NaN
+10          NaN                                      Coop 66 12oz        NaN         12         oz                                34        NaN       131        NaN
+11          NaN                                      Coop F5 12oz        NaN         12         oz                                38        NaN       143        NaN
+12          NaN                                      Coop HT 12oz        NaN         12         oz                                24        NaN       143        NaN
+13          NaN                           Coop IPA Ice Chest 12oz        NaN         12         oz                                 9        NaN       114        NaN
+14          NaN                                   Corona Can 12oz        NaN         12         oz                                62        NaN       129        NaN
+15          NaN                         Dos Equis Lager Cans 12oz        NaN         12         oz                                19        NaN       133        NaN
+16          NaN                        Estrella Jalisco Btl 12oz        NaN         12         oz                                 9        NaN       112        NaN
+17          NaN                     Guinness Extra Stout Btl 12oz        NaN         12         oz                                 6        NaN       131        NaN
+18          NaN                                 Heineken Can 12oz        NaN         12         oz                                12        NaN       133        NaN
+19          NaN                          Modelo Especial Can 12oz        NaN         12         oz                                57        NaN       118        NaN
+20          NaN                                   Shiner can 16oz        NaN         16         oz                                51        NaN       107        NaN
+21          NaN                               Shock Top Cans 12oz        NaN         12         oz                                14        NaN       105        NaN
+22          NaN                           Stella Artois Cans 12oz        NaN         12         oz                               156        NaN       107        NaN
+23          NaN          Stella Artois Cidre Apple Cider Btl 12oz        NaN         12         oz                                10        NaN        15        NaN
+24          NaN                          Beer60 Import Subtotal        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+25          NaN                                Modelo keg 155gal        NaN       155        gal                                 1        NaN        152        NaN
+26          NaN    Shock Top Belgian White Keg 12 Barrel 155gal        NaN       155        gal                               01        NaN         97        NaN
+27          NaN                                 Stella Keg 1984oz        NaN       1984         oz                                 1        NaN        103        NaN
+28          NaN                    Beer60 Import Draft Subtotal        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+29          NaN                       Bud Light Aluminum Btl 16oz        NaN         16         oz                                 5        NaN       105        NaN
+30          NaN                               Bud Light cans 16oz        NaN         16         oz                                11        NaN       105        NaN
+31          NaN                       Budweiser Aluminum can 16oz        NaN         16         oz                                69        NaN       105        NaN
+32          NaN                                Coors Banquet 16oz        NaN         16         oz                                66        NaN       099        NaN
+33          NaN                              Mich Ultra Cans 16oz        NaN         16         oz                                 6        NaN       118        NaN
+34          NaN                              Miller Lite Can 16oz        NaN         16         oz                                13        NaN       108        NaN
+35          NaN                            BeerDomestic Subtotal        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+36          NaN                              Bud Light Keg 1984oz        NaN       1984         oz                              325        NaN        103        NaN
+37          NaN                  Budweiser 12 barrel Keg 155gal        NaN       155        gal                               24        NaN         86        NaN
+38          NaN                        Michelob Ultra Keg 155gal        NaN       155        gal                                 2        NaN        103        NaN
+39          NaN                      BeerDomestic Draft Subtotal        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+40          NaN                            White  Claw Mango 12oz        NaN         12         oz                                18        NaN       136        NaN
+41          NaN                       White Claw  Blackberry 12oz        NaN         12         oz                                11        NaN       136        NaN
+42          NaN                           BeerSparkling Subtotal        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+43          NaN                                        Beer Total        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+44          NaN                             Angostura Bitters 4oz        NaN          4         oz                                 1        NaN          1        NaN
+45          NaN                        Bluebird Grapefruit 115oz        NaN       115         oz                                 3        NaN       073        NaN
+46          NaN                    Finest Call Grenadine Syrup 1L        NaN          1        ltr                                 7        NaN       366        NaN
+47          NaN                      Finest Call Margarita Mix 1L        NaN          1        ltr                                24        NaN       358        NaN
+48          NaN                    Finest Call Peach Puree Mix 1L        NaN          1        ltr                                17        NaN       321        NaN
+49          NaN                   Finest Call Watermelon Puree 1L        NaN          1        ltr                              131        NaN       366        NaN
+50          NaN                                    Ginger Ale 8oz        NaN          8         oz                                30        NaN       027        NaN
+51          NaN                        Goslings Ginger Beer 12oz        NaN         12         oz                                37        NaN       087        NaN
+52          NaN                Juice Sun Berry Cranberry juice 1L        NaN          1        ltr                                19        NaN       215        NaN
+53          NaN                   Juice Sun Berry Orange juice 1L        NaN          1        ltr                                27        NaN       189        NaN
+54          NaN                Juice Sun Berry Pineapple juice 1L        NaN          1        ltr                                39        NaN          2        NaN
+55          NaN                                  Juice Tomato 6oz        NaN          6         oz                                24        NaN       036        NaN
+56          NaN                       MIX COCKTAIL Bloody Mary 1L        NaN          1        ltr                                 4        NaN       385        NaN
+57          NaN                        MIX COCKTAIL Triple Sec 1L        NaN          1        ltr                              745        NaN       327        NaN
+58          NaN                Mix Finest Call Pina Colada Mix 1L        NaN          1        ltr                                 9        NaN       301        NaN
+59          NaN               Mix Finest Call Strawberry Puree 1L        NaN          1        ltr                                13        NaN       337        NaN
+60          NaN                   Mix Finest Call Sweet  Sour 1L        NaN          1        ltr                                23        NaN       327        NaN
+61          NaN                              Monin Spicy Mango 1L        NaN          1        ltr                                 5        NaN       796        NaN
+62          NaN                        Ronson Stuffed Olives 1gal        NaN          1        gal                                 1        NaN      1322        NaN
+63          NaN                       White Rock Tonic Water 10oz        NaN         10         oz                                24        NaN       061        NaN
+64          NaN           FoodBar condiments and mixers Subtotal        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+65          NaN                                        Food Total        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+66          NaN              Desert Island Long Island Ice Tea 1L        NaN          1        ltr                              525        NaN       719        NaN
+67          NaN                            LiquorAMisc Subtotal        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+68          NaN                     Bacardi Superior Light Rum 1L        NaN          1        ltr                              385        NaN       128        NaN
+69          NaN                          Barbarossa Silver Rum 1L        NaN          1        ltr                               46        NaN        58        NaN
+70          NaN                      Captain Morgan Spiced Rum 1L        NaN          1        ltr                               41        NaN      1874        NaN
+71          NaN                             Malibu Coconut Rum 1L        NaN          1        ltr                               67        NaN       168        NaN
+72          NaN                                          Myers 1L        NaN          1        ltr                              335        NaN      2339        NaN
+73          NaN                               RumChata Liqueur 1L        NaN          1        ltr                               29        NaN      2166        NaN
+74          NaN                             LiquorBRum Subtotal        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+75          NaN                         Basil Haydens Bourbon 1L        NaN          1        ltr                              165        NaN      4128        NaN
+76          NaN                      Basil Haydens Bourbon 750ml        NaN        750         ml                              025        NaN       386        NaN
+77          NaN                            Bulleit Rye Whiskey 1L        NaN          1        ltr                               11        NaN      2474        NaN
+78          NaN                         Bulleit Rye Whiskey 750ml        NaN        750         ml                              005        NaN      2474        NaN
+79          NaN                             Canadian Club 1858 1L        NaN          1        ltr                               28        NaN       128        NaN
+80          NaN                                    Crown Apple 1L        NaN          1        ltr                              085        NaN      3149        NaN
+81          NaN                                    Crown Peach 1L        NaN          1        ltr                                 1        NaN      3149        NaN
+82          NaN                    Crown Royal Canadian Whisky 1L        NaN          1        ltr                               23        NaN      3149        NaN
+83          NaN                                  Crown Vanilla 1L        NaN          1        ltr                               25        NaN      3149        NaN
+84          NaN                      Fireball Cinnamon Whiskey 1L        NaN          1        ltr                              135        NaN      1519        NaN
+85          NaN                         Gentleman Jack Whiskey 1L        NaN          1        ltr                              275        NaN      3233        NaN
+86          NaN                              Gentleman Jack 750ml        NaN        750         ml                                 1        NaN      2409        NaN
+87          NaN                         Jack Daniels Apple 750ml        NaN        750         ml                               16        NaN      1839        NaN
+88          NaN                 Jack Daniels Old No 7 Whiskey 1L        NaN          1        ltr                               57        NaN      2638        NaN
+89          NaN                   Jack Daniels Tennessee Fire 1L        NaN          1        ltr                               17        NaN      2638        NaN
+90          NaN          Jack Daniels Tennessee Honey Whiskey 1L        NaN          1        ltr                                 2        NaN      2638        NaN
+91          NaN                             Jack Daniels Apple 1L        NaN          1        ltr                               04        NaN      2638        NaN
+92          NaN                          Jameson Irish Whiskey 1L        NaN          1        ltr                               51        NaN       333        NaN
+93          NaN                                 Jameson Orange 1L        NaN          1        ltr                              545        NaN       333        NaN
+94          NaN                                       Jim Beam 1L        NaN          1        ltr                              585        NaN      1334        NaN
+95          NaN                  Kentucky Dale Blended Whiskey 1L        NaN          1        ltr                              825        NaN       639        NaN
+96          NaN                  Knob Creek Bourbon 9 years 750ml        NaN        750         ml                              075        NaN         26        NaN
+97          NaN                                 Knob Creek Rye 1L        NaN          1        ltr                                 1        NaN      3525        NaN
+98          NaN                           Makers Mark Bourbon 1L        NaN          1        ltr                              135        NaN      2458        NaN
+99          NaN                           Old Forester Bourbon 1L        NaN          1        ltr                                 1        NaN         17        NaN
+100         NaN                              Pendleton Whiskey 1L        NaN          1        ltr                              175        NaN      2626        NaN
+101         NaN             Seagrams 7 Crown American Whiskey 1L        NaN          1        ltr                              175        NaN      1499        NaN
+102         NaN                               Skrewball Peanut 1L        NaN          1        ltr                              105        NaN      2636        NaN
+103         NaN                               Southern Comfort 1L        NaN          1        ltr                               07        NaN      1439        NaN
+104         NaN                          TX Blended Whiskey 750ml        NaN        750         ml                               25        NaN      3519        NaN
+105         NaN                       Woodford Reserve Bourbon 1L        NaN          1        ltr                              285        NaN      3509        NaN
+106         NaN                      LiquorBrbnWhiskey Subtotal        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+107         NaN                        Courvoisier VSOP Cognac 1L        NaN          1        ltr                              205        NaN       383        NaN
+108         NaN                             Hennessy VS Cognac 1L        NaN          1        ltr                              265        NaN         39        NaN
+109         NaN                            LiquorCognac Subtotal        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+110         NaN                            Bombay Sapphire Gin 1L        NaN          1        ltr                              405        NaN      2239        NaN
+111         NaN                                 Hendricks Gin 1L        NaN          1        ltr                               18        NaN       374        NaN
+112         NaN                                      Taaka Gin 1L        NaN          1        ltr                               49        NaN       589        NaN
+113         NaN                                  Tanqueray Gin 1L        NaN          1        ltr                              195        NaN      2474        NaN
+114         NaN                               LiquorGin Subtotal        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+115         NaN                             Amaretto Disaronno 1L        NaN          1        ltr                                 1        NaN      3839        NaN
+116         NaN                           Baileys Irish Cream 1L        NaN          1        ltr                               07        NaN      3384        NaN
+117         NaN                                        Campari 1L        NaN          1        ltr                               36        NaN      3406        NaN
+118         NaN                            Chambord Liqueur 750ml        NaN        750         ml                                 3        NaN      2799        NaN
+119         NaN                                 Cointreau Liq 1L        NaN          1        ltr                              355        NaN      3199        NaN
+120         NaN                              DeKuyper Amaretto 1L        NaN          1        ltr                               02        NaN         10        NaN
+121         NaN                  DeKuyper Buttershots Schnapps 1L        NaN          1        ltr                                 3        NaN      1073        NaN
+122         NaN                                 DeKuyper Melon 1L        NaN          1        ltr                               06        NaN      1073        NaN
+123         NaN                  DeKuyper Razzamatazz Schnapps 1L        NaN          1        ltr                              955        NaN      1073        NaN
+124         NaN            DeKuyper Sour Apple Pucker Schnapps 1L        NaN          1        ltr                              285        NaN      1073        NaN
+125         NaN                                    EJ  Brandy 1L        NaN          1        ltr                               29        NaN      1199        NaN
+126         NaN                                  Frangelico 750ml        NaN        750         ml                              845        NaN      2479        NaN
+127         NaN                                  Grand Marnier 1L        NaN          1        ltr                               33        NaN      3442        NaN
+128         NaN                                   Jagermeister 1L        NaN          1        ltr                              065        NaN      2622        NaN
+129         NaN                                         Kahlua 1L        NaN          1        ltr                               05        NaN      2943        NaN
+130         NaN                Martini  Rossi Dry Vermouth 375ml        NaN        375         ml                                 1        NaN        37        NaN
+131         NaN                                Midori Melon 750ml        NaN        750         ml                              065        NaN      1638        NaN
+132         NaN                             Mr Boston Amaretto 1L        NaN          1        ltr                              295        NaN       505        NaN
+133         NaN                         Mr Boston Blue Curacao 1L        NaN          1        ltr                              455        NaN       505        NaN
+134         NaN                                Mr Boston Melon 1L        NaN          1        ltr                               15        NaN       592        NaN
+135         NaN                       Mr Boston Peach Schnapps 1L        NaN          1        ltr                               61        NaN       542        NaN
+136         NaN                                          Tuaca 1L        NaN          1        ltr                              285        NaN      2213        NaN
+137         NaN                          LiquorLiqueurs Subtotal        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+138         NaN            Chivas Regal 12yr Blended Scotch 750ml        NaN        750         ml                                 2        NaN       293        NaN
+139         NaN                     Dewars White Label Scotch 1L        NaN          1        ltr                              115        NaN       208        NaN
+140         NaN  Glenmorangie 10yr Highland Single Malt Scotch 1L        NaN          1        ltr                              155        NaN      4102        NaN
+141         NaN              Johnnie Walker Black Label Scotch 1L        NaN          1        ltr                              245        NaN      4199        NaN
+142         NaN                 Johnnie Walker Black Scotch 750ml        NaN        750         ml                              035        NaN      3224        NaN
+143         NaN            Macallan 12yr Single Malt Scotch 750ml        NaN        750         ml                               24        NaN      7599        NaN
+144         NaN                     Paul Masson VSOP Brandy 750ml        NaN        750         ml                               37        NaN      1039        NaN
+145         NaN                            LiquorScotch Subtotal        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+146         NaN                          1800 Reposado Tequila 1L        NaN          1        ltr                               62        NaN      2959        NaN
+147         NaN                            1800 Silver Tequila 1L        NaN          1        ltr                              125        NaN      2799        NaN
+148         NaN                       Clase Azul Añejo Teq 750ml        NaN        750         ml                               11        NaN  36798999        NaN
+149         NaN                    Clase Azul Plata Tequila 750ml        NaN        750         ml                               11        NaN      9211        NaN
+150         NaN                 Clase Azul Reposado Tequila 750ml        NaN        750         ml                              075        NaN     14917        NaN
+151         NaN                     Corralejo Anejo Tequila 750ml        NaN        750         ml                              205        NaN      3519        NaN
+152         NaN                            Corralejo Blanco 750ml        NaN        750         ml                              055        NaN      2479        NaN
+153         NaN                          Corralejo Reposado 750ml        NaN        750         ml                               27        NaN      2826        NaN
+154         NaN                      El Jimador Blanco Tequila 1L        NaN          1        ltr                              415        NaN      1979        NaN
+155         NaN                         El Toro Silver Tequila 1L        NaN          1        ltr                               47        NaN       876        NaN
+156         NaN                       Herradura Silver Tequila 1L        NaN          1        ltr                              315        NaN      3919        NaN
+157         NaN             JC Reserva de la Familia Repo 750ml        NaN        750         ml                               12        NaN      6919        NaN
+158         NaN              Jose Cuervo Especial Gold Tequila 1L        NaN          1        ltr                               36        NaN      2239        NaN
+159         NaN                       Patron Silver Tequila 750ml        NaN        750         ml                               43        NaN      4159        NaN
+160         NaN                           LiquorTequila Subtotal        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+161         NaN                                        Absolut 1L        NaN          1        ltr                              125        NaN      1922        NaN
+162         NaN                             Belvedere Vodka 750ml        NaN        750         ml                              065        NaN      2249        NaN
+163         NaN                                Belvedere Vodka 1L        NaN          1        ltr                               17        NaN      2977        NaN
+164         NaN                            Chopin Potato Vodka 1L        NaN          1        ltr                                 3        NaN      2719        NaN
+165         NaN                          Deep Eddy Lemon Vodka 1L        NaN          1        ltr                               35        NaN      1999        NaN
+166         NaN                                Deep Eddy Peach 1L        NaN          1        ltr                               41        NaN      1999        NaN
+167         NaN                       Deep Eddy Ruby Red Vodka 1L        NaN          1        ltr                              245        NaN      1999        NaN
+168         NaN                                Finlandia Vodka 1L        NaN          1        ltr                               12        NaN      1279        NaN
+169         NaN                               Grey Goose Vodka 1L        NaN          1        ltr                               16        NaN       264        NaN
+170         NaN                                Ketel One Vodka 1L        NaN          1        ltr                              105        NaN      2549        NaN
+171         NaN                     Skyy Infusion Citrus Vodka 1L        NaN          1        ltr                               05        NaN      1474        NaN
+172         NaN                               Stoli strawberry 1L        NaN          1        ltr                               08        NaN      2195        NaN
+173         NaN                                    Stoli Vanil 1L        NaN          1        ltr                              325        NaN      2125        NaN
+174         NaN                              Stolichnaya Vodka 1L        NaN          1        ltr                              385        NaN      1999        NaN
+175         NaN                                    Taaka Vodka 1L        NaN          1        ltr                              161        NaN       555        NaN
+176         NaN                           Titos Handmade Vodka 1L        NaN          1        ltr                               42        NaN       213        NaN
+177         NaN                             LiquorVodka Subtotal        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+178         NaN                                      Liquor Total        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+179         NaN                               Diet Pepsi BIB 5gal        NaN          5        gal                               39        NaN       995        NaN
+180         NaN                                Dr Pepper BIB 5gal        NaN          5        gal                              385        NaN       995        NaN
+181         NaN                             Mountain Dew BIB 5gal        NaN          5        gal                               57        NaN       995        NaN
+182         NaN                            Mug Root Beer BIB 5gal        NaN          5        gal                               37        NaN       995        NaN
+183         NaN                                    Pepsi BIB 5gal        NaN          5        gal                               32        NaN       995        NaN
+184         NaN                                    Red Bull 250ml        NaN        250         ml                                35        NaN       163        NaN
+185         NaN                       Red Bull Blue Edition 84oz        NaN        84         oz                                 9        NaN       175        NaN
+186         NaN                            Red Bull Coconut 84oz        NaN        84         oz                                24        NaN       163        NaN
+187         NaN                         Red Bull Sugar Free 250ml        NaN        250         ml                                27        NaN       175        NaN
+188         NaN                         Red Bull Watermelon 84oz        NaN        84         oz                                21        NaN       163        NaN
+189         NaN                              Sierra Mist BIB 5gal        NaN          5        gal                              255        NaN       995        NaN
+190         NaN                          NA BevNA Bev Subtotal        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+191         NaN                                     NA Bev Total        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+192         NaN                        High  Noon grapefruit 12oz        NaN         12         oz                                70        NaN       214        NaN
+193         NaN                          High Noon Pineapple 12oz        NaN         12         oz                                 2        NaN       214        NaN
+194         NaN                                  RTD Drinks Total        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+195         NaN                                 Korbel Brut 375ml        NaN        375         ml                                18        NaN          3        NaN
+196         NaN                           WineChampagne Subtotal        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+197         NaN                       Angeline Cabernet Sauvignon        NaN        750         ml                                 2        NaN          5        NaN
+198         NaN                    Sutter Home Cabernet Sauvignon        NaN        750         ml                              555        NaN       525        NaN
+199         NaN    Sutter Home Signature Series California Merlot        NaN        750         ml                              105        NaN       525        NaN
+200         NaN                                 WineRed Subtotal        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+201         NaN                               Angeline Chardonnay        NaN        750         ml                              751        NaN          5        NaN
+202         NaN                       Angeline Rosé of Pinot Noir        NaN        750         ml                               92        NaN          5        NaN
+203         NaN                            Sutter Home Chardonnay        NaN        750         ml                                13        NaN       525        NaN
+204         NaN                               Sutter Home Moscato        NaN        750         ml                                 5        NaN       525        NaN
+205         NaN                          Sutter Home Pinot Grigio        NaN        750         ml                               31        NaN       525        NaN
+206         NaN                       Sutter Home White Zinfandel        NaN        750         ml                              515        NaN       525        NaN
+207         NaN                  Vietti Moscato dAsti Cascinetta        NaN        750         ml                              025        NaN          8        NaN
+208         NaN                               WineWhite Subtotal        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+209         NaN                                        Wine Total        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+210         NaN                                      Grand Totals        NaN        NaN        NaN                               NaN        NaN        NaN        NaN
+Invoice 66702357
+
+Customer Name
+Toby Keiths  Wwe Tradi
+
+Delivery Date
+
+101042024
+ewe TEM
+
+NAME
+
+64043 Mustard Yellow Upside Down
+so04a1 Beef Brisket Choice Sel Noroll
+451772 Pasta Elbow Macaroni
+115593 Apron Dishwashing Clear 34x47
+774167 Pepper Red Crushed
+104929 Garlic Granulated
+TIAaTT Seasoning Blackened Red Fish
+774410 Seasoning SaltNo Msg
+774296 Seasoning Pork Dty Rub
+774842 Breading Fish Fry Crispy
+62110 Dressing Mix Original Ranch
+eB4018 Mustard Grey Poupon
+es0008 Sauce Bbq Regular
+110417 Pepper Jalapeno Nacho Sliced
+780007 Sugar Granulated Ex Fine 50 Lb
+110921 Mayonnaise Real Table Top
+es0e16 Ketchup Upside Down Sqz Bottle
+797233 Gravy Mix Peppered
+169190 Potato Red 2 A Size
+170046 Potato Russet 60 Ctida
+156030 Onion Yellow Jurntna
+662297 Mayonnaise Tub Gf Heavy Duty
+119462 il Pan  Gril Trans Fat Free
+779123 Shortening Clear Fry Liquid
+130882 Glove Nitrile Black x Pf
+130880 Glove Nitrile Black Md Pr
+110329 Pick 4 in Bamboo Knotted
+872078 Tray Food 3 Savaday 300
+197236 Liner Trash 60 Gal Black
+872060 Cont Foam Hnad 1 Large White
+432775 Label 2x2 Prepnprint Dura
+878005 Guest Check Green Paper
+9043 Tape Register Roll 1 Ply
+110982 Cup Plas Souffle 2 Oz Black
+131442 Napkin Bev 1 Ply
+153481 Meal Kit KF  Nap Sep Hw Bik
+860055 Lid Plas 16s Trans Slotted
+168500 Bag Plas Tshirt Jumbo
+098022 Carrot Jumbo Us 1
+093045 Cabhage Red Shredded
+eo241t Dressing Dijon Honey Mustard
+80276 Sauce Tartar European
+150105 Onion Green Iceless
+029090 Juice Lime Fresh Squeezed
+114107 Garlic Whole Peeled
+140261 Mushroom Sliced Tub
+423008 Lettuce Iceberg Prem Palletiad
+426005 Lettuce Romaine 24 Ct
+028075 Lemon Choice 200 ct
+206204 Tomato Grape
+oaoost Broccoli Floret lceless
+393129 Egg Hard Cooked Peeled
+408803 Tortilla Cam White 4 Cut
+7e101t Cheese American Loaf White
+164741 Milk Homo Gallon
+389019 Butter Solid Salted
+762148 Cheese Hava Plain Loaf
+736025 Cheese American Sliced 120 Ct
+429132 Cheese American Sliced White
+164785 Milk Buttermilk Whole
+166422 Cheese Cheddar Jack Shred Reg
+411422 Sour Cream all Natural
+142362 Egg Fresh Shell Xi Usda Aa
+547094 Bologna All Meat
+389300 Butter Blend Whipped Salted
+157938 Horseradish Extra Hot
+116840 Pork Ri St Louis Duroc
+131050 Beef Patty 75 Angus Wide
+550221 Chicken Breast 8oz Buttery
+550050 Chicken Wog Split2753 Lb
+530320 Bacon Layout 18122
+132628 Beef Top Sirloin Steak Boz Ch
+532444 Pork Butt Bone In Fresh Xt
+188474 Pork Loin Genter Cut Bone In
+500669 Beef Rineye Lip On Down Choice
+504575 Beef Ribeye Lip On Sel Light
+202181 French Fries S 38 In
+102067 Bun Brioche 4 Inch
+133857 Roll Hoagie White 8 Inch
+326209 Okra Cut Lightly Breaded
+171961 Chicken Brst Fillet Crispy Brd
+197841 Chicken Wing 4st  2nd Joint
+152641 Sausage Chub Breakfast Mild
+178369 Sausage Black Oak Smoked Fzn
+178718 Shrimp Breaded 1315 CtPanko
+303250 Blueberry tof
+423081 Dough Caokie Choc Chunk
+399867 Biscuit Baked Buttermilk
+502029 Beef Fries Breaded laf
+s0e074 Beef Steak Fritter 24
+639097 Sada Coke Classic Cube Pack
+639100 Soda Sprite Cube Pack
+691125 Combread Mix
+
+Customer
+FOK799734
+
+Quantity
+93 items
+198 pieces
+
+Pow
+
+Invoice Total
+1035116
+
+BRAND
+
+Heinz
+
+Packer
+
+Bellacibo
+
+John Ritzenthaler Company
+
+Mecormick
+
+Gran Sabor
+
+Cajun Magic
+
+Lawrys
+
+Allen Oliver Group
+
+Zatarains
+
+Hidden Valley
+
+Grey Poupon
+
+Head Country
+
+Gran Sabor
+
+Imperial Sugar
+
+kraft
+
+Heinz
+
+Shawnee Mills
+
+Packer
+
+Markon First Crop
+
+Markan Essentials
+
+Keiths Homestyle
+
+Ellington Farms
+
+Keiths Homestyle
+
+Essentials
+
+Essentials
+
+Handgards
+
+Savaday
+
+Essentials
+
+Dart
+
+Daydots
+
+National Checking
+
+National Checking
+
+Solo Cup Company
+
+Essentials
+
+Wallace Packaging Lie
+
+Dart
+
+Continental Poly
+
+Markon First Crop
+
+Vinyard Fruit  Vegetable
+
+Golden Harvest
+
+Giraras
+
+Markon Ready Set Serve
+
+Packer
+
+Markon Ready Set Serve
+
+Packer
+
+Markon First Crop
+
+Markon First Crop
+
+Markan Essentials
+
+Packer
+
+Markon Ready Set Serve
+
+Papettis
+
+Super Lopez
+
+Golden Harvest
+
+Hiland Dairy
+
+Golden Harvest
+
+Ostenborg
+
+Golden Harvest
+
+Schreiber
+
+Hiland Dairy
+
+Golden Harvest
+
+Fresh From Keiths
+
+Ellington Farms
+
+Smithnield
+
+Land 0 Lakes
+
+Tulkat
+
+Creekstone Farms
+
+Winn Meat
+
+Koch Foods
+
+Koch Foods
+
+Country Brand Bacon
+
+Omaha Steak Co
+
+Prairie Fresh
+
+Clemens Food Group
+
+Master Chef
+
+Excel
+
+Cavendish Farms
+
+Turano Baking Company
+
+La Baguette
+
+Sstibwell
+
+Brakebush
+
+Ok Foods
+
+Kelley Foods Manufacturing
+
+Black Oak
+
+Golden Harvest not Bek
+
+Markon First Crop
+
+Sweet Street
+
+Pillsburyr
+
+Osteens
+
+Advance
+
+Coca Cola
+
+Sprite
+
+lity
+
+PACKISIZE
+
+16113 OZ
+
+TI CATCH
+
+2108
+
+EA
+
+uw
+
+1165 LB
+
+4124 OZ
+
+15 LB
+
+110 LB
+
+125 LB
+
+18132 0Z
+
+824 OZ
+
+411 GAL
+
+ereto
+
+150 LB
+
+1211202
+
+3020 OZ
+
+6158
+
+150 LB
+
+450LB CTN
+
+150 LB
+
+1A GAL
+
+81 GAL
+
+135 LB
+
+10100 CT
+
+10100 CT
+
+10100 CT
+
+41125 CT
+
+4100 CT
+
+21100 CT
+
+4300 CT
+
+0100 CT
+
+4180 CT
+
+10260 CT
+
+8600 CT
+
+4280 CT
+
+10100 CT
+
+41000 CT
+
+110 LB BX
+
+15 LB
+
+211 GAL
+
+211 GAL
+
+42 LBCTN
+
+61 QUART
+
+451
+
+258
+
+424CT
+
+424CT
+
+135 LB
+
+4120T
+
+43LBCTN
+
+125 LB
+
+125 LB
+
+6f5LB
+
+411 GAL
+
+361 LB
+
+9B
+
+451
+
+451
+
+912 GAL
+
+258
+
+451
+
+416 DZ
+
+2101380
+
+258
+
+213202
+
+1032LBAVG
+
+2417 OZ
+
+2108
+
+16127538
+
+11518
+
+2418 OZ
+
+BrToFCW
+
+UT LBAVG
+
+417 LBDN
+
+4114 LBAVG
+
+61458
+
+9628 OZ
+
+804 OZ
+
+451
+
+258
+
+258
+
+121 LB
+
+41 LB
+
+438
+
+130 LB
+
+843 OZ
+
+751286 OZ
+
+110 LB
+
+208 OZ
+
+24112 OZ
+
+24112 OZ
+
+12140 OZ
+
+Branch
+FOK
+
+Email
+aprilcourtneytraditionsspiritscom
+
+PRICE
+
+S377
+per case
+
+434
+per pound
+
+2362
+per case
+
+8798
+percase
+
+saad
+percase
+
+3259
+per case
+
+3665
+per case
+
+1868
+per case
+
+4865
+per case
+
+4050
+per case
+
+3541
+percase
+
+6343
+per case
+
+6961
+percase
+
+3462
+per case
+
+4338
+percase
+
+6011
+per case
+
+6268
+per case
+
+2016
+percase
+
+2030
+per case
+
+2345
+per case
+
+2188
+per case
+
+4430
+percase
+
+6274
+per case
+
+2844
+percase
+
+2785
+per case
+
+2785
+per case
+
+2093
+percase
+
+s6a41
+percase
+
+3171
+percase
+
+2293
+per case
+
+6214
+percase
+
+3587
+per case
+
+4249
+per case
+
+2278
+per case
+
+2201
+per case
+
+2283
+per case
+
+si7a1
+per case
+
+4818
+per case
+
+1859
+percase
+
+1334
+percase
+
+4072
+percase
+
+4459
+per case
+
+g2771
+per case
+
+2840
+per case
+
+7054
+percase
+
+2808
+percase
+
+2829
+per case
+
+2628
+per case
+
+4893
+per case
+
+g2171
+percase
+
+2788
+per case
+
+4673
+per case
+
+1960
+percase
+
+9899
+per case
+
+2608
+percase
+
+14736
+per case
+
+529
+per pound
+
+6507
+percase
+
+6003
+per case
+
+3465
+percase
+
+3178
+per case
+
+3298
+percase
+
+6049
+per case
+
+329
+per pound
+
+2402
+per case
+
+1600
+per case
+
+461
+per pound
+
+3813
+per case
+
+8913
+per case
+
+204
+per pound
+
+5368
+percase
+
+1290
+per pound
+
+200
+per pound
+
+605
+per pound
+
+1287
+per pound
+
+sa77
+per pound
+
+3602
+per case
+
+4812
+per case
+
+2690
+per case
+
+2907
+per case
+
+5454
+per case
+
+6130
+per case
+
+3948
+per case
+
+3564
+percase
+
+6391
+percase
+
+87661
+per case
+
+9274
+percase
+
+3163
+per case
+
+6793
+per case
+
+6261
+per case
+
+si7a1
+per case
+
+si7a1
+per case
+
+3733
+per case
+
+ORDERED
+
+16
+
+CONFIRMED
+
+16
+
+STATUS
+
+Out of stack
+
+Out of stack
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+Filled
+
+                                                                                                     RECIPE Unnamed 1 Unnamed 2         Unnamed 3
+0                                                                                                        NaN        NaN        NaN                NaN
+1                                                                                       Andouille Marmalade         NaN        NaN                NaN
+2                                                                                                        NaN        NaN        NaN                NaN
+3                                                                                                        NaN        NaN        NaN                NaN
+4                                                                                                        NaN        NaN        NaN                NaN
+5                                                                                                        NaN        NaN        NaN                NaN
+6                                                                                                        NaN        NaN        NaN                NaN
+7                                                                                                        NaN        NaN        NaN                NaN
+8                                                                                                        NaN        NaN        NaN                NaN
+9                                                                                                        NaN        NaN        NaN                NaN
+10                                                                                                   OUTLET        NaN        NaN                NaN
+11                                                                                                       NaN        NaN        NaN                NaN
+12                                                                                                     Tobys        NaN        NaN                NaN
+13                                                                                                       NaN        NaN        NaN                NaN
+14                                                                                                    Amount       Unit       Cost         INGREDIENT
+15                                                                                                         5        lbs        NaN  Schwabs Andouille
+16                                                                                                       25       lbs         NaN       Diced onions
+17                                                                                                         1        cup        NaN       Brown Sugar 
+18                                                                                                       NaN        NaN        NaN                NaN
+19                                                                                                       NaN        NaN        NaN                NaN
+20                                                                                                       NaN        NaN        NaN                NaN
+21                                                                                                       NaN        NaN        NaN                NaN
+22                                                                                                       NaN        NaN        NaN                NaN
+23                                                                                                       NaN        NaN        NaN                NaN
+24                                                                                                       NaN        NaN        NaN                NaN
+25                                                                                                       NaN        NaN        NaN                NaN
+26                                                                                                       NaN        NaN        NaN                NaN
+27                                                                                                       NaN        NaN        NaN                NaN
+28                                                                                                       NaN        NaN        NaN                   
+29                                                                                                       NaN        NaN        NaN                NaN
+30                                                                 PROCEDURE  METHOD  ASSEMBLY  GARNISHES        NaN        NaN                NaN
+31                                                                                   Preheat rondo on burner        NaN        NaN                NaN
+32                                                              Add in andouille sausage and saute for 5 min        NaN        NaN                NaN
+33                                               Add in onions and saute with sausage until onions carmelize        NaN        NaN                NaN
+34  Add in brown sugar and constantly stir for 5 minutes until sugar is completely incorporated into sausage        NaN        NaN                NaN
+35                                                                 Store in proper container label and date        NaN        NaN                NaN
+36                                                                                                                  NaN        NaN                NaN
+                      Index
+0       Andouille Marmalade
+1              Baked Potato
+2                 BEEF STEW
+3      Bleu Cheese Dressing
+4         Blueberry topping
+5     Bourbon Caramel sauce
+6           Broccoli Butter
+7       Buffalo chicken Dip
+8          Burger Seasoning
+9     chicken and dumplings
+10  Chicken Pot Pie Filling
+11                    CHILI
+12      Cobbler mix and set
+13          Cobbler Topping
+14                Cole Slaw
+15            Fry Seasoning
+16              Green Beans
+17            Honey Mustard
+18             Horsey Sauce
+19       Jalapeno Peach Jam
+20                     Pico
+21             Potato Salad
+22           Pulled Chicken
+23              Pulled Pork
+24                Queso Dip
+25           Ranch Dressing
+26          Salmon Marinade
+27                    Salsa
+28        Sauteed Mushrooms
+29           Sauteed onions
+30           Seasoned Flour
+31          Seasoned Shrimp
+32         Seasoned Shrimp1
+33                   Sheet1
+34                   Sheet2
+35                   Sheet3
+36                   Sheet4
+37     Shrimp Cargot Butter
+38           Shrimp Havarti
+39            Spicy Chicken
+40  Sriracha Ranch Dressing
+41         Wing Sauce  Hot
