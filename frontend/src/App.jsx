@@ -8,6 +8,7 @@ import InventoryPriceTrend from './components/InventoryPriceTrend.jsx';  // Pric
 import Forecasting from './components/Forecasting.jsx';  // Forecasting component
 import ChatBox from './components/ChatBox.jsx'; // Import the ChatBox component
 import { ToastContainer, toast } from 'react-toastify';
+import ErrorBoundary from './components/ErrorBoundary';
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {

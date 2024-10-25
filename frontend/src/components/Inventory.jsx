@@ -30,7 +30,6 @@ const Inventory = () => {
         setLoading(false);
       }
     }
-
     fetchData();
   }, []);
 

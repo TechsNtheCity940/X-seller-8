@@ -1,9 +1,11 @@
+// Chatbot.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
 
 const Chatbot = () => {
   const [userMessage, setUserMessage] = useState('');
   const [chatLog, setChatLog] = useState([]);
+  const [error, setError] = useState(null); // Add error state
 
   const handleSend = async () => {
     if (!userMessage.trim()) return;
@@ -11,6 +13,7 @@ const Chatbot = () => {
     const newLog = [...chatLog, { role: 'user', content: userMessage }];
     setChatLog(newLog);
     setUserMessage('');
+    setError(null); // Reset error state
 
     try {
       const response = await axios.post('http://localhost:5000/chat', { message: userMessage });
@@ -18,6 +21,7 @@ const Chatbot = () => {
       setChatLog([...newLog, { role: 'assistant', content: botMessage }]);
     } catch (error) {
       console.error('Error sending message:', error);
+      setError('Failed to communicate with AI. Please try again later.');
     }
   };
 
@@ -30,6 +34,7 @@ const Chatbot = () => {
             <strong>{entry.role === 'user' ? 'You' : 'Bot'}:</strong> {entry.content}
           </div>
         ))}
+        {error && <div className="error-message">{error}</div>}
       </div>
       <input
         type="text"

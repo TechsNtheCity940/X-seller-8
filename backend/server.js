@@ -15,13 +15,31 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const UPLOAD_FOLDER = 'uploads';
-const OUTPUT_FOLDER = path.join(__dirname, 'output');  // Adjusted path for portability
+const UPLOAD_FOLDER = ('F:/repogit/x-seller-8/frontend/public/uploads');
+const OUTPUT_FOLDER = ('F:/repogit/x-seller-8/frontend/public/output');  // Adjusted path for portability
 const ARCHIVE_FOLDER = path.join(OUTPUT_FOLDER, 'archive');
 const JSON_FILE = path.join(OUTPUT_FOLDER, 'inventory_data.json');
 
+// server.js
+
+// Create a Winston logger
+const logger = winston.createLogger({
+    level: 'info',
+    format: winston.format.combine(
+      winston.format.timestamp(),
+      winston.format.json()
+    ),
+    transports: [
+      new winston.transports.Console(),
+      new winston.transports.File({
+        filename: path.join('F:', 'repogit', 'x-seller-8', 'backend', 'logs', 'error.log'),
+        level: 'error'
+      })
+    ],
+  });
+
 // Custom transport for saving specific logs to a separate file
-const extractTransport = new winston.transports.File({
+const extractlogs = new winston.transports.File({
     filename: path.join(__dirname, 'logs', 'extracted.txt'),
     level: 'info',
     format: winston.format.combine(
@@ -32,28 +50,11 @@ const extractTransport = new winston.transports.File({
     )
 });
 
-// server.js
-const express = require('express');
-const winston = require('winston');
-
-// Create a Winston logger
-const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.combine(
-    winston.format.timestamp(),
-    winston.format.json()
-  ),
-  transports: [
-    new winston.transports.Console(),
-    new winston.transports.File({ filename: 'error.log', level: 'error' })
-  ],
-});
-
 // Middleware for logging errors
 app.use((err, req, res, next) => {
   logger.error(`${err.status || 500} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
   res.status(500).send('Something went wrong!');
-});xzx
+});
 
 // Ensure upload and output folders exist
 [UPLOAD_FOLDER, OUTPUT_FOLDER, ARCHIVE_FOLDER].forEach(folder => {
@@ -238,65 +239,77 @@ app.put('/inventory', (req, res) => {
   });
 // API route to get inventory data
 app.get('/inventory', (req, res) => {
-  // Read the inventory data from the file and send it as a JSON response
-  fs.readFile(inventoryFile, 'utf8', (err, data) => {
-    if (err) {
-      console.error('Error reading inventory data:', err);
-      return res.status(500).json({ error: 'Failed to load inventory data' });
+    if (!fs.existsSync(inventoryFile)) {
+      logger.error(`Inventory data file not found: ${inventoryFile}`);
+      return res.status(404).json({ error: 'Inventory data file not found' });
     }
-
-    try {
-      const jsonData = JSON.parse(data);  // Parse the file contents
-      res.json(jsonData);  // Send the parsed JSON as the response
-    } catch (parseError) {
-      console.error('Error parsing inventory data:', parseError);
-      res.status(500).json({ error: 'Invalid JSON format in inventory file' });
-    }
+  
+    fs.readFile(inventoryFile, 'utf8', (err, data) => {
+      if (err) {
+        logger.error(`Error reading inventory data: ${err.message}`);
+        return res.status(500).json({ error: 'Failed to load inventory data' });
+      }
+  
+      try {
+        const jsonData = JSON.parse(data);
+        res.json(jsonData);
+      } catch (parseError) {
+        logger.error(`Error parsing inventory data: ${parseError.message}`);
+        res.status(500).json({ error: 'Invalid JSON format in inventory file' });
+      }
+    });
   });
-});
 
 // Function to update inventory with new invoice data
 function updateInventory(newData) {
-    const inventoryFile = "F:/repogit/X-seLLer-8/frontend/output/inventory_data.json"; // Update with the correct path to the inventory file
-    const inventory = JSON.parse(fs.readFileSync(inventoryFile, 'utf-8'));
+    try {
+      const inventory = JSON.parse(fs.readFileSync(inventoryFile, 'utf-8'));
   
-    // Ensure newData is an array
-    const dataArray = Array.isArray(newData) ? newData : [newData];
-  
-    dataArray.forEach(item => {
-      const existingItem = inventory.find(invItem => invItem['ITEM#'] === item['ITEM#']);
-  
-      if (existingItem) {
-        // Update the existing item with the most recent price and add the old price to history
-        if (!existingItem.priceHistory) {
-          existingItem.priceHistory = []; // Initialize priceHistory if it does not exist
-        }
-        existingItem.priceHistory.push({
-          price: existingItem.PRICE,
-          date: existingItem.lastUpdated,
-        });
-  
-        // Update the item with new data
-        existingItem.PRICE = item.PRICE;
-        existingItem.ORDERED = item.ORDERED;
-        existingItem.STATUS = item.STATUS;
-        existingItem.lastUpdated = new Date().toISOString(); // Update timestamp
-  
-      } else {
-        // Add the new item to the inventory
-        item.priceHistory = [];
-        item.lastUpdated = new Date().toISOString();
-        inventory.push(item);
+      // Ensure the inventory is an array
+      if (!Array.isArray(inventory)) {
+        throw new Error('Inventory data is not an array');
       }
-    });
   
-    // Save the updated inventory back to the file
-    fs.writeFileSync(inventoryFile, JSON.stringify(inventory, null, 2), 'utf-8');
-    console.log('Inventory updated successfully.');
+      // Ensure newData is an array
+      const dataArray = Array.isArray(newData) ? newData : [newData];
+  
+      dataArray.forEach(item => {
+        const existingItem = inventory.find(invItem => invItem['ITEM#'] === item['ITEM#']);
+  
+        if (existingItem) {
+          // Update the existing item with new data
+          if (!existingItem.priceHistory) {
+            existingItem.priceHistory = [];
+          }
+          existingItem.priceHistory.push({
+            price: existingItem.PRICE,
+            date: existingItem.lastUpdated,
+          });
+  
+          existingItem.PRICE = item.PRICE;
+          existingItem.ORDERED = item.ORDERED;
+          existingItem.STATUS = item.STATUS;
+          existingItem.lastUpdated = new Date().toISOString();
+        } else {
+          // Add the new item to the inventory
+          item.priceHistory = [];
+          item.lastUpdated = new Date().toISOString();
+          inventory.push(item);
+        }
+      });
+  
+      // Save the updated inventory back to the file
+      fs.writeFileSync(inventoryFile, JSON.stringify(inventory, null, 2), 'utf-8');
+      logger.info('Inventory updated successfully.');
+    } catch (error) {
+      logger.error(`Failed to update inventory: ${error.message}`);
+      throw error;
+    }
   }
+  
 
 const openai = new OpenAI({
-  apiKey: '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',  // Ensure you set your API key as an environment variable
+  apiKey: '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',  // Ensure you set your API key as an environment variable
   baseURL: 'https://integrate.api.nvidia.com/v1',
 });
 
@@ -305,16 +318,29 @@ app.use(express.json());
 app.post('/chat', async (req, res) => {
   const { message } = req.body;
 
+  if (!message) {
+    return res.status(400).send('Message is required');
+  }
+
   try {
     const completion = await openai.chat.completions.create({
-      model: 'ibm/granite-3.0-8b-instruct',
+      model: "nvidia/llama-3.1-nemotron-70b-instruct",
       messages: [{ role: 'user', content: message }],
-      temperature: 0.2,
-      top_p: 0.7,
+      temperature: 0.5,
+      top_p: 1,
       max_tokens: 1024,
+      stream: true,
     });
 
+    for await (const chunk of completion) {
+        process.stdout.write(chunk.choices[0]?.delta?.content || '')
+    }
     const botResponse = completion.choices[0]?.message?.content;
+    if (!botResponse) {
+      logger.error('AI returned an empty response');
+      return res.status(500).send('Failed to get a response from AI');
+    }
+
     res.json({ content: botResponse });
   } catch (error) {
     console.error('Error with AI chat:', error);
@@ -364,5 +390,6 @@ watcher.on('add', async filePath => {
 // Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
+    console.log('Server running on port 5000');
     logger.info(`Server is running on port ${PORT}`);
 });
