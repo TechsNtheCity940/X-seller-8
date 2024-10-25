@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import SalesChart from './SalesChart'; // Import the new chart component
+import SalesChart from './SalesChart';
 
 const UploadSales = ({ setIsProcessing }) => {
   const [file, setFile] = useState(null);
   const [salesData, setSalesData] = useState(null);
   const [errorMsg, setErrorMsg] = useState('');
-  const [salesChartData, setSalesChartData] = useState([]); // For chart data
-  const [costChartData, setCostChartData] = useState([]);   // For chart data
+  const [salesChartData, setSalesChartData] = useState([]);
+  const [costChartData, setCostChartData] = useState([]);
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
@@ -26,8 +26,8 @@ const UploadSales = ({ setIsProcessing }) => {
     try {
       const response = await axios.post('http://localhost:5000/upload_sales', formData);
       setSalesData(response.data);
-      setSalesChartData(response.data.monthlySales); // Assuming backend returns monthly sales
-      setCostChartData(response.data.monthlyCosts);  // Assuming backend returns monthly costs
+      setSalesChartData(response.data.monthlySales);
+      setCostChartData(response.data.monthlyCosts);
       setErrorMsg('');
     } catch (error) {
       setErrorMsg('Failed to upload sales data.');
@@ -48,8 +48,6 @@ const UploadSales = ({ setIsProcessing }) => {
           <h3>Sales Summary</h3>
           <p>Total Sales: ${salesData.totalSales}</p>
           <p>Average Monthly Sales: ${salesData.averageMonthlySales}</p>
-
-          {/* Display Sales vs Costs Chart */}
           <SalesChart salesData={salesChartData} costData={costChartData} />
         </div>
       )}

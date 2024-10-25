@@ -32,20 +32,28 @@ const extractTransport = new winston.transports.File({
     )
 });
 
+// server.js
+const express = require('express');
+const winston = require('winston');
 
-// Set up Winston logger with both the default and custom transports
+// Create a Winston logger
 const logger = winston.createLogger({
-    level: 'info',
-    format: winston.format.combine(
-        winston.format.timestamp(),
-        winston.format.printf(({ timestamp, level, message }) => `${timestamp} [${level.toUpperCase()}] - ${message}`)
-    ),
-    transports: [
-        new winston.transports.Console(),
-        new winston.transports.File({ filename: path.join(__dirname, 'logs', 'app.log') }),
-        extractTransport // Add custom transport for extracted text logs
-    ]
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.json()
+  ),
+  transports: [
+    new winston.transports.Console(),
+    new winston.transports.File({ filename: 'error.log', level: 'error' })
+  ],
 });
+
+// Middleware for logging errors
+app.use((err, req, res, next) => {
+  logger.error(`${err.status || 500} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
+  res.status(500).send('Something went wrong!');
+});xzx
 
 // Ensure upload and output folders exist
 [UPLOAD_FOLDER, OUTPUT_FOLDER, ARCHIVE_FOLDER].forEach(folder => {
@@ -218,7 +226,7 @@ async function saveDataToJSONFile(data, filename) {
 }
 
 // Path to your inventory data file
-const inventoryFile = path.join('F:','repogit', 'XseLLer8', 'inventory_data.json');
+const inventoryFile = path.join('F:','repogit', 'X-seLLer-8', 'frontend', 'output', 'inventory_data.json');
 app.put('/inventory', (req, res) => {
     const updatedInventory = req.body;  // Expecting an array of updated inventory data
   
@@ -249,7 +257,7 @@ app.get('/inventory', (req, res) => {
 
 // Function to update inventory with new invoice data
 function updateInventory(newData) {
-    const inventoryFile = "F:/repogit/XseLLer8/inventory_data.json"; // Update with the correct path to the inventory file
+    const inventoryFile = "F:/repogit/X-seLLer-8/frontend/output/inventory_data.json"; // Update with the correct path to the inventory file
     const inventory = JSON.parse(fs.readFileSync(inventoryFile, 'utf-8'));
   
     // Ensure newData is an array

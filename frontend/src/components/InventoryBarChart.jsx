@@ -5,24 +5,24 @@ import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Toolti
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 function InventoryBarChart({ data }) {
-  const labels = data.map(item => item['ITEM NAME']);
-  const quantities = data.map(item => item.ORDERED);
-  const prices = data.map(item => item.PRICE);
+  const labels = data.map(item => item['itemName']);
+  const quantities = data.map(item => item['ordered']);
+  const prices = data.map(item => item['price']);
 
   const chartData = {
-    labels: labels,
+    labels,
     datasets: [
       {
         label: 'Quantity Ordered',
         data: quantities,
-        backgroundColor: 'rgba(54, 162, 235, 0.6)'
+        backgroundColor: 'rgba(54, 162, 235, 0.6)',
       },
       {
         label: 'Price',
         data: prices,
-        backgroundColor: 'rgba(255, 99, 132, 0.6)'
-      }
-    ]
+        backgroundColor: 'rgba(255, 99, 132, 0.6)',
+      },
+    ],
   };
 
   return (

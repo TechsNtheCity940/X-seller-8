@@ -1,35 +1,48 @@
-import React, { useState, useEffect, useRef } from 'react';
-const express = require('express');
-const app = express();
+import { useState, useEffect, useRef } from 'react';
 
-let chatHistory = [];
-
-app.use(express.json());
-
-app.post('/save-chat', (req, res) => {
-  chatHistory = req.body.messages;
-  res.status(200).send('Chat saved');
-});
-
-app.get('/load-chat', (req, res) => {
-  res.json(chatHistory);
-});
 const ChatBox = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const messagesEndRef = useRef(null);
 
-  // Load chat history from local storage on component mount
+  // Load chat history from the backend API or local storage
   useEffect(() => {
-    const savedMessages = JSON.parse(localStorage.getItem('chatHistory')) || [];
-    setMessages(savedMessages);
+    async function loadChatHistory() {
+      try {
+        // Uncomment the next lines to use backend loading
+        // const response = await fetch('http://localhost:5000/load-chat');
+        // const savedMessages = await response.json();
+        const savedMessages = JSON.parse(localStorage.getItem('chatHistory')) || [];
+        setMessages(savedMessages);
+      } catch (error) {
+        console.error('Failed to load chat history:', error);
+      }
+    }
+
+    loadChatHistory();
   }, []);
 
-  // Save chat history to local storage on messages change
+  // Save chat history to local storage or the backend
   useEffect(() => {
     localStorage.setItem('chatHistory', JSON.stringify(messages));
-    // Scroll to the bottom of the messages list
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+
+    // Uncomment to save chat history to the backend
+    // async function saveChatHistory() {
+    //   try {
+    //     await fetch('http://localhost:5000/save-chat', {
+    //       method: 'POST',
+    //       headers: {
+    //         'Content-Type': 'application/json',
+    //       },
+    //       body: JSON.stringify({ messages }),
+    //     });
+    //   } catch (error) {
+    //     console.error('Failed to save chat history:', error);
+    //   }
+    // }
+    // saveChatHistory();
+
   }, [messages]);
 
   const sendMessage = () => {

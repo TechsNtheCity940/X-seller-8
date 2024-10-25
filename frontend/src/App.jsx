@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import FileUpload from './components/FileUpload.jsx';  // Import the file upload component
 import Inventory from './components/Inventory.jsx'; // Import the Inventory component
 import CostTracking from './components/CostTracking.jsx';  // Cost tracking component
@@ -86,10 +86,10 @@ function App() {
   return (
     <div className="App">
       <div className="background"></div>
-      <img src={`${process.env.PUBLIC_URL}/TiTCneons.png`} alt="Corner Logo" className="corner-logo" />
+      <img src="/TiTCneons.png" alt="Corner Logo" className="corner-logo" />
       <aside className="sidebar">
         <h1>XseLLer8</h1>
-        <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="XseLLer8 Logo" className="logo" />
+        <img src="/logo.png" alt="XseLLer8 Logo" className="logo" />
         <nav>
           <button className={activeTab === 'fileUpload' ? 'active' : ''} onClick={() => setActiveTab('fileUpload')}>
             Upload Invoice

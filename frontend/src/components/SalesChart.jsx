@@ -1,10 +1,13 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
-import 'chart.js/auto'; // Ensure auto importing of Chart.js modules
+import 'chart.js/auto';
 
 const SalesChart = ({ salesData, costData }) => {
   const data = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    labels: [
+      'January', 'February', 'March', 'April', 'May', 'June', 
+      'July', 'August', 'September', 'October', 'November', 'December'
+    ],
     datasets: [
       {
         label: 'Total Sales',

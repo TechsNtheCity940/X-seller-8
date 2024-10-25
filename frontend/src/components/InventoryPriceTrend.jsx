@@ -1,13 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 
-// Register components to Chart.js
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 const InventoryPriceTrend = () => {
   const [inventoryData, setInventoryData] = useState([]);
-  const chartRef = useRef(null);  // Track the chart instance
 
   useEffect(() => {
     async function fetchInventory() {
@@ -23,19 +21,12 @@ const InventoryPriceTrend = () => {
     fetchInventory();
   }, []);
 
-  useEffect(() => {
-    // Cleanup the previous chart instance if it exists
-    if (chartRef.current) {
-      chartRef.current.destroy();
-    }
-  }, [inventoryData]);
-
   const chartData = {
-    labels: inventoryData.map(item => item['ITEM NAME']),
+    labels: inventoryData.map(item => item['itemName']),
     datasets: [
       {
         label: 'Item Price Trend',
-        data: inventoryData.map(item => item.PRICE),
+        data: inventoryData.map(item => item.price),
         fill: false,
         backgroundColor: 'rgba(75,192,192,0.4)',
         borderColor: 'rgba(75,192,192,1)',
@@ -46,7 +37,7 @@ const InventoryPriceTrend = () => {
   return (
     <div className="inventory-price-trend">
       <h2>Inventory Price Trend</h2>
-      <Line data={chartData} ref={chartRef} />
+      <Line data={chartData} />
     </div>
   );
 };

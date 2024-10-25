@@ -6,17 +6,14 @@ const Chatbot = () => {
   const [chatLog, setChatLog] = useState([]);
 
   const handleSend = async () => {
-    if (!userMessage) return;
+    if (!userMessage.trim()) return;
 
     const newLog = [...chatLog, { role: 'user', content: userMessage }];
     setChatLog(newLog);
     setUserMessage('');
 
     try {
-      const response = await axios.post('http://localhost:5000/chat', {
-        message: userMessage,
-      });
-
+      const response = await axios.post('http://localhost:5000/chat', { message: userMessage });
       const botMessage = response.data.content;
       setChatLog([...newLog, { role: 'assistant', content: botMessage }]);
     } catch (error) {

@@ -1,19 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const ProcessedFiles = () => {
   const [processedFiles, setProcessedFiles] = useState([]);
+  const [error, setError] = useState('');
 
   useEffect(() => {
-    // Fetch processed files from the backend
     async function fetchProcessedFiles() {
       try {
-        const response = await fetch('http://localhost:5000/files');  // Example endpoint
+        const response = await fetch('http://localhost:5000/files');
+        if (!response.ok) throw new Error('Failed to fetch processed files');
         const data = await response.json();
         setProcessedFiles(data);
       } catch (error) {
         console.error("Error fetching processed files:", error);
+        setError('Failed to load processed files');
       }
     }
+
     fetchProcessedFiles();
   }, []);
 
@@ -24,6 +27,7 @@ const ProcessedFiles = () => {
   return (
     <div className="processed-files">
       <h2>Processed Files</h2>
+      {error && <p className="error">{error}</p>}
       {processedFiles.length > 0 ? (
         <ul>
           {processedFiles.map((file, index) => (
@@ -34,11 +38,10 @@ const ProcessedFiles = () => {
           ))}
         </ul>
       ) : (
-        <p>No processed files available.</p>
+        !error && <p>No processed files available.</p>
       )}
     </div>
   );
 };
 
 export default ProcessedFiles;
-

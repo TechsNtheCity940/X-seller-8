@@ -16,7 +16,7 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: -1; /* Ensure it is behind all other elements */
-  background: url("F:/repogit/XseLLer8/frontend/public/xseller8background.png") no-repeat center center fixed; /* Replace with your background image */
+  background: url("/xseller8background.png") no-repeat center center fixed; /* Replace with your background image */
   background-size: cover; /* Ensure the image covers the entire viewport */
 }
 

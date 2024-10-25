@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 
 const Settings = () => {
-  const [ocrLanguage, setOcrLanguage] = useState('eng'); // Example setting
+  const [ocrLanguage, setOcrLanguage] = useState('eng');
+  const [message, setMessage] = useState('');
 
   const handleSave = () => {
-    alert('Settings saved!');
-    // Save settings in backend or local storage
+    localStorage.setItem('ocrLanguage', ocrLanguage);
+    setMessage('Settings saved!');
+    setTimeout(() => setMessage(''), 3000);
   };
 
   return (
@@ -18,6 +20,7 @@ const Settings = () => {
         {/* Add more languages as needed */}
       </select>
       <button onClick={handleSave}>Save Settings</button>
+      {message && <p className="success-message">{message}</p>}
     </div>
   );
 };

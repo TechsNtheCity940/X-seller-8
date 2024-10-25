@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 
 const FileUpload = () => {
@@ -8,6 +8,7 @@ const FileUpload = () => {
   const [logs, setLogs] = useState([]);  // System log state
   const [successMsg, setSuccessMsg] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
+  const [loading, setLoading] = useState(false); // Loading state
 
   // Reference to the scrollable div for scroll lock
   const textDisplayRef = useRef(null);
@@ -35,13 +36,14 @@ const FileUpload = () => {
     }
 
     logAction('Starting file processing...');
+    setLoading(true); // Set loading state
     const formData = new FormData();
     formData.append('file', file);
     formData.append('deliveryDate', '2024-10-12');
     formData.append('invoiceTotal', '500');
 
     try {
-      const response = await axios.post('http://localhost:5000/process', formData);
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/process`, formData);
       setExtractedText(response.data.extractedText);
       setExcelPath(response.data.excelPath);
       logAction('File processed successfully.');
@@ -52,6 +54,8 @@ const FileUpload = () => {
       logAction('Error during file processing: ' + error.message);
       setErrorMsg('Failed to process the file.');
       setSuccessMsg('');
+    } finally {
+      setLoading(false); // Reset loading state
     }
   };
 
@@ -62,7 +66,7 @@ const FileUpload = () => {
     }
 
     logAction('Downloading Excel file...');
-    window.open(`http://localhost:5000/download/${excelPath}`);
+    window.open(`${import.meta.env.VITE_BACKEND_URL}/download/${excelPath}`);
   };
 
   return (
@@ -71,13 +75,15 @@ const FileUpload = () => {
 
       <div className="file-upload-section">
         <input type="file" onChange={handleFileChange} />
-        <button onClick={handleProcess} disabled={!file}>Process File</button>
+        <button onClick={handleProcess} disabled={!file || loading}>
+          {loading ? 'Processing...' : 'Process File'}
+        </button>
       </div>
 
       {extractedText && (
         <div className="extracted-text">
           <h3>Extracted Text:</h3>
-          <pre>{extractedText}</pre>
+          <pre ref={textDisplayRef}>{extractedText}</pre>
         </div>
       )}
 
@@ -88,14 +94,16 @@ const FileUpload = () => {
       {successMsg && <div className="success-msg">{successMsg}</div>}
       {errorMsg && <div className="error-msg">{errorMsg}</div>}
 
-      <div className="system-log">
-        <h3>System Log:</h3>
-        <ul>
-          {logs.map((log, index) => (
-            <li key={index}>{log}</li>
-          ))}
-        </ul>
-      </div>
+      {logs.length > 0 && (
+        <div className="system-log">
+          <h3>System Log:</h3>
+          <ul>
+            {logs.map((log, index) => (
+              <li key={index}>{log}</li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
