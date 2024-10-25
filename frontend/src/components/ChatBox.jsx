@@ -10,9 +10,9 @@ const ChatBox = () => {
     async function loadChatHistory() {
       try {
         // Uncomment the next lines to use backend loading
-        // const response = await fetch('http://localhost:5000/load-chat');
-        // const savedMessages = await response.json();
-        const savedMessages = JSON.parse(localStorage.getItem('chatHistory')) || [];
+        const response = await fetch('http://localhost:5000/load-chat');
+        //  const savedMessages = await response.json();
+          const savedMessages = JSON.parse(localStorage.getItem('chatHistory')) || [];
         setMessages(savedMessages);
       } catch (error) {
         console.error('Failed to load chat history:', error);
@@ -28,20 +28,20 @@ const ChatBox = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
 
     // Uncomment to save chat history to the backend
-    // async function saveChatHistory() {
-    //   try {
-    //     await fetch('http://localhost:5000/save-chat', {
-    //       method: 'POST',
-    //       headers: {
-    //         'Content-Type': 'application/json',
-    //       },
-    //       body: JSON.stringify({ messages }),
-    //     });
-    //   } catch (error) {
-    //     console.error('Failed to save chat history:', error);
-    //   }
-    // }
-    // saveChatHistory();
+     async function saveChatHistory() {
+       try {
+         await fetch('http://localhost:5000/save-chat', {
+           method: 'POST',
+           headers: {
+             'Content-Type': 'application/json',
+           },
+           body: JSON.stringify({ messages }),
+         });
+       } catch (error) {
+         console.error('Failed to save chat history:', error);
+       }
+     }
+     saveChatHistory();
 
   }, [messages]);
 
@@ -74,7 +74,7 @@ const ChatBox = () => {
           rows="1"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          onKeyPress={handleKeyPress}
+          onKeyUp={handleKeyPress}
           placeholder="Type your message..."
         />
         <button onClick={sendMessage}>Send</button>
