@@ -14,6 +14,7 @@ const OpenAI = require('openai');
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(cors());
 
 const UPLOAD_FOLDER = ('F:/repogit/x-seller-8/frontend/public/uploads');
 const OUTPUT_FOLDER = ('F:/repogit/x-seller-8/frontend/public/output');  // Adjusted path for portability
@@ -304,60 +305,6 @@ function updateInventory(newData) {
     }
   }
   
-
-const openai = new OpenAI({
-  apiKey: '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',  // Ensure you set your API key as an environment variable
-  baseURL: 'https://integrate.api.nvidia.com/v1',
-});
-
-app.use(express.json());
-
-app.post('/chat', async (req, res) => {
-  const { message } = req.body;
-
-  if (!message) {
-    return res.status(400).send('Message is required');
-  }
-
-  try {
-    const completion = await openai.chat.completions.create({
-      model: "nvidia/llama-3.1-nemotron-70b-instruct",
-      messages: [{ role: 'user', content: message }],
-      temperature: 0.5,
-      top_p: 1,
-      max_tokens: 1024,
-      stream: true,
-    });
-
-    for await (const chunk of completion) {
-        process.stdout.write(chunk.choices[0]?.delta?.content || '')
-    }
-    const botResponse = completion.choices[0]?.message?.content;
-    if (!botResponse) {
-      logger.error('AI returned an empty response');
-      return res.status(500).send('Failed to get a response from AI');
-    }
-
-    res.json({ content: botResponse });
-  } catch (error) {
-    console.error('Error with AI chat:', error);
-    res.status(500).send('Error communicating with AI');
-  }
-});
-
-let chatHistory = [];
-
-app.use(express.json());
-
-app.post('/save-chat', (req, res) => {
-  chatHistory = req.body.messages;
-  res.status(200).send('Chat saved');
-});
-
-app.get('/load-chat', (req, res) => {
-  res.json(chatHistory);
-});
-
 // Watch the output folder for new .txt files (optional)
 const watcher = chokidar.watch(OUTPUT_FOLDER, {
     persistent: true,
@@ -382,6 +329,36 @@ watcher.on('add', async filePath => {
             logger.error(`Failed to process and archive file ${filePath}: ${error}`);
         }
     }
+});
+
+// Initialize OpenAI
+const openai = new OpenAI({
+  apiKey: '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',  // Move your key to an environment variable for security
+  baseURL: 'https://integrate.api.nvidia.com/v1',
+});
+
+// Define the chat route
+app.post('/api/chat', async (req, res) => {
+  const { message } = req.body;
+  if (!message) return res.status(400).json({ error: 'Message is required' });
+
+  try {
+    const completion = await openai.chat.completions.create({
+      model: "nvidia/llama-3.1-nemotron-70b-instruct",
+      messages: [{ role: 'user', content: message }],
+      temperature: 0.5,
+      top_p: 1,
+      max_tokens: 1024,
+    });
+
+    const botResponse = completion.choices[0]?.message?.content;
+    if (!botResponse) return res.status(500).json({ error: 'No response from AI' });
+
+    res.json({ content: botResponse });
+  } catch (error) {
+    console.error('Error with OpenAI API:', error);
+    res.status(500).json({ error: 'Failed to get response from AI' });
+  }
 });
 
 // Start the server
