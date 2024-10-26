@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-function InventoryBarChart({ data }) {
-  const labels = data.map(item => item['itemName']);
-  const quantities = data.map(item => item['ordered']);
-  const prices = data.map(item => item['price']);
+function InventoryBarChart() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    async function fetchInventoryData() {
+      try {
+        const response = await fetch("F:/repogit/X-seller-8/frontend/public/output/inventory.json");
+        const inventoryData = await response.json();
+        setData(inventoryData);
+      } catch (error) {
+        console.error("Error loading inventory data:", error);
+      }
+    }
+    fetchInventoryData();
+  }, []);
+
+  const labels = data.map(item => item.itemName);
+  const quantities = data.map(item => item.ordered);
+  const prices = data.map(item => item.price);
 
   const chartData = {
     labels,

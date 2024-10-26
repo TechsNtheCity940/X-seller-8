@@ -22,32 +22,29 @@ const JSON_FILE = path.join(OUTPUT_FOLDER, 'inventory_data.json');
 
 // server.js
 
-// Create a Winston logger
-const logger = winston.createLogger({
-    level: 'info',
-    format: winston.format.combine(
-      winston.format.timestamp(),
-      winston.format.json()
-    ),
-    transports: [
-      new winston.transports.Console(),
-      new winston.transports.File({
-        filename: path.join('F:', 'repogit', 'x-seller-8', 'backend', 'logs', 'error.log'),
-        level: 'error'
-      })
-    ],
-  });
-
 // Custom transport for saving specific logs to a separate file
-const extractlogs = new winston.transports.File({
-    filename: path.join(__dirname, 'logs', 'extracted.txt'),
-    level: 'info',
-    format: winston.format.combine(
-        winston.format.printf(({ message }) => {
-            // Only log messages containing "Extracted Text"
-            return message.includes('Extracted Text') ? message : ''; // Return empty string if not matched
-        })
-    )
+const extractTransport = new winston.transports.File({
+  filename: path.join(__dirname, 'logs', 'extracted.txt'),
+  level: 'info',
+  format: winston.format.combine(
+      winston.format.printf(({ message }) => {
+          // Only log messages containing "Extracted Text"
+          return message.includes('Extracted Text') ? message : ''; // Return empty string if not matched
+      })
+  )
+});
+  // Set up Winston logger with both the default and custom transports
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+      winston.format.timestamp(),
+      winston.format.printf(({ timestamp, level, message }) => `${timestamp} [${level.toUpperCase()}] - ${message}`)
+  ),
+  transports: [
+      new winston.transports.Console(),
+      new winston.transports.File({ filename: path.join(__dirname, 'logs', 'app.log') }),
+      extractTransport // Add custom transport for extracted text logs
+  ]
 });
 
 // Middleware for logging errors
@@ -68,91 +65,91 @@ const upload = multer({ dest: UPLOAD_FOLDER });
 
 // Route to handle file upload and text extraction using app.py
 app.post('/process', upload.single('file'), async (req, res) => {
-    const file = req.file;
-    const file_path = path.join(UPLOAD_FOLDER, file.filename);
-    const fileType = mime.lookup(file.originalname);
-    const baseFilename = path.parse(file.originalname).name; // Get the base name without extension
-    if (!fileType || !fileType.startsWith('image/')) {
-        logger.error(`Uploaded file ${file.originalname} is not a valid image`);
-        return res.status(400).json({ error: 'Uploaded file is not a valid image' });
-    }
-                logger.error(`Failed to parse output from app.py: ${parseError}`);
+  const file = req.file;
+  const file_path = path.join(UPLOAD_FOLDER, file.filename);
+  const fileType = mime.lookup(file.originalname);
+  const baseFilename = path.parse(file.originalname).name; // Get the base name without extension
+  if (!fileType || !fileType.startsWith('image/')) {
+      logger.error(`Uploaded file ${file.originalname} is not a valid image`);
+      return res.status(400).json({ error: 'Uploaded file is not a valid image' });
+  }
 
-    try {
-        // Run the Python script (app.py) to extract text
-        const pythonProcess = spawn('python', [path.join(__dirname, 'app.py'), file_path]);
+  try {
+      // Run the Python script (app.py) to extract text
+      const pythonProcess = spawn('python', [path.join(__dirname, 'app.py'), file_path]);
 
-        let scriptOutput = '';
-        pythonProcess.stdout.on('data', (data) => {
-            scriptOutput += data.toString();
-        });
+      let scriptOutput = '';
+      pythonProcess.stdout.on('data', (data) => {
+          scriptOutput += data.toString();
+      });
 
-        pythonProcess.stderr.on('data', (data) => {
-            logger.error(`Python script error: ${data}`);
-        });
+      pythonProcess.stderr.on('data', (data) => {
+          logger.error(`Python script error: ${data}`);
+      });
 
-        pythonProcess.on('close', async (code) => {
-            if (code !== 0) {
-                logger.error(`Python script exited with code ${code}`);
-                return res.status(500).json({ error: 'Failed to process the file' });
-            }
+      pythonProcess.on('close', async (code) => {
+          if (code !== 0) {
+              logger.error(`Python script exited with code ${code}`);
+              return res.status(500).json({ error: 'Failed to process the file' });
+          }
 
-            try {
-                // Parse the script output as JSON
-                const jsonData = JSON.parse(scriptOutput);
-                logger.info(`Extracted data from app.py: ${JSON.stringify(jsonData)}`);
+          try {
+              // Parse the script output as JSON
+              const jsonData = JSON.parse(scriptOutput);
+              logger.info(`Extracted data from app.py: ${JSON.stringify(jsonData)}`);
 
-                // Generate the filenames for each format
-                const txtFilePath = path.join(OUTPUT_FOLDER, `${baseFilename}.txt`);
-                const jsonFilePath = path.join(OUTPUT_FOLDER, `${baseFilename}.json`);
-                const csvFilePath = path.join(OUTPUT_FOLDER, `${baseFilename}.csv`);
+              // Generate the filenames for each format
+              const txtFilePath = path.join(OUTPUT_FOLDER, `${baseFilename}.txt`);
+              const jsonFilePath = path.join(OUTPUT_FOLDER, `${baseFilename}.json`);
+              const csvFilePath = path.join(OUTPUT_FOLDER, `${baseFilename}.csv`);
 
-                // Save data in .txt format
-                await fs.promises.writeFile(txtFilePath, scriptOutput, 'utf8');
-                logger.info(`Data saved as .txt file: ${txtFilePath}`);
+              // Save data in .txt format
+              await fs.promises.writeFile(txtFilePath, scriptOutput, 'utf8');
+              logger.info(`Data saved as .txt file: ${txtFilePath}`);
 
-                // Save data in .json format
-                await fs.promises.writeFile(jsonFilePath, JSON.stringify(jsonData, null, 2), 'utf8');
-                logger.info(`Data saved as .json file: ${jsonFilePath}`);
+              // Save data in .json format
+              await fs.promises.writeFile(jsonFilePath, JSON.stringify(jsonData, null, 2), 'utf8');
+              logger.info(`Data saved as .json file: ${jsonFilePath}`);
 
-                // Convert JSON to CSV and save it
-                const csvData = parse(jsonData);
-                await fs.promises.writeFile(csvFilePath, csvData, 'utf8');
-                logger.info(`Data saved as .csv file: ${csvFilePath}`);
+              // Convert JSON to CSV and save it
+              const csvData = parse(jsonData);
+              await fs.promises.writeFile(csvFilePath, csvData, 'utf8');
+              logger.info(`Data saved as .csv file: ${csvFilePath}`);
 
-                // Cleanup: Delete the uploaded file after processing
-                fs.unlinkSync(file_path);
-                logger.info(`File ${file.originalname} successfully processed and deleted.`);
+              // Cleanup: Delete the uploaded file after processing
+              fs.unlinkSync(file_path);
+              logger.info(`File ${file.originalname} successfully processed and deleted.`);
 
-                res.status(200).json({ 
-                    message: 'Data processed successfully',
-                    files: {
-                        txt: txtFilePath,
-                        json: jsonFilePath,
-                        csv: csvFilePath
-                    }
-                });
-            } catch (parseError) {
-                logger.error(`Failed to parse output from app.py: ${parseError}`);
-                res.status(500).json({ error: 'Invalid output format from Python script' });
-            }
-        });
-    } catch (error) {
-        logger.error(`Error during file processing for ${file.originalname}: ${error}`);
-        res.status(500).json({ error: error.toString() });
-    }
+              res.status(200).json({ 
+                  message: 'Data processed successfully',
+                  files: {
+                      txt: txtFilePath,
+                      json: jsonFilePath,
+                      csv: csvFilePath
+                  }
+              });
+          } catch (parseError) {
+              logger.error(`Failed to parse output from app.py: ${parseError}`);
+              res.status(500).json({ error: 'Invalid output format from Python script' });
+          }
+      });
+  } catch (error) {
+      logger.error(`Error during file processing for ${file.originalname}: ${error}`);
+      res.status(500).json({ error: error.toString() });
+  }
 });
 
 // Helper function for OCR extraction using Tesseract
 async function extractText(file_path) {
-    try {
-        const { data: { text } } = await tesseract.recognize(file_path);
-        return text;
-    } catch (error) {
-        logger.error(`OCR extraction failed for file ${file_path}: ${error}`);
-        throw error;
-    }
+  try {
+      const { data: { text } } = await tesseract.recognize(file_path);
+      return text;
+  } catch (error) {
+      logger.error(`OCR extraction failed for file ${file_path}: ${error}`);
+      throw error;
+  }
 }
+
 function mapTextToJSON(extracted_text) {
     const lines = extracted_text.split('\n').map(line => line.trim());
     const jsonData = {lines};
@@ -227,7 +224,7 @@ async function saveDataToJSONFile(data, filename) {
 }
 
 // Path to your inventory data file
-const inventoryFile = path.join('F:','repogit', 'X-seLLer-8', 'frontend', 'output', 'inventory_data.json');
+const inventoryFile = path.join('F:','repogit', 'X-seLLer-8', 'frontend', 'public', 'output', 'inventory_data.json');
 app.put('/inventory', (req, res) => {
     const updatedInventory = req.body;  // Expecting an array of updated inventory data
   

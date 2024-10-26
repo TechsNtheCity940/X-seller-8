@@ -98,8 +98,8 @@ def process_files(input_folder, output_file):
     for root, _, files in os.walk(input_folder):
         for file_name in files:
             file_path = os.path.join(root, file_name)
-            with open(file_path, 'r', encoding='utf-8', errors='ignore') as file:
-                all_text += file.read() + "\n"
+            with open(file_path, 'r') as f:
+                all_text += f.read() + "\n"
 
     # Save extracted text to the specified output file
     with open(output_file, 'w') as file:
@@ -170,14 +170,14 @@ def save_to_inventory_excel(df, file_name):
     output_file = file_name + '.xlsx'
     writer = pd.ExcelWriter(output_file, engine='openpyxl')
     df.to_excel(writer, index=False, header=True, startcol=0, startrow=0)
-    writer.save()
+    writer.close()
     print(f"Data successfully saved to {output_file}")
     return output_file
 
 # Main processing
-input_folder = "F:/repogit/XseLLer8/testfiles"
-output_file = "F:/repogit/XseLLer8/output/newextracted.txt"
-inventory_data_path = "F:/repogit/XseLLer8/inventory_data.json"
+input_folder = "F:/repogit/X-seLLer-8/frontend/public/testfiles"
+output_file = "F:/repogit/X-seLLer-8/frontend/public/output/newextracted.txt"
+inventory_data_path = "F:/repogit/X-seLLer-8/frontend/public/new_inventory_data.json"
 
 # Step 1: Process input files to extract text
 process_files(input_folder, output_file)
@@ -198,5 +198,5 @@ inventory_data = df.to_dict(orient='records')
 save_inventory_data(inventory_data, inventory_data_path)
 
 # Step 5: Create an Excel file and copy data
-excel_output_file = "F:/repogit/XseLLer8/output/Inventory.xlsx"
+excel_output_file = "F:/repogit/X-seLLer-8/frontend/public/output/Inventory"
 save_to_inventory_excel(df, excel_output_file)

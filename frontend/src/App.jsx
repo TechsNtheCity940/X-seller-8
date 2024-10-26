@@ -1,14 +1,14 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import FileUpload from './components/FileUpload.jsx';  // Import the file upload component
-import Inventory from './components/Inventory.jsx'; // Import the Inventory component
-import CostTracking from './components/CostTracking.jsx';  // Cost tracking component
-import InventoryBarChart from './components/InventoryBarChart.jsx';  // Bar chart for inventory
-import InventoryPriceTrend from './components/InventoryPriceTrend.jsx';  // Price trend chart
-import Forecasting from './components/Forecasting.jsx';  // Forecasting component
-import ChatBox from './components/ChatBox.jsx'; // Import the ChatBox component
-import { ToastContainer, toast } from 'react-toastify';
+import FileUpload from './components/FileUpload.jsx';
+import Inventory from './components/Inventory.jsx';
+import CostTracking from './components/CostTracking.jsx';
+import InventoryBarChart from './components/InventoryBarChart.jsx';
+import InventoryPriceTrend from './components/InventoryPriceTrend.jsx';
+import Forecasting from './components/Forecasting.jsx';
 import ErrorBoundary from './components/ErrorBoundary';
+import Chatbot from './components/Chatbot.jsx';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
@@ -17,23 +17,28 @@ function App() {
   const [inventoryData, setInventoryData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [sales, setSales] = useState([]);
+  const [inventoryFileContent, setInventoryFileContent] = useState('');
 
-  // Fetch inventory data from the server (backend)
+  // Fetch inventory data from inventory.json
   useEffect(() => {
-    async function fetchInventoryData() {
-      try {
-        const response = await fetch('http://localhost:5000/inventory');
-        const data = await response.json();
-        setInventoryData(data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching inventory data:", error);
-        setLoading(false);
+    if (activeTab === 'inventory') {
+      async function fetchInventoryFile() {
+        try {
+          const response = await fetch('F:/repogit/X-seller-8/frontend/public/output/inventory.json');
+          if (!response.ok) throw new Error('Failed to load inventory file');
+          const data = await response.json();
+          setInventoryData(data);
+          setInventoryFileContent(JSON.stringify(data, null, 2));  // Pretty format JSON for display
+        } catch (error) {
+          console.error("Error loading inventory data:", error);
+          setInventoryFileContent("Error loading inventory data");
+        } finally {
+          setLoading(false);
+        }
       }
+      fetchInventoryFile();
     }
-
-    fetchInventoryData();
-  }, []);
+  }, [activeTab]);
 
   // Handle file upload and update the inventory
   const handleFileUpload = (parsedData) => {
@@ -66,20 +71,42 @@ function App() {
     if (loading) {
       return <div>Loading...</div>;
     }
-
+  
     return (
       <div className="content-container">
-        {activeTab === 'fileUpload' && <FileUpload onFileUpload={handleFileUpload} />}
-        {activeTab === 'costTracking' && <CostTracking invoices={invoices} />}
-        {activeTab === 'inventory' && (
-          <div>
-            <Inventory data={inventoryData} />  {/* Inventory Table */}
-            <InventoryBarChart data={inventoryData} />  {/* Inventory Bar Chart */}
-            <InventoryPriceTrend data={inventoryData} />  {/* Inventory Price Trend */}
-          </div>
+        {activeTab === 'fileUpload' && (
+          <ErrorBoundary>
+            <FileUpload onFileUpload={handleFileUpload} />
+          </ErrorBoundary>
         )}
-        {activeTab === 'forecasting' && <Forecasting sales={sales} />}
-        {activeTab === 'chat' && <ChatBox />}  {/* Render the ChatBox component */}
+        {activeTab === 'costTracking' && (
+          <ErrorBoundary>
+            <CostTracking invoices={invoices} />
+          </ErrorBoundary>
+        )}
+        {activeTab === 'inventory' && (
+          <ErrorBoundary>
+            <div>
+              <Inventory data={inventoryData} />
+              <InventoryBarChart data={inventoryData} />
+              <InventoryPriceTrend data={inventoryData} />
+              <div className="scrollable-json-container">
+                <h3>Live Inventory Data (JSON)</h3>
+                <pre className="scrollable-json">{inventoryFileContent}</pre>
+              </div>
+            </div>
+          </ErrorBoundary>
+        )}
+        {activeTab === 'forecasting' && (
+          <ErrorBoundary>
+            <Forecasting sales={sales} />
+          </ErrorBoundary>
+        )}
+        {activeTab === 'chat' && (
+          <ErrorBoundary>
+            <Chatbot />
+          </ErrorBoundary>
+        )}
       </div>
     );
   };
@@ -106,7 +133,7 @@ function App() {
           </button>
           <button className={activeTab === 'chat' ? 'active' : ''} onClick={() => setActiveTab('chat')}>
             AI Chat
-          </button>  {/* Add a button for the AI Chat */}
+          </button>
         </nav>
       </aside>
       <main className="content-area">
