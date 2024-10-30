@@ -127,6 +127,6 @@ def extract_excel_data(excel_file, output_file):
     xlsx_data.to_excel(output_file, index=False, header=True)
 
 # Example usage:
-input_folder = "F:/repogit/X-seLLer-8/frontend/public/testfiles"
+input_folder = "F:/Datasets/pdfdata"
 output_file = "F:/repogit/X-seLLer-8/frontend/public/output/newextracted.txt"
 
