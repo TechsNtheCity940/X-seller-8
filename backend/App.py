@@ -93,13 +93,12 @@ import pandas as pd
 import openpyxl
 
 def process_files(input_folder, output_file):
-    # Example processing of files to extract text
     all_text = ""
-    for root, _, files in os.walk(input_folder):
-        for file_name in files:
-            file_path = os.path.join(root, file_name)
-            with open(file_path, 'r') as f:
-                all_text += f.read() + "\n"
+    for root, dirs, files in os.walk(input_folder):
+        for file in files:
+            file_path = os.path.join(root, file)
+            with open(file_path, 'r', encoding='utf-8') as f:
+                    all_text += f.read() + "\n"
 
     # Save extracted text to the specified output file
     with open(output_file, 'w') as file:

@@ -9,18 +9,6 @@ const { promisify } = require('util');
 const readFileAsync = promisify(fs.readFile);
 const winston = require('winston');
 
-// Custom transport for saving specific logs to a separate file
-const extractTransport = new winston.transports.File({
-    filename: path.join(__dirname, 'logs', 'extracted_text.log'),
-    level: 'info',
-    format: winston.format.combine(
-        winston.format.printf(({ message }) => {
-            // Only log messages containing "Extracted Text"
-            return message.includes('Extracted Text') ? message : false;
-        })
-    )
-});
-
 // Set up Winston logger with both the default and custom transports
 const logger = winston.createLogger({
     level: 'info',
@@ -31,10 +19,18 @@ const logger = winston.createLogger({
     transports: [
         new winston.transports.Console(),
         new winston.transports.File({ filename: path.join(__dirname, 'logs', 'app.log') }),
-        extractTransport // Add custom transport for extracted text logs
-    ]
-});
-
+        extractTransport = new winston.transports.File({
+            filename: path.join(__dirname, 'logs', 'extracted_text.log'),
+            level: 'info',
+            format: winston.format.combine(
+                winston.format.printf(({ message }) => {
+                    // Only log messages containing "Extracted Text"
+                    return message.includes('BRAND','PACKISIZE', 'PRICE', 'ORDERED', 'CONFIRMED', 'STATUS', 'invoice_date', 'item_number', 'item', 'packsize', 'price', 'ordered', 'status', 'liquors', 'price_per_bottle', 'total', 'domestic_beer', 'import_beer', 'na_bev', 'beverage_supplies') ? message : True;
+                })
+            )
+        })
+    )
+,)
 // Function to dynamically import file-type module
 const getFileType = async (buffer) => {
     const { fileTypeFromBuffer } = await import('file-type');
@@ -172,8 +168,8 @@ const processFiles = async (inputFolder, outputFile) => {
 };
 
 // Example usage
-const inputFolder = 'F:/repogit/XseLLer8/uploads';
-const outputFile = 'F:/repogit/XseLLer8/uploads/extracted.txt';
+const inputFolder = 'F:/repogit/X-seLLer-8/frontend/public/testfiles';
+const outputFile = 'F:/repogit/X-seLLer-8/frontend/public/testfiles/extracted.txt';
 
 processFiles(inputFolder, outputFile).then(() => {
     console.log('Processing complete.');

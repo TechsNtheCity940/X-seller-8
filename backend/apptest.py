@@ -9,13 +9,18 @@ from PIL import Image
 import pandas as pd
 import docx2txt
 import openpyxl
-import camelot
 import cv2
 import numpy as np
+import pdfplumber
 import camelot
-import camelot.io as camelot
+
 # Set up Tesseract OCR
 pytesseract.pytesseract.tesseract_cmd = r"C:/Users/wonde/AppData/Local/Programs/Tesseract-OCR/tesseract.exe"  # Replace with your Tesseract path
+
+with pdfplumber.open("foo.pdf") as pdf:
+    first_page = pdf.pages[0]
+    text = first_page.extract_text()
+    print(text)
 
 # Function to extract text from PDF files
 def extract_pdf_text(pdf_file):
@@ -25,9 +30,10 @@ def extract_pdf_text(pdf_file):
 def extract_pdf_tables(pdf_file):
     tables = camelot.read_pdf(pdf_file, pages='all')
     return tables
-tables = camelot.read_pdf('foo.pdf')
 
-tables[0]
+tables = camelot.read_pdf('foo.pdf', pages='all')
+
+# Function to extract tables from image files
 def extract_image_tables(image_file):
     img = cv2.imread(image_file)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -51,18 +57,18 @@ def extract_image_text(image_file):
     text = pytesseract.image_to_string(img)
     return text
 
-# Function to extract text from .docx files
+# Function to extract text from.docx files
 def extract_docx_text(docx_file):
     text = docx2txt.process(docx_file)
     return text
 
-# Function to extract text from Excel files (.xlsx, .xls)
+# Function to extract text from Excel files (.xlsx,.xls)
 def extract_excel_text(excel_file):
     xlsx_data = pd.read_excel(excel_file, engine='openpyxl')
     text = xlsx_data.to_string(index=False, header=False)
     return text
 
-# Function to extract text from .txt files
+# Function to extract text from.txt files
 def extract_txt_text(txt_file):
     with open(txt_file, 'r') as file:
         text = file.read()
@@ -90,23 +96,23 @@ def process_files(input_folder, output_folder):
         for file in files:
             file_path = os.path.join(root, file)
             file_name, file_extension = os.path.splitext(file_path)
-            
+
             if file_extension.lower() in ['.pdf']:
                 tables = extract_pdf_tables(file_path)
                 output_file = os.path.join(output_folder, f"{file_name}.xlsx")
-                save_tables_to_excel(tables, output_file)
-            
+                save_tables_to_excel([tables], output_file)
+
             elif file_extension.lower() in ['.xlsx', '.xls']:
                 output_file = os.path.join(output_folder, f"{file_name}.xlsx")
                 extract_excel_data(file_path, output_file)
-            
+
             elif file_extension.lower() in ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.tiff', '.img']:
                 tables = extract_image_tables(file_path)
-            
+
             # Clean up text and append to all_text
             text = re.sub(r'[^\w\s]', '', text)
             all_text += text + "\n"
-    
+
     # Save extracted text to the specified output file
     with open(output_file, 'w') as file:
         file.write(all_text)
@@ -114,8 +120,7 @@ def process_files(input_folder, output_folder):
 
 tables[0].to_json('foo.json')
 tables[0].to_excel('foo.excel')
-tables.export('foo.json', f='json')
-tables.export('foo.excel', f='excel')
+
 # Function to save tables to Excel
 def save_tables_to_excel(tables, output_file):
     with pd.ExcelWriter(output_file) as writer:
@@ -127,6 +132,6 @@ def extract_excel_data(excel_file, output_file):
     xlsx_data.to_excel(output_file, index=False, header=True)
 
 # Example usage:
-input_folder = "F:/Datasets/pdfdata"
+input_folder = "F:/repogit/X-seLLer-8/frontend/public/testfiles"
 output_file = "F:/repogit/X-seLLer-8/frontend/public/output/newextracted.txt"
-
+		
