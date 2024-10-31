@@ -9,80 +9,78 @@ const { promisify } = require('util');
 const readFileAsync = promisify(fs.readFile);
 const winston = require('winston');
 
-// Setup Winston logger with app.log
+// Setup Winston logger to log everything
 const logger = winston.createLogger({
-  level: 'info',
+  level: 'debug, info, warn, error',// Capture all log levels: debug, info, warn, error
   format: winston.format.combine(
     winston.format.timestamp(),
-    winston.format.printf(({ timestamp, level, message }) => `${timestamp} [${level.toUpperCase()}] - ${message}`)
+    winston.format.printf(({ timestamp, level, message }) => `${timestamp} [${level.toUpperCase()}] - ${message}`),
+    winston.format.File({ filename: path.join(__dirname, 'logs', 'app.log') })
   ),
   transports: [
-    new winston.transports.Console(),
-    new winston.transports.File({ filename: path.join(__dirname, 'logs', 'app.log') })
+    winston.transports.Console(), // Log to console
+    winston.transports.File({ filename: path.join(__dirname, 'logs', 'app.log') }) // Log to app.log file
   ]
 });
 
-// Function to log structured row data
 const logRowData = (header, row) => {
-  logger.info(`Header: ${header.join(', ')} | Row Data: ${row.join(', ')}`);
+  logger.info(`Extracted Data Row: ${JSON.stringify({ header, row })}`);
 };
 
-// Pattern to identify possible headers
 const possibleHeaders = [
   /BRAND|PACKISIZE|PRICE|ORDERED|CONFIRMED|STATUS/i,
   /Brand|Bin|Size|Totals|Unit Cost|Ext Value/i
 ];
 
-// Function to detect and parse rows of data based on headers
 const parseTextRows = (text) => {
   const lines = text.split('\n');
   let currentHeader = [];
-  let structuredData = [];
-  
+  let jsonData = [];
+
   lines.forEach(line => {
     const trimmedLine = line.trim();
     if (possibleHeaders.some(headerRegex => headerRegex.test(trimmedLine))) {
-      // Identify new header row
       currentHeader = trimmedLine.split(/\s+/);
-      logger.info(`Detected header: ${currentHeader.join(', ')}`);
+      logger.info(`Detected Header Row: ${currentHeader.join(', ')}`);
     } else if (currentHeader.length) {
-      // Parse row of data under current header
       const rowData = trimmedLine.split(/\s+/);
-      structuredData.push({ header: currentHeader, row: rowData });
-      logRowData(currentHeader, rowData); // Log each row with the current header
+      const rowObject = {};
+      currentHeader.forEach((key, index) => {
+        rowObject[key.toLowerCase().replace(/[^a-z0-9_]/gi, '_')] = rowData[index] || '';
+      });
+      jsonData.push(rowObject);
+      logRowData(currentHeader, rowData);
     }
   });
-  return structuredData;
+
+  return jsonData;
 };
 
-// Example of parsing in one extraction function
+// PDF extraction with error handling
 const extractPdfText = async (pdfFilePath) => {
-  const dataBuffer = await readFileAsync(pdfFilePath);
-  const data = await pdfParse(dataBuffer);
-  const cleanedText = data.text.replace(/[^\w\s]/g, '');
-  return parseTextRows(cleanedText); // Process each text row based on headers and log
+  try {
+    logger.info(`Starting PDF extraction for file: ${pdfFilePath}`);
+    const dataBuffer = await readFileAsync(pdfFilePath);
+    const data = await pdfParse(dataBuffer);
+    const cleanedText = data.text.replace(/[^\w\s]/g, '');
+    logger.debug(`Extracted Text from PDF: ${cleanedText.slice(0, 100)}...`);
+    return parseTextRows(cleanedText);
+  } catch (error) {
+    logger.error(`Failed to extract PDF text from ${pdfFilePath}: ${error.message}`);
+    return null; // Skip file and continue
+  }
 };
 
-// Function to dynamically import file-type module
-const getFileType = async (buffer) => {
-  const { fileTypeFromBuffer } = await import('file-type');
-  return fileTypeFromBuffer(buffer);
-};
-
-// Function to extract text from PDF files
-//const extractPdfText = async (pdfFilePath) => {
-//  const dataBuffer = await readFileAsync(pdfFilePath);
-//  const data = await pdfParse(dataBuffer);
-//  return data.text;
-//};
-
-// Function to extract text from images using Tesseract OCR
+// Image extraction with Tesseract and error handling
 const extractImageText = async (imageFilePath) => {
   try {
+    logger.info(`Starting OCR for image file: ${imageFilePath}`);
     const { data: { text } } = await tesseract.recognize(imageFilePath, 'eng');
+    logger.debug(`Extracted Text from Image: ${text.slice(0, 100)}...`);
     return text;
   } catch (error) {
-    throw new Error(`Error processing image with Tesseract: ${error.message}`);
+    logger.error(`Failed to extract image text with Tesseract from ${imageFilePath}: ${error.message}`);
+    return null; // Skip file and continue
   }
 };
 
@@ -141,21 +139,23 @@ const extractJsonText = (jsonFilePath) => {
 // Determine file type and process accordingly
 const determineFileTypeAndExtract = async (filePath) => {
   const buffer = await readFileAsync(filePath);
-  const type = await getFileType(buffer);
+  const { fileTypeFromBuffer } = await import('file-type');
+  const type = await fileTypeFromBuffer(buffer);
 
   if (!type) {
     console.log(`Could not determine the file type of ${filePath}. Skipping.`);
     return null;
   }
 
-  switch (type.mime) {
+  let extractedData;
+    switch (type.mime) {
     case 'application/pdf':
-      return await extractPdfText(filePath);
-    case 'image/jpeg':
-    case 'image/png':
-    case 'image/bmp':
-    case 'image/gif':
-    case 'image/tiff':
+    extractedData = await extractPdfText(filePath);
+  case 'image/jpeg':
+  case 'image/png':
+  case 'image/bmp':
+  case 'image/gif':
+  case 'image/tiff':
       return await extractImageText(filePath);
     case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
       return await extractDocxText(filePath);
@@ -168,43 +168,38 @@ const determineFileTypeAndExtract = async (filePath) => {
     case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
     case 'application/vnd.ms-excel':
       return extractExcelText(filePath);
-    default:
-      console.log(`Unsupported file type for ${filePath}: ${type.mime}. Skipping.`);
-      return null;
-  }
-};
-
-// Main function to process files
-const processFiles = async (inputFolder, outputFile) => {
-  let allText = '';
-  const files = await fs.readdir(inputFolder);
-
-  for (const file of files) {
-    const filePath = path.join(inputFolder, file);
-    
-    try {
-      const text = await determineFileTypeAndExtract(filePath);
-      if (text) {
-        // Clean up text and append to allText
-        const cleanedText = text.replace(/[^\w\s]/g, '');
-        allText += cleanedText + '\n';
-      }
-    } catch (error) {
-      console.error(`Failed to process ${filePath}: ${error.message}`);
+      default:
+        console.log(`Unsupported file type for ${filePath}: ${type.mime}. Skipping.`);
+        return null;
     }
-  }
-
-  // Save extracted text to the specified output file
-  await fs.writeFile(outputFile, allText, 'utf-8');
-  console.log(`Text data saved to ${outputFile}`);
-};
-
-// Example usage
-const inputFolder = 'F:/repogit/X-seLLer-8/frontend/public/testfiles';
-const outputFile = 'F:/repogit/X-seLLer-8/frontend/public/testfiles/testesextracted.txt';
-
-processFiles(inputFolder, outputFile).then(() => {
-  console.log('Processing complete.');
-}).catch((error) => {
-  console.error('Error during processing:', error);
-});
+  };
+  
+  const processFiles = async (inputFolder, outputFile) => {
+    let allJsonData = [];
+    const files = await fs.readdir(inputFolder);
+  
+    for (const file of files) {
+      const filePath = path.join(inputFolder, file);
+      try {
+        const fileData = await determineFileTypeAndExtract(filePath);
+        if (fileData) {
+          allJsonData = allJsonData.concat(fileData);
+        }
+      } catch (error) {
+        console.error(`Failed to process ${filePath}: ${error.message}`);
+      }
+    }
+  
+    await fs.writeFile(outputFile, JSON.stringify(allJsonData, null, 2), 'utf-8');
+    console.log(`JSON data saved to ${outputFile}`);
+  };
+  
+  // Example usage
+  const inputFolder = 'F:/repogit/X-seLLer-8/frontend/public/uploads';
+  const outputFile = 'F:/repogit/X-seLLer-8/frontend/public/testfiles/testsextracted.json';
+  
+  processFiles(inputFolder, outputFile).then(() => {
+    console.log('Processing complete.');
+  }).catch((error) => {
+    console.error('Error during processing:', error);
+  });

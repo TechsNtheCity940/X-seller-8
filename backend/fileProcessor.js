@@ -9,172 +9,175 @@ const { promisify } = require('util');
 const readFileAsync = promisify(fs.readFile);
 const winston = require('winston');
 
-// Set up Winston logger with both the default and custom transports
+// Setup Winston logger
 const logger = winston.createLogger({
-    level: 'info',
-    format: winston.format.combine(
-        winston.format.timestamp(),
-        winston.format.printf(({ timestamp, level, message }) => `${timestamp} [${level.toUpperCase()}] - ${message}`)
-    ),
-    transports: [
-        new winston.transports.Console(),
-        new winston.transports.File({ filename: path.join(__dirname, 'logs', 'app.log') }),
-        extractTransport = new winston.transports.File({
-            filename: path.join(__dirname, 'logs', 'extracted_text.log'),
-            level: 'info',
-            format: winston.format.combine(
-                winston.format.printf(({ message }) => {
-                    // Only log messages containing "Extracted Text"
-                    return message.includes('BRAND','PACKISIZE', 'PRICE', 'ORDERED', 'CONFIRMED', 'STATUS', 'invoice_date', 'item_number', 'item', 'packsize', 'price', 'ordered', 'status', 'liquors', 'price_per_bottle', 'total', 'domestic_beer', 'import_beer', 'na_bev', 'beverage_supplies') ? message : True;
-                })
-            )
-        })
-    )
-,)
-// Function to dynamically import file-type module
-const getFileType = async (buffer) => {
-    const { fileTypeFromBuffer } = await import('file-type');
-    return fileTypeFromBuffer(buffer);
+  level: 'debug',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.printf(({ timestamp, level, message }) => `${timestamp} [${level.toUpperCase()}] - ${message}`)
+  ),
+  transports: [
+    new winston.transports.Console(),
+    new winston.transports.File({ filename: path.join(__dirname, 'logs', 'app.log') })
+  ]
+});
+
+const logRowData = (header, row) => {
+  logger.info(`Extracted Data Row: ${JSON.stringify({ header, row })}`);
 };
 
-// Function to extract text from PDF files
+const possibleHeaders = [
+  /BRAND|PACKISIZE|PRICE|ORDERED|CONFIRMED|STATUS/i,
+  /Brand|Bin|Size|Totals|Unit Cost|Ext Value/i
+];
+
+// Parse text rows based on headers
+const parseTextRows = (rawText) => {
+  const lines = rawText.split('\n');
+  let currentHeader = [];
+  let parsedText = [];
+
+  lines.forEach(line => {
+    const trimmedLine = line.trim();
+    if (possibleHeaders.some(headerRegex => headerRegex.test(trimmedLine))) {
+      currentHeader = trimmedLine.split(/\s+/);
+      logger.info(`Detected Header Row: ${currentHeader.join(', ')}`);
+    } else if (currentHeader.length) {
+      const rowData = trimmedLine.split(/\s+/);
+      const rowObject = {};
+      currentHeader.forEach((key, index) => {
+        rowObject[key.toLowerCase().replace(/[^a-z0-9_]/gi, '_')] = rowData[index] || '';
+      });
+      parsedText.push(rowObject);
+      logRowData(currentHeader, rowData);
+    }
+  });
+  return parsedText;
+};
+
+// Extract text from PDF files
 const extractPdfText = async (pdfFilePath) => {
+  try {
+    logger.info(`Starting PDF extraction for file: ${pdfFilePath}`);
     const dataBuffer = await readFileAsync(pdfFilePath);
     const data = await pdfParse(dataBuffer);
-    return data.text;
+    const cleanedText = data.text.replace(/[^\w\s]/g, '');
+    logger.info(`Extracted Text from PDF (${pdfFilePath}): ${cleanedText.slice(0, 500)}...`);
+    return parseTextRows(cleanedText);
+  } catch (error) {
+    logger.warn(`Skipping file ${pdfFilePath} due to PDF parsing error: ${error.message}`);
+    return null;
+  }
 };
 
-// Function to extract text from images using Tesseract OCR
+// Extract text from images with Tesseract
 const extractImageText = async (imageFilePath) => {
-    try {
-        const { data: { text } } = await tesseract.recognize(imageFilePath, 'eng');
-        return text;
-    } catch (error) {
-        throw new Error(`Error processing image with Tesseract: ${error.message}`);
-    }
+  try {
+    logger.info(`Starting OCR for image file: ${imageFilePath}`);
+    const { data: { text: ocrText } } = await tesseract.recognize(imageFilePath, 'eng');
+    logger.info(`Extracted Text from Image (${imageFilePath}): ${ocrText.slice(0, 500)}...`);
+    return ocrText;
+  } catch (error) {
+    logger.warn(`Skipping file ${imageFilePath} due to OCR error: ${error.message}`);
+    return null;
+  }
 };
 
-// Function to extract text from .docx files
-const extractDocxText = async (docxFilePath) => {
-    return new Promise((resolve, reject) => {
-        docxParser.parseDocx(docxFilePath, (error, data) => {
-            if (error) reject(error);
-            resolve(data);
-        });
-    });
-};
-
-// Function to extract text from Excel files (.xlsx, .xls)
+// Extract text from Excel files
 const extractExcelText = (excelFilePath) => {
+  try {
+    logger.info(`Starting extraction on Excel file: ${excelFilePath}`);
     const workbook = XLSX.readFile(excelFilePath);
-    let text = '';
+    let excelText = '';
+
     workbook.SheetNames.forEach(sheetName => {
-        const sheet = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName], { header: 1 });
-        sheet.forEach(row => {
-            text += row.join(' ') + '\n';
-        });
+      const sheet = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName], { header: 1 });
+      sheet.forEach(row => {
+        excelText += Array.isArray(row) ? row.join(' ') + '\n' : Object.values(row).join(' ') + '\n';
+      });
     });
-    return text;
+
+    logger.info(`Extracted Text from Excel (${excelFilePath}): ${excelText.slice(0, 500)}...`);
+    return excelText;
+  } catch (error) {
+    logger.warn(`Skipping file ${excelFilePath} due to error: ${error.message}`);
+    return null;
+  }
 };
 
-// Function to extract text from .txt files
-const extractTxtText = (txtFilePath) => {
-    return fs.readFileSync(txtFilePath, 'utf-8');
-};
-
-// Function to extract text from CSV files
-const extractCsvText = (csvFilePath) => {
-    return new Promise((resolve, reject) => {
-        let text = '';
-        fs.createReadStream(csvFilePath)
-            .pipe(csv())
-            .on('data', (row) => {
-                text += Object.values(row).join(' ') + '\n';
-            })
-            .on('end', () => {
-                resolve(text);
-            })
-            .on('error', (error) => {
-                reject(error);
-            });
-    });
-};
-
-// Function to extract text from JSON files
-const extractJsonText = (jsonFilePath) => {
-    const jsonData = fs.readFileSync(jsonFilePath, 'utf-8');
-    return JSON.stringify(JSON.parse(jsonData), null, 2);
-};
-
-// Determine file type and process accordingly
+// Determine file type and extract text
 const determineFileTypeAndExtract = async (filePath) => {
+  try {
     const buffer = await readFileAsync(filePath);
-    const type = await getFileType(buffer);
+    const { fileTypeFromBuffer } = await import('file-type');
+    const type = await fileTypeFromBuffer(buffer);
 
     if (!type) {
-        console.log(`Could not determine the file type of ${filePath}. Skipping.`);
-        return null;
+      logger.warn(`Could not determine file type for ${filePath}. Skipping.`);
+      return null;
     }
+
+    logger.info(`Processing file type ${type.mime} for ${filePath}`);
 
     switch (type.mime) {
-        case 'application/pdf':
-            return await extractPdfText(filePath);
-        case 'image/jpeg':
-        case 'image/png':
-        case 'image/bmp':
-        case 'image/gif':
-        case 'image/tiff':
-            return await extractImageText(filePath);
-        case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
-            return await extractDocxText(filePath);
-        case 'text/csv':
-            return await extractCsvText(filePath);
-        case 'application/json':
-            return extractJsonText(filePath);
-        case 'text/plain':
-            return extractTxtText(filePath);
-        case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
-        case 'application/vnd.ms-excel':
-            return extractExcelText(filePath);
-        default:
-            console.log(`Unsupported file type for ${filePath}: ${type.mime}. Skipping.`);
-            return null;
+      case 'application/pdf':
+        return await extractPdfText(filePath);
+      case 'image/jpeg':
+      case 'image/png':
+      case 'image/bmp':
+      case 'image/gif':
+      case 'image/tiff':
+        return await extractImageText(filePath);
+      case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
+        return await extractDocxText(filePath);
+      case 'text/csv':
+        return await extractCsvText(filePath);
+      case 'text/plain':
+        return extractTxtText(filePath);
+      case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
+      case 'application/vnd.ms-excel':
+        return extractExcelText(filePath);
+      default:
+        logger.warn(`Unsupported file type for ${filePath}: ${type.mime}. Skipping.`);
+        return null;
     }
+  } catch (error) {
+    logger.error(`Error processing ${filePath}: ${error.message}`);
+    return null;
+  }
 };
 
-// Main function to process files
+// Process files and save as .txt
 const processFiles = async (inputFolder, outputFile) => {
-    let allText = '';
-    const files = await fs.readdir(inputFolder);
+  logger.info(`Starting file processing in folder: ${inputFolder}`);
+  let extractedContent = [];
+  const files = await fs.readdir(inputFolder);
 
-    for (const file of files) {
-        const filePath = path.join(inputFolder, file);
-        
-        try {
-            const text = await determineFileTypeAndExtract(filePath);
-            if (text) {
-                // Clean up text and append to allText
-                const cleanedText = text.replace(/[^\w\s]/g, '');
-                allText += cleanedText + '\n';
-            }
-        } catch (error) {
-            console.error(`Failed to process ${filePath}: ${error.message}`);
-        }
+  for (const file of files) {
+    const filePath = path.join(inputFolder, file);
+    try {
+      const fileData = await determineFileTypeAndExtract(filePath);
+      if (fileData) {
+        extractedContent.push(fileData);
+        logger.info(`File ${file} successfully processed.`);
+      }
+    } catch (error) {
+      logger.error(`Failed to process file ${filePath}: ${error.message}`);
     }
+  }
 
-    // Save extracted text to the specified output file
-    await fs.writeFile(outputFile, allText, 'utf-8');
-    console.log(`Text data saved to ${outputFile}`);
+  // Combine text data for output
+  const outputText = extractedContent.join('\n');
+  await fs.writeFile(outputFile, outputText, 'utf-8');
+  logger.info(`Data written to ${outputFile}`);
 };
 
 // Example usage
-const inputFolder = 'F:/repogit/X-seLLer-8/frontend/public/testfiles';
-const outputFile = 'F:/repogit/X-seLLer-8/frontend/public/testfiles/extracted.txt';
+const inputFolder = 'F:/repogit/X-seLLer-8/frontend/public/uploads';
+const outputFile = 'F:/repogit/X-seLLer-8/backend/uploads/RawTextExtract.txt';
 
 processFiles(inputFolder, outputFile).then(() => {
-    console.log('Processing complete.');
+  logger.info('Processing complete.');
 }).catch((error) => {
-    console.error('Error during processing:', error);
+  logger.error('Error during processing:', error);
 });
-
-

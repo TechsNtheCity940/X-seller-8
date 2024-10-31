@@ -225,7 +225,7 @@ async function saveDataToJSONFile(data, filename) {
 }
 
 // Path to your inventory data file
-const inventoryFile = path.join('F:','repogit', 'X-seLLer-8', 'frontend', 'public', 'output', 'inventory_data.json');
+const inventoryFile = path.join('F:','repogit', 'X-seLLer-8', 'frontend', 'public', 'outputs', 'InventoryList.json');
 app.put('/inventory', (req, res) => {
     const updatedInventory = req.body;  // Expecting an array of updated inventory data
   
