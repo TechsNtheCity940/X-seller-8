@@ -1,0 +1,508 @@
+GIT Invoice
+Customer Name Customer PO
+Branch
+Toby Keiths
+Wwe
+Tradi
+FOK
+Delivery Date Quantity Invoice Total
+Email
+TEE TEN BRAND PACKISIZE PRICE ORDERED CONFIRMED STATUS
+NAME
+Mustard Yellow Upside Down Heinz
+Outof
+Beef Brisket Choice Sel Noroll Packer
+CATCH
+Outof
+Pasta Elbow Macaroni Bellacibo
+Filled
+Apton Distwashing Clear
+John Ritzerthaler Company EA
+Filled
+Pepper Red Crushed Mccormick
+Filled
+Garlic Granulated Gran Saor
+Filled
+Seasoning Blackened Red Fish Cajun Magic
+Filled
+Seasoning Salt No Msg Lawry
+Filled
+Seasoning Pork Dry Rub Allen Oliver Group
+Filled
+Breading Fish Fry Crispy Zatarain
+Filled
+Dressing Mix Original Ranch Hidden Valley
+Filled
+Mustard Grey Poupon Grey Poupon
+Filled
+Sauce Bbg Regular Head Country
+Fille
+Pepper Jalapeno Nacho Sliced Gran Saor
+Filled
+Sugar Granulated Ex Fine
+Lb Imperial Sugar
+Filled
+Mayonnaise Real Table Top Katt
+Filled
+Ketchup Upside Down Soz Bottle Heinz
+Filled
+Grav Mix Peppered Shawnee Mills
+Filled
+Potato Red
+A
+Packer
+Filled
+Potato Russet
+Gt
+Markon First Crop
+CTN
+Filled
+Onion Yellow Jumbo Markon Essentials
+Filled
+Mayonnaise Tub Gf Heavy Duty Keith
+Homestyle
+Filled
+Oil Pan
+Gril Trans Fat Free Ellington Farms
+Filled
+Shortening Clear Fry Liguid Keith
+Homestyle
+Filled
+Glove Nite Black XI PT Essentials
+CT
+Filled
+Glove Nite Black Ma Pr Essentials
+CT
+Filled
+Pick
+In Bamboo Knotted Handgards
+CT
+Filled
+Tray Food
+Savaday
+Savaday
+Filled
+Liner Trash
+Gal Black Essentials
+CT
+Filled
+Cont Foarm Higa
+Large White Dart
+CT
+Filled
+Label
+Prep
+Dura Daydots
+CT
+Filled
+Guest Check Green Paper National Checking
+CT
+Fille
+Tape Register Roll
+Ply National Checking
+Filled
+Cup Plas Soufle
+Black Solo Cup Corpany
+CT
+Filled
+Napkin Bev
+Ply Essentials
+CT
+Filled
+Meal Kit KF
+Nap S
+Hw Bik Wallace Packaging Lic
+CT
+Filled
+Lid Plas
+Trans Slotted Dart
+CT
+Fille
+Bag Plas T
+Jumbo Continental Poly
+CT
+Fille
+Cart Jumbo Us
+Markon First Crop
+BX
+Filled
+Cathiage Red Shredded Vinyard Frut
+Vegetable
+Fille
+Dressing Dijon Honey Mustard Golden Harvest
+Fille
+Sauce Tartar European Girard
+Filled
+Onion Green
+Markon Ready Set Serve
+Filled
+Juice Lime Fresh Squeezed Packer
+QUART
+Filled
+Garlic Whole Peeled Markon Ready Set Serve
+Filled
+Mushroom Sliced Tu Packer
+Filled
+Lettuce
+Prem Palletizd Markon First Crop
+CT
+Filled
+Lettuce Romaine
+Ct Markon First Crop
+CT
+Filled
+Lemon Choice
+Gt Markon Essentials
+Filled
+Tomato Grape Packer
+Filled
+Broccoli Floret Iceless Markon Ready Set Serve
+Filled
+Egg Hard Cooked Peeled Papetts
+Filled
+Torila Gom White
+Cut Super Lopez
+Filled
+Cheese American Loaf White Golden Harvest
+Fille
+Milk Homo Gallon Hiland Dairy
+Filled
+Butter Solid Salted Golden Harvest
+Filled
+Cheese Havart Plain Loaf Ostentiory
+Filled
+Cheese American Sliced
+Gt Golden Harvest
+Filled
+Cheese American Sliced White Schreiber
+Filled
+Milk Butermilk Whole Hiland Dairy
+GAL
+Filled
+Cheese Cheddar Jack Shred Reg Golden Harvest
+Filled
+Sour Cream All Natural Fresh From Keith
+Filled
+Egg Fresh Shell X Usda Aa Ellington Farms
+Filled
+Bologna All Meat Smithfield
+Filled
+Butter Blend Whipped Sated Land
+Lakes
+Filled
+Horseradish Era Hot Tulkoft
+Filled
+Pork Rib St Louis Duroc Creekstone Farms
+Filled
+Beef Patty
+Angus Wide Winn Meat
+Filled
+Chicken Breast Boz Butterfly Koch Foods
+Filled
+Chicken Wog Spit
+Lb Koch Foods
+Filled
+Bacon Layout
+Country Brand Bacon
+Fille
+Beef Top Sirloin Steak
+Ch Omaha Steak Co
+Filled
+Pork Butt Bane In Fresh Xt Praifie Fresh
+Filled
+Pork Loin Center Gut Bane In Clemens Food Group
+Filled
+Beef Riteye Lin On Down Choice Master Chef
+Filled
+Beef Riveye Lip On Sel Light Excel
+Filled
+French Fries Sc
+In Cavendish Farms
+Filed
+Bun Brioche
+Inch Turano Baking Company
+Filled
+Rol Hoagie White
+Inch La Baguette
+Filled
+Okra Cut Lightly Breaded Stiwel
+Filled
+Chicken Brst Fillet Crispy Bra Brakebush
+Filled
+Chicken Wing
+Joint OkFoods
+Filled
+Sausage Chub Breakfast Mild Kelley Foods Manufacturing
+Filled
+Sausage Black Oak Smoked Fzn Black Oak
+Filled
+Ship Breaded
+Ct Panko Golden Harvest
+Bek
+Filled
+Blueberry
+Markon First Crop
+Filled
+Dough Cookie Choe Chunk Sweet Street
+Filled
+Biscult Baked Butermilk Filshury
+Filled
+Beef Fries Breaded
+Osteen
+Filled
+Beer Steak Fiter
+Advance
+Filled
+Coke Classic Cube Pack Cota Cola
+Filled
+Soda Spite Cube Pack
+Filled
+Gombread Mix Jit
+Filled
+Internal Transfer
+Requistion From
+Venue Requesting
+Toby Keiths
+Liquors Prev
+Ordered Pars Price
+Ordered Total
+Signature Signature
+WHISKEY
+S
+TX Whiskey
+Gentleman Jack
+Jack Daniels
+Jack Daniels Honey
+Jack Daniels Apple
+Jack Daniels Fire
+Fireball
+Pendleton
+Seagram
+Screwball
+Southern Comfort
+Kentucky Dale
+BOURBON
+S
+Eagle Rare
+Basil Hayden
+Woodford Reserve
+Jim Bean
+Makers Mark
+Old Forester
+RYE WHISKEY
+S
+Knob Creek RYE
+Bulleit
+RYE
+IRISH WHISKEY
+Jameson Iris
+Jamison Orange
+Jamison Orange
+CANADIAN WHISKEY
+Crown
+Crown Apple
+Crown Peach
+Crown Vanilla
+Canadian Club
+Old Forester
+SCOTCH
+Macallen
+YR
+The Glenlivet
+YR
+Dewars White
+JW Black
+Chivas Regal
+YR
+VODKA
+Chopin
+Belvedere
+Finlandia
+Grey Goose
+Ketel One
+Stolichnaya
+Stolichnaya Vanilla
+Absolute Vodka
+Tito
+Deep Eddy
+Lemon
+Deep Eddy
+Ruby Red
+Deep Eddy
+Peach
+Taaka
+TEQUILA
+Clasa	Azul Anejo
+Clasa	Azul Reposado
+Clasa	Azul Plata
+Patron Silver
+Corralejo Anejo
+Corralejo Reposado
+Corralejo Blanco
+Herradura Silver
+Reposado
+Silver
+Jose Cuervo
+El Jimador
+El Jimador
+El Toro
+GIN
+Hedricks
+Tanqueray
+Bombay Sapphire
+Taaka
+RUM
+Myer
+Mark
+Captian Morgan
+Malibu
+Bacardi
+Barbarossa
+BRANDY
+COGNAC
+Hennessey VS
+Courvoisier VSOP
+Tuaca Itailian Brandy
+E
+J
+Pual Mason
+LIQUEUR
+S
+Disaronno
+Grand Marnier
+Cointreau
+Chambord
+Frangelico
+Campari
+Kahlua
+Jagermeister
+Midori
+Rum Chata
+Mr
+Boston Ameretto
+Mr
+Boston Blue Curacao
+Buttershots
+Mr
+Boston Melon
+Mr
+Boston Peach Schapps
+Mr
+Boston Sour Apple
+Dessert LIT
+Total
+Wines
+Champaigne	Prev
+Order Pars Price Ordered Total
+Signature Signature
+Korbel Mini Bottles
+House Wines
+Sutter Homes Cabernet
+Sutter Homes Merlot
+Sutter Homes	Chardonnay
+Sutter Homes Moscato
+Sutter Homes White Zin
+Sutter Homes Pinot Grig
+Top
+Wines
+Angeline CAB
+Angeline Chard
+Angeline Rose
+Vietti Moscato
+Total
+Internal Transfer
+Requistion From
+Venue Requesting
+Toby
+Keiths
+Date
+Product Name Prev
+Order Pars Price Ordered Total
+Signature Signature
+DOMESTIC BEER
+Bud Light
+Mich Ultra
+Coors Banquet
+Coors Light
+Miller Lite
+Budweiser Cans
+Budweiser Zero Cans
+IMPORT BEER	Pars
+Stella Cans
+Blue Moon
+Shocktop
+Dos Equis
+Modelo Especial
+Corona Extra
+Heineken
+Shiner
+Coop
+Coop Ice Chest
+Coop Horny Toad
+Guiness
+Estrella Jalisco
+Stella Cidar Bot
+Kegs Beer
+DOMESTIC BEER
+Budweiser Keg
+Bud Light Keg
+Michelob Keg
+IMPORT BEER	Pars
+Stella Keg
+Shocktop Keg
+Modelo Keg
+Total
+Commonly
+Misc
+Supplies
+NA BEV
+N
+A BEV	Pars
+Redbull
+Sugar Free Redbull
+Redbull Coconut
+Redbull Watermelon
+Redbull Blue
+Aquafina
+Employee Water
+Case
+Total
+Internal Transfer
+Requistion From
+Venue Requesting
+Date
+Beverage Supplies Ordered Prev
+Pars Price
+Ordered Total
+Signature Signature
+Cherries
+Olives
+Spicy Mango Monin
+Cranberry Juice
+Grapefruit Juice
+Orange Juice
+Pineapple Juice
+Tomato Juice
+Watermelon Syrup
+Grenadine
+Strawberry Syrup
+Peach Syrup
+Triple Sec
+Sweetend Lime Juice
+Ninas Pina Mix
+Zing Zang
+Sweet
+Sour
+Ninas Marg
+Ginger Beer
+Case
+Beverage Swords
+Case
+Thermal Paper
+Cases
+Tonic Water
+Rocks
+Case
+Bitters
+Orange Bitter
+Total

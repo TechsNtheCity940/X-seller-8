@@ -352,7 +352,7 @@ app.post('/api/chat', async (req, res) => {
     });
 
     const botResponse = completion.choices[0]?.message?.content;
-    if (!botResponse) return res.status(500).json({ error: 'No response from AI' });
+    if (!botResponse) return res.status(500).json({ error: 'No response from Lumin' });
 
     res.json({ content: botResponse });
   } catch (error) {

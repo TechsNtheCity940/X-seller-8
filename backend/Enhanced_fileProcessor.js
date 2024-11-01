@@ -98,7 +98,7 @@ const processExtractedFile = (inputFile, intermediateFile) => {
 };
 
 // Paths
-const inputPath = 'F:/repogit/X-seLLer-8/backend/uploads/RawTextExtract.txt';
+const inputPath = 'F:/repogit/X-seLLer-8/backend/uploads/StructuredTableData.txt';
 const intermediatePath = 'F:/repogit/X-seLLer-8/backend/uploads/StructuredData.json';
 const outputPath = 'F:/repogit/X-seLLer-8/frontend/public/outputs/InventoryList.json';
 
