@@ -24,7 +24,7 @@ function App() {
     if (activeTab === 'inventory') {
       async function fetchInventoryFile() {
         try {
-          const response = await fetch('http://localhost:5000/output/inventory.json');
+          const response = await fetch('http://localhost:5000/public/inventory.xlsx'); // Updated URL
           if (!response.ok) throw new Error('Failed to load inventory file');
           const data = await response.json();
           setInventoryData(data);
@@ -39,14 +39,6 @@ function App() {
       fetchInventoryFile();
     }
   }, [activeTab]);
-
-  // Handle file upload and update the inventory
-  const handleFileUpload = (parsedData) => {
-    setInvoices([...invoices, ...parsedData]);
-    updateInventory(parsedData);
-    updateCostTracking(parsedData);
-    toast.success('File uploaded successfully!');
-  };
 
   const updateInventory = (invoiceData) => {
     const updatedInventory = invoiceData.map(item => ({

@@ -13,9 +13,11 @@ const OpenAI = require('openai');
 const xlsx = require('xlsx');
 // Initialize the express app
 const app = express();
+
+app.use(cors({ origin: 'http://localhost:5173' }));  // Adjust the origin as needed
+
 app.use(cors());
 app.use(express.json());
-app.use(cors());
 
 const UPLOAD_FOLDER = ('D:/repogit/x-seller-8/frontend/public/uploads');
 const OUTPUT_FOLDER = ('D:/repogit/x-seller-8/frontend/public/output');  // Adjusted path for portability
@@ -146,29 +148,15 @@ async function saveDataToJSONFile(data, filename) {
 app.use('/public', express.static(path.join(__dirname, 'frontend/public/output')));
 
 // Route to serve JSON specifically if needed
-app.get('/output/inventory.json', (req, res) => {
-  const filePath = path.join(__dirname, 'frontend/public/output/inventory.xlsx');
+app.get('/output/inventory.xlsx', (req, res) => {
+  const filePath = path.join(OUTPUT_FOLDER, 'inventory.xlsx');
   if (fs.existsSync(filePath)) {
-    res.sendFile(filePath);
+      res.sendFile(filePath);
   } else {
-    res.status(404).send({ error: 'Inventory data file not found' });
-  }
-
-  try {
-    // Read the Excel file
-    const workbook = xlsx.readFile(excelPath);
-    const sheetName = workbook.SheetNames[0]; // Assuming data is in the first sheet
-    const worksheet = workbook.Sheets[sheetName];
-
-    // Convert sheet data to JSON
-    const jsonData = xlsx.utils.sheet_to_json(worksheet);
-
-    res.json(jsonData);
-  } catch (error) {
-    logger.error(`Error reading Excel file: ${error.message}`);
-    res.status(500).send({ error: 'Failed to process Excel file' });
+      res.status(404).send({ error: 'Inventory data file not found' });
   }
 });
+
   
 // Watch the output folder for new .txt files (optional)
 const watcher = chokidar.watch(OUTPUT_FOLDER, {
