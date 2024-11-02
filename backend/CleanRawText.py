@@ -92,11 +92,36 @@ def clean_text(input_file_path, output_file_path):
     """
     # Define irrelevant words to remove
     irrelevant_words = {
-        "Filled", "Customer", "Invoice", "Email", "Branch", "Name", "Total", "Prepared", "Misc", "Commonly",
-        "Date", "Sent", "Received", "Special", "Instructions", "Signature", "Prepared", "Pars", "Wines", "Ordered",
-        "Company", "Amount", "Notes", "Page", "OK", "TX", "Fille", "Osteen", "Advance", "bek", "Case", "Cases",
-        "Whiskey", "Toby", "Keiths", "Total", "Price", "Delivered", "Customer", "Total", "Liquors", "Vodka", "Gin",
-        "Champagne", "Prev"
+    "Filled", "Customer", "Invoice", "Email", "Branch", "Name", "Total", "Prepared", "Misc", "Commonly",
+    "Date", "Sent", "Received", "Special", "Instructions", "Signature", "Prepared", "Pars", "Wines", "Ordered",
+    "Company", "Amount", "Notes", "Page", "OK", "TX", "Fille", "Osteen", "Advance", "bek", "Case", "Cases",
+    "Whiskey", "Toby", "Keiths", "Total", "Price", "Delivered", "Customer", "Total", "Liquors", "Vodka", "Gin",
+    "Champagne", "Prev", "Environmental Charge", "Tax", "Single Units", "Pump", "Nozzies", "Mrns", "Wumsmal", "Swe", "Teacaos Bll",
+    "Rei", "Craoaii", "Ccoiaii", "Ccozomi", "Sper", "Basa", "Units", "State Local Charges", "Duel",
+    "Service Rep Braxton Evans", "Service Blue", "Los", "Tol", "Dora", "Tacoazelpasic", "Prt", "Basslc", "Tccopozi",
+    "Qty", "Credits", "Nei Full", "Container Deposits", "Sales Tax", "Product Charges", "Tax Chicago", "Ens Disp",
+    "Amin", "Veal", "Ses", "Cpe Shag", "Gaw", "Turonil Caesar", "Eppiopll Laks", "Mix", "Eaoe", "Lad", "Toa", "Mor",
+    "Rental Tax", "Tax Adj Sales Tax", "Aue", "Seo", "Gaiosail", "Vimees", "Fuioeas", "Iva", "Hbunn", "Lae Wipe",
+    "Tnz", "Tioeian", "Tizozazlunianp", "Lanpol", "Craig Stephens Preparer Craig Stephens Accounting", "Jes Bow",
+    "Sun", "Wika", "Full", "Toes", "Craosit", "Crossai", "Tig Tov", "Dee", "Baking Dish Taxable", "Platter Taxable",
+    "Sport Beer Mug Taxable", "Mixing Glass Taxable", "Dinner Fork Taxable", "All", "Tos", "Tales", "Croaazil",
+    "Wcommemip", "Des Pood", "Bol", "Wah", "Trac", "Rentaland", "Collins Glass Taxable", "Wir Bros", "Nee",
+    "Seer Pree", "Fuidea", "Cpaagzg Oza", "Fvioisd Put", "Toney", "Titeesales", "Gls", "Toro", "Deda Todi Sess",
+    "Tea", "Lave", "Lod", "Ecc", "Tot", "Sing", "Salt", "Jaf", "Tota Machine Charges Custorner", "Sales", "Sram",
+    "Amour", "Sta", "Asie", "Sion", "Crodsoal", "Wal", "Zien", "Ter", "Teeziio Hale", "Machine Charges", "Deposits",
+    "Please Remit Payments", "Joosoo", "Wernzo", "Sek", "Foam", "Ene", "Dea", "Inazia", "Rental Tax", "Tiseiod",
+    "Tie", "Rwn", "Coosssd Sol", "Fopized", "Bowneul", "Fooozzl", "Enver", "Lapibl", "Fvioaoe Jasos", "Sok",
+    "Charges Due", "Receipt", "Aol Pos Fae", "Pump Pume", "Sem", "Dvisagi Sasa", "Yeh Qaim", "Box", "Sus", "Tey",
+    "Wag Str Gal", "Comainer Deposits", "Rinse", "Disp", "Craoaai Gade", "Bal", "Boll", "Slow", "Coord", "Bay",
+    "Jab", "Pee", "Funnel", "Taw", "Sah Nig", "Bais", "Fiie", "Charges", "Web", "Lit", "Raw", "Dvigasi", "Tim",
+    "Fwizaza", "Muowr", "Shelf Taxable", "Post Taxable", "Sah", "Eos Ptr", "Isis", "Cal", "Soogenl Ero",
+    "Units", "Remittance Suite", "Dominic", "Sher", "Account Balance", "Liu", "Ewr", "Environmental", "Charge",
+    "Environmental Charge", "Teacaos Bll", "Service Rep Braxton Evans", "Service Blue", "Environmental Charge", "Turonil Caesar",
+    "Eppiopll Laks", "Environmental Charge", "Lae Wipe", "Jes Bow", "Baking Dish Taxable", "Platter Taxable", "Platter Taxable",
+    "Sport Beer Mug Taxable", "Mixing Glass Taxable", "Dinner Fork Taxable", "Des Pood", "Environmental Charge", "Collins Glass Taxable", "Seer Pree",
+    "Cpaagzg Oza", "Fvioisd Put", "Deda Todi Sess", "Environmental Charge", "Teeziio Hale", "Please Remit Payments", "Environmental Charge", "Coosssd Sol",
+    "Fvioaoe Jasos", "Aol Pos Fae", "Dvisagi Sasa", "Yeh Qaim", "Environmental Charge", "Craoaai Gade", "Wel", "Environmental Charge", "Environmental Charge",
+    "Shelf Taxable", "Post Taxable", "Eos Ptr", "Environmental Charge", "Remittance Suite"
     }
         # Read the input text
     with open(input_file_path, 'r') as file:
@@ -125,11 +150,11 @@ def clean_text(input_file_path, output_file_path):
         # Recombine cleaned words into a line if it has valid content
         if cleaned_words:
             cleaned_lines.append(" ".join(cleaned_words))
-    
+                
     # Write the cleaned content to the output file
     with open(output_file_path, 'w') as output_file:
         for line in cleaned_lines:
-            output_file.write(line + '\n')
+            output_file.write(line + '\n')  
 
     print(f"Text cleaned and saved to {output_file_path}")
 # Example usage

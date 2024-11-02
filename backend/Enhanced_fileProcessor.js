@@ -1,42 +1,42 @@
 const fs = require('fs');
 const path = require('path');
 
-// Function to extract item name, price, and quantity
+// Function to extract item name, price, ordered, and delivered amounts
 function parseLine(line) {
-  // Regular expression for matching numeric and text sections
-  const numberPattern = /\b\d+(\.\d{2})?\b/g;  // Matches whole numbers and decimal prices
-  const wordPattern = /[A-Za-z\s\-'()]+/;      // Matches item names between numbers
+    // Regular expressions
+    const numberPattern = /\b\d+(\.\d{2})?\b/g; // Matches whole numbers and decimal prices
+    const itemNamePattern = /\b[A-Z][a-z]+\b(?:\s[A-Z][a-z]+)*\b/g; // Matches capitalized words
 
-  // Split the line into segments using numbers as boundaries
-  const segments = line.split(numberPattern).filter(segment => segment && segment.trim() !== '');
+    // Extract numbers and item names from the line
+    const numbers = line.match(numberPattern);
+    const itemNames = line.match(itemNamePattern);
 
-  // Extract numbers from the line to check positions
-  const numbers = line.match(numberPattern);
+    if (!numbers || !itemNames) {
+        return null; // Return null if no valid data found
+    }
 
-  // Item name should be the first non-empty text between numeric sections
-  let itemName = '';
-  if (segments.length > 0 && segments[0]) {
-      itemName = segments[0].trim();
-  } else {
-      return null; // Return null if no valid segments found
-  }
+    // Ensure the price format is either $XX.XX or $X.XX
+    const price = numbers.find(num => /^\d{1,2}\.\d{2}$/.test(num));
+    const formattedPrice = price ? parseFloat(price).toFixed(2) : null;
 
-  // Extract price (usually the first number matching the format 12.34)
-  const priceMatch = numbers ? numbers.find(num => num.includes('.')) : null;
-  const price = priceMatch ? parseFloat(priceMatch) : null;
+    // The last two numbers should be 'ordered' and 'delivered'
+    const ordered = parseInt(numbers[numbers.length - 2], 10);
+    const delivered = parseInt(numbers[numbers.length - 1], 10);
 
-  // Extract the last number as quantity (if reasonable)
-  const quantity = numbers && numbers.length > 1 ? parseInt(numbers[numbers.length - 1], 10) : null;
+    // Handle "out of stock" case where delivered quantity should be zero
+    const isOutOfStock = line.toLowerCase().includes('out of stock');
+    const finalDelivered = isOutOfStock ? 0 : delivered;
 
-  // Validate that we have extracted the necessary fields
-  if (itemName && price !== null && quantity !== null) {
-      return {
-          itemName,
-          price,
-          quantity,
-      };
-  }
-  return null; // Return null if parsing fails
+    if (itemNames && formattedPrice && !isNaN(ordered) && !isNaN(finalDelivered)) {
+        return {
+            itemName: itemNames.join(' '),
+            price: `$${formattedPrice}`,
+            ordered,
+            delivered: finalDelivered,
+        };
+    }
+
+    return null; // Return null if parsing fails
 }
 
 // Main function to process the input file and create structured output
@@ -57,7 +57,7 @@ function processRawText(inputFilePath, outputFilePath) {
 
         // Write structured data to the output file
         const outputLines = structuredData.map(data => 
-            `${data.itemName}\t${data.price.toFixed(2)}\t${data.quantity}`
+            `${data.itemName}\t${data.price}\t${data.ordered}\t${data.delivered}`
         ).join('\n');
         fs.writeFileSync(outputFilePath, outputLines, 'utf-8');
 
@@ -67,7 +67,6 @@ function processRawText(inputFilePath, outputFilePath) {
     }
 }
 
-// Paths to input and output files 
 // Paths to input and output files
 const inputFilePath = path.resolve(__dirname, 'D:/repogit/X-seLLer-8/backend/uploads/RawTextExtract.txt');
 const outputFilePath = path.resolve(__dirname, 'D:/repogit/X-seLLer-8/backend/uploads/StructuredTableData.txt');
