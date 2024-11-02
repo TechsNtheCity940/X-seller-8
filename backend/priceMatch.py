@@ -63,7 +63,7 @@ def main():
     phrases_file = r"D:/repogit/X-seller-8/backend/uploads/CleanedCapitalizedPhrases.txt"
     prices_file = r'D:/repogit/X-seller-8/backend/uploads/ExtractedPrices.txt'
     structured_file = r'D:/repogit/X-seller-8/backend/uploads/StructuredTableData.txt'
-    output_excel = r'D:/repogit/X-seller-8/backend/outputMatchedItemPrices_Enhanced.xlsx'
+    output_excel = r'D:/repogit/X-seller-8/frontend/public/output/Inventory.xlsx'
 
     # Load data from files
     item_names = load_file_lines(phrases_file)

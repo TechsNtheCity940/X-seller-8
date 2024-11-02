@@ -24,7 +24,7 @@ function App() {
     if (activeTab === 'inventory') {
       async function fetchInventoryFile() {
         try {
-          const response = await fetch('F:/repogit/X-seller-8/frontend/public/output/inventory.json');
+          const response = await fetch('http://localhost:5000/output/inventory.json');
           if (!response.ok) throw new Error('Failed to load inventory file');
           const data = await response.json();
           setInventoryData(data);
@@ -102,11 +102,6 @@ function App() {
             <Forecasting sales={sales} />
           </ErrorBoundary>
         )}
-        {activeTab === 'chat' && (
-          <ErrorBoundary>
-            <Chatbot />
-          </ErrorBoundary>
-        )}
       </div>
     );
   };
@@ -131,14 +126,15 @@ function App() {
           <button className={activeTab === 'forecasting' ? 'active' : ''} onClick={() => setActiveTab('forecasting')}>
             Forecasting
           </button>
-          <button className={activeTab === 'chat' ? 'active' : ''} onClick={() => setActiveTab('chat')}>
-            AI Chat
-          </button>
         </nav>
       </aside>
       <main className="content-area">
         {renderContent()}
       </main>
+      {/* Persistent chatbox component */}
+      <div className="chatbox-wrapper">
+        <Chatbot />
+      </div>
       
       <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} closeOnClick pauseOnHover draggable />
     </div>

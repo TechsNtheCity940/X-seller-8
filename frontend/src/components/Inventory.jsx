@@ -18,19 +18,23 @@ const Inventory = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchInventoryData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/inventory');
-        if (!response.ok) throw new Error('Failed to fetch inventory data');
+        const response = await fetch('http://localhost:5000/output/inventory.json');
+        if (!response.ok) {
+          throw new Error('Failed to fetch inventory data');
+        }
         const data = await response.json();
         setRows(data.map((item, index) => ({ id: index + 1, ...item })));
       } catch (error) {
+        console.error('Error loading inventory data:', error);
         setError('Failed to load inventory data');
       } finally {
         setLoading(false);
       }
-    }
-    fetchData();
+    };
+  
+    fetchInventoryData();
   }, []);
 
   const handleRowsChange = (updatedRows) => {
@@ -44,27 +48,15 @@ const Inventory = () => {
       status: row.status,
     }));
 
-    fetch('http://localhost:5000/inventory', {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(updatedData),
-    }).catch(error => {
-      console.error('Error updating inventory:', error);
-      setError('Failed to update inventory');
-    });
-  };
-
   if (loading) return <div>Loading inventory data...</div>;
   if (error) return <div className="error">{error}</div>;
 
   return (
     <div className="inventory">
       <h2>Inventory Data</h2>
-      <DataGrid columns={columns} rows={rows} onRowsChange={handleRowsChange} />
+      <DataGrid columns={columns} rows={rows} />
     </div>
   );
-};
+};}
 
 export default Inventory;

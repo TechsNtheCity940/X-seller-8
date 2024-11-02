@@ -145,6 +145,15 @@ body {
 }
 
 /* Chatbox styling */
+/* Chatbox wrapper to position it in the corner */
+.chatbox-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  z-index: 10; /* Ensure it's above most UI elements */
+}
+
 .chatbox-container {
   margin: 20px auto;
   width: 90%;

@@ -10,6 +10,7 @@ const { parse } = require('json2csv'); // Importing the json2csv library for CSV
 const mime = require('mime-types');
 const winston = require('winston');  // Advanced logging library
 const OpenAI = require('openai');
+const xlsx = require('xlsx');
 // Initialize the express app
 const app = express();
 app.use(cors());
@@ -17,7 +18,7 @@ app.use(express.json());
 app.use(cors());
 
 const UPLOAD_FOLDER = ('D:/repogit/x-seller-8/frontend/public/uploads');
-const OUTPUT_FOLDER = ('D:/repogit/x-seller-8/frontend/public/outputs');  // Adjusted path for portability
+const OUTPUT_FOLDER = ('D:/repogit/x-seller-8/frontend/public/output');  // Adjusted path for portability
 const ARCHIVE_FOLDER = path.join(OUTPUT_FOLDER, 'archive');
 const JSON_FILE = path.join(OUTPUT_FOLDER, 'inventory_data.json');
 
@@ -64,56 +65,68 @@ app.use((err, req, res, next) => {
 // Set up multer for file upload handling
 const upload = multer({ dest: UPLOAD_FOLDER });
 
-app.post('/upload', upload.single('file'), (req, res) => {
+app.post('/process', upload.single('file'), (req, res) => {
+  if (!req.file) {
+    logger.error('No file uploaded.');
+    return res.status(400).send('No file uploaded.');
+  }
+
   const filePath = path.resolve(__dirname, req.file.path);
-  const outputFolder = path.resolve(__dirname, 'output');
-  
-  // Step 1: Run pdfConversion.py
-  execFile('python', ['pdfConversion.py', filePath, outputFolder], (err, stdout, stderr) => {
+
+  logger.info('Starting processing chain...');
+  // Step 1: Run pdfProcessor.py
+  execFile('python', ['pdfProcessor.py', filePath, OUTPUT_FOLDER], (err, stdout, stderr) => {
+    if (err) {
+      logger.error(`Error in pdfProcessor.py: ${stderr}`);
+      return res.status(500).send('Error in PDF processing.');
+    }
+    logger.info('pdfProcessor.py completed successfully.');
+
+    // Step 2: Run fileProcessor.js
+    execFile('node', ['fileProcessor.js', OUTPUT_FOLDER], (err, stdout, stderr) => {
       if (err) {
-          console.error(`Error in pdfConversion.py: ${stderr}`);
-          return res.status(500).send('Error in PDF conversion.');
+        logger.error(`Error in fileProcessor.js: ${stderr}`);
+        return res.status(500).send('Error in file processing.');
       }
-      console.log(stdout);
-      
-      // Step 2: Run fileProcessor.js
-      execFile('node', ['fileProcessor.js', outputFolder], (err, stdout, stderr) => {
+      logger.info('fileProcessor.js completed successfully.');
+
+      // Step 3: Run Enhanced_fileProcessor.js
+      execFile('node', ['Enhanced_fileProcessor.js', OUTPUT_FOLDER], (err, stdout, stderr) => {
+        if (err) {
+          logger.error(`Error in Enhanced_fileProcessor.js: ${stderr}`);
+          return res.status(500).send('Error in enhanced file processing.');
+        }
+        logger.info('Enhanced_fileProcessor.js completed successfully.');
+
+        // Step 4: Run App.py
+        execFile('python', ['App.py', path.join(OUTPUT_FOLDER, 'RawTextExtract.txt')], (err, stdout, stderr) => {
           if (err) {
-              console.error(`Error in fileProcessor.js: ${stderr}`);
-              return res.status(500).send('Error in file processing.');
+            logger.error(`Error in App.py: ${stderr}`);
+            return res.status(500).send('Error in parsing App.py.');
           }
-          console.log(stdout);
+          logger.info('App.py completed successfully.');
 
-          // Step 3: Run Enhanced_fileProcessor.js
-          execFile('node', ['Enhanced_fileProcessor.js', outputFolder], (err, stdout, stderr) => {
+          // Step 5: Run CleanRawText.py
+          execFile('python', ['CleanRawText.py', path.join(OUTPUT_FOLDER, 'CapitalizedPhrases.txt')], (err, stdout, stderr) => {
+            if (err) {
+              logger.error(`Error in CleanRawText.py: ${stderr}`);
+              return res.status(500).send('Error in cleaning raw text.');
+            }
+            logger.info('CleanRawText.py completed successfully.');
+
+            // Step 6: Run priceMatch.py
+            execFile('python', ['priceMatch.py'], (err, stdout, stderr) => {
               if (err) {
-                  console.error(`Error in Enhanced_fileProcessor.js: ${stderr}`);
-                  return res.status(500).send('Error in enhanced file processing.');
+                logger.error(`Error in priceMatch.py: ${stderr}`);
+                return res.status(500).send('Error in price matching.');
               }
-              console.log(stdout);
-
-              // Step 4: Run App.py
-              execFile('python', ['App.py', path.join(outputFolder, 'RawTextExtract.txt')], (err, stdout, stderr) => {
-                  if (err) {
-                      console.error(`Error in App.py: ${stderr}`);
-                      return res.status(500).send('Error in App processing.');
-                  }
-                  console.log(stdout);
-
-                  // Step 5: Run CleanRawText.py
-                  execFile('python', ['CleanRawText.py', path.join(outputFolder, 'CapitalizedPhrases.txt')], (err, stdout, stderr) => {
-                      if (err) {
-                          console.error(`Error in CleanRawText.py: ${stderr}`);
-                          return res.status(500).send('Error in text cleaning.');
-                      }
-                      console.log(stdout);
-
-                      // All steps completed successfully
-                      res.send({ message: 'File processed successfully!' });
-                  });
-              });
+              logger.info('priceMatch.py completed successfully.');
+              res.send({ message: 'File processed and Excel generated successfully!', excelPath: EXCEL_FILE });
+            });
           });
+        });
       });
+    });
   });
 });
 
@@ -129,86 +142,33 @@ async function saveDataToJSONFile(data, filename) {
     }
 }
 
-// Path to your inventory data file
-const inventoryFile = path.join('D:','repogit', 'X-seLLer-8', 'frontend', 'public', 'outputs', 'InventoryList.json');
-app.put('/inventory', (req, res) => {
-    const updatedInventory = req.body;  // Expecting an array of updated inventory data
-  
-    // Save the updated data to your database or in-memory storage here
-   
-    database.saveInventory(updatedInventory);
-  
-    res.json({ success: true, message: 'Inventory updated successfully' });
-  });
-// API route to get inventory data
-app.get('/inventory', (req, res) => {
-    if (!fs.existsSync(inventoryFile)) {
-      logger.error(`Inventory data file not found: ${inventoryFile}`);
-      return res.status(404).json({ error: 'Inventory data file not found' });
-    }
-  
-    fs.readFile(inventoryFile, 'utf8', (err, data) => {
-      if (err) {
-        logger.error(`Error reading inventory data: ${err.message}`);
-        return res.status(500).json({ error: 'Failed to load inventory data' });
-      }
-  
-      try {
-        const jsonData = JSON.parse(data);
-        res.json(jsonData);
-      } catch (parseError) {
-        logger.error(`Error parsing inventory data: ${parseError.message}`);
-        res.status(500).json({ error: 'Invalid JSON format in inventory file' });
-      }
-    });
-  });
+// Serve static files in the public folder
+app.use('/public', express.static(path.join(__dirname, 'frontend/public/output')));
 
-// Function to update inventory with new invoice data
-function updateInventory(newData) {
-    try {
-      const inventory = JSON.parse(fs.readFileSync(inventoryFile, 'utf-8'));
-  
-      // Ensure the inventory is an array
-      if (!Array.isArray(inventory)) {
-        throw new Error('Inventory data is not an array');
-      }
-  
-      // Ensure newData is an array
-      const dataArray = Array.isArray(newData) ? newData : [newData];
-  
-      dataArray.forEach(item => {
-        const existingItem = inventory.find(invItem => invItem['ITEM#'] === item['ITEM#']);
-  
-        if (existingItem) {
-          // Update the existing item with new data
-          if (!existingItem.priceHistory) {
-            existingItem.priceHistory = [];
-          }
-          existingItem.priceHistory.push({
-            price: existingItem.PRICE,
-            date: existingItem.lastUpdated,
-          });
-  
-          existingItem.PRICE = item.PRICE;
-          existingItem.ORDERED = item.ORDERED;
-          existingItem.STATUS = item.STATUS;
-          existingItem.lastUpdated = new Date().toISOString();
-        } else {
-          // Add the new item to the inventory
-          item.priceHistory = [];
-          item.lastUpdated = new Date().toISOString();
-          inventory.push(item);
-        }
-      });
-  
-      // Save the updated inventory back to the file
-      fs.writeFileSync(inventoryFile, JSON.stringify(inventory, null, 2), 'utf-8');
-      logger.info('Inventory updated successfully.');
-    } catch (error) {
-      logger.error(`Failed to update inventory: ${error.message}`);
-      throw error;
-    }
+// Route to serve JSON specifically if needed
+app.get('/output/inventory.json', (req, res) => {
+  const filePath = path.join(__dirname, 'frontend/public/output/inventory.xlsx');
+  if (fs.existsSync(filePath)) {
+    res.sendFile(filePath);
+  } else {
+    res.status(404).send({ error: 'Inventory data file not found' });
   }
+
+  try {
+    // Read the Excel file
+    const workbook = xlsx.readFile(excelPath);
+    const sheetName = workbook.SheetNames[0]; // Assuming data is in the first sheet
+    const worksheet = workbook.Sheets[sheetName];
+
+    // Convert sheet data to JSON
+    const jsonData = xlsx.utils.sheet_to_json(worksheet);
+
+    res.json(jsonData);
+  } catch (error) {
+    logger.error(`Error reading Excel file: ${error.message}`);
+    res.status(500).send({ error: 'Failed to process Excel file' });
+  }
+});
   
 // Watch the output folder for new .txt files (optional)
 const watcher = chokidar.watch(OUTPUT_FOLDER, {
@@ -262,7 +222,7 @@ app.post('/api/chat', async (req, res) => {
     res.json({ content: botResponse });
   } catch (error) {
     console.error('Error with OpenAI API:', error);
-    res.status(500).json({ error: 'Failed to get response from AI' });
+    res.status(500).json({ error: 'Failed to get response from Lumin' });
   }
 });
 

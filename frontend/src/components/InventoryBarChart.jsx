@@ -8,15 +8,20 @@ function InventoryBarChart() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    async function fetchInventoryData() {
+    const fetchInventoryData = async () => {
       try {
-        const response = await fetch("F:/repogit/X-seller-8/frontend/public/output/inventory.json");
-        const inventoryData = await response.json();
-        setData(inventoryData);
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/output/Inventory.xlsx`);
+        if (!response.ok) {
+          throw new Error('Failed to load inventory data');
+        }
+        const data = await response.json();
+        setInventoryData(data);
       } catch (error) {
-        console.error("Error loading inventory data:", error);
+        console.error('Error loading inventory data:', error);
+        setErrorMsg('Failed to load inventory data');
       }
-    }
+    };
+  
     fetchInventoryData();
   }, []);
 
