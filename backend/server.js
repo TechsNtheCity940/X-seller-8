@@ -147,16 +147,21 @@ async function saveDataToJSONFile(data, filename) {
 // Serve static files in the public folder
 app.use('/public', express.static(path.join(__dirname, 'frontend/public/output')));
 
-// Route to serve JSON specifically if needed
-app.get('/output/inventory.xlsx', (req, res) => {
-  const filePath = path.join(OUTPUT_FOLDER, 'inventory.xlsx');
-  if (fs.existsSync(filePath)) {
-      res.sendFile(filePath);
-  } else {
-      res.status(404).send({ error: 'Inventory data file not found' });
+app.get('/output/inventory.json', (req, res) => {
+  try {
+    const filePath = path.join(__dirname, 'frontend/public/output/inventory.xlsx');
+    if (fs.existsSync(filePath)) {
+      return res.sendFile(filePath);
+    } else {
+      return res.status(404).send({ error: 'Inventory data file not found' });
+    }
+  } catch (error) {
+    logger.error(`Error reading Excel file: ${error.message}`);
+    if (!res.headersSent) {
+      return res.status(500).send({ error: 'Failed to process Excel file' });
+    }
   }
 });
-
   
 // Watch the output folder for new .txt files (optional)
 const watcher = chokidar.watch(OUTPUT_FOLDER, {
