@@ -16,8 +16,8 @@ app.use(cors());
 app.use(express.json());
 app.use(cors());
 
-const UPLOAD_FOLDER = ('F:/repogit/x-seller-8/frontend/public/uploads');
-const OUTPUT_FOLDER = ('F:/repogit/x-seller-8/frontend/public/output');  // Adjusted path for portability
+const UPLOAD_FOLDER = ('D:/repogit/x-seller-8/frontend/public/uploads');
+const OUTPUT_FOLDER = ('D:/repogit/x-seller-8/frontend/public/outputs');  // Adjusted path for portability
 const ARCHIVE_FOLDER = path.join(OUTPUT_FOLDER, 'archive');
 const JSON_FILE = path.join(OUTPUT_FOLDER, 'inventory_data.json');
 
@@ -64,154 +64,59 @@ app.use((err, req, res, next) => {
 // Set up multer for file upload handling
 const upload = multer({ dest: UPLOAD_FOLDER });
 
-// Route to handle file upload and text extraction using app.py
-app.post('/process', upload.single('file'), async (req, res) => {
-  const file = req.file;
-  const file_path = path.join(UPLOAD_FOLDER, file.filename);
-  const fileType = mime.lookup(file.originalname);
-  const baseFilename = path.parse(file.originalname).name; // Get the base name without extension
-  if (!fileType || !fileType.startsWith('image/')) {
-      logger.error(`Uploaded file ${file.originalname} is not a valid image`);
-      return res.status(400).json({ error: 'Uploaded file is not a valid image' });
-  }
-
-  try {
-      // Run the Python script (app.py) to extract text
-      const pythonProcess = spawn('python', [path.join(__dirname, 'app.py'), file_path]);
-
-      let scriptOutput = '';
-      pythonProcess.stdout.on('data', (data) => {
-          scriptOutput += data.toString();
-      });
-
-      pythonProcess.stderr.on('data', (data) => {
-          logger.error(`Python script error: ${data}`);
-      });
-
-      pythonProcess.on('close', async (code) => {
-          if (code !== 0) {
-              logger.error(`Python script exited with code ${code}`);
-              return res.status(500).json({ error: 'Failed to process the file' });
+app.post('/upload', upload.single('file'), (req, res) => {
+  const filePath = path.resolve(__dirname, req.file.path);
+  const outputFolder = path.resolve(__dirname, 'output');
+  
+  // Step 1: Run pdfConversion.py
+  execFile('python', ['pdfConversion.py', filePath, outputFolder], (err, stdout, stderr) => {
+      if (err) {
+          console.error(`Error in pdfConversion.py: ${stderr}`);
+          return res.status(500).send('Error in PDF conversion.');
+      }
+      console.log(stdout);
+      
+      // Step 2: Run fileProcessor.js
+      execFile('node', ['fileProcessor.js', outputFolder], (err, stdout, stderr) => {
+          if (err) {
+              console.error(`Error in fileProcessor.js: ${stderr}`);
+              return res.status(500).send('Error in file processing.');
           }
+          console.log(stdout);
 
-          try {
-              // Parse the script output as JSON
-              const jsonData = JSON.parse(scriptOutput);
-              logger.info(`Extracted data from app.py: ${JSON.stringify(jsonData)}`);
+          // Step 3: Run Enhanced_fileProcessor.js
+          execFile('node', ['Enhanced_fileProcessor.js', outputFolder], (err, stdout, stderr) => {
+              if (err) {
+                  console.error(`Error in Enhanced_fileProcessor.js: ${stderr}`);
+                  return res.status(500).send('Error in enhanced file processing.');
+              }
+              console.log(stdout);
 
-              // Generate the filenames for each format
-              const txtFilePath = path.join(OUTPUT_FOLDER, `${baseFilename}.txt`);
-              const jsonFilePath = path.join(OUTPUT_FOLDER, `${baseFilename}.json`);
-              const csvFilePath = path.join(OUTPUT_FOLDER, `${baseFilename}.csv`);
-
-              // Save data in .txt format
-              await fs.promises.writeFile(txtFilePath, scriptOutput, 'utf8');
-              logger.info(`Data saved as .txt file: ${txtFilePath}`);
-
-              // Save data in .json format
-              await fs.promises.writeFile(jsonFilePath, JSON.stringify(jsonData, null, 2), 'utf8');
-              logger.info(`Data saved as .json file: ${jsonFilePath}`);
-
-              // Convert JSON to CSV and save it
-              const csvData = parse(jsonData);
-              await fs.promises.writeFile(csvFilePath, csvData, 'utf8');
-              logger.info(`Data saved as .csv file: ${csvFilePath}`);
-
-              // Cleanup: Delete the uploaded file after processing
-              fs.unlinkSync(file_path);
-              logger.info(`File ${file.originalname} successfully processed and deleted.`);
-
-              res.status(200).json({ 
-                  message: 'Data processed successfully',
-                  files: {
-                      txt: txtFilePath,
-                      json: jsonFilePath,
-                      csv: csvFilePath
+              // Step 4: Run App.py
+              execFile('python', ['App.py', path.join(outputFolder, 'RawTextExtract.txt')], (err, stdout, stderr) => {
+                  if (err) {
+                      console.error(`Error in App.py: ${stderr}`);
+                      return res.status(500).send('Error in App processing.');
                   }
+                  console.log(stdout);
+
+                  // Step 5: Run CleanRawText.py
+                  execFile('python', ['CleanRawText.py', path.join(outputFolder, 'CapitalizedPhrases.txt')], (err, stdout, stderr) => {
+                      if (err) {
+                          console.error(`Error in CleanRawText.py: ${stderr}`);
+                          return res.status(500).send('Error in text cleaning.');
+                      }
+                      console.log(stdout);
+
+                      // All steps completed successfully
+                      res.send({ message: 'File processed successfully!' });
+                  });
               });
-          } catch (parseError) {
-              logger.error(`Failed to parse output from app.py: ${parseError}`);
-              res.status(500).json({ error: 'Invalid output format from Python script' });
-          }
+          });
       });
-  } catch (error) {
-      logger.error(`Error during file processing for ${file.originalname}: ${error}`);
-      res.status(500).json({ error: error.toString() });
-  }
+  });
 });
 
-// Helper function for OCR extraction using Tesseract
-async function extractText(file_path) {
-  try {
-      const { data: { text } } = await tesseract.recognize(file_path);
-      return text;
-  } catch (error) {
-      logger.error(`OCR extraction failed for file ${file_path}: ${error}`);
-      throw error;
-  }
-}
-
-function mapTextToJSON(extracted_text) {
-    const lines = extracted_text.split('\n').map(line => line.trim());
-    const jsonData = {lines};
-    let currentItem = {};  // To store the current item being processed
-    let currentItemNumber = '';  // Store item number to associate with additional data
-
-    console.log("Processing lines from extracted text...");
-
-    // Regular expression patterns
-    const itemNumberPattern = /^[A-Za-z0-9]+$/;
-    const numericPattern = /^[0-9]+(\.[0-9]+)?$/;
-
-    lines.forEach((line, index) => {
-        // Skip empty lines or irrelevant lines
-        if (!line || line.match(/Invoice|Customer|Delivery|pieces|Email|Branch|NAME/i)) {
-            console.log(`Skipping line due to irrelevant content: "${line}"`);
-            return;
-        }
-
-        const match = line.split(/\s{2,}|\t+/);  // Split by multiple spaces or tabs
-
-        // Check if the line might contain product data
-        if (match.length >= 1) {
-            // Check if first element looks like an item number
-            const itemNumber = match[0] && itemNumberPattern.test(match[0]) ? match[0].trim() : null;
-
-            if (itemNumber) {
-                // If it's a valid item number, process the product data
-                const itemName = match.slice(1, match.length - 4).join(' ').trim();  // Capture everything until pack size
-                const packSize = match[match.length - 4] ? match[match.length - 4].trim() : 'Unknown';
-                const price = match[match.length - 3] ? parseFloat(match[match.length - 3].replace('$', '').trim()) || 0 : 0;
-                const ordered = match[match.length - 2] ? parseInt(match[match.length - 2].trim()) || 0 : 0;
-                const status = match[match.length - 1] ? match[match.length - 1].trim() : 'Unknown';
-
-                // Construct the current item object
-                currentItem = {
-                    'ITEM#': itemNumber,
-                    'ITEM NAME': itemName,
-                    'PACKSIZE': packSize,
-                    'PRICE': price,
-                    'ORDERED': ordered,
-                    'STATUS': status,
-                };
-
-                currentItemNumber = itemNumber;  // Store the item number for future use
-                jsonData[itemNumber] = currentItem;  // Save the item into JSON
-
-                console.log(`Processed item: ${JSON.stringify(currentItem)}`);
-            }
-        } else if (line.match(/per case|per pound/i) && currentItemNumber) {
-            // Append additional details like "per case" or "per pound" to the previous item's pack size
-            jsonData[currentItemNumber]['PACKSIZE'] += ' ' + line.trim();
-            console.log(`Appended additional info to ${currentItemNumber}: ${line.trim()}`);
-        } else {
-            console.log(`Skipping line due to insufficient data: "${line}"`);
-        }
-    });
-
-    console.log('Final JSON Data:', jsonData);
-    return jsonData;
-}
 // Function to save data to JSON file
 async function saveDataToJSONFile(data, filename) {
     try {
@@ -225,7 +130,7 @@ async function saveDataToJSONFile(data, filename) {
 }
 
 // Path to your inventory data file
-const inventoryFile = path.join('F:','repogit', 'X-seLLer-8', 'frontend', 'public', 'outputs', 'InventoryList.json');
+const inventoryFile = path.join('D:','repogit', 'X-seLLer-8', 'frontend', 'public', 'outputs', 'InventoryList.json');
 app.put('/inventory', (req, res) => {
     const updatedInventory = req.body;  // Expecting an array of updated inventory data
   

@@ -1,0 +1,1796 @@
+[
+  {
+    "NAME": ""
+  },
+  {
+    "NAME": "Returned/Credit"
+  },
+  {
+    "NAME": ""
+  },
+  {
+    "NAME": ""
+  },
+  {
+    "NAME": "y"
+  },
+  {
+    "NAME": ""
+  },
+  {
+    "NAME": ""
+  },
+  {
+    "THE": "Delivery",
+    "LINEN": "Reorder",
+    "COMPANY": "Actual",
+    "JRZECES": "Amount"
+  },
+  {
+    "THE": "Environmental",
+    "LINEN": "Charge",
+    "COMPANY": "0",
+    "JRZECES": "8.00"
+  },
+  {
+    "THE": "SERVICE",
+    "LINEN": "CHARGE",
+    "COMPANY": "0",
+    "JRZECES": "21.93"
+  },
+  {
+    "THE": "Netad)",
+    "LINEN": "[|",
+    "COMPANY": "|",
+    "JRZECES": "e——"
+  },
+  {
+    "THE": "—————————————————",
+    "LINEN": "—————",
+    "COMPANY": "BE",
+    "JRZECES": "—————"
+  },
+  {
+    "THE": "TERMS:",
+    "LINEN": "Charge",
+    "COMPANY": "achine",
+    "JRZECES": "Charges"
+  },
+  {
+    "THE": "Pepsi-Cola",
+    "LINEN": "Sales",
+    "COMPANY": "Total",
+    "JRZECES": "$"
+  },
+  {
+    "EEE": "0-54900-71054-5",
+    "EE": "POS"
+  },
+  {
+    "EEE": ":",
+    "EE": ":"
+  },
+  {
+    "EEE": "ROUTE/STOP.",
+    "EE": "REPRESENTATIVE"
+  },
+  {
+    "EA": ""
+  },
+  {
+    "EA": "1"
+  },
+  {
+    "EA": ""
+  },
+  {
+    "EA": ""
+  },
+  {
+    "EA": "\""
+  },
+  {
+    "EA": ""
+  },
+  {
+    "EA": ""
+  },
+  {
+    "EA": ""
+  },
+  {
+    "EA": "0]"
+  },
+  {
+    "EA": ""
+  },
+  {
+    "LJ": "ste",
+    "I": "nen",
+    "L": "TER",
+    "BRN": "EN",
+    "ERS": "REE",
+    "LLU": "|"
+  },
+  {
+    "LJ": "SPECIAL",
+    "I": "INSTRUCTIONS",
+    "L": "SRT",
+    "BRN": "a",
+    "ERS": "53-7600",
+    "LLU": "=e"
+  },
+  {
+    "LJ": "=",
+    "I": "=",
+    "L": "-",
+    "BRN": "THe",
+    "ERS": ":",
+    "LLU": "-"
+  },
+  {
+    "LJ": "3",
+    "I": "5",
+    "L": "MARKON-",
+    "BRN": "EST",
+    "ERS": ":",
+    "LLU": "Wot."
+  },
+  {
+    "LJ": "Basa]",
+    "I": "$B",
+    "L": "73]",
+    "BRN": "|",
+    "ERS": "1&5",
+    "LLU": "86.19]"
+  },
+  {
+    "LJ": "SCa01]",
+    "I": "—",
+    "L": "Bei",
+    "BRN": "los",
+    "ERS": "LE",
+    "LLU": "-"
+  },
+  {
+    "LJ": "MACKERVILLE",
+    "I": "ou",
+    "L": "a",
+    "BRN": "TX",
+    "ERS": "761",
+    "LLU": "Ra"
+  },
+  {
+    "LJ": "[fomanimvace",
+    "I": "|",
+    "L": "YOU",
+    "BRN": "SHORTAGES",
+    "ERS": "AFTER",
+    "LLU": "SIGN."
+  },
+  {
+    "LJ": "rai:",
+    "I": "J0B333",
+    "L": "0.",
+    "BRN": "1",
+    "ERS": "218",
+    "LLU": "$0."
+  },
+  {
+    "LJ": "RR",
+    "I": "TRIE:",
+    "L": "ARG",
+    "BRN": "427",
+    "ERS": "D-GREASE",
+    "LLU": "CASE"
+  },
+  {
+    "LJ": "-—Amount",
+    "I": "Duel",
+    "L": ":",
+    "BRN": "Mn",
+    "ERS": "$71.10",
+    "LLU": "$71.10"
+  },
+  {
+    "LJ": "Description",
+    "I": "UPC",
+    "L": "0671820230322A",
+    "BRN": "/",
+    "ERS": "Receipt:",
+    "LLU": "Co"
+  },
+  {
+    "LJ": "30.00",
+    "I": "5",
+    "L": "p=",
+    "BRN": "ary",
+    "ERS": "G=ch",
+    "LLU": "Blue"
+  },
+  {
+    "LJ": "ILB",
+    "I": "A",
+    "L": "0.2500",
+    "BRN": "10",
+    "ERS": "20",
+    "LLU": "2.50"
+  },
+  {
+    "LJ": "ilbr",
+    "I": "A",
+    "L": "0.2500",
+    "BRN": "ic",
+    "ERS": "fe",
+    "LLU": "0.25"
+  },
+  {
+    "LJ": "MWET",
+    "I": "A",
+    "L": "3.0000",
+    "BRN": "16",
+    "ERS": "32",
+    "LLU": "48.00"
+  },
+  {
+    "LJ": "SPECIAL",
+    "I": "INSTRUCTIONS",
+    "L": "#",
+    "BRN": "Tax",
+    "ERS": "ID:",
+    "LLU": "238862336"
+  },
+  {
+    "LJ": "el",
+    "I": "lmmmmleee]",
+    "L": "|",
+    "BRN": "wy",
+    "ERS": "Qo",
+    "LLU": "meememm=]|"
+  },
+  {
+    "LJ": "SPECIAL",
+    "I": "INSTRUCTIONS",
+    "L": "#",
+    "BRN": "TAX",
+    "ERS": "ID:",
+    "LLU": "DARE"
+  },
+  {
+    "LJ": "BEN",
+    "I": "E.",
+    "L": "RESPONSIBLE",
+    "BRN": "NOT",
+    "ERS": "BE",
+    "LLU": "(EAE)"
+  },
+  {
+    "W": ""
+  },
+  {
+    "W": ""
+  },
+  {
+    "EC": "ee",
+    "LE": "Ee"
+  },
+  {
+    "EC": "ie",
+    "LE": "Pepsi-Cola"
+  },
+  {
+    "EC": "—_—",
+    "LE": "POEs"
+  },
+  {
+    "EC": "Signature",
+    "LE": "."
+  },
+  {
+    "EC": "5G",
+    "LE": "BIB"
+  },
+  {
+    "EC": "J",
+    "LE": "Jl"
+  },
+  {
+    "EC": "3:",
+    "LE": "me"
+  },
+  {
+    "EC": "NET",
+    "LE": "14"
+  },
+  {
+    "ROUTESTOR": ""
+  },
+  {
+    "ROUTESTOR": "ks"
+  },
+  {
+    "ROUTESTOR": ""
+  },
+  {
+    "ROUTESTOR": ""
+  },
+  {
+    "ROUTESTOR": ""
+  },
+  {
+    "ROUTESTOR": ""
+  },
+  {
+    "ROUTESTOR": ""
+  },
+  {
+    "ROUTESTOR": ""
+  },
+  {
+    "ROUTESTOR": ""
+  },
+  {
+    "OFFICE": "Net",
+    "ROUTE": "Charge:"
+  },
+  {
+    "CUSTOMER": "-",
+    "H": "-",
+    "REP": "—"
+  },
+  {
+    "I": ""
+  },
+  {
+    "CUSTOMER": "[WF",
+    "J": "SAIESHEPRESENTATIVE",
+    "H": "_",
+    "REF": "ROUTE/STOP"
+  },
+  {
+    "CUSTOMER": "|",
+    "J": "2",
+    "H": "eid",
+    "REF": "MARKON."
+  },
+  {
+    "CUSTOMER": "=",
+    "KEITH": "co.",
+    "REE": "5"
+  },
+  {
+    "CUSTOMER": "EE",
+    "KEITH": "EE",
+    "REE": "="
+  },
+  {
+    "CUSTOMER": "TE",
+    "KEITH": ".",
+    "REE": "—"
+  },
+  {
+    "CUSTOMER": "EE",
+    "KEITH": ")",
+    "REE": "——"
+  },
+  {
+    "CUSTOMER": "EE",
+    "KEITH": "a",
+    "REE": "——"
+  },
+  {
+    "CUSTOMER": "EE",
+    "KEITH": "yy",
+    "REE": "———"
+  },
+  {
+    "CUSTOMER": "ys",
+    "KEITH": "I",
+    "REE": "——"
+  },
+  {
+    "CUSTOMER": "GRAND",
+    "KEITH": "TOTAL",
+    "REE": "$24,176.36"
+  },
+  {
+    "CUSTOMER": "be",
+    "KEITH": "me",
+    "REE": "at"
+  },
+  {
+    "KEITH": "J)",
+    "REF": "H"
+  },
+  {
+    "KEITH": "s",
+    "REF": "."
+  },
+  {
+    "KEITH": "crystal",
+    "REF": "03701/2023"
+  },
+  {
+    "INVOICE": "it"
+  },
+  {
+    "INVOICE": "Hid"
+  },
+  {
+    "INVOICE": ""
+  },
+  {
+    "INVOICE": "CiNTAS"
+  },
+  {
+    "READY": "COMPONENT",
+    "FOR": "SUBTOTAL",
+    "THE": ":",
+    "WORKDAY": "$773.71"
+  },
+  {
+    "READY": "P.O.",
+    "FOR": "Box",
+    "THE": "631025",
+    "WORKDAY": ";"
+  },
+  {
+    "READY": "Contact",
+    "FOR": "#:",
+    "THE": "(580)",
+    "WORKDAY": "332-0380"
+  },
+  {
+    "READY": "Route",
+    "FOR": "#:",
+    "THE": "301",
+    "WORKDAY": "."
+  },
+  {
+    "READY": "—",
+    "FOR": "SALES",
+    "THE": "SUMMARY",
+    "WORKDAY": "_"
+  },
+  {
+    "READY": "Full",
+    "FOR": "Cases",
+    "THE": "0",
+    "WORKDAY": "0.00"
+  },
+  {
+    "READY": "Single",
+    "FOR": "Units",
+    "THE": "0",
+    "WORKDAY": "0.00"
+  },
+  {
+    "READY": "Amoumtu®",
+    "FOR": "____",
+    "THE": "_",
+    "WORKDAY": "—"
+  },
+  {
+    "READY": "—",
+    "FOR": "Net",
+    "THE": "30",
+    "WORKDAY": "i"
+  },
+  {
+    "READY": "Chicago",
+    "FOR": "IL",
+    "THE": "606751",
+    "WORKDAY": "884"
+  },
+  {
+    "ITEM": "pe",
+    "DETAIL": "al"
+  },
+  {
+    "ITEM": "SALES",
+    "DETAIL": "’"
+  },
+  {
+    "ITEM": "Description",
+    "DETAIL": "UPC"
+  },
+  {
+    "ITEM": "5G",
+    "DETAIL": "BIB"
+  },
+  {
+    "ITEM": "ll",
+    "DETAIL": "he"
+  },
+  {
+    "I": "Restaurant",
+    "ET": "Basics"
+  },
+  {
+    "I": "[",
+    "ET": "="
+  },
+  {
+    "I": "ee",
+    "ET": "me"
+  },
+  {
+    "I": "1",
+    "ET": "INVOICE"
+  },
+  {
+    "I": "Market",
+    "ET": "Source"
+  },
+  {
+    "I": "0031588",
+    "ET": "TKRa0Zi0420"
+  },
+  {
+    "PLEASE": "EE",
+    "EAL": "———————————————————"
+  },
+  {
+    "EER": "SER#",
+    "E": "TOTAL"
+  },
+  {
+    "BASE": "$13150",
+    "METER": "5823",
+    "PREV": "5136",
+    "RACKS": "687",
+    "INCL": "0",
+    "OVER": "687",
+    "RATE": "0.000",
+    "OVRAGE": "$0.00"
+  },
+  {
+    "BASE": "794",
+    "METER": "HK",
+    "PREV": "LUX",
+    "RACKS": "HAND",
+    "INCL": "SOAP",
+    "OVER": "4X",
+    "RATE": "1000M",
+    "OVRAGE": "CASE"
+  },
+  {
+    "BASE": "(35",
+    "METER": "wast",
+    "PREV": "PRESSURE",
+    "RACKS": "[f",
+    "INCL": "RINSE",
+    "OVER": "PRESSURE",
+    "RATE": "[3",
+    "OVRAGE": "ora"
+  },
+  {
+    "BASE": "[¥",
+    "METER": "soLENOCIDICHAIN",
+    "PREV": "(¥",
+    "RACKS": "sToPPERISTUMP",
+    "INCL": "SEAT",
+    "OVER": "(¥)",
+    "RATE": "STRAINER",
+    "OVRAGE": "BASKET"
+  },
+  {
+    "BASE": "(¥",
+    "METER": "onioFF",
+    "PREV": "waLL",
+    "RACKS": "ouTLET",
+    "INCL": "(1",
+    "OVER": "START/FILL",
+    "RATE": "[4",
+    "OVRAGE": "BREAKER"
+  },
+  {
+    "BASE": "379ISNOJS3Y",
+    "METER": "38",
+    "PREV": "LON",
+    "RACKS": "TIM",
+    "INCL": "SA00<",
+    "OVER": "HLI3x",
+    "RATE": "3",
+    "OVRAGE": "Nd"
+  },
+  {
+    "BASE": "——",
+    "METER": "mB",
+    "PREV": "Eodaaad",
+    "RACKS": "eS",
+    "INCL": "sro",
+    "OVER": "mee",
+    "RATE": "TT",
+    "OVRAGE": "TL"
+  },
+  {
+    "BASE": "31%",
+    "METER": "“my",
+    "PREV": "toes",
+    "RACKS": "wes",
+    "INCL": "|",
+    "OVER": "1",
+    "RATE": "T_T",
+    "OVRAGE": "5"
+  },
+  {
+    "BASE": "roy",
+    "METER": "srw",
+    "PREV": "ws",
+    "RACKS": "wm",
+    "INCL": "BE",
+    "OVER": "eg",
+    "RATE": "ed",
+    "OVRAGE": "==="
+  },
+  {
+    "BASE": "VWOHY",
+    "METER": "IMO",
+    "PREV": "HLIZEA",
+    "RACKS": "NE",
+    "INCL": "p—",
+    "OVER": "1IAY",
+    "RATE": "ONISYD",
+    "OVRAGE": "Z/"
+  },
+  {
+    "BASE": "U8",
+    "METER": "BIBER",
+    "PREV": "piRle",
+    "RACKS": "LI",
+    "INCL": "RIA",
+    "OVER": "i",
+    "RATE": "i",
+    "OVRAGE": "gs"
+  },
+  {
+    "BASE": "SPECIAL",
+    "METER": "INSTRUCTIONS",
+    "PREV": "TERMS",
+    "RACKS": "(405)",
+    "INCL": "753-7600",
+    "OVER": "iD",
+    "RATE": "DREELD",
+    "OVRAGE": "Eh"
+  },
+  {
+    "BASE": "EEE",
+    "METER": "IER",
+    "PREV": "CY",
+    "RACKS": "TJC",
+    "INCL": "We",
+    "OVER": "|",
+    "RATE": "[Te",
+    "OVRAGE": "a"
+  },
+  {
+    "BASE": "Er",
+    "METER": "I",
+    "PREV": "FOR",
+    "RACKS": "ANY",
+    "INCL": "SHORTAGES",
+    "OVER": "AFTER",
+    "RATE": "YOU",
+    "OVRAGE": "SIGN."
+  },
+  {
+    "BASE": "of",
+    "METER": "these",
+    "PREV": "commodities",
+    "RACKS": "until",
+    "INCL": "full",
+    "OVER": "payment",
+    "RATE": "is",
+    "OVRAGE": "received."
+  },
+  {
+    "BASE": "sla",
+    "METER": "IHN",
+    "PREV": "(011A",
+    "RACKS": "TTTN",
+    "INCL": "SUEDE",
+    "OVER": "NET",
+    "RATE": "LE",
+    "OVRAGE": "EER"
+  },
+  {
+    "BASE": "7",
+    "METER": "CASINI",
+    "PREV": "VE",
+    "RACKS": "=",
+    "INCL": "BEN",
+    "OVER": "E.",
+    "RATE": "KEITH",
+    "OVRAGE": "OKLAHOMA"
+  },
+  {
+    "BASE": "NET",
+    "METER": "14",
+    "PREV": "[ee",
+    "RACKS": "SALES",
+    "INCL": "REPRESENTATIVE:",
+    "OVER": "Sew",
+    "RATE": "|",
+    "OVRAGE": "ROUTE/STOP"
+  },
+  {
+    "BASE": "Gay",
+    "METER": "1",
+    "PREV": "§",
+    "RACKS": "1",
+    "INCL": "|",
+    "OVER": ":",
+    "RATE": "FIR",
+    "OVRAGE": "ERR"
+  },
+  {
+    "BASE": "CUSTOMER",
+    "METER": ")",
+    "PREV": "H",
+    "RACKS": "[_INVOICENG,",
+    "INCL": "|",
+    "OVER": "PAGE",
+    "RATE": "|",
+    "OVRAGE": "REF"
+  },
+  {
+    "IE": "—"
+  },
+  {
+    "IE": ""
+  },
+  {
+    "IE": "i)"
+  },
+  {
+    "EE": "etelieh",
+    "NE": "fisiin"
+  },
+  {
+    "EE": "—",
+    "NE": "ee"
+  },
+  {
+    "EE": "3",
+    "NE": "N"
+  },
+  {
+    "EE": "°NOM",
+    "NE": "p"
+  },
+  {
+    "EE": "Sra",
+    "NE": "IAHR"
+  },
+  {
+    "EE": "290",
+    "NE": "ON"
+  },
+  {
+    "EE": "ssc",
+    "NE": "rT"
+  },
+  {
+    "EE": "NET",
+    "NE": "§"
+  },
+  {
+    "EE": "xy",
+    "NE": "_———"
+  },
+  {
+    "EE": "or",
+    "NE": "gas"
+  },
+  {
+    "EE": "Customer",
+    "NE": "3837531"
+  },
+  {
+    "EE": "al",
+    "NE": "$527.20"
+  },
+  {
+    "EE": "30",
+    "NE": "106.40"
+  },
+  {
+    "EE": "-",
+    "NE": "519-6"
+  },
+  {
+    "EE": "y",
+    "NE": "o"
+  },
+  {
+    "EE": "Vendor",
+    "NE": "#"
+  },
+  {
+    "THE": "Delivery",
+    "LINEN": "Reorder",
+    "COMPANY": "Actual",
+    "JIREEUELED": "Amount"
+  },
+  {
+    "THE": "Environmental",
+    "LINEN": "Charge",
+    "COMPANY": "0",
+    "JIREEUELED": "8.00"
+  },
+  {
+    "THE": "SERVICE",
+    "LINEN": "CHARGE",
+    "COMPANY": "0",
+    "JIREEUELED": "25.50"
+  },
+  {
+    "THE": "060",
+    "LINEN": "KRIS",
+    "COMPANY": "KEFFER",
+    "JIREEUELED": "26:"
+  },
+  {
+    "THE": "cial",
+    "LINEN": "FT",
+    "COMPANY": "Era",
+    "JIREEUELED": "NPE"
+  },
+  {
+    "THE": "==",
+    "LINEN": "[|",
+    "COMPANY": "TT",
+    "JIREEUELED": "TT"
+  },
+  {
+    "THE": "FETE",
+    "LINEN": "me",
+    "COMPANY": "i]",
+    "JIREEUELED": "J"
+  },
+  {
+    "THE": "“NOYUYIN",
+    "LINEN": "06271",
+    "COMPANY": "X0d",
+    "JIREEUELED": "Od"
+  },
+  {
+    "THE": "040",
+    "LINEN": "KRIS",
+    "COMPANY": "KEFFER",
+    "JIREEUELED": "PLN"
+  },
+  {
+    "THE": "lo-",
+    "LINEN": "ieuElV",
+    "COMPANY": "EU",
+    "JIREEUELED": "</"
+  },
+  {
+    "THE": ".",
+    "LINEN": "05/06/2023",
+    "COMPANY": "3:56",
+    "JIREEUELED": "AM"
+  },
+  {
+    "THE": "2",
+    "LINEN": "PE",
+    "COMPANY": "aah",
+    "JIREEUELED": "PO#:"
+  },
+  {
+    "THE": "H20h",
+    "LINEN": "3",
+    "COMPANY": "$120.28",
+    "JIREEUELED": "Credits"
+  },
+  {
+    "THE": "Invoice",
+    "LINEN": "Summary",
+    "COMPANY": "Net",
+    "JIREEUELED": "30"
+  },
+  {
+    "THE": "Product",
+    "LINEN": "Charges",
+    "COMPANY": "$597.75",
+    "JIREEUELED": "Pepsi-Cola"
+  },
+  {
+    "THE": "Receipt",
+    "LINEN": "Total:",
+    "COMPANY": "$0.00",
+    "JIREEUELED": "So."
+  },
+  {
+    "THE": "DT",
+    "LINEN": "PEPSI",
+    "COMPANY": "POS",
+    "JIREEUELED": "0-12000-40006-3"
+  },
+  {
+    "THE": "30.00",
+    "LINEN": "5",
+    "COMPANY": "52128",
+    "JIREEUELED": "106.40"
+  },
+  {
+    "THE": "-",
+    "LINEN": "DRPEP",
+    "COMPANY": "POS",
+    "JIREEUELED": "0-54900-71054-5"
+  },
+  {
+    "THE": "CUSTOMER",
+    "LINEN": "KEITH",
+    "COMPANY": "i",
+    "JIREEUELED": "REP."
+  },
+  {
+    "THE": "TERE",
+    "LINEN": "ey",
+    "COMPANY": "[ee",
+    "JIREEUELED": "sae"
+  },
+  {
+    "THE": "CUSTOMER",
+    "LINEN": ")",
+    "COMPANY": "i",
+    "JIREEUELED": "REP"
+  },
+  {
+    "THE": "booiuric",
+    "LINEN": "KEEFER",
+    "COMPANY": "I",
+    "JIREEUELED": "Pa\""
+  },
+  {
+    "THE": "Bro",
+    "LINEN": "He",
+    "COMPANY": "a",
+    "JIREEUELED": "Ey"
+  },
+  {
+    "THE": "Invoice/Receiving",
+    "LINEN": "Slip",
+    "COMPANY": "Page",
+    "JIREEUELED": "10f1"
+  },
+  {
+    "THE": "Delivery",
+    "LINEN": "Reorder",
+    "COMPANY": "Actual",
+    "JIREEUELED": "Amount"
+  },
+  {
+    "THE": "Environmental",
+    "LINEN": "Charge",
+    "COMPANY": "0",
+    "JIREEUELED": "8.00"
+  },
+  {
+    "THE": "SERVICE",
+    "LINEN": "CHARGE",
+    "COMPANY": "0",
+    "JIREEUELED": "25.50"
+  },
+  {
+    "J": ""
+  },
+  {
+    "J": ""
+  },
+  {
+    "J": ""
+  },
+  {
+    "J": ""
+  },
+  {
+    "J": ""
+  },
+  {
+    "J": ""
+  },
+  {
+    "J": ""
+  },
+  {
+    "J": ""
+  },
+  {
+    "J": ""
+  },
+  {
+    "J": ""
+  },
+  {
+    "J": ""
+  },
+  {
+    "J": ""
+  },
+  {
+    "J": ""
+  },
+  {
+    "J": ""
+  },
+  {
+    "J": ""
+  },
+  {
+    "J": ""
+  },
+  {
+    "J": ""
+  },
+  {
+    "J": ""
+  },
+  {
+    "J": ""
+  },
+  {
+    "J": ""
+  },
+  {
+    "CUSTOMER": "Es",
+    "KEITH": "worms",
+    "AE": "ROUTERTOR"
+  },
+  {
+    "HE": "LIEB",
+    "SE": "|",
+    "TTR": "EN"
+  },
+  {
+    "HE": "HK",
+    "SE": "iW",
+    "TTR": "H3INOLSNO"
+  },
+  {
+    "HE": "w",
+    "SE": "I",
+    "TTR": "Yr"
+  },
+  {
+    "HE": "abe",
+    "SE": "Ma",
+    "TTR": "Mim"
+  },
+  {
+    "HE": "|",
+    "SE": ":",
+    "TTR": "INVOICE"
+  },
+  {
+    "HE": "4",
+    "SE": "+",
+    "TTR": "."
+  },
+  {
+    "HE": "Sales",
+    "SE": "Tax",
+    "TTR": "0.00"
+  },
+  {
+    "HE": "Signature",
+    "SE": "ITEM",
+    "TTR": "DETAIL"
+  },
+  {
+    "HE": "Description",
+    "SE": "UPC",
+    "TTR": "="
+  },
+  {
+    "HE": "ITH",
+    "SE": "es",
+    "TTR": "cm"
+  },
+  {
+    "HE": "Ld",
+    "SE": "en",
+    "TTR": "8d"
+  },
+  {
+    "CINTAC": "LIINIAS."
+  },
+  {
+    "PLEASE": ":",
+    "PAY": "777",
+    "DIRECTLY": "CASINO",
+    "FROM": "AVE",
+    "THIS": "DATE",
+    "INVOICE": ":"
+  },
+  {
+    "PLEASE": "[EEE",
+    "PAY": "SVC",
+    "DIRECTLY": "ORDER",
+    "FROM": "#",
+    "THIS": "©",
+    "INVOICE": "8033787154"
+  },
+  {
+    "PLEASE": "MATERIAL#",
+    "PAY": "DESCRIPTION",
+    "DIRECTLY": "aw",
+    "FROM": "UNITPRICE",
+    "THIS": "EXTPRICE",
+    "INVOICE": "TAX"
+  },
+  {
+    "PLEASE": "REMIT",
+    "PAY": "TO:",
+    "DIRECTLY": "CINTAS",
+    "FROM": "SUBTOTAL",
+    "THIS": ":",
+    "INVOICE": "$de087"
+  },
+  {
+    "READY": "Invoice/Receiving",
+    "FOR": "Slip",
+    "THE": "Page",
+    "WORKDAY": "1of1"
+  },
+  {
+    "READY": "Delivery",
+    "FOR": "Reorder",
+    "THE": "Actual",
+    "WORKDAY": "Amount"
+  },
+  {
+    "READY": "Environmental",
+    "FOR": "Charge",
+    "THE": "0",
+    "WORKDAY": "8.00"
+  },
+  {
+    "READY": "SERVICE",
+    "FOR": "CHARGE",
+    "THE": "0",
+    "WORKDAY": "25.50"
+  },
+  {
+    "READY": "sw",
+    "FOR": "1900",
+    "THE": "ot",
+    "WORKDAY": "PE"
+  },
+  {
+    "READY": "sta",
+    "FOR": "LAIR",
+    "THE": "|",
+    "WORKDAY": "|"
+  },
+  {
+    "READY": "=",
+    "FOR": "CLT",
+    "THE": "ORIGINAL",
+    "WORKDAY": "VO)"
+  },
+  {
+    "READY": "ss",
+    "FOR": "EE",
+    "THE": "ORIGINAL",
+    "WORKDAY": "INVOIC"
+  },
+  {
+    "N": ""
+  },
+  {
+    "N": ""
+  },
+  {
+    "N": "ww"
+  },
+  {
+    "CUSTOMER": "—",
+    "A": "ttt",
+    "H": "1",
+    "REF": "SE"
+  },
+  {
+    "CUSTOMER": "CUSTOMER",
+    "A": ")",
+    "H": "H",
+    "REF": "FER"
+  },
+  {
+    "FR": "&:"
+  },
+  {
+    "FR": ""
+  },
+  {
+    "FR": "Eee"
+  },
+  {
+    "FR": ""
+  },
+  {
+    "FR": ""
+  },
+  {
+    "FR": ""
+  },
+  {
+    "FR": ""
+  },
+  {
+    "FR": ""
+  },
+  {
+    "FR": ""
+  },
+  {
+    "FR": ""
+  },
+  {
+    "FR": ""
+  },
+  {
+    "FR": ""
+  },
+  {
+    "FR": ""
+  },
+  {
+    "FR": ""
+  },
+  {
+    "FR": ""
+  },
+  {
+    "DELIVERY": "H",
+    "TIME": "-"
+  },
+  {
+    "DELIVERY": "BETTE",
+    "TIME": "[——"
+  },
+  {
+    "SOLE": "cele",
+    "LL": "hei",
+    "RRL": "ae",
+    "ERR": "WHE",
+    "LOB": "TREITELAAATL",
+    "BERET": "(m=",
+    "A": "eee"
+  },
+  {
+    "SOLE": "TRIRT:",
+    "LL": "22:08",
+    "RRL": "PD-WID:",
+    "ERR": "04-2/3",
+    "LOB": "TOB",
+    "BERET": "[17'S",
+    "A": "BAR"
+  },
+  {
+    "SOLE": "mmo",
+    "LL": "Invoice",
+    "RRL": "Total",
+    "ERR": "$582.94",
+    "LOB": "777",
+    "BERET": "CASINO",
+    "A": "AVE,"
+  },
+  {
+    "SOLE": "acl",
+    "LL": "Service",
+    "RRL": "Infor",
+    "ERR": "ion",
+    "LOB": "THACKERVTLLE,",
+    "BERET": "OK",
+    "A": "734599774"
+  },
+  {
+    "SOLE": "S",
+    "LL": "ie",
+    "RRL": "7",
+    "ERR": "}",
+    "LOB": "A",
+    "BERET": "Gust",
+    "A": "3837631"
+  },
+  {
+    "SOLE": "147",
+    "LL": "i",
+    "RRL": "*RIACH",
+    "ERR": "bem",
+    "LOB": "bi",
+    "BERET": "GAL",
+    "A": "SUMMARY"
+  },
+  {
+    "SOLE": "re",
+    "LL": "Si",
+    "RRL": "Sub",
+    "ERR": "du",
+    "LOB": "-",
+    "BERET": "A",
+    "A": "Amount"
+  },
+  {
+    "SOLE": "We",
+    "LL": "SF",
+    "RRL": "rn",
+    "ERR": ":",
+    "LOB": ":",
+    "BERET": ";",
+    "A": "751.50"
+  },
+  {
+    "SOLE": ";",
+    "LL": ":",
+    "RRL": "|",
+    "ERR": "$A1",
+    "LOB": "0",
+    "BERET": "0.00",
+    "A": "”"
+  },
+  {
+    "SOLE": "ee",
+    "LL": "Sp",
+    "RRL": "-",
+    "ERR": "mn",
+    "LOB": "£m",
+    "BERET": "ma",
+    "A": "oo"
+  },
+  {
+    "SOLE": "7",
+    "LL": "PUtP",
+    "RRL": "BODY",
+    "ERR": "i",
+    "LOB": ")",
+    "BERET": ";",
+    "A": "A"
+  },
+  {
+    "SOLE": ":",
+    "LL": "L",
+    "RRL": "Err",
+    "ERR": "OLIN",
+    "LOB": "ORR",
+    "BERET": "HA",
+    "A": "RRR"
+  },
+  {
+    "SOLE": "ee",
+    "LL": "—",
+    "RRL": "I",
+    "ERR": "TE",
+    "LOB": "=",
+    "BERET": "al",
+    "A": "="
+  },
+  {
+    "SOLE": "ow",
+    "LL": "<<",
+    "RRL": "RHE",
+    "ERR": "|",
+    "LOB": "Hiei",
+    "BERET": "|",
+    "A": "EI"
+  },
+  {
+    "SOLE": "CUSTOMER",
+    "LL": "A",
+    "RRL": "H",
+    "ERR": "[INVOICENG.___T",
+    "LOB": "PAGE",
+    "BERET": "|",
+    "A": "REP"
+  },
+  {
+    "SOLE": "[7",
+    "LL": "Ti]",
+    "RRL": "Cape",
+    "ERR": "tamg",
+    "LOB": "gofeys",
+    "BERET": "i",
+    "A": "|]"
+  },
+  {
+    "SOLE": "777",
+    "LL": "CASINO",
+    "RRL": "AVE",
+    "ERR": "BEN",
+    "LOB": "I",
+    "BERET": "KEITH",
+    "A": "OKLAHOMA"
+  },
+  {
+    "SOLE": ".",
+    "LL": ".",
+    "RRL": ":",
+    "ERR": "¥",
+    "LOB": "ITH",
+    "BERET": "OKLAHOMA",
+    "A": "a"
+  },
+  {
+    "SOLE": "For",
+    "LL": "fon,",
+    "RRL": "1x",
+    "ERR": "76101",
+    "LOB": "RRIEGENY",
+    "BERET": "Elman.",
+    "A": "[CoRR"
+  },
+  {
+    "H": ""
+  },
+  {
+    "TRADITIONS": "Invoice",
+    "SPIRITS": "Minimum",
+    "J": "0"
+  },
+  {
+    "TRADITIONS": "coments",
+    "SPIRITS": "ws",
+    "J": "_"
+  },
+  {
+    "TRADITIONS": "Tax",
+    "SPIRITS": "based",
+    "J": "on"
+  },
+  {
+    "TRADITIONS": "Nets)",
+    "SPIRITS": "[Je",
+    "J": "7"
+  },
+  {
+    "NSF": ""
+  },
+  {
+    "NSF": ""
+  },
+  {
+    "NSF": ""
+  },
+  {
+    "NSF": ""
+  },
+  {
+    "NSF": ""
+  },
+  {
+    "NSF": ""
+  },
+  {
+    "NSF": "y"
+  },
+  {
+    "NSF": ""
+  },
+  {
+    "NSF": "b"
+  },
+  {
+    "NSF": ""
+  },
+  {
+    "ROUTERTOR": ""
+  },
+  {
+    "ROUTERTOR": ""
+  },
+  {
+    "ROUTERTOR": ""
+  },
+  {
+    "ROUTERTOR": "J)"
+  },
+  {
+    "ROUTERTOR": ""
+  },
+  {
+    "ROUTERTOR": ""
+  },
+  {
+    "ROUTERTOR": ""
+  },
+  {
+    "ROUTERTOR": ""
+  },
+  {
+    "ROUTERTOR": ""
+  },
+  {
+    "ROUTERTOR": ""
+  },
+  {
+    "ROUTERTOR": ""
+  },
+  {
+    "ROUTERTOR": ""
+  },
+  {
+    "ROUTERTOR": ""
+  },
+  {
+    "ROUTERTOR": ""
+  },
+  {
+    "ROUTERTOR": ""
+  },
+  {
+    "ROUTERTOR": ""
+  },
+  {
+    "ROUTERTOR": ""
+  },
+  {
+    "ROUTERTOR": ""
+  },
+  {
+    "THE": "Delivery",
+    "LINEN": "Reorder",
+    "COMPANY": "Actual",
+    "JRE": "Amount"
+  },
+  {
+    "THE": "Environmental",
+    "LINEN": "Charge",
+    "COMPANY": "0",
+    "JRE": "8.00"
+  },
+  {
+    "THE": "SERVICE",
+    "LINEN": "CHARGE",
+    "COMPANY": "0",
+    "JRE": "25.50"
+  },
+  {
+    "THE": "Netad)",
+    "LINEN": "[|",
+    "COMPANY": "e—",
+    "JRE": "1]"
+  },
+  {
+    "THE": "INVOICE",
+    "LINEN": "777",
+    "COMPANY": "CASINO",
+    "JRE": "AVENUE"
+  },
+  {
+    "THE": "Jr",
+    "LINEN": "CODE#:",
+    "COMPANY": "U4z484",
+    "JRE": "$131.50"
+  },
+  {
+    "SALES": "U42485",
+    "SUMMARY": "$131.50"
+  },
+  {
+    "SALES": "EEE",
+    "SUMMARY": "he"
+  },
+  {
+    "I": ""
+  },
+  {
+    "I": "J)"
+  },
+  {
+    "I": ""
+  },
+  {
+    "I": "yy"
+  },
+  {
+    "I": ""
+  },
+  {
+    "I": "J)"
+  },
+  {
+    "I": ""
+  },
+  {
+    "I": ""
+  },
+  {
+    "I": ""
+  },
+  {
+    "I": ""
+  },
+  {
+    "I": ""
+  },
+  {
+    "I": ""
+  },
+  {
+    "I": ""
+  },
+  {
+    "I": ""
+  },
+  {
+    "I": ""
+  },
+  {
+    "I": ""
+  },
+  {
+    "I": ""
+  },
+  {
+    "I": "ol"
+  },
+  {
+    "AS": "rT",
+    "INO": "Bye",
+    "AVE": "SEE",
+    "BEN": "ad",
+    "KE": "reroor",
+    "H": "ose",
+    "OKLAHOMA": "—woree]"
+  },
+  {
+    "AS": "IE",
+    "INO": "SS",
+    "AVE": "ee",
+    "BEN": "os",
+    "KE": "es",
+    "H": "Ran",
+    "OKLAHOMA": "A"
+  },
+  {
+    "AS": "IN",
+    "INO": "00000",
+    "AVE": "OR",
+    "BEN": "IVOIRE",
+    "KE": "NE",
+    "H": "RRR",
+    "OKLAHOMA": "EEE"
+  },
+  {
+    "AS": "77",
+    "INO": "CASINO",
+    "AVE": "a\\",
+    "BEN": "BE",
+    "KE": ":",
+    "H": "i",
+    "OKLAHOMA": "OKLAHOMA"
+  },
+  {
+    "RUM": "BRANDY/COGNAC"
+  },
+  {
+    "RUM": "LIQUEUR'S"
+  },
+  {
+    "RUM": "Wines"
+  },
+  {
+    "RUM": "0"
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  },
+  {
+    "RUM": ""
+  }
+]

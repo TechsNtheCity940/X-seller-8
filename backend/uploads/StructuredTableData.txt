@@ -1,401 +1,1191 @@
-GIT Invoice# 66702357
-Customer Name Customer PO# Branch
-Toby Keiths - Wwe --Tradi FOK799734 FOK
-Delivery Date Quantity Invoice Total" Email
-10/04/2024 93 items! $10,351.16 april.courtney@traditionsspirits.com
-198 pieces
-TEE TEN BRAND PACKISIZE PRICE ORDERED CONFIRMED STATUS
-NAME
-BB4043 Mustard Yellow Upside Down Heinz 1611302 $31.77 2 0 Outof stock
-per case
-500401 Beef Brisket Choice Sel Noroll Packer 71 CATCH $434 1 0 Outof stock
-per pound
-151772 Pasta Elbow Macaroni Bellacibo 21018 52362 1 1 Filled
-per case
-115583 ‘Apton Distwashing Clear 34x47 John Ritzerthaler Company EA 57.96 2 2 Filled
-per case
-T4187 Pepper Red Crushed Mccormick it $9.4 1 1 Filled
-per case
-104928 Garlic Granulated Gran Saor 1658 $3259 1 1 Filled
-per case
-74477 Seasoning Blackened Red Fish Cajun Magic 43407 536.65 1 1 Filled
-per case
-774410 Seasoning Salt No Msg Lawry's 1518 518.60 2 2 Filled
-per case
-774208 Seasoning Pork Dry Rub Allen Oliver Group 111018 548.65 1 1 Filled
-per case
-774842 Breading Fish Fry Crispy Zatarain's 113518 54050 2 2 Filled
-per case
-E6210 Dressing Mix Original Ranch Hidden Valley 1813302 $35.41 1 1 Filled
-per case
-BB4018 Mustard Grey Poupon Grey Poupon 612402 563.43 1 1 Filled
-per case
-BB000E Sauce Bbg Regular Head Country 416AL 559.61 1 1 Fille
-per case
-oa7 Pepper Jalapeno Nacho Sliced Gran Saor 6r#10 534.62 1 1 Filled
-per case
-780007 Sugar Granulated Ex Fine 50 Lb Imperial Sugar 115018 $4338 1 1 Filled
-per case
-110ez1 Mayonnaise Real Table Top Katt 1211202 550.1 1 1 Filled
-per case
-BB0815 Ketchup Upside Down Soz Bottle Heinz 3012007 56260 2 2 Filled
-per case
-797233 Grav Mix Peppered Shawnee Mills 6158 52016 4 4 Filled
-per case
-169120 Potato Red #2 A 8ize Packer 115018 $2030 2 2 Filled
-per case
-170046 Potato Russet 60 Gt da Markon First Crop 115018 CTN $23.45 6 6 Filled
-per case
-155030 Onion Yellow Jumbo Markon Essentials 115018 521.68 1 1 Filled
-per case
-BB2207 Mayonnaise Tub Gf Heavy Duty Keith's Homestyle 114GAL 544.30 2 2 Filled
-per case
-118452 Oil Pan & Gril Trans Fat Free Ellington Farms 61 6AL 56274 1 1 Filled
-per case
-779123 Shortening Clear Fry Liguid Keith's Homestyle 113518 $28.44 6 6 Filled
-per case
-130882 Glove Nite Black XI PT Essentials 101100 CT 527.85 1 1 Filled
-per case
-130880 Glove Nite Black Ma Pr Essentials 101100 CT 527.85 1 1 Filled
-per case
-110329 Pick 4 In Bamboo Knotted Handgards 101100 CT $2093 2 2 Filled
-per case
-872078 Tray Food 3¢ Savaday #300 Savaday 412501 559.41 1 1 Filled
-per case
-197236 Liner Trash 60 Gal Black Essentials 11100 CT $31.71 2 2 Filled
-per case
-872080 Cont Foarm Higa 1-c Large White Dart 2100 CT $2293 3 3 Filled
-per case
-132775 Label 2:2 Prep-n-print Dura Daydots 41300 CT 55214 2 2 Filled
-per case
-878005 Guest Check Green Paper National Checking 501100 CT $35.67 1 1 Fille
-per case
-830943 Tape Register Roll 1 Ply National Checking 1506 54249 1 1 Filled
-per case
-110882 Cup Plas Soufle 2 0z Black Solo Cup Corpany 101250 CT $2278 1 1 Filled
-per case
-131402 Napkin Bev 1 Ply Essentials 81500 CT $2201 4 4 Filled
-per case
-153481 Meal Kit KF § Nap S&p Hw Bik Wallace Packaging Lic 11250 CT $2263 2 2 Filled
-per case
-860055 Lid Plas 16s Trans Slotted Dart 101100 CT 17.91 1 1 Fille
-per case
-168500 Bag Plas T-shirt Jumbo Continental Poly 111000 CT $4818 1 1 Fille
-per case
-038022 Cart Jumbo Us #1 Markon First Crop 111018 BX $1859 1 1 Filled
-per case
-033045 Cathiage Red Shredded Vinyard Frut 8 Vegetable 1518 $1334 1 1 Fille
-per case
-BB2411 Dressing Dijon Honey Mustard Golden Harvest 21681 $40.72 1 1 Fille
-per case
-BB0276 Sauce Tartar European Girard's 21681 544.59 2 2 Filled
-per case
-150105 Onion Green eless Markon Ready Set Serve 43LBCTN $27.71 1 1 Filled
-per case
-029080 Juice Lime Fresh Squeezed Packer 61 QUART 528.40 1 1 Filled
-per case
-Ta107 Garlic Whole Peeled Markon Ready Set Serve 4518 57054 1 1 Filled
-per case
-140261 Mushroom Sliced Tu Packer 2518 528.08 1 1 Filled
-per case
-123008 Lettuce lcsherg Prem Palletizd Markon First Crop 1134 CT 528.29 1 1 Filled
-per case
-126008 Lettuce Romaine 24 Ct Markon First Crop 1134 CT 52620 6 6 Filled
-per case
-028075 Lemon Choice 200 Gt Markon Essentials 113518 $48.93 3 3 Filled
-per case
-205204 Tomato Grape Packer 1nzeT 82171 4 4 Filled
-per case
-00081 Broccoli Floret Iceless Markon Ready Set Serve 43LBCTN 527.68 2 2 Filled
-per case
-293128 Egg Hard Cooked Peeled Papetts 113518 $46.73 1 1 Filled
-per case
-408803 Torila Gom White 4 Cut Super Lopez 113518 519.60 1 1 Filled
-per case
-78101 Cheese American Loaf White Golden Harvest 6518 598.99 1 1 Fille
-per case
-164741 Milk Homo Gallon Hiland Dairy 416AL 526.08 1 1 Filled
-per case
-389018 Butter Solid Salted Golden Harvest 361118 $147.36 1 1 Filled
-per case
-762148 Cheese Havart Plain Loaf Ostentiory 198 55.29 1 1 Filled
-per pound
-735025 Cheese American Sliced 120 Gt Golden Harvest 4518 565.07 2 2 Filled
-per case
-120132 Cheese American Sliced White Schreiber 4518 560.03 2 2 Filled
-per case
-164785 Milk Butermilk Whole Hiland Dairy 9172 GAL 534.65 3 3 Filled
-per case
-166422 Cheese Cheddar Jack Shred Reg Golden Harvest 2518 $31.78 6 6 Filled
-per case
-11422 Sour Cream All Natural Fresh From Keith's 4518 53296 2 2 Filled
-per case
-142362 Egg Fresh Shell X Usda Aa Ellington Farms 111502 560.49 2 2 Filled
-per case
-547084 Bologna All Meat Smithfield 21013800 $329 1 1 Filled
-per pound
-389300 Butter Blend Whipped Sated Land 0 Lakes 2518 524.02 2 2 Filled
-per case
-157938 Horseradish Era Hot Tulkoft 23107 $16.00 1 1 Filled
-per case
-116840 Pork Rib St Louis Duroc Creekstone Farms 1013.2L8AV0 54.61 2 2 Filled
-per pound
-131080 Beef Patty 75% Angus Wide Winn Meat 241702 $3813 6 6 Filled
-per case
-550221 Chicken Breast Boz Butterfly Koch Foods 21018 $69.13 3 3 Filled
-per case
-550050 Chicken Wog Spit 275-3 Lb Koch Foods 161275-3¢ 5204 1 1 Filled
-per pound
-530320 Bacon Layout 18/22 Country Brand Bacon 111518 553.60 1 1 Fille
-per case
-132528 Beef Top Sirloin Steak 8oz Ch Omaha Steak Co 241802 $1290 2 2 Filled
-per pound
-532444 Pork Butt Bane In Fresh Xt Praifie Fresh 81 7-g40W 5200 1 1 Filled
-per pound
-185474 Pork Loin Center Gut Bane In Clemens Food Group 271846 56.05 5 5 Filled
-per pound
-500669 Beef Riteye Lin On Down Choice Master Chef 417LBDN 1267 2 2 Filled
-per pound
-504575 Beef Riveye Lip On Sel Light Excel 414 L8G 59.77 1 1 Filled
-per pound
-202181 French Fries Sc 38 In Cavendish Farms 61458 $35.02 16 16 Filed
-per case
-102087 Bun Brioche 4 Inch Turano Baking Company 9612502 $4812 2 2 Filled
-per case
-133567 Rol Hoagie White 8 Inch La Baguette 601402 52690 1 1 Filled
-per case
-325208 Okra Cut Lightly Breaded Stiwel 4518 529.07 4 4 Filled
-per case
-171981 Chicken Brst Fillet Crispy Bra Brakebush 2518 55454 2 2 Filled
-per case
-197501 Chicken Wing 15t& 2nd Joint OkFoods 2518 55130 6 6 Filled
-per case
-152501 Sausage Chub Breakfast Mild Kelley Foods Manufacturing 121118 539.46 2 2 Filled
-per case
-178368 Sausage Black Oak Smoked Fzn Black Oak 1118 53564 2 2 Filled
-per case
-175718 Ship Breaded 13-15 Ct Panko Golden Harvest (not Bek) 438 $6391 3 3 Filled
-per case
-303250 Blueberry lof Markon First Crop 113018 576.61 1 1 Filled
-per case
-123081 Dough Cookie Choe Chunk Sweet Street 841302 59274 1 1 Filled
-per case
-290567 Biscult Baked Butermilk Filshury( 751285 02 53163 1 1 Filled
-per case
-502028 Beef Fries Breaded lof Osteen 111018 567.93 2 2 Filled
-per case
-508074 Beer Steak Fiter 21 Advance 201802 55261 9 9 Filled
-per case
-E3087 04a Coke Classic Cube Pack Cota Cola 241202 17.91 1 1 Filled
-per case
-£39100 Soda Spite Cube Pack sprite 241202 17.91 1 1 Filled
-per case
-591125 Gombread Mix Jit 1214002 $37.33 1 1 Filled
-per case
-Internal Transfer/ Requistion From
-Venue Requesting: Toby Keiths
-Liquors Prev. Ordered Pars Price/bottle Ordered Total $ Signature Signature
-WHISKEY'S
-TX Whiskey	1 35.19 0 0
-Gentleman Jack	2 24.09 1 24.09
-Jack Daniels	8 26.38 3 79.14
-Jack Daniels Honey	1 26.38	0
-Jack Daniels Apple	1 18.39	0
-Jack Daniels Fire	1 26.38	0
-Fireball	1 15.19	0
-Pendleton	x 29.59	0
-Seagram's 7	1 14.99 1 14.99
-Screwball	x 26.36	0
-Southern Comfort	1 11.99	0
-Kentucky Dale	x 6.39	0
-BOURBON'S
-Eagle Rare	x 28.39	0
-Basil Hayden	1 41.28 1 41.28
-Woodford Reserve	2 35.09	0
-Jim Bean	6 16.68 4 66.72
-Makers Mark	3 29 3 87
-Old Forester	2 16.5	0
-RYE WHISKEY"S
-Knob Creek RYE	1 26	0
-Bulleit 95 RYE	x 24.74	0
-IRISH WHISKEY
-Jameson Iris	3 33.3 2 66.6
-Jamison Orange	2 33.3 2 66.6
-Jamison Orange	2 33.3	0
-CANADIAN WHISKEY
-Crown	4 29.99 4 119.96
-Crown Apple	1 29.99	0
-Crown Peach	1 23.99	0
-Crown Vanilla	1 29.99	0
-Canadian Club 1858	x 12.8	0
-Old Forester	x 16.5	0
-SCOTCH
-Macallen 12 YR	x 75.99	0
-The Glenlivet 12 YR	x 58.79	0
-Dewars White label	x 19.2	0
-JW Black	x 41.99	0
-Chivas Regal 12 YR	x 29.9	0
-VODKA
-Chopin	x 31.6	0
-Belvedere	x 29.77	0
-Finlandia	x 12.79	0
-Grey Goose	1 26.4 1 26.4
-Ketel One	x 25.49	0
-Stolichnaya	x 19.99	0
-Stolichnaya Vanilla	x 21.25	0
-Absolute Vodka	x 19.22	0
-Tito's	12 21.3 8 170.4
-Deep Eddy's Lemon	3 19.99	0
-Deep Eddy's Ruby Red	1 19.99	0
-Deep Eddy's Peach	1 19.99	0
-Taaka	3 5.55 2 11.1
-TEQUILA
-Clasa	Azul Anejo	x 367.99	0
-Clasa	Azul Reposado	x 149.17	0
-Clasa	Azul Plata	x 92.11	0
-Patron Silver	3 39.99 2 79.98
-Corralejo Anejo	x 0	0
-Corralejo Reposado	1 28.26	0
-Corralejo Blanco	1 24.79	0
-Herradura Silver	x 39.19	0
-1800 Reposado	6 31.79 2 63.58
-1800 Silver	8 28.79 7 201.53
-Jose Cuervo (blue agave)	x 21.59	0
-El Jimador	1 19.5 1 19.5
-El Jimador	x 19.5	0
-El Toro	8 8.76 1 8.76
-GIN
-Hedricks	x 37.4	0
-Tanqueray	1 23.99	0
-Bombay Sapphire	x 22.39	0
-Taaka	2 5.89	0
-RUM
-Myer's Mark	x 22.39	0
-Captian Morgan	2 17.99 1 17.99
-Malibu	8 16.8 4 67.2
-Bacardi	3 12 1 12
-Barbarossa	3 5.8 2 11.6
-BRANDY/COGNAC
-Hennessey VS	1 44.49	0
-Courvoisier VSOP	x 38.3	0
-Tuaca Itailian Brandy	x 22.13	0
-E & J	x 11.99	0
-Pual Mason	x 10.39	0
-LIQUEUR'S
-Disaronno	1 38.39	0
-Grand Marnier	4 34.42	0
-Cointreau	4 31.39	0
-Chambord	x 27.99	0
-Frangelico	x 24.79	0
-Campari	x 34.06	0
-Kahlua	x 26.98	0
-Jagermeister	x 26.22	0
-Midori	x 20.8	0
-Rum Chata	x 21.66	0
-razzmatazz	4 10 4 40
-Mr.Boston Ameretto	x 5.05	0
-Mr.Boston Blue Curacao	5 5.05	0
-Buttershots	x 10.73	0
-Mr.Boston Melon	1 5.92	0
-Mr.Boston Peach Schapps	6 5.42 2 10.84
-Mr.Boston Sour Apple	1 5.42	0
-Dessert LIT	4 7.19	0
-Total	1307.26
-Wines
-Champaigne	Prev. Order Pars Price Ordered Total $ Signature Signature
-Korbel Mini Bottles	24 3	0
-House Wines
-Sutter Homes Cabernet	12 5.25 10 52.5
-Sutter Homes Merlot	6 5.25	0
-Sutter Homes	Chardonnay	12 5.25 4 21
-Sutter Homes Moscato	6 5.25 2 10.5
-Sutter Homes White Zin	6 5.25 2 10.5
-Sutter Homes Pinot Grig.	8 5.25 1 5.25
-Top shelf Wines
-Angeline CAB	6 5	0
-Angeline Chard	6 5	0
-Angeline Rose	x 5	0
-Vietti Moscato	2 8	0
-0
-Total	99.75
-Internal Transfer/ Requistion From
-Venue Requesting:	Toby's Keiths
-Date: 9.11.23
-Product Name Prev. Order Pars Price Ordered Total $ Signature Signature
-DOMESTIC BEER	0
-Bud Light 16 oz cans	24 0.98 0 0
-Mich Ultra 12oz cans	72 1.18 30 35.4
-Coors Banquet 16oz cans	24 0.99 9 0
-Coors Light 16oz can	96 1.04 24 24.96
-Miller Lite 16 oz can	120 1.04 120 124.80000000000001
-Budweiser Cans	24 1.05 12 12.600000000000001
-Budweiser Zero Cans	12 1.05 0 0
-IMPORT BEER	Pars	0
-Stella Cans	x 1.2	0
-Blue Moon 12oz	30 1 24 24
-Shocktop	x 1.01	0
-Dos Equis	72 1.23 60 73.8
-Modelo Especial	24 1.18	0
-Corona Extra	48 1.29 36 46.44
-Heineken	12 1.29	0
-Shiner	48 1.19 36 42.839999999999996
-Coop F5	24 1.43 24 34.32
-Coop Ice Chest	12 1.43	0
-Coop Horny Toad	12 1.43 6 8.58
-Guiness	x 1.31	0
-Estrella Jalisco	x 1.12	0
-Stella Cidar Bot	x 1.5	0
-seltzer	24 1.33	0
-Kegs Beer
-DOMESTIC BEER	par
-Budweiser Keg	4 86 1 86
-Bud Light Keg	3 103 3 309
-Michelob Keg	5 103 3 309
-IMPORT BEER	Pars
-Stella Keg	2 150 1 150
-Shocktop Keg	2 97	0
-Modelo Keg	2 152 2 304
-Total	1585.74
-Commonly used Misc. Supplies, and NA BEV
-N/A BEV	Pars
-Redbull	48 1.63 24 39.12
-Sugar Free Redbull	24 1.63 24 39.12
-Redbull Coconut	24 1.63	0
-Redbull Watermelon	24 1.63	0
-Redbull Blue	24 1.63 24 39.12
-Aquafina	1 case 9.08 1 9.08
-Employee Water	1 Case 9.08 1 9.08
-Total	135.51999999999998
-Internal Transfer/ Requistion From
-Venue Requesting:
-Date: 9.12.23
-Beverage Supplies Ordered Prev. Pars Price/unit Ordered Total $ Signature Signature
-Cherries	2 14.51 1 14.51
-Olives	1 12.69	0
-Spicy Mango Monin	4	3 0
-Cranberry Juice	24 1.65 12 19.799999999999997
-Grapefruit Juice	6 3.97	0
-Orange Juice	36 1.89 24 45.36
-Pineapple Juice	36 2.16 36 77.76
-Tomato Juice	12 0.36	0
-Watermelon Syrup	12 3.37 6 20.22
-Grenadine	6 2.46	0
-Strawberry Syrup	12 3.19	0
-Peach Syrup	12 3.21	0
-Triple Sec	6 2.78 2 5.56
-Sweetend Lime Juice	6 2.55	0
-Ninas Pina Mix	6 3.19	0
-Zing Zang	12 3.19	0
-Sweet and Sour	24 0.36 24 8.64
-Ninas Marg mix	36 2.54 12 30.48
-16 oz beer cups	1 case	0
-Ginger Beer	24 0.87 12 10.44
-14oz cups	1 Case 4.67	0
-Beverage Swords	1 Case 3.83	0
-gingerale	24 1.18 14 16.52
-Thermal Paper	2 Cases 56.88 1 56.88
-Tonic Water	24 0.69 6 4.14
-9oz Rocks togo cups	1 Case 3.11	0
-Bitters	2 4.28 1 4.28
-Orange Bitter	2	2 0
-Total	314.59
+/	351.16	351
+BB4043 Mustard Yellow Upside Down Heinz	31.77	0
+‘Apton Distwashing Clear 34x47 John Ritzerthaler Company EA	57.96	2
+Seasoning Blackened Red Fish Cajun Magic	536.65	1
+Seasoning Salt No Msg Lawry's	518.60	2
+Seasoning Pork Dry Rub Allen Oliver Group	548.65	1
+E6210 Dressing Mix Original Ranch Hidden Valley	35.41	1
+BB4018 Mustard Grey Poupon Grey Poupon	563.43	1
+BB000E Sauce Bbg Regular Head Country 416AL	559.61	1
+oa7 Pepper Jalapeno Nacho Sliced Gran Saor 6r#	534.62	1
+Potato Russet	23.45	6
+Onion Yellow Jumbo Markon Essentials	521.68	1
+BB2207 Mayonnaise Tub Gf Heavy Duty Keith's Homestyle 114GAL	544.30	2
+Shortening Clear Fry Liguid Keith's Homestyle	28.44	6
+Glove Nite Black XI PT Essentials	527.85	1
+Glove Nite Black Ma Pr Essentials	527.85	1
+Tray Food	559.41	1
+Liner Trash	31.71	2
+Guest Check Green Paper National Checking	35.67	1
+Lid Plas 16s Trans Slotted Dart	17.91	1
+BB2411 Dressing Dijon Honey Mustard Golden Harvest	40.72	1
+BB0276 Sauce Tartar European Girard's	544.59	2
+Onion Green eless Markon Ready Set Serve 43LBCTN $	27.71	1
+Juice Lime Fresh Squeezed Packer	528.40	1
+Mushroom Sliced Tu Packer	528.08	1
+Lettuce lcsherg Prem Palletizd Markon First Crop	528.29	1
+Lemon Choice	48.93	3
+Broccoli Floret Iceless Markon Ready Set Serve 43LBCTN	527.68	2
+Egg Hard Cooked Peeled Papetts	46.73	1
+Torila Gom White	519.60	1
+Cheese American Loaf White Golden Harvest	598.99	1
+Milk Homo Gallon Hiland Dairy 416AL	526.08	1
+Butter Solid Salted Golden Harvest	147.36	1
+Cheese Havart Plain Loaf Ostentiory	55.29	1
+Cheese American Sliced	565.07	2
+Cheese American Sliced White Schreiber	560.03	2
+Milk Butermilk Whole Hiland Dairy	534.65	3
+Cheese Cheddar Jack Shred Reg Golden Harvest	31.78	6
+Egg Fresh Shell X Usda Aa Ellington Farms	560.49	2
+Butter Blend Whipped Sated Land	524.02	2
+Horseradish Era Hot Tulkoft	16.00	1
+Pork Rib St Louis Duroc Creekstone Farms	54.61	2
+Chicken Breast Boz Butterfly Koch Foods	69.13	3
+Bacon Layout	553.60	1
+Pork Loin Center Gut Bane In Clemens Food Group	56.05	5
+Beef Riveye Lip On Sel Light Excel	59.77	1
+French Fries Sc	35.02	16
+Okra Cut Lightly Breaded Stiwel	529.07	4
+Sausage Chub Breakfast Mild Kelley Foods Manufacturing	539.46	2
+Blueberry lof Markon First Crop	576.61	1
+Beef Fries Breaded lof Osteen	567.93	2
+E3087 04a Coke Classic Cube Pack Cota Cola	17.91	1
+£	17.91	1
+Gombread Mix Jit	37.33	1
+|	435.03	435
+[	558.49	558
+.23	37.23	348
+GRAND TOTAL $	93.84	93
+[	47.65	50
+[	171.78	171
+LT ET TEE AT Pe TOR VET) BN EOF |	12.41	59
+o TOSETTEl	35.59	71
+[af EP20641l	22.83	64
+[6d EB3Z641[ ol |	58.50	58
+ABLK A APRON BLACK VISA Ic	58.50	58
+BBM	204.00	204
+ILB A LAUNDRY BAG FR3	2.50	2
+ilbr A “LAUNDRY BAG RACK ic i	0.25	0
+MWET PF) STRING WETMOP ic	48.00	48
+Environmental Charge	8.00	8
+SERVICE CHARGE	21.93	21
+ABLK A APRON BLACK VISA Ic	58.50	58
+BBM A TOWEL BAR MOPS BLUE IC	204.00	204
+ILB A LAUNDRY BAG FR3	2.50	2
+ilbr A “LAUNDRY BAG RACK IC j Ei	0.25	0
+MWET A STRING WETMOP IC	48.00	48
+Environmental Charge	8.00	8
+SERVICE CHARGE	21.93	21
+COMMENTS: Subtotal	343.18	1
+SALES TAX (	1.80	5
+PRE-BILLED	348.82	80
+/	4.59	4
+SALES SUMMARY	2.56	2
+ee ee es ee eee en ee $	20.00	1
+Seles a5	751.50	1
+EL aes	0.00	6
+Single Units	0.00	5
+s Ko PP ==Total"Account Balancer $	611.82	611
+.00	30.00	55
+.00	30.00	106
+.00	30.00	219
+.00	30.00	106
+.00	50.00	3
+SUBTOTAL	761.50	761
+vol epataai]l	40.87	40
+A crapani| wl  |omoowi|Mrns/R|[	24.03	15
+| croaoan”	8.93	8
+ol croaonz| i] |o9so22|mMrun/F|	15.08	15
+[croao11l	17.28	29
+alcraizat]	79.08	99
+craozat|	2.17	62
+“o[ cEoasza]	20.91	20
+sel croazei] al [	57.03	57
+a] ccozo21|	388.60	388
+[cH23331|	21.40	60
+cH23621|	8.26	8
+[	20.59	20
+[oa Fuoomas]	106.47	471
+[	24.35	48
+a] Faroe12| al [	37.08	84
+nel cpoanna] | lacmeoaliopez |osas |	19.60	40
+a5] Fv3i10a1]	61.52	4
+[FGa0e22]	316.29	316
+a5| eBoo0sa|	90.45	951
+| _ VWWW.UCIICHCTOTAL WEIGHT	5.62	57
+oi pmazooi]l al livaoizlup i maleaias] yazod3d7 ™ dina lISE SQUEEZE UPSIDE | __	71.88	7
+op poeeetil	20.75	75
+| gplprioe2i]	2.07	43
+gal pHe1gai]l ol lesosss|Rei@iEesor | Dd #	59.58	59
+[pJo2est]	40.53	46
+2lpn10331[	40.50	81
+{pe12513] a]	55.03	3
+[ Da31621]	32.43	32
+we mi ld Be rn	2691.67	2691
+] ceo3021|	94.13	26
+[ €	84.88	68
+( CD23311] —	114.98	114
+] CD32642]	58.73	58
+[S[CE06743]	71.40	71
+Craoaii[ i] [OUB0GA|MRAN/R|	16.80	50
+{ Ccoiaii[	17.93	931
+LE Ccozomi]	38.86	16
+I FOTZEAT	7.73	107
+[Fo30912]	57.78	77
+CB31041 i	1.34	1
+] Fugioo1|	50.98	631
+C00 \Sdc0an [HoRNEL [0asaa|	153.96	153
+eta s——hioerorrunmer sama | Ea ies OF IRTEE RTI TNRNFURMMED |	15.53	15
+[DG1Z511] Z| [	110.06	110
+Basa] $B SOU-CREATL gE. NATURAL |	86.19	86
+[TT1423 [FRSA7K [T0030] @A@EaZE UZ [CREALGRGWRCY & PALF PC |	18.57	18
+OTCHZI0ZL]	50.51	50
+|Fwizaz2|	42.55	55
+[Ch23a11]	114.98	114
+CASINO AVE, Invoice Total $	534.49	534
+bid Lug393  $	0.00	13150
+Customer #: giczTae Uzisd $	131.50	131
+TAX ID: STS-	131.50	131
+PO#: U42486  $	0.00	13150
+ACCOMCODE® ~~ RLED4E-	400.00	400
+Cases |	967.65	967
+a si	0.00	95
+oo Units g	0.00	7
+State/Local Charges	0.00	74
+-—Amount Duel ig	71.10	71
+N6t30 $	71.90	215
+MEE SEE Sales Total $	434.10	434
+ssBB Total Account Balance: $	704.75	704
+.00	30.00	212
+.00	30.00	2023
+.00	30.00	219
+.00	30.00	109
+.00	30.00	4
+.00	50.00	5
+ABLK A APRON BLACK VISA Ic	58.50	58
+BBM A TOWEL BAR MOPS BLUE Ic	255.00	255
+ILB A LAUNDRY BAG FR3	2.50	2
+ilbr A “LAUNDRY BAG RACK ic fe	0.25	0
+MWET A STRING WETMOP ic	48.00	48
+Environmental Charge	8.00	8
+SERVICE CHARGE	25.50	25
+12elccorant] ~	17.93	17
+[elciosea] al	20.00	20
+/FW0204if, | [	15.40	9040
+2s]rvozeac] £	106.47	106
+Z51y [uaup0T [BREWGY HGELY | |	37.28	56
+(FPO33LL]	162.43	162
+[ [	43.37	74
+BIFVi0&	381.20	381
+FST a TT ZT BR TONNE Tol SW7iio# [	1.62	30
+LTT [	5.25	24
+to]cp2ao21] si] [11955B[KTH/vA[	56.91	91
+e3lonz0s11 [=~	69.54	69
+[cE01701] Ji]	81.78	81
+zaln,	40.53	53
+afore |, |	36.65	36
+D600621 [	38.56	72
+o]DL11S1I1]"	22.37	3373
+alcrs2311] Z	49.48	44
+[€H33931] Ja [7e1011]elDHRV[	75.85	701
+Tccopozi]	38.32	20
+, " pe	895.40	895
+$	24.06	25
+$	39.20	1077
+$	74.75	74
+; Nei od : .	0.00	0
+D-GREASE IXIG CASE Single Units	0.00	0
+$	71.10	0
+ULTRAFC-	0.00	0
+$	71.90	142
+Total Product Charges: $	544.50	0
+Sales Total $	544.50	1884
+Tax Total $	38.12	606751884
+Invoice Total $	582.62	17
+Total Account Balance: $	728.88	728
+[	30.00	106
+[f BYPASS MAKEURIOVERFLOW [	30.00	106
+.00	30.00	106
+© (Ens Disp y ~	30.00	439
+[	30.00	106
+[	50.00	106
+BE Fvai0al]	61.52	8
+SEE FF §	4.45	4
+dl Frogoiil © [	336.96	336
+cBa4ooD]	36.08	48
+TOR FNOoE41]	54.50	65
+AH GRooO5T	0.65	362
+WEEE	3.36	62
+| [Ses f OVP OORVICE Li TTRIUERHY T LSE @wea™.	7.77	60
+el ee |W. I TN FOIA WEIGHS,	12.31	20
+Ey	57.50	87
+"	50.98	52
+[id coomadsl =] [ssomes| HORMEL 3ACON TOPPING PRECODKED | ~	76.95	94
+Ll [ TT	1.62	260
+f CI07151]	8.72	54
+] DNO3821[	13.67	57
+GDVis4@il	32.86	98
+iq DTO031or	57.27	27
+STORTO&RT[	63.85	3
+[ DoT7051[	0.52	0
+[	42.87	771
+pHaRT71 To [ea2297| k@i/nol	101.18	101
+SA DHS	77.45	49
+od puo2 aii lesoios| pAvarl oosze]	40.53	53
+a5 Eppiopll i] |	40.24	24
+Ad pmeisad	9.84	9
+pazoaiy]	43.89	87
+B" TORTI a	19.89	56
+FA GeoTisi]	28.73	65
+dL —iasses| eLiyio| 1az98	60.27	60
+Bf Eaoe ll —1ioiio[uribicloseral me 1D | CeramgARM GRATED STYLE |	8.89	95
+Ed cooa0zi]	130.52	130
+SErCoos7ii[ io] |	276.20	276
+~SoleeoTIIE	24.03	8
+Lad coapeadl iI |	38.72	73
+(ih €eoaazil	68.45	45
+M02 CEOh7a3[	71.80	71
+[9d BSSie41]	82.09	9
+DT12641]	20.93	93
+SUDPiipail	50.40	30
+|	34.58	49
+DT13021] i | i308m0| EERE]	31.88	51
+ABLK A APRON BLACK VISA ic	58.50	58
+BBM A TOWEL BAR MOPS BLUE ic	255.00	255
+ILB A LAUNDRY BAG FR3	2.50	2
+ilbr A “LAUNDRY BAG RACK []	0.25	0
+MWET A STRING WETMOP Ic	48.00	48
+Environmental Charge	8.00	8
+SERVICE CHARGE	25.50	25
+§ g	6.56	20
+PRE-BILLED	404.31	80
+LAUNDRY BAG	0.00	7
+LAUNDRY BAGRACK i BC)	0.00	0
+NAPSPUNBLACK eom0	939.00	939
+SHLARGETOBYKEMHS qq $	19.90	19
+MERCHANDISE REPLENISHMENT $	0.00	197
+Office Adj.: $	1204.29	1204
+Tax Adj.: $	0.00	99
+Commenti Po wee Boh ED Net Adj.: $	1303.64	1303
+ce rrmiars lal icinne eke [Eo Re Aue | fetes DoMOMMUGRL © |.	17.39	1
+[cnaamet]	20.00	20
+Gaiosail al |iaaes7 |i anacy [D013 |  AOPRS—leIr: WHE	26.90	80
+[	87.04	4
+(FTi0621]	26.08	26
+Fuioeas |	37.94	531
+oad el (fa n= | [AS78780 Iva vo dl{se olla WS TOE" |»	71.85	71
+ae ee TRED pa [Hbunn | OE] ianGIYED FRITTE © |-	29.75	55
+LA enn heancT [12M |	50.52	50
+oD Lae v6 [a TrARD [son Wipe	42.87	61
+De La a ete [hE Tnz [	69.52	8
+elpmasssel + loea0an HEINZ	29.42	42
+RRO ie  IKRAFT [	22.05	32
+lenmiianl	53.15	5
+lceozaarl	84.88	84
+zelccor112]	28.04	28
+GRAND TOTAL $	176.36	176
+Prepared By: Craig Stephens Preparer Signature: Craig Stephens Date Sent to Accounting:	7.23	7
+[DH21841 |	119.16	119
+D614021 |	50.52	50
+[D0Zi2e1 |	45.26	536
+|	55.57	5597
+47IDRZI021 |	30.21	4021
+G5 |DB21352 |	35.65	3563
+SZDLISTIT | T1 [	57.70	57
+[	27.42	29327
+IDCIZTIT | T[  §	31.50	31
+[CPST7SZ |	102.45	102
+[PMEIaZY | ® | [7eE007 LUCKYL FFPFT |	167.52	167
+|PGROITT |	43.87	43
+B6 |Ce01131 |	28.73	65
+[cp33421 |	19.59	59
+cH31142 |	53.15	106
+[cB21021 |	44.32	44
+B53 |CD34332 |	35.28	70
+[	24.84	68
+[	353.42	68
+[C606711 |	27.23	217
+[cooaaa1 | | [	85.51	171
+[	84.25	5
+[copaaii |	114.98	98
+|cDa2642 |	38.72	38
+[CE0a4z1 |	65.45	68
+[cHGa951 |	521.20	521
+[DVisaii |	28.17	17
+[DT13021 |	31.85	51
+[pP12711	31.88	63
+[	20.92	20
+1EB20641 |	22.85	49
+°	4.75	46
+oz [EB21041]	50.82	50
+[EB30021 |	35.55	55
+[DS32442 |	36.05	36
+[	20.76	7
+$	19.08	190
+.84	57.84	39
+S200	2.00	2
+Total Account Balance: $	659.38	659
+SERVICE ACKNOWLEDGEMENT	0.00	0
+CABINET ORGANIZED	0.00	0
+EXPIRATION DATES CHECKED	0.00	0
+BBP KIT CHECKED	0.00	0
+LIQUID BANDAGE SMALL	13.27	13
+WOUND CLOSURE BNDG 10M/10L	2.60	2
+BLUE MD FM 1X3 STRIP MED g $	13.65	27
+BLUE MD FM FINGERTIP MED	8.75	8
+BLUE MD WTRPROOF STRIP	9.50	9
+BLUE MD FOAM KNUCKLE MED	9.00	9
+BLUE MD FM LRG PTCH MED	7.50	7
+QUIKHEAL F/P BANDAGES MED	11.00	22
+SKIN TONE BNDG BEIGE REFILL B $	4.32	8
+X-LONG BANDAGE MEDIUM	10.75	10
+JUNIOR STRIP MED	5.75	5
+ELASTIC STRIP SMALL	8.12	8
+LARGE PATCH 2INX3IN- MED	11.80	11
+HYDROGEN PEROXIDE	4.50	4
+HARD SURFACE DISINFEC SVC	9.45	9
+BURN CARE PUMP	5.50	11
+COLD SPRAY	10.50	10
+BLOOD CLOTTER SPRAY	16.50	16
+GAUZE PADS 3INX3IN SMALL	5.00	5
+NON-ADHERENT PAD 2INX3INSM	9.59	1
+READY-RIP 2IN | $	3.00	3
+READY-RIP 3IN	9.58	9
+COLD PACK, SMALL,	3.00	3
+TRIPLE ANTIBIOTIC OINT MD	10.25	10
+HAND LOTION, MEDIUM	10.31	10
+FIRST AID CREAM, MED	10.00	10
+BIOFREEZE MUSCLE RLF SM	14.09	28
+DENTAL RELIEF, SMALL	4.00	4
+BLEED STOP GAUZE	23.52	23
+CHEWABLE ASPIRIN 81mg	9.59	9
+ACETAMINOPHEN LRG	27.50	27
+IBUPROFEN TABS MEDIUM	20.66	4
+LIQUID COUGH SUPPRSSNT Si	11.95	11
+ANTI-DIARRHEAL CAPLETS SM	9.50	9
+ALLERGY RELIEF TABLET MED	16.95	16
+PEPTUM TABS SMALL	13.25	13
+Page	836.37	21192819
+ALL DAY PAIN RELIEF	9.67	9
+GLUCOSE POWDER	12.66	12
+GLUCOSE MELTS	13.86	13
+L	12.50	12
+/	24.47	24
+TWEEZERS, METAL IND/3PK	15.72	15
+SPLINTER REMOVER	9.39	18
+FIRST AID GUIDE	6.97	6
+BURN RELIEF 4X4 DRESSING	11.95	11
+BURN RELIEF PACKET/	10.95	21
+COOL AND SOOTHE	22.69	22
+TRIANGULAR BANDAGE.	5.50	5
+EMERGENCY MEDICAL GLV/8BX	10.12	10
+LENS/SCREEN WIPES	17.95	17
+:	15.23	15
+SPLINT 24IN	20.87	2
+EMERGENCY FOIL BLANKET	17.64	17
+EMERGENCY TOURNIQUET	33.15	33
+DAYTIME COLD AND FLU RELIEF	15.91	2
+WOUNDSEAL PLUS APPLCTR (	16.21	16
+WOUNDSEAL POUR 1CT PACK	14.71	14
+COLD-EEZE CHERRY LOZENGE SMALL	12.59	12
+SERVICE CHARGE	8.50	8
+CINCINNATI, OH	54.16	54
+TOTAL $	636.37	1
+Page	836.37	21192819
+Cases	867.95	867
+Full Cases	0.00	0
+Single Units	0.00	0
+.00	30.00	106
+.00	30.00	106
+.00	30.00	439
+.00	30.00	109
+[FVS2111 |	175.58	175
+Si ceoas1T |	13.83	13
+cFoasa |	9.53	9
+S[Craosit |	16.80	16
+SE [eFgerTT | T | |{	28.53	28
+SE [Crossai |Z] [	3.56	3
+SL[CroasiT |	537.08	537
+[cr30anT [	50.56	50
+Fi JeCoTaTT |= [	33.48	33
+[COTTA TT [TE50T0 [RANZE-TE95 | 5i/	21.95	95
+[CEOORZT |Z | [	7.55	7
+<	20.21	20
+ST [FUTZERT | TS | pSA0T7 BURECK [ICP [	57.10	57
+EE pi wal [Dee Ce se re | TRL RTA a i51.	3.14	476
+#	50.98	1274
+er ceooaai [	3.53	54
+[ST [cAGeETI |	228.28	228
+TUXT-BEK-	6.00	443
+DIVC-DCI	6.00	10
+TUXT-TRE-	1.00	129
+LIBB-	2.00	230
+LIBB-1639HT: Mixing Glass,	5.00	407
+WALC-	6.00	130
+NOTE: ALL RETURNS ARE SUBJECT TO RESTOCKING FEES Sales Total:	351.74	351
+Less Payments:	554.56	554
+All credit card orders are subject to a	0.00	0
+ee Tos oalMRKn/F|@s08E|T	13.99	991
+CemaeeT—— [	57.95	99
+[craacal]	24.89	45
+sd CFacaai]	20.36	20
+[ccoizil	20.08	50
+Foroano[ IL [ie	215.12	215
+Croaazil Al [	19.34	841
+LT TT | ___SNwgEotAL welonr	3.85	96
+[	7.77	15
+{nana fossa ens oSior	67.00	67
+Des —	46.61	221
+Da20ALY	65.83	65
+ee Joso0d crawl	19.89	79
+[il cmziozi] if [	22.47	47
+fussed	2.55	55
+Dxze7all	66.96	66
+oq visa] i | 10443c Trac] e2etsl 1o/i0Nn glen FLAS t2-	27.47	27
+: I DTi12641 i] |	0.93	20
+DLoiozd J |	20.01	44
+ABLK A APRON BLACK VISA IC	58.50	58
+BBM A TOWEL BAR MOPS BLUE IC	255.00	255
+ILB A LAUNDRY BAG FR3	2.50	2
+ilbr A *LAUNDRY BAG RACK IC >	0.25	0
+MWET A STRING WETMOP ic	48.09	48
+Environmental Charge	8.00	8
+SERVICE CHARGE	25.50	25
+SALES TAX (	1.80	500
+fl CARD-V3475: Collins Glass,	2.00	177
+Invoice Total $	520.26	520
+$	131.50	60
+$	0.00	0
+RL2048-	400.00	400
+$	0.00	0
+$	190.80	190
+$	79.50	79
+$	71.90	143
+$	68.75	68
+.95	89.95	9
+Sales Total $	420.80	420
+Invoice Total $	520.26	520
+Total Account Balance: $	202.57	202
+Sales Total $	420.80	420
+Invoice Total $	520.26	520
+TT	9.53	27
+ad coooani = | szoazol cni¥aliadzo7] SNARE La | BACON A hvOusEENeRa | TT	53.95	75
+ccozaan] i] |	76.98	981
+— TTT WA Nee [WroTACEioMeS Ma cow |i	1.89	55
+"	88.04	704
+[2s cro7i51]	8.72	156
+|	71.85	71
+Poon] oS] [eviiec| JIEEN || OOVABLA Midday C ORMBRERD MK [	733.65	95
+S EAvaOAa]	121.07	121
+[Oi] DN10301[_i| |	540.50	40
+Bd cooiiai] a]  [	27.99	111
+ro Choaa1i] i] [	116.25	25
+| ch3231i]	49.75	49
+[	66.96	66
+I =| 110vs2 seo FooorNgiC2s0 CL SLB PLAS SOUFFLE	27.20	0
+|	715.86	15
+Fuidea]	37.94	569
+FWi0S31l | [	46.09	46
+Cpaagzg	37.36	40
+sl Fvioisd dl |	47.65	85
+[	12.09	74
+—=-esseesl	53.95	107
+LTT | pee [ENT]. Bl of RUIWETCRES ~NEW	3.68	71
+EE RN EO SG NON I ah	52.30	509
+[eo se | eo se | DoSvaYl EIB] ©	0.70	21
+[4slpei2sia|	53.34	53
+[	69.39	9
+ps2io22]	27.02	2
+SP] DPIIBaT] TI |T10982|S0L0_|PROOBY.	27.80	807
+z OO as] I [	17.90	17
+cra191 J |	28.01	2
+rd coool EAL | oroosbmmrmr or rast wow SON RR ED JOBC OD |	20.38	28
+cD34B21 od |	24.62	24
+d croomal iT	14.54	14
+crossed	18.47	18
+sd ciodgza]l	19.46	84
+[Fva2iill	57.79	175
+| FWi035]	48.09	48
+[£	19.60	78
+Fvio33d [agave] FUNNELL4508 |	24.95	24
+| _& c53szad	37.36	40
+LL	51.00	71
+[	54.00	16200
+ceoo042y	53.95	80
+TI Deda | CICIOS ECOTNC] Todi,	3.86	3
+DOR Tea Oo7o GIRARDI	32.43	53
+[6d Emo1021	40.24	40
+Lod pwoamo)	41.88	41
+|	35.18	20
+L 2d peiosil il [	53.34	34
+| zd pazoatl od | 7a0007 IMPERI]	93.22	93
+ceo1151 J [	27.99	95
+|	22.47	25
+Cc040a1] Jd | 1s647as| HIGAND! 55a6h.|	32.88	76
+CG0a711 A |	24.27	18
+EB30021] i]	55.10	10
+RINSE AD I CASE hy	971.00	971
+$	76.35	76
+$	19.03	0
+SOLUTION CL	0.00	0
+Salt { $	0.00	0
+. $	971.00	971
+Jaf “hares $	0.00	606751884
+ro :	527.20	527
+_— REESE Rn	106.40	106
+.40	106.40	106
+[ svpass i VVERFLOY	109.75	109
+[	106.40	106
+Tota! Machine Charges: $	0.00	3837531
+$	95.40	95
+SOLUTION Je GAL Cases	428.95	428
+Sram |	74.75	4
+) | |	0.00	0
+HKLUX SOAR AX CASE Sales Ta»	0.00	0
+$	68.75	0
+$	2.00	428
+Sta |	79.50	12130
+| ges $	0.00	606751884
+os SI | m—	521.28	106
+Tr	109.75	109
+worn i EL	106.40	106
+[	521.28	106
+ABLK A APRON BLACK VISA Ic	58.50	58
+BBM A TOWEL BAR MOPS BLUE IC	255.00	255
+ILB A LAUNDRY BAG FR3	2.50	2
+ilbr A *LAUNDRY BAG RACK Ic fi	0.25	0
+MWET A STRING WETMOP IC	48.00	48
+Environmental Charge	8.00	8
+SERVICE CHARGE	25.50	25
+SALES TAX (	1.80	6
+PRE-BILLED	404.31	80
+] CF24911] of [	13.23	26
+CC0151il	20.58	208
+] CDI4B21]	54.62	49
+Crodsoal i	18.47	18
+fCresea tl a	30.37	0
+] FY10622]	7.65	428
+]	50.65	60
+asl Fropa2i|	107.13	107
+z5l Fwo3s71] jo]  [as7013[wocH [ese22]	42.00	420
+ET SEN NA TE | CR, 0d NY RV (CO I Zien OM BN: TT	243.90	897
+LL [| Cl AAG Ter	12.06	12
+FE EN I EER EIA AP =~ F FA. R.	51.70	504
+] Fvaio21]	50.98	50
+eee LTT | TW | Ta g@oNT a3	299.10	299
+CAOeS1I|  B[  [S5022T1[WOCH [#	85.04	70432
+zel |	32.59	897
+silonozzial	91.99	51
+0H33021]	94.73	94
+DNO3821]	13.67	13
+/DR10&	63.86	8561
+Dh21841]	29.79	59
+“ol DT01511[	35.81	55
+] DH3D711|	50.59	777
+B Invoice Total $	639.59	777
+Total Machine Charges: $	0.00	10022573
+$	190.80	190
+H20h	120.28	120
+SOLUTION CL	0.00	0
+$	20.00	0
+$	51.00	5100
+ei for	0.00	0
+Total Product Charges: $	597.75	428
+Sales Total $	597.75	606751884
+Total Account Balance: $	795.58	795
+.00	30.00	106
+Please Remit Payments To:	30.00	100
+AUTO CHLOR SERVICES, LLC.	50.00	106
+DALLAS, TX	50.00	106
+Questions? Call (	428.95	428
+7olenagais |	14.79	79
+2a [nvinaps | a]  |1aveso lcevion [1a78s |	97.98	97
+16lntoominl	57.07	27
+polniotass |	30.54	30
+alomigent | + | leacaos [Er erne 1saia | care BY © SCOFPEECTRADITIONAL FP |	63.86	63
+|popisat | a]  |eenaoe Wernzo [	20.66	94
+,pwiozaz|	55.97	111
+|DT01311 |	35.41	70
+[cCEQOa41 |	77.45	49
+ss] |	59.87	87
+[pM33330 |	29.42	42
+alpa33331t |	7.60	7
+|DPO2931 |	100.95	100
+|cH31932 |	51.21	42
+|pM23321 |	41.88	167
+[pM32312 |	15.83	15
+|DT12912 |	36.65	36
+[DN10331 |	40.50	81
+[DE12511 |	54.22	54
+[Daz0311 |	44.98	96
+[Ds2i022 |	27.02	27
+a7 |Dur1az2|	65.83	65
+DL010eE Se TpAvVDOT	53.13	267
+Eo	22.63	45
+az ERa0ed eee lioa |	4.75	27
+aris | lBeooss [part lies. |	17.99	17
+& DOO Lo e00e0 [EooNTT [1epEK |	50.61	50
+ERE OT	27.12	48
+Ene Jh7a0sz [coNTPO l1ax7X "	51.53	51
+DR IT le750e7 hiANDGA [	36.05	1
+Dea —	42.49	397
+olepaocis | | lesoiinlprecn Inazia |	4.71	9
+ABLK A APRON BLACK VISA Ic	58.50	58
+BBM A TOWEL BAR MOPS BLUE IC	255.00	255
+ILB A LAUNDRY BAG FR3	2.50	2
+ilbr A *LAUNDRY BAG RACK Ic	0.25	0
+MWET A STRING WETMOP IC	48.00	48
+Environmental Charge	8.00	8
+SERVICE CHARGE	25.50	25
+SALES TAX (	1.80	20
+PRE-BILLED	404.31	80
+ee Tiseiod vinvaR seozal	12.38	5
+he Tie ooo WRK	17.58	7074
+re — iT iesoro[ Rwn/E visas	23.08	23
+eased [Tes00¢ OUTSATOvE7|  B/SWLE. WAC GREESE RIVES WEACON_	77.70	70
+| Coosssd	7.80	57
+Ed cpoasod od [	36.03	27
+od Fopized	56.03	15
+ad FNOOBa]	54.00	216
+2d Fooozzl dA |	35.64	28
+[| | "we | To@®ToHT	72.50	45
+Si Fuosss	273.19	273
+—— +t	516.49	516
+[los s9  [eaze | FON VIIWHALLOE MIN [v8	58.91	58
+onlceanziy |	31.68	68
+lcroaes |	12.36	36
+ie [ceooany |	15.42	42
+aloroaony | al |iae106 lackerdoo BiB | ats CWC WRHNTATO-RED #	15.92	76
+aa [chon | a | |posoos lpacker [P4952 sassy remmBmaTDsoRaRE Y |	16.24	96
+|cHoRan1 |	21.67	21
+leatpeat | al [	6.50	80
+olrvopgan |	106.47	106
+oglryieaeo | os] l1s4036 |LOUTSA dC % CHEBBE BITES W/BACON |	47.20	283
+[FP01021 |  &|  |	24.24	157
+s7]cpeaaea]	15.40	78
+Ze |Fvioaoe | a] [a15350 [FUNNEL Jasos |	24.95	74
+—lfugioar |e] [	61.52	369
+Fo lcezazoo |	36.03	324
+5ilro2i72a|	36.03	216
+[	54.00	216
+(Fotasi|	426.50	426
+ee WWW. DCT ICCTOTAL REIT	535.25	535
+| I [	12.51	1
+LT	1.57	47
+LT TTT TT Ne |} TOTAL WEIORt=e eve |	96.39	96
+931CAOLS1T |B] [	88.04	32
+[CTO7151 |	159.52	159
+[DPOIBA1 |	7.77	771
+O1|DGOTBAT |	32.17	32
+B[DH33021 |	34.73	34
+[DHIT221 |	8.11	8
+$	95.40	95
+$	7.84	20
+$	74.75	6356
+$	61.00	61
+ULTRAFC-	0.00	0
+$	71.90	0
+Total Product Charges: $	476.05	0
+achine Charges $	0.00	535
+Invoice Total $	509.37	606751884
+Total Account Balance: $	821.19	821
+| Receipt Total: $	0.00	4
+© BYPASS MAKEUP/OVERFLOW [	9.20	9
+.00	30.00	109
+[ o-RiNes/saueeze TuseS [¥{ Pump moToRS (	50.00	106
+f SPRAY ARMS SUBTOTAL	535.35	535
+|	55.34	55
+[	18.52	18
+| 7d ¢F34351] i] |	5.53	53
+CF31911]	28.01	3
+(	47.20	295
+17a | il	26.32	26
+[	137.53	137
+[	7.77	77
+ERT ES ING|	16.74	16
+[	20.75	75
+[	13.58	13
+[&	85.32	85
+|	63.84	63
+[	77.45	49
+[	40.50	40
+[	19.89	79
+ZA CCOTIST	85.19	85
+: J cood02l]	65.06	65
+ed | I TITeAe7s[ DISCO [	4.75	27
+___|_	4.75	27
+[EBS2641[	57.75	57
+| DX3083L]	59.30	40
+[EB91221] | I ['eBT026 ENMOTI[BYA50],	55.22	55
+SERVICE ACKNOWLEDGEMENT	0.00	0
+CABINET ORGANIZED	0.00	0
+EXPIRATION DATES CHECKED	0.00	0
+BBP KIT CHECKED	0.00	0
+DILOTAB II,	29.99	29
+LIQUID BANDAGE SMALL	13.27	13
+BLUE MD FM 1X3 STRIP MED	13.65	7
+BLUE MD FM FINGERTIP MED	8.75	8
+BLUE MD WTRPROOF STRIP	9.50	9
+BLUE MD FOAM KNUCKLE MED	9.00	9
+BLUE MD FM LRG PTCH MED	7.50	7
+QUIKHEAL F/P BANDAGES MED	11.00	11
+X-LONG BANDAGE MEDIUM	10.75	10
+LARGE PATCH 2INX3IN- MED	11.80	11
+ALCOHOL SWABS SMALL	5.49	5
+HARD SURFACE DISINFEC SVC	9.45	9
+COTTONTIP APP 3IN	4.00	4
+GAUZE PADS 3INX3IN SMALL	5.00	5
+ROLLER GAUZE- 2IN NON-STER	2.50	2
+NON-ADHERENT PAD 2INX3INSM	9.59	9
+TRIPLE ANTIBIOTIC OINT MD :| $	10.25	10
+ACETAMINOPHEN LRG	27.50	27
+IBUPROFEN TABS MEDIUM	20.66	20
+ANTACID FRUIT FLAVOR MED	11.95	11
+ANTI-DIARRHEAL CAPLETS SM	9.50	9
+ALLERGY RELIEF TABLET MED	16.95	16
+PEPTUM TABS SMALL	13.25	13
+ALEVE MEDIUM	42.62	7
+GLUCOSE MELTS	13.86	13
+TWEEZERS, METAL IND/3PK	15.72	15
+BURN RELIEF PACKET/	10.95	10
+COOL AND SOOTHE	22.69	22
+LENS/SCREEN WIPES	17.95	35
+BLUE FINGERCOTS LTX	11.48	11
+EXCEDRIN XTRA STRENGTH/30BOX	27.85	27
+SERVICE CHARGE	8.50	8
+Page	492.54	21192819
+P.O. Box	31.67	31
+CINCINNATI, OH	492.54	492
+Page2ot2 | INVOICE TOTAL: $	492.54	21192819
+ABLK A APRON BLACK VISA Ic	58.50	58
+BBM A TOWEL BAR MOPS BLUE Ic	255.00	255
+ILB A LAUNDRY BAG FR3	2.50	2
+ilor A *LAUNDRY BAG RACK Ic >	0.25	0
+MWET A STRING WETMOP IC	48.00	48
+Environmental Charge	8.00	8
+SERVICE CHARGE	25.50	25
+COMMENTS: Subtotal	397.75	1
+CCOD&EL =|	70.96	70
+CF32711]	35.27	27
+CFaA5G1|	28.53	57
+CF2avii]	12.35	24
+CFPa1o11]	28.01	28
+CD3ABZI] I |	19.18	1918
+SY CEOOBZM| iI [	15.57	15
+SI CTOS221[ of [	19.01	38
+ZY FYIZEIN A |	47.20	60
+J FUS07IZ | 362EO01| BREWCI[ CITY] Sus	57.28	57
+BY FU31041] A [	246.08	246
+EN a EA I I BT NT TL	903.97	903
+Fvai1o21|	50.98	611
+ceoo4zi] oI [	62.11	62
+ERP a RE REE EN we	75.50	120
+[TT	5.08	77
+ZH DOZIEAI]	20.66	64
+[	50.98	41
+[2d D600sZ1[ tal [	35.56	757
+[	43.85	78
+S2 CRGTIAZl	51.54	51
+[	32.50	45
+Iq DX@	79.33	79
+ed oios22l	34.55	9
+oy DTTSOe I | TI0BBO[ESSNTIIS0A3&[	31.88	31
+Tq Coo0etT] A [TSOICI[WALLACI IH99" | _1/28p CT [FAL KIT K Wag NaF Str Ay |	22.53	4
+FEaoes— a | o700T7| DARKEST S¥/	35.55	35
+/	566.40	566
+TOBY KEITH'S BAR ——__1	9566.40	9566
+—_——— $	19.08	96
+ales $	7.84	78
+Toe ri i	325.90	427
+Credits $	71.10	71
+Full Cases	0.00	5
+Single Units	0.00	216
+Comainer Deposits	0.00	68
+Net	520.35	520
+Shep Total Account Balance: $	665.36	665
+.00	30.00	4
+.00	30.00	100
+SUBTOTAL |	325.80	325
+[craoezil J [	34.20	40
+i cFaosil]	16.80	50
+cra@7ii i |	25.82	831
+B9 crogoill I |	17.28	28
+oi CF3asai	157.26	157
+oi CFzaoTi Z|	12.36	721
+Craoaai	20.36	20
+cco1ai |	19.88	19
+Bq cTo3z2l]	15.92	31
+[	4.45	544
+TT Tl Wr NO BT Pr TW. Sag BOF [	1184.56	1184
+q FROZEZI of |	35.71	42
+a VT) NT Slow en ya | Ja CCS	52.20	17
+§ FUsiozi]	50.98	76
+FT [ El J pl aay Wy Tea WEI ~	95.50	641
+I chosstl HE all CHICKEN -BREASWB0Z BUTTERF|	86.04	20
+DyigeEi A | T67860  CEYLON'Ig706	92.66	21
+ee iI e99io7[Lave [1104s/~	40.54	30
+I ehaloos i [	51.21	211
+Td [	36.99	380
+DPii7i	59.67	59
+Sd coozsall i | | JD ooGERE BiaW TOE | CREAMS HALEEID FREE [	82.36	96
+FuToAsd i Wi [ER] 67S.	42.55	42
+st Coord	93.02	38
+pRIZZAy_ ¥ |ioeseo FooNTIi So4ds	31.88	31
+od Drioa=l 4d _ [	105.78	105
+#	90.43	0
+ABLK A APRON BLACK VISA Ic	58.50	58
+BBM A TOWEL BAR MOPS BLUE Ic	55.00	55
+LB A LAUNDRY BAG i FR3	2.50	2
+ilbr A “LAUNDRY BAG RACK Ic	0.25	0
+MWET A STRING WETMOP Ic	48.00	48
+Environmental Charge	8.00	8
+SERVICE CHARGE	25.50	25
+SALES TAX (	1.80	20
+PRE-BILLED	404.31	3
+|	59.75	2575
+[CC01731]	5.57	97
+[CCO3511]	13.07	13
+[CF32621|	4.20	196
+[cr2a952]	17.76	17
+[CF52711]	25.82	25
+/CF24911]	12.36	72
+[CF31911]	28.01	55027
+] CCOISIT|	17.84	19
+S5|CEO4B22]	16.08	16
+BICRZ333T]	16.24	97
+| CH234621 | ELE LE QPIATO 5X§	19.50	58
+T[FUSZIIT|	67.77	587
+1ijeal=edl]	26.50	26
+DF [FPOTORT [	157.44	157
+en|ri1paat|	37.94	10
+lonoaaga|	19.60	20
+solvvionno| al |ai1aneo [Funnel [asos [> aa/s gn. Bb #CAKE FUNNEL HEAT & SERVE |	24.95	99
+a2|Fvsi0a1| a] |11s110]aDMIRA [	61.52	8
+| | T	27.55	27
+[TW ss ao" aneeaaiotT W	4.45	34
+[cp3a2p2|	56.03	48
+]ras0eon]	216.30	216
+Fwoiaai]	426.50	426
+LL LT	10.26	16
+]FV21021|	50.98	917
+or2021	4.75	69
+IZ DRAT2eT [	85.22	85
+[DNOSB2I]	15.67	15
+ore1S81]	9.75	29
+[DCTF021] —	50.52	50
+[cE03911]	42.43	64
+[DK30422|	116.01	1
+za|pro1911]	85.41	41
+[	19.86	86
+|DJOREA1 | TI [6B0105[BAYVAL |OFS2Z{~	40.53	531
+[DP02931 |	7.30	7
+6BCHIISG2[	51.21	51
+S7|DNIOSST[ Z| [	40.50	0
+xf	2123.39	2123
+[eelFwioazn]	42.85	40
+[cao1112] a]  [3me3colt anol [	24.00	24
+a2[croaszi [|	68.03	3
+aalppiizat] ol	59.40	59
+/Dv03041]	55.84	35
+solpLiossal	34.58	69
+s6[pP12711[	31.88	761
+[EB32641]	87.36	87
+]EB3i1201]	55.22	55
+mmo Invoice Total $	582.94	777
+. | hs ih e Charges: $	0.00	102746
+hs © CASE or	0.00	0
+; : | $A1	0.00	0
+i ] a euet ¢ “harges: $	544.80	751
+t Charges $	544.80	3
+les Total $	544.80	1884
+:	106.40	106
+zlcFa2e21 |	27.29	27
+|cF343311	28.53	57
+[CF31911 [	28.01	61
+8cF3o2a1]	23.62	2
+E CH23331]	12.88	55
+[CHa3621 |	59.00	59
+? FJ12641]	57.98	2
+PB|FA30912 |	37.28	56
+ODLOSEIL|	33.08	6
+|CD23525 | TZ	19.60	3920
+v5 [cpaapoo |	36.03	51
+[Fasoeze |	216.30	216
+EF I ewig	54.26	504
+[Emer rae Ty Tee ree | BroTAl WEIGHT STs a0% B10.	1184.60	1
+|Fve1oz1 |	917.44	917
+7olceozsaz |	153.94	153
+[Fa3p112|	35.54	71
+[cAOGSIT|	56.04	264
+mel [30s | [	9159.97	9159
+AG CI07151 |	5.72	15696
+[omMaazel |	71.65	71
+[pHa1e21 |	42.11	42
+BlcD30511 |	13.58	15
+[Dvigasi|	32.66	66
+[Dc04041 |	35.32	1
+[D614021 |	50.52	50
+[CE0G911 |	42.87	42
+|D021641 |	20.66	41
+[CE02632 |	44.50	44
+a@lchmi9a32 |	1.12	51
+31Daz0311 |	43.89	87
+SslpPi1711]	19.85	78
+[ceo1in1| A] [	28.03	13
+€	60.25	60
+[¢	32.63	97
+[coob711 |	27.23	84
+[[i[Fwizaza|	42.55	42
+[	238.20	238
+R71op12711 |]	51.88	3
+[ea326a1] ol  |a72060 [ert	29.25	50
+51EB31221 |	55.22	55
+ABLK A APRON BLACK VISA IC	58.50	58
+BBM A TOWEL BAR MOPS BLUE IC	255.00	255
+ILB A LAUNDRY BAG FR3	2.50	2
+ilbr A “LAUNDRY BAG RACK [	0.25	0
+MWET A STRING WETMOP IC	48.00	48
+Environmental Charge	8.00	8
+SERVICE CHARGE	25.50	25
+SALESITAXI(	1.80	20
+PRE-BILLED	404.31	80
+OLYM-J2460C: Shelf, wire,	6.00	333
+OLYM-J74C: Post	4.00	62
+All credit card orders are subject to a	429.61	429
+[FY10332	49.90	49
+[FV31041 |	184.56	184
+[FNOOB41 |	162.99	162
+CE TS CR a IR I se | a	12.31	85
+| I TT |  SNw#P90TAL WEIGHT	60.00	60
+[Fv21021 |	50.98	917
+[c600421 [	62.13	44
+TT	51.07	55
+[DS30932 |	36.29	36
+] | iT lio4910 [VEX PE [	585.55	53
+[DM22361 |	32.55	52
+TT	19.12	19
+ZIDASS0ST [	37.73	73
+|CD30311 |	13.58	13
+B88 pTo0312 |	57.27	57
+DR10621 |	63.86	86
+DH21841 [	59.79	88
+D614021 |	50.53	50
+DJ02711 [	49.24	49
+CEO2111 [	49.54	49
+DO021641]	20.66	41
+Dk3oaz2 |	116.01	1
+pTo1311]	70.82	70
+IDH92711 [|	50.59	101
+[CEQO&4L |	77.49	77
+Eos Ptr haga	59.42	59
+[DGu20i2 |	19.36	19
+[CH31532 | T1 [	51.73	12
+[DHs2sia |	715.87	715
+PE |DZISIIL|	37.36	37
+|S [	13.33	65
+[DNTOJIL |	30.50	5100
+[	33.69	33
+PEDPIT/IT [| [	19.85	79
+I] |”	17.27	17
+#	2651.30	2651
+galcco7iio|	115.09	6
+[cH31142|	51.84	51
+[CB21021 |	40.39	60
+|	48.26	48
+[CG04021 | FT| [	32.63	57
+/CG06711 |	143.38	143
+©51C603441]	170.02	170
+[€	52.36	64
+[CH32311 |	104.00	8
+[CEO442T |	68.03	68
+JCH3S731]	158.80	158
+olep2oeat [	22.83	46
+a1lppiigar]	34.28	8
+[ER21041 |	50.82	50
+[EB32641 |	89.95	87
+[Dx21731 |	126.05	124
+a5 TT	735.87	87
+] |	50.43	867
+|	171.00	171
+J CF3%63ll ~	40.92	163
+|	19.84	68
+: j CEORB23 I] | [	16.05	0
+[rao A [0sooN PARERIZEAYSY] mupted Cal TOMAR CRACISSAL I TI |	14.88	52
+| Soogenl]	10.41	10
+i oo — J | TECOSISWT STRPZS | eo CUES (ECC CHUNAR	7.75	7
+] DWO12BI[	18.10	407
+] €CO3441] I] [	85.01	85
+ABLK A APRON BLACK VISA Ic	58.50	58
+BBM A TOWEL BAR MOPS BLUE ic	256.00	256
+ILB A LAUNDRY BAG FR3	2.50	2
+itor A “LAUNDRY BAG RACK Ic	0.25	0
+MWET A STRING WETMOP Ic	48.00	48
+Environmental Charge	8.00	8
+SERVICE CHARGE	25.50	25
+CASINO AVE, Invoice Total $	589.59	589
+TAXID: | ST8-	0.00	0
+$	131.50	0
+| Qy Amount $	131.50	0
+Cases |	861.25	50
+Total Units	131.50	0
+Full Cases	0.00	400
+Single Units	0.00	0
+Sales Tax	0.00	0
+PLEASE REMIT PAYMENT TO: $	95.40	95
+Remittance Dr, Suite	7.84	39
+$	14.95	149
+Dominic shipp ’ $	51.00	51
+Sher $	71.90	143
+- TT $	68.75	68
+) RE $	2.00	2
+SALES $	9.95	0
+.00	30.00	559
+.00	30.00	485
+uDEW POS	103.99	103
+i	106.40	106
+DRPEP POS	589.59	589
+SE	1521.95	671820230420
+.00	50.00	828
+.00	50.00	0
+DT00314 if |	57.27	27
+| DWIO2BY — i [	55.97	55
+| DJOREAT if T6BO104 FANESEZOFS2R) BaSawE] CALS [FICHE DILL SSNMEAMINC G/T]	40.53	40
+J onoieed I |	51.21	51
+[C103321]	35.02	35
+[	96.69	27
+TW ss wt pb lE CHT W	7956.60	7956
+[F030628]	324.45	324
+LY C0242	58.96	58
+| CAOBSTT|	98.08	525747
+[CD30311]	14.79	14
+2ICEOZITTI”	39.53	39
+rosea	116.01	116
+TX Whiskey	35.19	0
+Gentleman Jack	24.09	24
+Jack Daniels	26.38	79
+Jack Daniels Honey	26.38	0
+Jack Daniels Apple	18.39	0
+Jack Daniels Fire	26.38	0
+Fireball	15.19	0
+Pendleton  x	29.59	0
+Seagram's	14.99	14
+Screwball   x	26.36	0
+Southern Comfort	11.99	0
+Kentucky Dale   x	6.39	0
+Eagle Rare  x	28.39	0
+Basil Hayden	41.28	41
+Woodford Reserve	35.09	0
+Jim Bean	16.68	66
+Bulleit	24.74	0
+Crown	29.99	119
+Crown Apple	29.99	0
+Crown Peach	23.99	0
+Crown Vanilla	29.99	0
+Macallen	75.99	0
+The Glenlivet	58.79	0
+JW Black  x	41.99	0
+Belvedere  x	29.77	0
+Finlandia   x	12.79	0
+Ketel One  x	25.49	0
+Stolichnaya  x	19.99	0
+Stolichnaya Vanilla  x	21.25	0
+Absolute Vodka  x	19.22	0
+Deep Eddy's Lemon	19.99	0
+Deep Eddy's Ruby Red	19.99	0
+Deep Eddy's Peach	19.99	0
+Taaka	5.55	1
+Clasa  Azul Anejo  x	367.99	0
+Clasa  Azul Reposado  x	149.17	0
+Clasa  Azul Plata  x	92.11	0
+Patron Silver	39.99	79
+Corralejo Reposado	28.26	0
+Corralejo Blanco	24.79	0
+Herradura Silver  x	39.19	0
+Reposado	31.79	63
+Silver	28.79	201
+Jose Cuervo (blue agave)  x	21.59	0
+El Toro	8.76	8
+Tanqueray	23.99	0
+Bombay Sapphire  x	22.39	0
+Taaka	5.89	0
+Myer's Mark  x	22.39	0
+Captian Morgan	17.99	17
+Hennessey VS	44.49	0
+Tuaca Itailian Brandy  x	22.13	0
+E & J   x	11.99	0
+Pual Mason  x	10.39	0
+Disaronno	38.39	0
+Grand Marnier	34.42	0
+Cointreau	31.39	0
+Chambord  x	27.99	0
+Frangelico  x	24.79	0
+Campari  x	34.06	0
+Kahlua  x	26.98	0
+Jagermeister  x	26.22	0
+Rum Chata  x	21.66	0
+Mr.Boston Ameretto  x	5.05	0
+Mr.Boston Blue Curacao	5.05	0
+Buttershots  x	10.73	0
+Mr.Boston Melon	5.92	0
+Mr.Boston Peach Schapps	5.42	10
+Mr.Boston Sour Apple	5.42	0
+Dessert LIT	7.19	0
+Sutter Homes Cabernet	5.25	5
+Sutter Homes Merlot	5.25	0
+Sutter Homes  Chardonnay	5.25	21
+Sutter Homes Moscato	5.25	5
+Sutter Homes White Zin	5.25	5
+Sutter Homes Pinot Grig.	5.25	5
+Date:	9.11	23
+Bud Light	0.98	0
+Mich Ultra 12oz cans	1.18	4
+Coors Banquet 16oz cans	0.99	0
+Coors Light 16oz can	1.04	24
+Miller Lite	1.04	80000000000001
+Budweiser Cans	1.05	600000000000001
+Budweiser Zero Cans	1.05	0
+Shocktop  x	1.01	0
+Dos Equis	1.23	8
+Modelo Especial	1.18	0
+Corona Extra	1.29	46
+Heineken	1.29	0
+Shiner	1.19	839999999999996
+Coop F5	1.43	34
+Coop Ice Chest	1.43	0
+Coop Horny Toad	1.43	8
+Guiness  x	1.31	0
+Estrella Jalisco  x	1.12	0
+seltzer	1.33	0
+Redbull	1.63	39
+Sugar Free Redbull	1.63	39
+Redbull Coconut	1.63	0
+Redbull Watermelon	1.63	0
+Redbull Blue	1.63	39
+Aquafina	9.08	9
+Employee Water	9.08	9
+Date:	9.12	23
+Cherries	14.51	14
+Olives	12.69	0
+Cranberry Juice	1.65	799999999999997
+Grapefruit Juice	3.97	0
+Orange Juice	1.89	45
+Pineapple Juice	2.16	77
+Tomato Juice	0.36	0
+Watermelon Syrup	3.37	20
+Grenadine	2.46	0
+Strawberry Syrup	3.19	0
+Peach Syrup	3.21	0
+Triple Sec	2.78	5
+Sweetend Lime Juice	2.55	0
+Ninas Pina Mix	3.19	0
+Zing Zang	3.19	0
+Sweet and Sour	0.36	8
+Ninas Marg mix	2.54	30
+Ginger Beer	0.87	10
+14oz cups	4.67	0
+Beverage Swords	3.83	0
+gingerale	1.18	16
+Thermal Paper	56.88	56
+Tonic Water	0.69	4
+9oz Rocks togo cups	3.11	0
+Bitters	4.28	4
