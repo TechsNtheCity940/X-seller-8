@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const CostTracking = ({ invoices }) => {
   const totalCost = invoices.reduce((acc, item) => {
@@ -32,6 +33,14 @@ const CostTracking = ({ invoices }) => {
       </table>
     </div>
   );
+};
+
+CostTracking.propTypes = {
+  invoices: PropTypes.arrayOf(PropTypes.shape({
+    'ITEM NAME': PropTypes.string,
+    ORDERED: PropTypes.number,
+    PRICE: PropTypes.number,
+  })),
 };
 
 export default CostTracking;

@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import PropTypes from 'prop-types';
 
 const ProcessedFiles = () => {
   const [processedFiles, setProcessedFiles] = useState([]);
@@ -20,9 +21,9 @@ const ProcessedFiles = () => {
     fetchProcessedFiles();
   }, []);
 
-  const handleDownload = (filePath) => {
+  const handleDownload = useCallback((filePath) => {
     window.open(`http://localhost:5000/download/${filePath}`);
-  };
+  }, []);
 
   return (
     <div className="processed-files">
@@ -42,6 +43,13 @@ const ProcessedFiles = () => {
       )}
     </div>
   );
+};
+
+ProcessedFiles.propTypes = {
+  processedFiles: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    path: PropTypes.string,
+  })),
 };
 
 export default ProcessedFiles;

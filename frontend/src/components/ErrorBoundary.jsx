@@ -1,5 +1,5 @@
-// ErrorBoundary.jsx
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -22,11 +22,15 @@ class ErrorBoundary extends React.Component {
 
   render() {
     if (this.state.hasError) {
-      return <h2>Something went wrong.</h2>;
+      return <h2>Something went wrong. Please try refreshing the page or contact support.</h2>;
     }
 
     return this.props.children;
   }
 }
+
+ErrorBoundary.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default ErrorBoundary;

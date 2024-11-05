@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
+import PropTypes from 'prop-types';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
@@ -11,6 +12,7 @@ const InventoryPriceTrend = () => {
     async function fetchInventory() {
       try {
         const response = await fetch('http://localhost:5000/inventory');
+        if (!response.ok) throw new Error('Failed to fetch inventory data');
         const data = await response.json();
         setInventoryData(data);
       } catch (error) {
@@ -40,6 +42,13 @@ const InventoryPriceTrend = () => {
       <Line data={chartData} />
     </div>
   );
+};
+
+InventoryPriceTrend.propTypes = {
+  inventoryData: PropTypes.arrayOf(PropTypes.shape({
+    itemName: PropTypes.string,
+    price: PropTypes.number,
+  })),
 };
 
 export default InventoryPriceTrend;

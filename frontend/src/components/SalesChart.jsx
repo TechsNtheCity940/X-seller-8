@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Bar } from 'react-chartjs-2';
 import 'chart.js/auto';
 
@@ -40,6 +41,11 @@ const SalesChart = ({ salesData, costData }) => {
       <Bar data={data} options={options} />
     </div>
   );
+};
+
+SalesChart.propTypes = {
+  salesData: PropTypes.arrayOf(PropTypes.number).isRequired,
+  costData: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 
 export default SalesChart;

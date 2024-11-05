@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import DataGrid from 'react-data-grid';
+import PropTypes from 'prop-types';
 
 const columns = [
   { key: 'id', name: 'ID', editable: false },
@@ -21,42 +22,14 @@ const Inventory = () => {
     const fetchInventoryData = async () => {
       try {
         const response = await fetch('http://localhost:5000/output/inventory.json');
-        if (!response.ok) {
-          throw new Error('Failed to fetch inventory data');
-        }
+        if (!response.ok) throw new Error('Failed to fetch inventory data');
         const data = await response.json();
         setRows(data.map((item, index) => ({ id: index + 1, ...item })));
       } catch (error) {
         console.error('Error loading inventory data:', error);
         setError('Failed to load inventory data');
       } finally {
-        setLoading(false);
       }
-    };
-  
-    fetchInventoryData();
-  }, []);
-
-  const handleRowsChange = (updatedRows) => {
-    setRows(updatedRows);
-    const updatedData = updatedRows.map(row => ({
-      itemName: row.itemName,
-      brand: row.brand,
-      packSize: row.packSize,
-      price: row.price,
-      ordered: row.ordered,
-      status: row.status,
-    }));
-
-  if (loading) return <div>Loading inventory data...</div>;
-  if (error) return <div className="error">{error}</div>;
-
-  return (
-    <div className="inventory">
-      <h2>Inventory Data</h2>
-      <DataGrid columns={columns} rows={rows} />
-    </div>
-  );
-};}
-
-export default Inventory;
+    }
+  })
+}

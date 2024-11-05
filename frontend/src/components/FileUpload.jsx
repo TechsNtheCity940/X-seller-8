@@ -1,19 +1,18 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 const FileUpload = () => {
   const [file, setFile] = useState(null);
   const [extractedText, setExtractedText] = useState('');
   const [excelPath, setExcelPath] = useState('');
-  const [logs, setLogs] = useState([]);  // System log state
+  const [logs, setLogs] = useState([]);
   const [successMsg, setSuccessMsg] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
-  const [loading, setLoading] = useState(false); // Loading state
+  const [loading, setLoading] = useState(false);
 
-  // Reference to the scrollable div for scroll lock
   const textDisplayRef = useRef(null);
 
-  // Scroll to the bottom whenever new text is added
   useEffect(() => {
     if (textDisplayRef.current) {
       textDisplayRef.current.scrollTop = textDisplayRef.current.scrollHeight;
@@ -21,22 +20,23 @@ const FileUpload = () => {
   }, [extractedText, logs]);
 
   const logAction = (message) => {
-    setLogs(prevLogs => [...prevLogs, message]);
+    setLogs(prevLogs => [...prevLogs, `[${new Date().toISOString()}] ${message}`]);
   };
 
   const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
-    logAction('File selected: ' + event.target.files[0].name);
+    const selectedFile = event.target.files[0];
+    setFile(selectedFile);
+    logAction('File selected: ' + selectedFile.name);
   };
 
-  const handleProcess = async () => {
+  const handleProcess = useCallback(async () => {
     if (!file) {
       alert('Please upload a file first.');
       return;
     }
 
     logAction('Starting file processing...');
-    setLoading(true); // Set loading state
+    setLoading(true);
     const formData = new FormData();
     formData.append('file', file);
     formData.append('deliveryDate', '2024-10-12');
@@ -55,11 +55,11 @@ const FileUpload = () => {
       setErrorMsg('Failed to process the file.');
       setSuccessMsg('');
     } finally {
-      setLoading(false); // Reset loading state
+      setLoading(false);
     }
-  };
+  }, [file]);
 
-  const handleDownload = () => {
+  const handleDownload = useCallback(() => {
     if (!excelPath) {
       alert('No file available for download.');
       return;
@@ -67,33 +67,28 @@ const FileUpload = () => {
 
     logAction('Downloading Excel file...');
     window.open(`${import.meta.env.VITE_BACKEND_URL}/download/${excelPath}`);
-  };
+  }, [excelPath]);
 
   return (
     <div className="file-upload-container">
       <h2>Upload and Process Invoice</h2>
-
       <div className="file-upload-section">
         <input type="file" onChange={handleFileChange} />
         <button onClick={handleProcess} disabled={!file || loading}>
           {loading ? 'Processing...' : 'Process File'}
         </button>
       </div>
-
       {extractedText && (
         <div className="extracted-text">
           <h3>Extracted Text:</h3>
           <pre ref={textDisplayRef}>{extractedText}</pre>
         </div>
       )}
-
       {excelPath && (
         <button className="download-btn" onClick={handleDownload}>Download Excel</button>
       )}
-
       {successMsg && <div className="success-msg">{successMsg}</div>}
       {errorMsg && <div className="error-msg">{errorMsg}</div>}
-
       {logs.length > 0 && (
         <div className="system-log">
           <h3>System Log:</h3>
@@ -106,6 +101,11 @@ const FileUpload = () => {
       )}
     </div>
   );
+};
+
+FileUpload.propTypes = {
+  file: PropTypes.instanceOf(File),
+  logs: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default FileUpload;
