@@ -29,7 +29,31 @@ const Inventory = () => {
         console.error('Error loading inventory data:', error);
         setError('Failed to load inventory data');
       } finally {
+        setLoading(false);
       }
-    }
-  })
-}
+    };
+
+    fetchInventoryData();
+  }, []);
+
+  return (
+    <div>
+      {loading && <p>Loading inventory data...</p>}
+      {error && <p>{error}</p>}
+      {!loading && !error && (
+        <DataGrid
+          columns={columns}
+          rows={rows}
+          onRowsChange={setRows}
+        />
+      )}
+    </div>
+  );
+};
+
+Inventory.propTypes = {
+  columns: PropTypes.array,
+  rows: PropTypes.array,
+};
+
+export default Inventory;

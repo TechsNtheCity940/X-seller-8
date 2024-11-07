@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
 
-const FileUpload = () => {
+const FileUpload = ({ onFileUpload }) => {
   const [file, setFile] = useState(null);
   const [extractedText, setExtractedText] = useState('');
   const [excelPath, setExcelPath] = useState('');
@@ -17,21 +18,43 @@ const FileUpload = () => {
     if (textDisplayRef.current) {
       textDisplayRef.current.scrollTop = textDisplayRef.current.scrollHeight;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
   }, [extractedText, logs]);
 
-  const logAction = (message) => {
-    setLogs(prevLogs => [...prevLogs, `[${new Date().toISOString()}] ${message}`]);
+  const logAction = (message, level = 'info') => {
+    const logEntry = `[${new Date().toISOString()}] [${level.toUpperCase()}] - ${message}`;
+    setLogs(prevLogs => [...prevLogs, logEntry]);
+    console[level](logEntry);
+    toast(message);
   };
 
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
     setFile(selectedFile);
     logAction('File selected: ' + selectedFile.name);
+    if (onFileUpload) {
+      onFileUpload(selectedFile);
+    }
   };
 
   const handleProcess = useCallback(async () => {
     if (!file) {
-      alert('Please upload a file first.');
+      logAction('Please upload a file first.', 'error');
       return;
     }
 
@@ -39,20 +62,25 @@ const FileUpload = () => {
     setLoading(true);
     const formData = new FormData();
     formData.append('file', file);
-    formData.append('deliveryDate', '2024-10-12');
-    formData.append('invoiceTotal', '500');
 
     try {
       const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/process`, formData);
       setExtractedText(response.data.extractedText);
       setExcelPath(response.data.excelPath);
-      logAction('File processed successfully.');
+      logAction('File processed successfully.', 'info');
       setSuccessMsg('File processed and Excel generated successfully.');
       setErrorMsg('');
     } catch (error) {
-      console.error('Error processing file:', error.response || error);
-      logAction('Error during file processing: ' + error.message);
-      setErrorMsg('Failed to process the file.');
+      let errorMessage = 'Failed to process the file.';
+      if (error.response) {
+        errorMessage = `Request failed with status ${error.response.status}: ${error.response.statusText}`;
+      } else if (error.request) {
+        errorMessage = 'No response received from the server.';
+      } else {
+        errorMessage = `Error: ${error.message}`;
+      }
+      logAction(`Error during file processing: ${errorMessage}`, 'error');
+      setErrorMsg(errorMessage);
       setSuccessMsg('');
     } finally {
       setLoading(false);
@@ -61,7 +89,7 @@ const FileUpload = () => {
 
   const handleDownload = useCallback(() => {
     if (!excelPath) {
-      alert('No file available for download.');
+      logAction('No file available for download.', 'error');
       return;
     }
 
@@ -104,8 +132,7 @@ const FileUpload = () => {
 };
 
 FileUpload.propTypes = {
-  file: PropTypes.instanceOf(File),
-  logs: PropTypes.arrayOf(PropTypes.string),
+  onFileUpload: PropTypes.func,
 };
 
 export default FileUpload;

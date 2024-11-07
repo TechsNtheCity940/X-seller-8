@@ -92,8 +92,9 @@ const extractExcelText = (excelFilePath) => {
 
     workbook.SheetNames.forEach(sheetName => {
       const sheet = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName], { header: 1 });
-      sheet.forEach(row => {
-        excelText += Array.isArray(row) ? row.join(' ') + '\n' : Object.values(row).join(' ') + '\n';
+      sheet.forEach((row, rowIndex) => {
+        const formattedRow = row.join(' ');
+        excelText += `Row ${rowIndex + 1}: ${formattedRow}\n`;
       });
     });
 
@@ -101,6 +102,53 @@ const extractExcelText = (excelFilePath) => {
     return excelText;
   } catch (error) {
     logger.warn(`Skipping file ${excelFilePath} due to error: ${error.message}`);
+    return null;
+  }
+};
+
+// Extract text from DOCX files
+const extractDocxText = async (docxFilePath) => {
+  try {
+    logger.info(`Starting DOCX extraction for file: ${docxFilePath}`);
+    const text = await promisify(docxParser.parseDocx)(docxFilePath);
+    logger.info(`Extracted Text from DOCX (${docxFilePath}): ${text.slice(0, 500)}...`);
+    return text;
+  } catch (error) {
+    logger.warn(`Skipping file ${docxFilePath} due to DOCX parsing error: ${error.message}`);
+    return null;
+  }
+};
+
+// Extract text from CSV files
+const extractCsvText = (csvFilePath) => {
+  return new Promise((resolve, reject) => {
+    logger.info(`Starting CSV extraction for file: ${csvFilePath}`);
+    let csvText = '';
+    fs.createReadStream(csvFilePath)
+      .pipe(csv())
+      .on('data', (row) => {
+        csvText += Object.values(row).join(' ') + '\n';
+      })
+      .on('end', () => {
+        logger.info(`Extracted Text from CSV (${csvFilePath}): ${csvText.slice(0, 500)}...`);
+        resolve(csvText);
+      })
+      .on('error', (error) => {
+        logger.warn(`Skipping file ${csvFilePath} due to CSV parsing error: ${error.message}`);
+        reject(error);
+      });
+  });
+};
+
+// Extract text from TXT files
+const extractTxtText = async (txtFilePath) => {
+  try {
+    logger.info(`Starting TXT extraction for file: ${txtFilePath}`);
+    const text = await readFileAsync(txtFilePath, 'utf-8');
+    logger.info(`Extracted Text from TXT (${txtFilePath}): ${text.slice(0, 500)}...`);
+    return text;
+  } catch (error) {
+    logger.warn(`Skipping file ${txtFilePath} due to TXT reading error: ${error.message}`);
     return null;
   }
 };
@@ -157,7 +205,7 @@ const processFiles = async (inputFolder, outputFile) => {
     const filePath = path.join(inputFolder, file);
     try {
       const fileData = await determineFileTypeAndExtract(filePath);
-      if (fileData) {
+      if (fileData && fileData.trim()) {
         extractedContent.push(fileData);
         logger.info(`File ${file} successfully processed.`);
       }
@@ -173,11 +221,11 @@ const processFiles = async (inputFolder, outputFile) => {
 };
 
 // Example usage
-const inputFolder = 'D:/repogit/X-seLLer-8/frontend/public/uploads';
-const outputFile = 'D:/repogit/X-seLLer-8/backend/uploads/RawTextExtract.txt';
+const inputFolder = 'F:/repogit/X-seLLer-8/frontend/public/uploads';
+const outputFile = 'F:/repogit/X-seLLer-8/backend/uploads/RawTextExtract.txt';
 
 processFiles(inputFolder, outputFile).then(() => {
   logger.info('Processing complete.');
 }).catch((error) => {
-  logger.error('Error during processing:', error);
+  logger.error(`Unexpected error during file processing: ${error.message}`);
 });

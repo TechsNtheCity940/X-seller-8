@@ -82,7 +82,10 @@ def main(input_path: str, output_json_path: str, output_csv_path: str):
 
 # Example usage
 if __name__ == "__main__":
-    input_file = 'D:/repogit/X-seller-8/backend/uploads/RawTextExtract.txt'  # Path to the extracted text file
-    output_json = 'D:/repogit/X-seller-8/backend/output/ParsedItems.json'   # Path to save JSON output
-    output_csv = 'D:/repogit/X-seller-8/backend/output/ParsedItems.csv'     # Path to save CSV output
+    input_file = 'F:/repogit/X-seller-8/backend/uploads/RawTextExtract.txt'  # Path to the extracted text file
+
+
+    
+    output_json = 'F:/repogit/X-seller-8/backend/output/ParsedItems.json'   # Path to save JSON output
+    output_csv = 'F:/repogit/X-seller-8/backend/output/ParsedItems.csv'     # Path to save CSV output
     main(input_file, output_json, output_csv)

@@ -23,9 +23,10 @@ function App() {
   useEffect(() => {
     if (activeTab === 'inventory') {
       async function fetchInventoryFile() {
+        setLoading(true);  // Added to ensure the loading indicator shows correctly during fetch
         try {
-          const response = await fetch('http://localhost:5000/public/inventory.xlsx'); // Updated URL
-          if (!response.ok) throw new Error('Failed to load inventory file');
+          const response = await fetch('http://localhost:5000/public/inventory.json'); // Changed to JSON for easier handling
+          if (!response.ok) throw new Error(`Failed to load inventory file. Status: ${response.status}`);
           const data = await response.json();
           setInventoryData(data);
           setInventoryFileContent(JSON.stringify(data, null, 2));  // Pretty format JSON for display
@@ -59,9 +60,14 @@ function App() {
     setSales([...sales, { month: new Date().getMonth(), cost: totalCost }]);
   };
 
+  const handleFileUpload = (file) => {
+    console.log('File uploaded:', file);
+    toast.success('File uploaded successfully!');
+  };
+
   const renderContent = () => {
     if (loading) {
-      return <div>Loading...</div>;
+      return <div className="loading-indicator">Loading...</div>;
     }
   
     return (
@@ -134,3 +140,31 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

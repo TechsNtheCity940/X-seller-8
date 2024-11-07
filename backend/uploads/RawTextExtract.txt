@@ -8147,253 +8147,253 @@ you acknowledge that you are responsible for the cold chain protection of the fo
 
 |
 
-
-
-
-
-
-Internal Transfer/ Requistion From
-Venue Requesting: Toby Keiths
-Liquors Prev. Ordered Pars Price/bottle Ordered Total $ Signature Signature
-WHISKEY'S
-TX Whiskey   1 35.19 0 0
-Gentleman Jack   2 24.09 1 24.09
-Jack Daniels  8 26.38 3 79.14
-Jack Daniels Honey  1 26.38  0
-Jack Daniels Apple  1 18.39  0
-Jack Daniels Fire  1 26.38  0
-Fireball  1 15.19  0
-Pendleton  x 29.59  0
-Seagram's 7  1 14.99 1 14.99
-Screwball   x 26.36  0
-Southern Comfort  1 11.99  0
-Kentucky Dale   x 6.39  0
-BOURBON'S
-Eagle Rare  x 28.39  0
-Basil Hayden  1 41.28 1 41.28
-Woodford Reserve   2 35.09  0
-Jim Bean  6 16.68 4 66.72
-Makers Mark  3 29 3 87
-Old Forester  2 16.5  0
-RYE WHISKEY"S
-Knob Creek RYE   1 26  0
-Bulleit 95 RYE  x 24.74  0
-IRISH WHISKEY
-Jameson Iris  3 33.3 2 66.6
-Jamison Orange  2 33.3 2 66.6
-Jamison Orange  2 33.3  0
-CANADIAN WHISKEY
-Crown   4 29.99 4 119.96
-Crown Apple   1 29.99  0
-Crown Peach  1 23.99  0
-Crown Vanilla   1 29.99  0
-Canadian Club 1858  x 12.8  0
-Old Forester  x 16.5  0
-SCOTCH
-Macallen 12 YR  x 75.99  0
-The Glenlivet 12 YR  x 58.79  0
-Dewars White label  x 19.2  0
-JW Black  x 41.99  0
-Chivas Regal 12 YR  x 29.9  0
-VODKA
-Chopin  x 31.6  0
-Belvedere  x 29.77  0
-Finlandia   x 12.79  0
-Grey Goose  1 26.4 1 26.4
-Ketel One  x 25.49  0
-Stolichnaya  x 19.99  0
-Stolichnaya Vanilla  x 21.25  0
-Absolute Vodka  x 19.22  0
-Tito's  12 21.3 8 170.4
-Deep Eddy's Lemon  3 19.99  0
-Deep Eddy's Ruby Red  1 19.99  0
-Deep Eddy's Peach  1 19.99  0
-Taaka  3 5.55 2 11.1
-TEQUILA
-Clasa  Azul Anejo  x 367.99  0
-Clasa  Azul Reposado  x 149.17  0
-Clasa  Azul Plata  x 92.11  0
-Patron Silver   3 39.99 2 79.98
-Corralejo Anejo  x 0  0
-Corralejo Reposado  1 28.26  0
-Corralejo Blanco  1 24.79  0
-Herradura Silver  x 39.19  0
-1800 Reposado  6 31.79 2 63.58
-1800 Silver  8 28.79 7 201.53
-Jose Cuervo (blue agave)  x 21.59  0
-El Jimador  1 19.5 1 19.5
-El Jimador  x 19.5  0
-El Toro  8 8.76 1 8.76
-GIN
-Hedricks  x 37.4  0
-Tanqueray  1 23.99  0
-Bombay Sapphire  x 22.39  0
-Taaka   2 5.89  0
-RUM
-Myer's Mark  x 22.39  0
-Captian Morgan  2 17.99 1 17.99
-Malibu  8 16.8 4 67.2
-Bacardi  3 12 1 12
-Barbarossa  3 5.8 2 11.6
-BRANDY/COGNAC
-Hennessey VS  1 44.49  0
-Courvoisier VSOP  x 38.3  0
-Tuaca Itailian Brandy  x 22.13  0
-E & J   x 11.99  0
-Pual Mason  x 10.39  0
-LIQUEUR'S
-Disaronno  1 38.39  0
-Grand Marnier  4 34.42  0
-Cointreau  4 31.39  0
-Chambord  x 27.99  0
-Frangelico  x 24.79  0
-Campari  x 34.06  0
-Kahlua  x 26.98  0
-Jagermeister  x 26.22  0
-Midori  x 20.8  0
-Rum Chata  x 21.66  0
-razzmatazz  4 10 4 40
-Mr.Boston Ameretto  x 5.05  0
-Mr.Boston Blue Curacao  5 5.05  0
-Buttershots  x 10.73  0
-Mr.Boston Melon  1 5.92  0
-Mr.Boston Peach Schapps  6 5.42 2 10.84
-Mr.Boston Sour Apple  1 5.42  0
-Dessert LIT  4 7.19  0
-Total      1307.26
-Wines
-Champaigne  Prev. Order Pars Price Ordered Total $ Signature Signature
-Korbel Mini Bottles  24 3  0
-House Wines
-Sutter Homes Cabernet  12 5.25 10 52.5
-Sutter Homes Merlot  6 5.25  0
-Sutter Homes  Chardonnay  12 5.25 4 21
-Sutter Homes Moscato  6 5.25 2 10.5
-Sutter Homes White Zin  6 5.25 2 10.5
-Sutter Homes Pinot Grig.  8 5.25 1 5.25
-Top shelf Wines
-Angeline CAB  6 5  0
-Angeline Chard  6 5  0
-Angeline Rose  x 5  0
-Vietti Moscato   2 8  0
-     0
-Total      99.75
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Internal Transfer/ Requistion From
-Venue Requesting:  Toby's Keiths
-Date: 9.11.23
-Product Name Prev. Order Pars Price Ordered Total $ Signature Signature
-DOMESTIC BEER     0
-Bud Light 16 oz cans  24 0.98 0 0
-Mich Ultra 12oz cans  72 1.18 30 35.4
-Coors Banquet 16oz cans  24 0.99 9 0
-Coors Light 16oz can  96 1.04 24 24.96
-Miller Lite 16 oz can  120 1.04 120 124.80000000000001
-Budweiser Cans  24 1.05 12 12.600000000000001
-Budweiser Zero Cans  12 1.05 0 0
-IMPORT BEER  Pars   0
-Stella Cans  x 1.2  0
-Blue Moon 12oz   30 1 24 24
-Shocktop  x 1.01  0
-Dos Equis  72 1.23 60 73.8
-Modelo Especial  24 1.18  0
-Corona Extra  48 1.29 36 46.44
-Heineken  12 1.29  0
-Shiner  48 1.19 36 42.839999999999996
-Coop F5  24 1.43 24 34.32
-Coop Ice Chest  12 1.43  0
-Coop Horny Toad  12 1.43 6 8.58
-Guiness  x 1.31  0
-Estrella Jalisco  x 1.12  0
-Stella Cidar Bot  x 1.5  0
-seltzer  24 1.33  0
-Kegs Beer
-DOMESTIC BEER  par
-Budweiser Keg  4 86 1 86
-Bud Light Keg  3 103 3 309
-Michelob Keg  5 103 3 309
-IMPORT BEER  Pars
-Stella Keg  2 150 1 150
-Shocktop Keg  2 97  0
-Modelo Keg  2 152 2 304
-Total      1585.74
-Commonly used Misc. Supplies, and NA BEV
-N/A BEV  Pars
-Redbull  48 1.63 24 39.12
-Sugar Free Redbull  24 1.63 24 39.12
-Redbull Coconut  24 1.63  0
-Redbull Watermelon  24 1.63  0
-Redbull Blue  24 1.63 24 39.12
-Aquafina  1 case 9.08 1 9.08
-Employee Water  1 Case 9.08 1 9.08
-Total      135.51999999999998
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Internal Transfer/ Requistion From
-Venue Requesting:
-Date: 9.12.23
-Beverage Supplies Ordered Prev. Pars Price/unit Ordered Total $ Signature Signature
-Cherries  2 14.51 1 14.51
-Olives  1 12.69  0
-Spicy Mango Monin  4  3 0
-Cranberry Juice  24 1.65 12 19.799999999999997
-Grapefruit Juice  6 3.97  0
-Orange Juice  36 1.89 24 45.36
-Pineapple Juice  36 2.16 36 77.76
-Tomato Juice  12 0.36  0
-Watermelon Syrup  12 3.37 6 20.22
-Grenadine  6 2.46  0
-Strawberry Syrup  12 3.19  0
-Peach Syrup   12 3.21  0
-Triple Sec  6 2.78 2 5.56
-Sweetend Lime Juice  6 2.55  0
-Ninas Pina Mix  6 3.19  0
-Zing Zang   12 3.19  0
-Sweet and Sour   24 0.36 24 8.64
-Ninas Marg mix  36 2.54 12 30.48
-16 oz beer cups  1 case   0
-Ginger Beer  24 0.87 12 10.44
-14oz cups  1 Case 4.67  0
-Beverage Swords  1 Case 3.83  0
-gingerale  24 1.18 14 16.52
-Thermal Paper  2 Cases 56.88 1 56.88
-Tonic Water  24 0.69 6 4.14
-9oz Rocks togo cups  1 Case 3.11  0
-Bitters  2 4.28 1 4.28
-Orange Bitter  2  2 0
-Total     314.59
+Row 1: 
+Row 2: 
+Row 3: 
+Row 4: 
+Row 5: 
+Row 6: Internal Transfer/ Requistion From
+Row 7: Venue Requesting: Toby Keiths
+Row 8: Liquors Prev. Ordered Pars Price/bottle Ordered Total $ Signature Signature
+Row 9: WHISKEY'S
+Row 10: TX Whiskey   1 35.19 0 0
+Row 11: Gentleman Jack   2 24.09 1 24.09
+Row 12: Jack Daniels  8 26.38 3 79.14
+Row 13: Jack Daniels Honey  1 26.38  0
+Row 14: Jack Daniels Apple  1 18.39  0
+Row 15: Jack Daniels Fire  1 26.38  0
+Row 16: Fireball  1 15.19  0
+Row 17: Pendleton  x 29.59  0
+Row 18: Seagram's 7  1 14.99 1 14.99
+Row 19: Screwball   x 26.36  0
+Row 20: Southern Comfort  1 11.99  0
+Row 21: Kentucky Dale   x 6.39  0
+Row 22: BOURBON'S
+Row 23: Eagle Rare  x 28.39  0
+Row 24: Basil Hayden  1 41.28 1 41.28
+Row 25: Woodford Reserve   2 35.09  0
+Row 26: Jim Bean  6 16.68 4 66.72
+Row 27: Makers Mark  3 29 3 87
+Row 28: Old Forester  2 16.5  0
+Row 29: RYE WHISKEY"S
+Row 30: Knob Creek RYE   1 26  0
+Row 31: Bulleit 95 RYE  x 24.74  0
+Row 32: IRISH WHISKEY
+Row 33: Jameson Iris  3 33.3 2 66.6
+Row 34: Jamison Orange  2 33.3 2 66.6
+Row 35: Jamison Orange  2 33.3  0
+Row 36: CANADIAN WHISKEY
+Row 37: Crown   4 29.99 4 119.96
+Row 38: Crown Apple   1 29.99  0
+Row 39: Crown Peach  1 23.99  0
+Row 40: Crown Vanilla   1 29.99  0
+Row 41: Canadian Club 1858  x 12.8  0
+Row 42: Old Forester  x 16.5  0
+Row 43: SCOTCH
+Row 44: Macallen 12 YR  x 75.99  0
+Row 45: The Glenlivet 12 YR  x 58.79  0
+Row 46: Dewars White label  x 19.2  0
+Row 47: JW Black  x 41.99  0
+Row 48: Chivas Regal 12 YR  x 29.9  0
+Row 49: VODKA
+Row 50: Chopin  x 31.6  0
+Row 51: Belvedere  x 29.77  0
+Row 52: Finlandia   x 12.79  0
+Row 53: Grey Goose  1 26.4 1 26.4
+Row 54: Ketel One  x 25.49  0
+Row 55: Stolichnaya  x 19.99  0
+Row 56: Stolichnaya Vanilla  x 21.25  0
+Row 57: Absolute Vodka  x 19.22  0
+Row 58: Tito's  12 21.3 8 170.4
+Row 59: Deep Eddy's Lemon  3 19.99  0
+Row 60: Deep Eddy's Ruby Red  1 19.99  0
+Row 61: Deep Eddy's Peach  1 19.99  0
+Row 62: Taaka  3 5.55 2 11.1
+Row 63: TEQUILA
+Row 64: Clasa  Azul Anejo  x 367.99  0
+Row 65: Clasa  Azul Reposado  x 149.17  0
+Row 66: Clasa  Azul Plata  x 92.11  0
+Row 67: Patron Silver   3 39.99 2 79.98
+Row 68: Corralejo Anejo  x 0  0
+Row 69: Corralejo Reposado  1 28.26  0
+Row 70: Corralejo Blanco  1 24.79  0
+Row 71: Herradura Silver  x 39.19  0
+Row 72: 1800 Reposado  6 31.79 2 63.58
+Row 73: 1800 Silver  8 28.79 7 201.53
+Row 74: Jose Cuervo (blue agave)  x 21.59  0
+Row 75: El Jimador  1 19.5 1 19.5
+Row 76: El Jimador  x 19.5  0
+Row 77: El Toro  8 8.76 1 8.76
+Row 78: GIN
+Row 79: Hedricks  x 37.4  0
+Row 80: Tanqueray  1 23.99  0
+Row 81: Bombay Sapphire  x 22.39  0
+Row 82: Taaka   2 5.89  0
+Row 83: RUM
+Row 84: Myer's Mark  x 22.39  0
+Row 85: Captian Morgan  2 17.99 1 17.99
+Row 86: Malibu  8 16.8 4 67.2
+Row 87: Bacardi  3 12 1 12
+Row 88: Barbarossa  3 5.8 2 11.6
+Row 89: BRANDY/COGNAC
+Row 90: Hennessey VS  1 44.49  0
+Row 91: Courvoisier VSOP  x 38.3  0
+Row 92: Tuaca Itailian Brandy  x 22.13  0
+Row 93: E & J   x 11.99  0
+Row 94: Pual Mason  x 10.39  0
+Row 95: LIQUEUR'S
+Row 96: Disaronno  1 38.39  0
+Row 97: Grand Marnier  4 34.42  0
+Row 98: Cointreau  4 31.39  0
+Row 99: Chambord  x 27.99  0
+Row 100: Frangelico  x 24.79  0
+Row 101: Campari  x 34.06  0
+Row 102: Kahlua  x 26.98  0
+Row 103: Jagermeister  x 26.22  0
+Row 104: Midori  x 20.8  0
+Row 105: Rum Chata  x 21.66  0
+Row 106: razzmatazz  4 10 4 40
+Row 107: Mr.Boston Ameretto  x 5.05  0
+Row 108: Mr.Boston Blue Curacao  5 5.05  0
+Row 109: Buttershots  x 10.73  0
+Row 110: Mr.Boston Melon  1 5.92  0
+Row 111: Mr.Boston Peach Schapps  6 5.42 2 10.84
+Row 112: Mr.Boston Sour Apple  1 5.42  0
+Row 113: Dessert LIT  4 7.19  0
+Row 114: Total      1307.26
+Row 115: Wines
+Row 116: Champaigne  Prev. Order Pars Price Ordered Total $ Signature Signature
+Row 117: Korbel Mini Bottles  24 3  0
+Row 118: House Wines
+Row 119: Sutter Homes Cabernet  12 5.25 10 52.5
+Row 120: Sutter Homes Merlot  6 5.25  0
+Row 121: Sutter Homes  Chardonnay  12 5.25 4 21
+Row 122: Sutter Homes Moscato  6 5.25 2 10.5
+Row 123: Sutter Homes White Zin  6 5.25 2 10.5
+Row 124: Sutter Homes Pinot Grig.  8 5.25 1 5.25
+Row 125: Top shelf Wines
+Row 126: Angeline CAB  6 5  0
+Row 127: Angeline Chard  6 5  0
+Row 128: Angeline Rose  x 5  0
+Row 129: Vietti Moscato   2 8  0
+Row 130:      0
+Row 131: Total      99.75
+Row 132: 
+Row 133: 
+Row 134: 
+Row 135: 
+Row 136: 
+Row 137: 
+Row 138: 
+Row 139: 
+Row 140: 
+Row 141: 
+Row 1: 
+Row 2: 
+Row 3: 
+Row 4: 
+Row 5: 
+Row 6: Internal Transfer/ Requistion From
+Row 7: Venue Requesting:  Toby's Keiths
+Row 8: Date: 9.11.23
+Row 9: Product Name Prev. Order Pars Price Ordered Total $ Signature Signature
+Row 10: DOMESTIC BEER     0
+Row 11: Bud Light 16 oz cans  24 0.98 0 0
+Row 12: Mich Ultra 12oz cans  72 1.18 30 35.4
+Row 13: Coors Banquet 16oz cans  24 0.99 9 0
+Row 14: Coors Light 16oz can  96 1.04 24 24.96
+Row 15: Miller Lite 16 oz can  120 1.04 120 124.80000000000001
+Row 16: Budweiser Cans  24 1.05 12 12.600000000000001
+Row 17: Budweiser Zero Cans  12 1.05 0 0
+Row 18: IMPORT BEER  Pars   0
+Row 19: Stella Cans  x 1.2  0
+Row 20: Blue Moon 12oz   30 1 24 24
+Row 21: Shocktop  x 1.01  0
+Row 22: Dos Equis  72 1.23 60 73.8
+Row 23: Modelo Especial  24 1.18  0
+Row 24: Corona Extra  48 1.29 36 46.44
+Row 25: Heineken  12 1.29  0
+Row 26: Shiner  48 1.19 36 42.839999999999996
+Row 27: Coop F5  24 1.43 24 34.32
+Row 28: Coop Ice Chest  12 1.43  0
+Row 29: Coop Horny Toad  12 1.43 6 8.58
+Row 30: Guiness  x 1.31  0
+Row 31: Estrella Jalisco  x 1.12  0
+Row 32: Stella Cidar Bot  x 1.5  0
+Row 33: seltzer  24 1.33  0
+Row 34: Kegs Beer
+Row 35: DOMESTIC BEER  par
+Row 36: Budweiser Keg  4 86 1 86
+Row 37: Bud Light Keg  3 103 3 309
+Row 38: Michelob Keg  5 103 3 309
+Row 39: IMPORT BEER  Pars
+Row 40: Stella Keg  2 150 1 150
+Row 41: Shocktop Keg  2 97  0
+Row 42: Modelo Keg  2 152 2 304
+Row 43: Total      1585.74
+Row 44: Commonly used Misc. Supplies, and NA BEV
+Row 45: N/A BEV  Pars
+Row 46: Redbull  48 1.63 24 39.12
+Row 47: Sugar Free Redbull  24 1.63 24 39.12
+Row 48: Redbull Coconut  24 1.63  0
+Row 49: Redbull Watermelon  24 1.63  0
+Row 50: Redbull Blue  24 1.63 24 39.12
+Row 51: Aquafina  1 case 9.08 1 9.08
+Row 52: Employee Water  1 Case 9.08 1 9.08
+Row 53: Total      135.51999999999998
+Row 54: 
+Row 55: 
+Row 56: 
+Row 57: 
+Row 58: 
+Row 59: 
+Row 60: 
+Row 61: 
+Row 62: 
+Row 63: 
+Row 64: 
+Row 65: 
+Row 66: 
+Row 67: 
+Row 68: 
+Row 69: 
+Row 70: 
+Row 71: 
+Row 1: 
+Row 2: 
+Row 3: 
+Row 4: 
+Row 5: 
+Row 6: Internal Transfer/ Requistion From
+Row 7: Venue Requesting:
+Row 8: Date: 9.12.23
+Row 9: Beverage Supplies Ordered Prev. Pars Price/unit Ordered Total $ Signature Signature
+Row 10: Cherries  2 14.51 1 14.51
+Row 11: Olives  1 12.69  0
+Row 12: Spicy Mango Monin  4  3 0
+Row 13: Cranberry Juice  24 1.65 12 19.799999999999997
+Row 14: Grapefruit Juice  6 3.97  0
+Row 15: Orange Juice  36 1.89 24 45.36
+Row 16: Pineapple Juice  36 2.16 36 77.76
+Row 17: Tomato Juice  12 0.36  0
+Row 18: Watermelon Syrup  12 3.37 6 20.22
+Row 19: Grenadine  6 2.46  0
+Row 20: Strawberry Syrup  12 3.19  0
+Row 21: Peach Syrup   12 3.21  0
+Row 22: Triple Sec  6 2.78 2 5.56
+Row 23: Sweetend Lime Juice  6 2.55  0
+Row 24: Ninas Pina Mix  6 3.19  0
+Row 25: Zing Zang   12 3.19  0
+Row 26: Sweet and Sour   24 0.36 24 8.64
+Row 27: Ninas Marg mix  36 2.54 12 30.48
+Row 28: 16 oz beer cups  1 case   0
+Row 29: Ginger Beer  24 0.87 12 10.44
+Row 30: 14oz cups  1 Case 4.67  0
+Row 31: Beverage Swords  1 Case 3.83  0
+Row 32: gingerale  24 1.18 14 16.52
+Row 33: Thermal Paper  2 Cases 56.88 1 56.88
+Row 34: Tonic Water  24 0.69 6 4.14
+Row 35: 9oz Rocks togo cups  1 Case 3.11  0
+Row 36: Bitters  2 4.28 1 4.28
+Row 37: Orange Bitter  2  2 0
+Row 38: Total     314.59

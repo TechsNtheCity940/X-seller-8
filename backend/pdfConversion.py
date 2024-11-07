@@ -71,6 +71,6 @@ def process_all_pdfs_in_folder(folder_path, output_folder):
             pdf_to_png(pdf_path, output_folder)
 
 # Example usage
-folder_path = r"D:/repogit/X-seller-8/frontend/public/uploads"
-output_folder = r"D:/repogit/X-seller-8/frontend/public/uploads"
+folder_path = r"F:/repogit/X-seller-8/frontend/public/uploads"
+output_folder = r"F:/repogit/X-seller-8/frontend/public/uploads"
 process_all_pdfs_in_folder(folder_path, output_folder)

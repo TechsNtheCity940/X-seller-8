@@ -60,10 +60,10 @@ def extract_item_prices(item_names, structured_data, extracted_prices, threshold
 
 def main():
     # File paths
-    phrases_file = r"D:/repogit/X-seller-8/backend/uploads/CleanedCapitalizedPhrases.txt"
-    prices_file = r'D:/repogit/X-seller-8/backend/uploads/ExtractedPrices.txt'
-    structured_file = r'D:/repogit/X-seller-8/backend/uploads/StructuredTableData.txt'
-    output_excel = r'D:/repogit/X-seller-8/frontend/public/output/Inventory.xlsx'
+    phrases_file = r"F:/repogit/X-seller-8/backend/uploads/CleanedCapitalizedPhrases.txt"
+    prices_file = r'F:/repogit/X-seller-8/backend/uploads/ExtractedPrices.txt'
+    structured_file = r'F:/repogit/X-seller-8/backend/uploads/StructuredTableData.txt'
+    output_excel = r'F:/repogit/X-seller-8/frontend/public/output/Inventory.xlsx'
 
     # Load data from files
     item_names = load_file_lines(phrases_file)
