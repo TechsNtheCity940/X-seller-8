@@ -36,24 +36,40 @@ const Inventory = () => {
     fetchInventoryData();
   }, []);
 
+const Inventory = () => {
+  const [logs, setLogs] = useState([]);
+  
+  useEffect(() => {
+    const socket = new WebSocket('ws://localhost:8081');
+  
+    socket.onmessage = (event) => {
+      setLogs((prevLogs) => [...prevLogs, event.data]);
+    };
+  
+    socket.onclose = () => {
+    console.log('WebSocket connection closed');
+    };
+  
+    return () => {
+      socket.close();
+    };
+  }, []);
+  
   return (
-    <div>
-      {loading && <p>Loading inventory data...</p>}
-      {error && <p>{error}</p>}
-      {!loading && !error && (
-        <DataGrid
-          columns={columns}
-          rows={rows}
-          onRowsChange={setRows}
-        />
-      )}
+    <div className="inventory-logs">
+      <h2>Processing Logs</h2>
+      <div className="log-container">
+        {logs.map((log, index) => (
+          <p key={index}>{log}</p>
+        ))}
+      </div>
     </div>
   );
-};
+}
 
 Inventory.propTypes = {
   columns: PropTypes.array,
   rows: PropTypes.array,
 };
-
+}
 export default Inventory;

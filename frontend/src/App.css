@@ -26,6 +26,19 @@ body {
   z-index: 1;
 }
 
+.inventory-logs {
+  background-color: #2f2f2f;
+  padding: 20px;
+  border-radius: 10px;
+  color: #e0e0e0;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.log-container {
+  font-family: 'Courier New', Courier, monospace;
+}
+
 /* Sidebar styling with gold accents */
 .sidebar {
   width: 250px;
