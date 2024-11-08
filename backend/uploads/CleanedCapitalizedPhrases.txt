@@ -87,122 +87,131 @@ Machine
 Remittance Suite
 Product
 Account Balance
-Gentleman Jack
-Jack Daniels
-Jack Daniels Honey
-Jack Daniels Apple
-Jack Daniels Fire
-Fireball
-Pendleton
-Seagram
-Screwball
-Southern Comfort
-Kentucky Dale
-Eagle Rare
-Basil Hayden
-Woodford Reserve
-Jim Bean
-Bulleit
-Crown
-Crown Apple
-Crown Peach
-Crown Vanilla
-Macallen
-The Glenlivet
-Black
-Belvedere
-Finlandia
-Ketel One
-Stolichnaya
-Stolichnaya Vanilla
-Absolute
-Deep Eddy Lemon
-Deep Eddy Ruby Red
-Deep Eddy Peach
-Taaka
-Clasa Azul Plata
-Patron Silver
-Corralejo Reposado
-Corralejo Blanco
-Herradura Silver
-Reposado
-Silver
-Jose Cuervo
-Tanqueray
-Bombay Sapphire
-Taaka
-Myer Mark
-Captian Morgan
-Hennessey
-Tuaca Itailian Brandy
-Pual Mason
-Disaronno
-Grand Marnier
-Cointreau
-Chambord
-Frangelico
-Campari
-Kahlua
-Jagermeister
-Rum Chata
-Boston Ameretto
-Boston Blue Curacao
-Buttershots
-Boston Melon
-Boston Peach Schapps
-Boston Sour Apple
-Dessert
-Sutter Homes Cabernet
-Sutter Homes Merlot
-Sutter Homes Chardonnay
-Sutter Homes Moscato
-Sutter Homes White Zin
-Sutter Homes Pinot Grig
-Bud Light
-Mich Ultra
-Coors Banquet
-Coors Light
-Miller Lite
-Budweiser Cans
-Budweiser Zero Cans
-Shocktop
-Dos Equis
-Modelo Especial
-Corona Extra
-Heineken
-Shiner
-Coop
-Coop Ice Chest
-Coop Horny Toad
-Guiness
-Estrella Jalisco
-Redbull
-Sugar Free Redbull
-Redbull Coconut
-Redbull Watermelon
-Redbull Blue
-Aquafina
-Employee Water
-Cherries
-Olives
-Cranberry Juice
-Grapefruit Juice
-Orange Juice
-Pineapple Juice
-Tomato Juice
-Watermelon Syrup
-Grenadine
-Strawberry Syrup
-Peach Syrup
-Triple Sec
-Sweetend Lime Juice
-Ninas Pina
-Zing Zang
-Sweet Sour
-Ninas Marg
-Ginger Beer
-Beverage Swords
-Thermal Paper
-Tonic Water
-Rocks
-Bitters
+Row
+Row Gentleman Jack
+Row Jack Daniels
+Row Jack Daniels Honey
+Row Jack Daniels Apple
+Row Jack Daniels Fire
+Row Fireball
+Row Pendleton
+Row Seagram
+Row Screwball
+Row Southern Comfort
+Row Kentucky Dale
+Row Eagle Rare
+Row Basil Hayden
+Row Woodford Reserve
+Row Jim Bean
+Row Bulleit
+Row Crown
+Row Crown Apple
+Row Crown Peach
+Row Crown Vanilla
+Row Macallen
+Row The Glenlivet
+Row Black
+Row Belvedere
+Row Finlandia
+Row Ketel One
+Row Stolichnaya
+Row Stolichnaya Vanilla
+Row Absolute
+Row Deep Eddy Lemon
+Row Deep Eddy Ruby Red
+Row Deep Eddy Peach
+Row Taaka
+Row Clasa Azul Plata
+Row Patron Silver
+Row Corralejo Reposado
+Row Corralejo Blanco
+Row Herradura Silver
+Row Reposado
+Row Silver
+Row Jose Cuervo
+Row
+Row Tanqueray
+Row Bombay Sapphire
+Row Taaka
+Row Myer Mark
+Row Captian Morgan
+Row Hennessey
+Row Tuaca Itailian Brandy
+Row
+Row Pual Mason
+Row Disaronno
+Row Grand Marnier
+Row Cointreau
+Row Chambord
+Row Frangelico
+Row Campari
+Row Kahlua
+Row Jagermeister
+Row Rum Chata
+Row Boston Ameretto
+Row Boston Blue Curacao
+Row Buttershots
+Row Boston Melon
+Row Boston Peach Schapps
+Row Boston Sour Apple
+Row Dessert
+Row Sutter Homes Cabernet
+Row Sutter Homes Merlot
+Row Sutter Homes Chardonnay
+Row Sutter Homes Moscato
+Row Sutter Homes White Zin
+Row Sutter Homes Pinot Grig
+Row
+Row
+Row Bud Light
+Row Mich Ultra
+Row Coors Banquet
+Row Coors Light
+Row Miller Lite
+Row Budweiser Cans
+Row Budweiser Zero Cans
+Row Shocktop
+Row Dos Equis
+Row Modelo Especial
+Row Corona Extra
+Row Heineken
+Row Shiner
+Row Coop
+Row Coop Ice Chest
+Row Coop Horny Toad
+Row Guiness
+Row Estrella Jalisco
+Row
+Row Redbull
+Row Sugar Free Redbull
+Row Redbull Coconut
+Row Redbull Watermelon
+Row Redbull Blue
+Row Aquafina
+Row Employee Water
+Row
+Row Cherries
+Row Olives
+Row Cranberry Juice
+Row Grapefruit Juice
+Row Orange Juice
+Row Pineapple Juice
+Row Tomato Juice
+Row Watermelon Syrup
+Row Grenadine
+Row Strawberry Syrup
+Row Peach Syrup
+Row Triple Sec
+Row Sweetend Lime Juice
+Row Ninas Pina
+Row Zing Zang
+Row Sweet Sour
+Row Ninas Marg
+Row Ginger Beer
+Row
+Row Beverage Swords
+Row
+Row Thermal Paper
+Row Tonic Water
+Row Rocks
+Row Bitters

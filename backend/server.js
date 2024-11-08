@@ -1,13 +1,23 @@
-require('dotenv').config({ path: 'openai.env' }); // Load environment variables
+require('dotenv').config({ path: 'openai.env' });
 const express = require('express');
-const multer = require('multer');
+const fileUpload = require('express-fileupload');
 const path = require('path');
 const fs = require('fs');
 const winston = require('winston');
-const { execFile } = require('child_process');
+const { spawn } = require('child_process');
 const XLSX = require('xlsx');
 const OpenAI = require('openai');
+const cors = require('cors');
 const app = express();
+const PORT = process.env.PORT || 5000;
+
+// Middleware Setup
+app.use(cors({ origin: 'http://localhost:5173' })); // Allow frontend origin
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(fileUpload());
+app.use(express.static(path.join(__dirname, '../frontend/public')));
+app.use('/output', express.static(path.join(__dirname, 'output'))); // Serve output directory
 
 // Set up Winston logger
 const logger = winston.createLogger({
@@ -22,73 +32,59 @@ const logger = winston.createLogger({
   ]
 });
 
-// Middleware for handling file uploads
-const upload = multer({ dest: 'uploads/' });
-
-const OUTPUT_FOLDER = 'F:/repogit/X-seller-8/frontend/public/output/archives'
-const INVENTORY_XLSX_PATH = path.join(OUTPUT_FOLDER, 'Inventory.xlsx');
-const INVENTORY_JSON_PATH = path.join(OUTPUT_FOLDER, 'inventory.json');
-
-// Endpoint to process file uploads
-app.post('/process', upload.single('file'), (req, res) => {
-  if (!req.file) {
-    logger.error('No file uploaded.');
-    return res.status(400).send('No file uploaded.');
+// Endpoint for processing the uploaded file
+app.post('/process', (req, res) => {
+  if (!req.files || !req.files.file) {
+    logger.error('No files were uploaded.');
+    return res.status(400).json({ error: 'No files were uploaded.' });
   }
 
-  const filePath = path.join(__dirname, req.file.path);
-  logger.info(`Processing file: ${filePath}`);
+  const uploadedFile = req.files.file;
+  const uploadPath = path.join(__dirname, 'uploads', uploadedFile.name);
 
-  // Run external fileProcessor script
-  execFile('node', ['fileProcessor.js', filePath], (error, stdout, stderr) => {
-    if (error) {
-      logger.error(`Error processing file: ${error.message}`);
-      logger.error(`stderr: ${stderr}`);
-      return res.status(500).json({ error: 'Error processing file.' });
+  // Save the uploaded file
+  uploadedFile.mv(uploadPath, (err) => {
+    if (err) {
+      logger.error(`Error saving file: ${err.message}`);
+      return res.status(500).json({ error: 'Failed to save the file.' });
     }
 
-    logger.info(`File processed successfully: ${stdout}`);
+    logger.info('File saved successfully. Starting extractText.js script...');
 
-    // After processing, convert the Inventory.xlsx to JSON
-    try {
-      logger.info('Converting Inventory.xlsx to JSON...');
-      const workbook = XLSX.readFile(INVENTORY_XLSX_PATH);
-      const sheetName = workbook.SheetNames[0];
-      const worksheet = workbook.Sheets[sheetName];
-      const jsonData = XLSX.utils.sheet_to_json(worksheet);
+    // Run extractText.js script
+    const extractScript = spawn('node', ['extractText.js', uploadPath]);
 
-      // Save JSON data to a file
-      fs.writeFileSync(INVENTORY_JSON_PATH, JSON.stringify(jsonData, null, 2), 'utf8');
-      logger.info(`Inventory JSON saved to ${INVENTORY_JSON_PATH}`);
+    extractScript.stdout.on('data', (data) => {
+      logger.info(`stdout: ${data}`);
+    });
 
-      res.json({
-        message: 'File processed successfully and inventory JSON generated.',
-        excelPath: 'output/Inventory.xlsx'
-      });
-    } catch (xlsxError) {
-      logger.error(`Error converting Inventory.xlsx to JSON: ${xlsxError.message}`);
-      res.status(500).json({ error: 'Error converting Inventory.xlsx to JSON.' });
-    }
+    extractScript.stderr.on('data', (data) => {
+      logger.error(`stderr: ${data}`);
+    });
+
+    extractScript.on('close', (code) => {
+      if (code !== 0) {
+        logger.error(`extractText.js exited with code ${code}`);
+        return res.status(500).json({ error: 'Error during file processing.' });
+      }
+
+      const excelPath = path.join('output', 'Inventory.xlsx');
+      logger.info('extractText.js script completed successfully. Sending response to client...');
+      res.status(200).json({ excelPath });
+    });
   });
 });
 
-// Endpoint for logging errors from ErrorBoundary (if applicable)
-app.post('/log', (req, res) => {
-  const { error, info } = req.body;
-  logger.error(`Frontend Error: ${error}`);
-  logger.info(`Additional Info: ${JSON.stringify(info)}`);
-  res.sendStatus(200);
-});
+// Endpoint for downloading the processed Excel file
+app.get('/download/:filePath', (req, res) => {
+  const filePath = path.join(__dirname, 'output', req.params.filePath);
 
-// Serve static files
-app.use('/public', express.static(path.join(__dirname, '../frontend/public')));
-
-// Endpoint to serve the inventory JSON
-app.get('/public/output/inventory.json', (req, res) => {
-  if (fs.existsSync(INVENTORY_JSON_PATH)) {
-    res.sendFile(INVENTORY_JSON_PATH);
+  if (fs.existsSync(filePath)) {
+    logger.info(`File found. Downloading: ${req.params.filePath}`);
+    res.download(filePath);
   } else {
-    res.status(404).json({ error: 'Inventory JSON file not found' });
+    logger.error(`File not found: ${req.params.filePath}`);
+    res.status(404).json({ error: 'File not found.' });
   }
 });
 
@@ -98,21 +94,27 @@ const openai = new OpenAI({
   baseURL: 'https://integrate.api.nvidia.com/v1',
 });
 
-// Define the chat route
+// Chat API Endpoint
 app.post('/api/chat', async (req, res) => {
   const { message } = req.body;
-  if (!message) return res.status(400).json({ error: 'Message is required' });
+  if (!message) {
+    logger.error('Message is required for chat endpoint.');
+    return res.status(400).json({ error: 'Message is required' });
+  }
 
   try {
     const completion = await openai.chat.completions.create({
-      model: "nvidia/llama-3.1-nemotron-70b-instruct",
+      model: 'nvidia/llama-3.1-nemotron-70b-instruct',
       messages: [{ role: 'user', content: message }],
       temperature: 0.5,
       max_tokens: 1024,
     });
 
     const botResponse = completion.choices[0]?.message?.content;
-    if (!botResponse) return res.status(500).json({ error: 'No response from Lumin' });
+    if (!botResponse) {
+      logger.error('No response from Lumin');
+      return res.status(500).json({ error: 'No response from Lumin' });
+    }
 
     res.json({ content: botResponse });
   } catch (error) {
@@ -122,8 +124,6 @@ app.post('/api/chat', async (req, res) => {
 });
 
 // Start the server
-const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log('Server running on port 5000');
   logger.info(`Server is running on port ${PORT}`);
 });

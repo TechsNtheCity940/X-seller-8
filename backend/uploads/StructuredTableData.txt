@@ -331,127 +331,131 @@ Total Account Balance	$50.00	4	828
 Receipt Total	$50.00	106	0
 Liu	$35.02	19	35
 Ewr	$39.53	54	39
-Whiskey	$35.19	0	0
-Gentleman Jack	$24.09	1	24
-Jack Daniels	$26.38	3	79
-Jack Daniels Honey	$26.38	26	0
-Jack Daniels Apple	$18.39	18	0
-Jack Daniels Fire	$26.38	26	0
-Fireball	$15.19	15	0
-Pendleton	$29.59	29	0
-Seagram	$14.99	1	14
-Screwball	$26.36	26	0
-Southern Comfort	$11.99	11	0
-Kentucky Dale	$6.39	6	0
-Eagle Rare	$28.39	28	0
-Basil Hayden	$41.28	1	41
-Woodford Reserve	$35.09	35	0
-Jim Bean	$16.68	4	66
-Bulleit	$24.74	24	0
-Crown	$29.99	4	119
-Crown Apple	$29.99	29	0
-Crown Peach	$23.99	23	0
-Crown Vanilla	$29.99	29	0
-Macallen	$75.99	75	0
-The Glenlivet	$58.79	58	0
-Black	$41.99	41	0
-Belvedere	$29.77	29	0
-Finlandia	$12.79	12	0
-Ketel One	$25.49	25	0
-Stolichnaya	$19.99	19	0
-Stolichnaya Vanilla	$21.25	21	0
-Absolute Vodka	$19.22	19	0
-Deep Eddy Lemon	$19.99	19	0
-Deep Eddy Ruby Red	$19.99	19	0
-Deep Eddy Peach	$19.99	19	0
-Taaka	$5.55	11	1
-Clasa Azul Plata	$92.11	92	0
-Patron Silver	$39.99	2	79
-Corralejo Reposado	$28.26	28	0
-Corralejo Blanco	$24.79	24	0
-Herradura Silver	$39.19	39	0
-Reposado	$31.79	2	63
-Silver	$28.79	7	201
-Jose Cuervo	$21.59	21	0
-El Toro	$8.76	1	8
-Tanqueray	$23.99	23	0
-Bombay Sapphire	$22.39	22	0
-Taaka	$5.89	5	0
-Myer Mark	$22.39	22	0
-Captian Morgan	$17.99	1	17
-Hennessey	$44.49	44	0
-Tuaca Itailian Brandy	$22.13	22	0
-Pual Mason	$10.39	10	0
-Disaronno	$38.39	38	0
-Grand Marnier	$34.42	34	0
-Cointreau	$31.39	31	0
-Chambord	$27.99	27	0
-Frangelico	$24.79	24	0
-Campari	$34.06	34	0
-Kahlua	$26.98	26	0
-Jagermeister	$26.22	26	0
-Rum Chata	$21.66	21	0
-Mr Boston Ameretto	$5.05	5	0
-Mr Boston Blue Curacao	$5.05	5	0
-Buttershots	$10.73	10	0
-Mr Boston Melon	$5.92	5	0
-Mr Boston Peach Schapps	$5.42	2	10
-Mr Boston Sour Apple	$5.42	5	0
-Dessert	$7.19	7	0
-Sutter Homes Cabernet	$5.25	52	5
-Sutter Homes Merlot	$5.25	5	0
-Sutter Homes Chardonnay	$5.25	4	21
-Sutter Homes Moscato	$5.25	10	5
-Sutter Homes White Zin	$5.25	10	5
-Sutter Homes Pinot Grig	$5.25	1	5
-Date	$9.11	9	23
-Bud Light	$0.98	0	0
-Mich Ultra	$1.18	35	4
-Coors Banquet	$0.99	9	0
-Coors Light	$1.04	24	24
-Miller Lite	$1.04	124	80000000000001
-Budweiser Cans	$1.05	12	600000000000001
-Budweiser Zero Cans	$1.05	0	0
-Shocktop	$1.01	1	0
-Dos Equis	$1.23	73	8
-Modelo Especial	$1.18	1	0
-Corona Extra	$1.29	36	46
-Heineken	$1.29	1	0
-Shiner	$1.19	42	839999999999996
-Coop	$1.43	24	34
-Coop Ice Chest	$1.43	1	0
-Coop Horny Toad	$1.43	6	8
-Guiness	$1.31	1	0
-Estrella Jalisco	$1.12	1	0
-Redbull	$1.63	24	39
-Sugar Free Redbull	$1.63	24	39
-Redbull Coconut	$1.63	1	0
-Redbull Watermelon	$1.63	1	0
-Redbull Blue	$1.63	24	39
-Aquafina	$9.08	1	9
-Employee Water Case	$9.08	1	9
-Date	$9.12	9	23
-Cherries	$14.51	1	14
-Olives	$12.69	12	0
-Cranberry Juice	$1.65	19	799999999999997
-Grapefruit Juice	$3.97	3	0
-Orange Juice	$1.89	24	45
-Pineapple Juice	$2.16	36	77
-Tomato Juice	$0.36	0	0
-Watermelon Syrup	$3.37	6	20
-Grenadine	$2.46	2	0
-Strawberry Syrup	$3.19	3	0
-Peach Syrup	$3.21	3	0
-Triple Sec	$2.78	2	5
-Sweetend Lime Juice	$2.55	2	0
-Ninas Pina Mix	$3.19	3	0
-Zing Zang	$3.19	3	0
-Sweet Sour	$0.36	24	8
-Ninas Marg	$2.54	12	30
-Ginger Beer	$0.87	12	10
-Case	$4.67	4	0
-Beverage Swords Case	$3.83	3	0
-Thermal Paper Cases	$56.88	1	56
-Tonic Water	$0.69	6	4
-Rocks Case	$3.11	3	0
-Bitters	$4.28	1	4
+Row Whiskey	$35.19	0	0
+Row Gentleman Jack	$24.09	1	24
+Row Jack Daniels	$26.38	3	79
+Row Jack Daniels Honey	$26.38	26	0
+Row Jack Daniels Apple	$18.39	18	0
+Row Jack Daniels Fire	$26.38	26	0
+Row Fireball	$15.19	15	0
+Row Pendleton	$29.59	29	0
+Row Seagram	$14.99	1	14
+Row Screwball	$26.36	26	0
+Row Southern Comfort	$11.99	11	0
+Row Kentucky Dale	$6.39	6	0
+Row Eagle Rare	$28.39	28	0
+Row Basil Hayden	$41.28	1	41
+Row Woodford Reserve	$35.09	35	0
+Row Jim Bean	$16.68	4	66
+Row Bulleit	$24.74	24	0
+Row Crown	$29.99	4	119
+Row Crown Apple	$29.99	29	0
+Row Crown Peach	$23.99	23	0
+Row Crown Vanilla	$29.99	29	0
+Row Macallen	$75.99	75	0
+Row The Glenlivet	$58.79	58	0
+Row Black	$41.99	41	0
+Row Belvedere	$29.77	29	0
+Row Finlandia	$12.79	12	0
+Row Ketel One	$25.49	25	0
+Row Stolichnaya	$19.99	19	0
+Row Stolichnaya Vanilla	$21.25	21	0
+Row Absolute Vodka	$19.22	19	0
+Row Deep Eddy Lemon	$19.99	19	0
+Row Deep Eddy Ruby Red	$19.99	19	0
+Row Deep Eddy Peach	$19.99	19	0
+Row Taaka	$5.55	11	1
+Row Clasa Azul Plata	$92.11	92	0
+Row Patron Silver	$39.99	2	79
+Row Corralejo Reposado	$28.26	28	0
+Row Corralejo Blanco	$24.79	24	0
+Row Herradura Silver	$39.19	39	0
+Row Reposado	$31.79	2	63
+Row Silver	$28.79	7	201
+Row Jose Cuervo	$21.59	21	0
+Row El Toro	$8.76	1	8
+Row Tanqueray	$23.99	23	0
+Row Bombay Sapphire	$22.39	22	0
+Row Taaka	$5.89	5	0
+Row Myer Mark	$22.39	22	0
+Row Captian Morgan	$17.99	1	17
+Row Hennessey	$44.49	44	0
+Row Tuaca Itailian Brandy	$22.13	22	0
+Row	$11.99	11	0
+Row Pual Mason	$10.39	10	0
+Row Disaronno	$38.39	38	0
+Row Grand Marnier	$34.42	34	0
+Row Cointreau	$31.39	31	0
+Row Chambord	$27.99	27	0
+Row Frangelico	$24.79	24	0
+Row Campari	$34.06	34	0
+Row Kahlua	$26.98	26	0
+Row Jagermeister	$26.22	26	0
+Row Rum Chata	$21.66	21	0
+Row Mr Boston Ameretto	$5.05	5	0
+Row Mr Boston Blue Curacao	$5.05	5	0
+Row Buttershots	$10.73	10	0
+Row Mr Boston Melon	$5.92	5	0
+Row Mr Boston Peach Schapps	$5.42	2	10
+Row Mr Boston Sour Apple	$5.42	5	0
+Row Dessert	$7.19	7	0
+Row Sutter Homes Cabernet	$5.25	52	5
+Row Sutter Homes Merlot	$5.25	5	0
+Row Sutter Homes Chardonnay	$5.25	4	21
+Row Sutter Homes Moscato	$5.25	10	5
+Row Sutter Homes White Zin	$5.25	10	5
+Row Sutter Homes Pinot Grig	$5.25	1	5
+Row Total	$99.75	131	99
+Row Date	$9.11	9	23
+Row Bud Light	$0.98	0	0
+Row Mich Ultra	$1.18	35	4
+Row Coors Banquet	$0.99	9	0
+Row Coors Light	$1.04	24	24
+Row Miller Lite	$1.04	124	80000000000001
+Row Budweiser Cans	$1.05	12	600000000000001
+Row Budweiser Zero Cans	$1.05	0	0
+Row Shocktop	$1.01	1	0
+Row Dos Equis	$1.23	73	8
+Row Modelo Especial	$1.18	1	0
+Row Corona Extra	$1.29	36	46
+Row Heineken	$1.29	1	0
+Row Shiner	$1.19	42	839999999999996
+Row Coop	$1.43	24	34
+Row Coop Ice Chest	$1.43	1	0
+Row Coop Horny Toad	$1.43	6	8
+Row Guiness	$1.31	1	0
+Row Estrella Jalisco	$1.12	1	0
+Row	$1.33	1	0
+Row Redbull	$1.63	24	39
+Row Sugar Free Redbull	$1.63	24	39
+Row Redbull Coconut	$1.63	1	0
+Row Redbull Watermelon	$1.63	1	0
+Row Redbull Blue	$1.63	24	39
+Row Aquafina	$9.08	1	9
+Row Employee Water Case	$9.08	1	9
+Row Date	$9.12	9	23
+Row Cherries	$14.51	1	14
+Row Olives	$12.69	12	0
+Row Cranberry Juice	$1.65	19	799999999999997
+Row Grapefruit Juice	$3.97	3	0
+Row Orange Juice	$1.89	24	45
+Row Pineapple Juice	$2.16	36	77
+Row Tomato Juice	$0.36	0	0
+Row Watermelon Syrup	$3.37	6	20
+Row Grenadine	$2.46	2	0
+Row Strawberry Syrup	$3.19	3	0
+Row Peach Syrup	$3.21	3	0
+Row Triple Sec	$2.78	2	5
+Row Sweetend Lime Juice	$2.55	2	0
+Row Ninas Pina Mix	$3.19	3	0
+Row Zing Zang	$3.19	3	0
+Row Sweet Sour	$0.36	24	8
+Row Ninas Marg	$2.54	12	30
+Row Ginger Beer	$0.87	12	10
+Row Case	$4.67	4	0
+Row Beverage Swords Case	$3.83	3	0
+Row	$1.18	14	16
+Row Thermal Paper Cases	$56.88	1	56
+Row Tonic Water	$0.69	6	4
+Row Rocks Case	$3.11	3	0
+Row Bitters	$4.28	1	4
