@@ -7,20 +7,69 @@ const csv = require('csv-parser');
 const docxParser = require('docx-parser');
 const { promisify } = require('util');
 const readFileAsync = promisify(fs.readFile);
+const { spawn } = require('child_process');
 const winston = require('winston');
 
 // Setup Winston logger
 const logger = winston.createLogger({
-  level: 'debug',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.printf(({ timestamp, level, message }) => `${timestamp} [${level.toUpperCase()}] - ${message}`)
   ),
   transports: [
     new winston.transports.Console(),
-    new winston.transports.File({ filename: path.join(__dirname, 'logs', 'app.log') })
+    new winston.transports.File({ filename: 'app.log' })
   ]
 });
+
+// Function to call EasyOCR Python script
+const extractImageTextWithEasyOCR = async (imageFilePath) => {
+  return new Promise((resolve, reject) => {
+    const script = spawn('python', ['easy_ocr_extractor.py', imageFilePath]);
+    let ocrText = '';
+
+    script.stdout.on('data', (data) => {
+      ocrText += data.toString();
+    });
+
+    script.stderr.on('data', (data) => {
+      logger.error(`EasyOCR Error: ${data.toString()}`);
+    });
+
+    script.on('close', (code) => {
+      if (code !== 0) {
+        reject(new Error(`EasyOCR exited with code ${code}`));
+      } else {
+        resolve(ocrText);
+      }
+    });
+  });
+};
+
+// Function to call PaddleOCR Python script
+const extractImageTextWithPaddleOCR = async (imageFilePath) => {
+  return new Promise((resolve, reject) => {
+    const script = spawn('python', ['paddle_ocr_extractor.py', imageFilePath]);
+    let ocrText = '';
+
+    script.stdout.on('data', (data) => {
+      ocrText += data.toString();
+    });
+
+    script.stderr.on('data', (data) => {
+      logger.error(`PaddleOCR Error: ${data.toString()}`);
+    });
+
+    script.on('close', (code) => {
+      if (code !== 0) {
+        reject(new Error(`PaddleOCR exited with code ${code}`));
+      } else {
+        resolve(ocrText);
+      }
+    });
+  });
+};
 
 const logRowData = (header, row) => {
   logger.info(`Extracted Data Row: ${JSON.stringify({ header, row })}`);
@@ -70,17 +119,42 @@ const extractPdfText = async (pdfFilePath) => {
   }
 };
 
-// Extract text from images with Tesseract
+process.env.PYTHONIOENCODING = 'utf-8';
+
 const extractImageText = async (imageFilePath) => {
+  let combinedText = '';
+
+  // 1. Run Tesseract OCR
   try {
-    logger.info(`Starting OCR for image file: ${imageFilePath}`);
-    const { data: { text: ocrText } } = await tesseract.recognize(imageFilePath, 'eng');
-    logger.info(`Extracted Text from Image (${imageFilePath}): ${ocrText.slice(0, 500)}...`);
-    return ocrText;
+    logger.info(`Running Tesseract OCR for image: ${imageFilePath}`);
+    const { data: { text: tesseractText } } = await tesseract.recognize(imageFilePath, 'eng');
+    logger.info(`Tesseract OCR extracted text: ${tesseractText.slice(0, 500)}...`);
+    combinedText += `\n[Tesseract OCR]\n${tesseractText.trim()}`;
   } catch (error) {
-    logger.warn(`Skipping file ${imageFilePath} due to OCR error: ${error.message}`);
-    return null;
+    logger.warn(`Tesseract OCR failed for ${imageFilePath}: ${error.message}`);
   }
+
+  // 2. Run EasyOCR
+  try {
+    logger.info(`Running EasyOCR for image: ${imageFilePath}`);
+    const easyOcrText = await extractImageTextWithEasyOCR(imageFilePath);
+    logger.info(`EasyOCR extracted text: ${easyOcrText.slice(0, 500)}...`);
+    combinedText += `\n[EasyOCR]\n${easyOcrText.trim()}`;
+  } catch (error) {
+    logger.warn(`EasyOCR failed for ${imageFilePath}: ${error.message}`);
+  }
+
+  // 3. Run PaddleOCR
+  try {
+    logger.info(`Running PaddleOCR for image: ${imageFilePath}`);
+    const paddleOcrText = await extractImageTextWithPaddleOCR(imageFilePath);
+    logger.info(`PaddleOCR extracted text: ${paddleOcrText.slice(0, 500)}...`);
+    combinedText += `\n[PaddleOCR]\n${paddleOcrText.trim()}`;
+  } catch (error) {
+    logger.warn(`PaddleOCR failed for ${imageFilePath}: ${error.message}`);
+  }
+
+  return combinedText.trim();
 };
 
 // Extract text from Excel files
@@ -153,8 +227,7 @@ const extractTxtText = async (txtFilePath) => {
   }
 };
 
-// Determine file type and extract text
-const determineFileTypeAndExtract = async (filePath) => {
+const determineFileTypeAndExtract = async (filePath, existingText = '') => {
   try {
     const buffer = await readFileAsync(filePath);
     const { fileTypeFromBuffer } = await import('file-type');
@@ -162,49 +235,70 @@ const determineFileTypeAndExtract = async (filePath) => {
 
     if (!type) {
       logger.warn(`Could not determine file type for ${filePath}. Skipping.`);
-      return null;
+      return existingText;
     }
 
     logger.info(`Processing file type ${type.mime} for ${filePath}`);
+    let extractedText = '';
 
     switch (type.mime) {
       case 'application/pdf':
-        return await extractPdfText(filePath);
+        extractedText = await extractPdfText(filePath);
+        break;
       case 'image/jpeg':
       case 'image/png':
       case 'image/bmp':
       case 'image/gif':
       case 'image/tiff':
-        return await extractImageText(filePath);
+        const tesseractText = await extractImageText(filePath);
+        const easyOcrText = await extractImageTextWithEasyOCR(filePath);
+        const paddleOcrText = await extractImageTextWithPaddleOCR(filePath);
+          // Combine the results from all three OCR engines
+        extractedText = `${tesseractText}\n[EasyOCR]\n${easyOcrText}\n[PaddleOCR]\n${paddleOcrText}`;
+        break;
       case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
-        return await extractDocxText(filePath);
+        extractedText = await extractDocxText(filePath);
+        break;
       case 'text/csv':
-        return await extractCsvText(filePath);
+        extractedText = await extractCsvText(filePath);
+        break;
       case 'text/plain':
-        return extractTxtText(filePath);
+        extractedText = await extractTxtText(filePath);
+        break;
       case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
       case 'application/vnd.ms-excel':
-        return extractExcelText(filePath);
+        extractedText = await extractExcelText(filePath);
+        break;
       default:
         logger.warn(`Unsupported file type for ${filePath}: ${type.mime}. Skipping.`);
-        return null;
+        return existingText;
     }
+
+    // Combine the newly extracted text with the existing text
+    return `${existingText}\n${extractedText}`.trim();
   } catch (error) {
     logger.error(`Error processing ${filePath}: ${error.message}`);
-    return null;
+    return existingText;
   }
 };
 
-// Process files and save as .txt
 const processFiles = async (inputFolder, outputFile) => {
   logger.info(`Starting file processing in folder: ${inputFolder}`);
   let extractedContent = [];
   const files = await fs.readdir(inputFolder);
 
+  // Read existing content from the output file (if it exists)
+  let existingText = '';
+  if (fs.existsSync(outputFile)) {
+    existingText = await readFileAsync(outputFile, 'utf-8');
+    logger.info(`Loaded existing extracted text from ${outputFile}`);
+  }
+
+  // Process each file and append new extracted text
   for (const file of files) {
     const filePath = path.join(inputFolder, file);
     try {
-      const fileData = await determineFileTypeAndExtract(filePath);
+      const fileData = await determineFileTypeAndExtract(filePath, existingText);
       if (fileData && fileData.trim()) {
         extractedContent.push(fileData);
         logger.info(`File ${file} successfully processed.`);
@@ -214,11 +308,12 @@ const processFiles = async (inputFolder, outputFile) => {
     }
   }
 
-  // Combine text data for output
-  const outputText = extractedContent.join('\n');
+  // Combine the new extracted content with the existing text
+  const outputText = extractedContent.join('\n').trim();
   await fs.writeFile(outputFile, outputText, 'utf-8');
   logger.info(`Data written to ${outputFile}`);
 };
+
 
 // Example usage
 const inputFolder = 'F:/repogit/X-seLLer-8/frontend/public/uploads';

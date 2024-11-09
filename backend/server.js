@@ -88,6 +88,24 @@ app.get('/download/:filePath', (req, res) => {
   }
 });
 
+app.get('/api/inventory', async (req, res) => {
+  try {
+    const updatedInventoryFile = path.join(__dirname, 'frontend/public/output/UpdatedFoodInventory.xlsx');
+    const inventoryData = await fs.readFile(updatedInventoryFile);
+
+    // Use pandas or a library like `xlsx` in Node.js to read and parse the Excel file to JSON
+    const XLSX = require('xlsx');
+    const workbook = XLSX.read(inventoryData, { type: 'buffer' });
+    const sheetName = workbook.SheetNames[0];
+    const jsonData = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
+
+    res.json(jsonData);
+  } catch (error) {
+    logger.error(`Failed to fetch inventory data: ${error.message}`);
+    res.status(500).send('Error fetching inventory data.');
+  }
+});
+
 // Initialize OpenAI
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -122,6 +140,32 @@ app.post('/api/chat', async (req, res) => {
     res.status(500).json({ error: 'Failed to get response from Lumin' });
   }
 });
+
+app.post('/api/update-inventory', async (req, res) => {
+  try {
+    const newData = req.body.data;
+    if (!newData || !Array.isArray(newData)) {
+      return res.status(400).send('Invalid data format.');
+    }
+
+    await updateInventory(newData);
+    res.status(200).send('Inventory updated successfully.');
+  } catch (error) {
+    logger.error(`Failed to update inventory: ${error.message}`);
+    res.status(500).send('Error updating inventory.');
+  }
+});
+
+app.get('/api/inventory', async (req, res) => {
+  try {
+    const inventory = await fs.readJSON(path.join(__dirname, 'inventory_data.json'));
+    res.json(inventory);
+  } catch (error) {
+    logger.error(`Failed to fetch inventory: ${error.message}`);
+    res.status(500).send('Error fetching inventory.');
+  }
+});
+
 
 // Start the server
 app.listen(PORT, () => {

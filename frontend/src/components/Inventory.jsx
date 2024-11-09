@@ -1,75 +1,51 @@
-import React, { useState, useEffect } from 'react';
-import DataGrid from 'react-data-grid';
-import PropTypes from 'prop-types';
-
-const columns = [
-  { key: 'id', name: 'ID', editable: false },
-  { key: 'itemName', name: 'Item Name', editable: true },
-  { key: 'brand', name: 'Brand', editable: true },
-  { key: 'packSize', name: 'Pack Size', editable: true },
-  { key: 'price', name: 'Price', editable: true },
-  { key: 'ordered', name: 'Quantity Ordered', editable: true },
-  { key: 'status', name: 'Status', editable: true },
-  { key: 'lastUpdated', name: 'Last Updated', editable: false },
-];
+import React, { useEffect, useState } from 'react';
 
 const Inventory = () => {
-  const [rows, setRows] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [inventory, setInventory] = useState([]);
+
+  const fetchInventory = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/api/inventory');
+      const data = await response.json();
+      setInventory(Object.values(data));
+    } catch (error) {
+      console.error('Error fetching inventory:', error);
+    }
+  };
 
   useEffect(() => {
-    const fetchInventoryData = async () => {
-      try {
-        const response = await fetch('http://localhost:5000/output/inventory.json');
-        if (!response.ok) throw new Error('Failed to fetch inventory data');
-        const data = await response.json();
-        setRows(data.map((item, index) => ({ id: index + 1, ...item })));
-      } catch (error) {
-        console.error('Error loading inventory data:', error);
-        setError('Failed to load inventory data');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchInventoryData();
+    fetchInventory();
+    const interval = setInterval(fetchInventory, 5000); // Polling every 5 seconds
+    return () => clearInterval(interval);
   }, []);
 
-const Inventory = () => {
-  const [logs, setLogs] = useState([]);
-  
-  useEffect(() => {
-    const socket = new WebSocket('ws://localhost:8081');
-  
-    socket.onmessage = (event) => {
-      setLogs((prevLogs) => [...prevLogs, event.data]);
-    };
-  
-    socket.onclose = () => {
-    console.log('WebSocket connection closed');
-    };
-  
-    return () => {
-      socket.close();
-    };
-  }, []);
-  
   return (
-    <div className="inventory-logs">
-      <h2>Processing Logs</h2>
-      <div className="log-container">
-        {logs.map((log, index) => (
-          <p key={index}>{log}</p>
-        ))}
-      </div>
+    <div className="inventory-table">
+      <h2>Running Inventory</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Brand</th>
+            <th>Pack Size</th>
+            <th>Price</th>
+            <th>Ordered</th>
+            <th>Delivered</th>
+          </tr>
+        </thead>
+        <tbody>
+          {inventory.map((item, index) => (
+            <tr key={index}>
+              <td>{item.brand}</td>
+              <td>{item.packSize}</td>
+              <td>${item.price.toFixed(2)}</td>
+              <td>{item.ordered}</td>
+              <td>{item.delivered}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
-}
-
-Inventory.propTypes = {
-  columns: PropTypes.array,
-  rows: PropTypes.array,
 };
-}
+
 export default Inventory;
