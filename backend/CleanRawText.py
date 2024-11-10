@@ -121,7 +121,7 @@ def clean_text(input_file_path, output_file_path):
     "Sport Beer Mug Taxable", "Mixing Glass Taxable", "Dinner Fork Taxable", "Des Pood", "Environmental Charge", "Collins Glass Taxable", "Seer Pree",
     "Cpaagzg Oza", "Fvioisd Put", "Deda Todi Sess", "Environmental Charge", "Teeziio Hale", "Please Remit Payments", "Environmental Charge", "Coosssd Sol",
     "Fvioaoe Jasos", "Aol Pos Fae", "Dvisagi Sasa", "Yeh Qaim", "Environmental Charge", "Craoaai Gade", "Wel", "Environmental Charge", "Environmental Charge",
-    "Shelf Taxable", "Post Taxable", "Eos Ptr", "Environmental Charge", "Remittance Suite"
+    "Shelf Taxable", "Post Taxable", "Eos Ptr", "Environmental Charge", "Remittance Suite", "row", "Row"
     }
         # Read the input text
     with open(input_file_path, 'r') as file:
