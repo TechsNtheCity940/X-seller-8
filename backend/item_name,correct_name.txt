@@ -1,0 +1,180 @@
+item_name,correct_name
+Maraschino Cherries Luxardo Gourmet 14oz
+Blue Moon Can 12oz
+Bud Zero 12oz
+Coop 66 12oz
+Coop F5 12oz
+Corona Can 12oz
+Dos Equis Lager Cans 12oz
+Estrella Jalisco Btl. 12oz
+Guinness Extra Stout Btl 12oz
+Heineken Can 12oz
+Modelo Especial Can 12oz
+Shiner can 16oz
+Shock Top Cans 12oz
+Stella Artois Cans 12oz
+Yuengling Lager Can 12oz
+Stella Keg 1984oz
+Beer-6.0 Import Draft Subtotal
+Bud Light Aluminum Btl 16oz
+Bud Light cans 16oz
+Budweiser Aluminum can 16oz
+Coors Banquet 16oz
+Coors Light can 16oz
+Mich Ultra Cans 16oz
+Miller Lite Can 16oz
+Bud Light Keg 1984oz
+Budweiser 1/2 barrel Keg 15.5gal
+Michelob Ultra Keg 15.5gal
+Dos Equis Keg 15.5gal
+White  Claw Mango 12oz
+White Claw  Blackberry 12oz
+White claw black berry 12ml
+White claw mango 12ml
+Angostura Bitters 4oz
+Bluebird Grapefruit 11.5oz
+Cherry Maraschino Gallon 1gal
+Finest Call Grenadine Syrup 1L
+Finest Call Margarita Mix 1L
+Finest Call Old Fashioned Mix 1L
+Finest Call Peach Puree Mix 1L
+Finest Call Watermelon Puree 1L
+Ginger Ale 8oz
+Gosling's Ginger Beer 12oz
+Juice Cranberry Lyons 46oz
+Juice Sun Berry Cranberry juice 1L
+Juice Sun Berry Orange juice 1L
+Juice Sun Berry Pineapple juice 1L
+Juice Tomato 6oz
+MIX COCKTAIL Bloody Mary 1L
+MIX COCKTAIL Triple Sec 1L
+Mix Finest Call Pina Colada Mix 1L
+Mix Finest Call Strawberry Puree 1L
+Mix Finest Call Sweet & Sour 1L
+Monin Agave Nectar 1L
+Monin Red Sangria Mix 1L
+Monin Spicy Mango 1L
+Ocean Spray White graoefruit juice 7.2oz
+Real Blueberry Syrup 16.9oz
+Ronson Stuffed Olives 1gal
+White Rock Tonic Water 10oz
+Barton Long Island Tea 1L
+Bacardi Superior Light Rum 1L
+Barbarossa Silver Rum 1L
+Captain Morgan Spiced Rum 1L
+Conciere Silver Rum 1L
+Malibu Coconut Rum 1L
+Myers 1L
+RumChata Liqueur 1L
+Basil Hayden's Bourbon 1L
+Bulleit Rye Whiskey 1L
+Canadian Club 1858 1L
+Conciere Blended Whiskey 1L
+Crown Apple 1L
+Crown Peach 1L
+Crown Royal Canadian Whisky 1L
+Crown Vanilla 1L
+Fireball Cinnamon Whiskey 1L
+Gentleman Jack Whiskey 1L
+Jack Daniel's Apple 750ml
+Jack Daniel's Old No 7 Whiskey 1L
+Jack Daniel's Tennessee Fire 1L
+Jack Daniel's Tennessee Honey Whiskey 1L
+Jack Daniels Apple 1L
+Jameson Irish Whiskey 1L
+Jameson Orange 1L
+Jim Beam 1L
+Kentucky Dale Blended Whiskey 1L
+Knob Creek Rye 1L
+Maker's Mark Bourbon 1L
+Old Forester Bourbon 1L
+Pendleton Whiskey 1L
+Seagram's 7 Crown American Whiskey 1L
+Skrewball Peanut Butter Whiskey 1L
+Southern Comfort 1L
+TX Blended Whiskey 750ml
+Woodford Reserve Bourbon 1L
+Liquor-Brbn/Whiskey Subtotal
+Courvoisier VSOP Cognac 1L
+Hennessy VS Cognac 1L
+Liquor-Cognac Subtotal
+Bombay Sapphire Gin 1L
+Concierce Gin 1L
+Hendrick's Gin 1L
+Taaka Gin 1L
+Tanqueray Gin 1L
+Liquor-Gin Subtotal
+Amaretto Disaronno 1L
+Bailey's Irish Cream 1L
+Campari 1L
+Chambord Liqueur 750ml
+Cointreau Liq. 1L
+DeKuyper Buttershots Schnapps 1L
+DeKuyper Melon 1L
+DeKuyper Razzamatazz Schnapps 1L
+DeKuyper Sour Apple Pucker Schnapps 1L
+E&J  Brandy 1L
+Frangelico 750ml
+Grand Marnier 1L
+Jagermeister 1L
+Kahlua 1L
+Midori Melon 1L
+Mr Boston Amaretto 1L
+Mr Boston Blue Curacao 1L
+Mr Boston Melon 1L
+Mr Boston Peach Schnapps 1L
+Mr Boston Sour Apple Schnapps 1L
+Tuaca 1L
+Liquor-Liqueurs Subtotal
+Chivas Regal 12yr Blended Scotch 1L
+Chivas Regal 12yr Blended Scotch 750ml
+Dewar's White Label Scotch 1L
+Glenlivet 12yr Scotch 1L
+Glenmorangie 10yr Highland Single Malt Scotch 1L
+Johnnie Walker Black Label Scotch 1L
+Johnnie Walker Black Scotch 750ml
+Macallan 12yr Single Malt Scotch 750ml
+Paul Masson VSOP Brandy 750ml
+Liquor-Scotch Subtotal
+1800 Reposado Tequila 1L
+1800 Silver Tequila 1L
+Conciere Silver Tequila 1L
+Corralejo Anejo Tequila 750ml
+Corralejo Blanco 750ml
+Corralejo Reposado 750ml
+El Jimador Blanco Tequila 1L
+Herradura Silver Tequila 1L
+J.C. Reserva de la Familia Repo 750ml
+Jose Cuervo Especial Gold Tequila 1L
+Jose Cuervo Tradicional Silver 1L
+Patron Silver Tequila 750ml
+Liquor-Tequila Subtotal
+Belvedere Vodka 750ml
+Belvedere Vodka 1L
+Chopin Potato Vodka 1L
+Conciere Vodka 1L
+Deep Eddy Lemon Vodka 1L
+Deep Eddy Peach 1L
+Deep Eddy Ruby Red Vodka 1L
+Finlandia Vodka 1L
+Grey Goose Vodka 1L
+Ketel One Vodka 1L
+Stoli strawberry 1L
+Stoli Vanil 1L
+Stolichnaya Vodka 1L
+Titos Handmade Vodka 1L
+Red Bull 250ml
+Red Bull Blue Edition 8.4oz
+Red Bull Coconut 8.4oz
+Red Bull Sugar Free 250ml
+Red Bull Watermelon 8.4oz
+High Noon Pineapple 12oz
+High Noon Watermelon 355ml
+Sword picks 1pkg
+Korbel Brut 375ml
+Wine-Champagne Subtotal
+Grand Cru Cabernet Sauvignon
+Angeline Rosé of Pinot Noir
+Grand Cru California Chardonnay
+Grand Cru Pinot Noir
+
