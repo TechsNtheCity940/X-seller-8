@@ -75,8 +75,8 @@ def extract_all_prices(input_file_path, output_file_path):
         print(f"Error: Could not read the file '{input_file_path}'.")
 
 # Example usage
-input_file_path = r'F:\repogit\X-seller-8\backend\uploads\StructuredTableData.txt'
-output_file_path = r'F:\repogit\X-seller-8\backend\uploads\ExtractedPrices.txt'
+input_file_path = r'D:\repogit\X-seller-8\backend\uploads\StructuredTableData.txt'
+output_file_path = r'D:\repogit\X-seller-8\backend\uploads\ExtractedPrices.txt'
 extract_all_prices(input_file_path, output_file_path)
 
 import re
