@@ -36,8 +36,8 @@ def extract_capitalized_phrases(input_file_path, output_file_path):
         print(f"Error: Could not read the file '{input_file_path}'.")
 
 # Example usage
-input_file_path = r'F:\repogit\X-seller-8\backend\uploads\StructuredTableData.txt'
-output_file_path = r'F:\repogit\X-seller-8\backend\uploads\CapitalizedPhrases.txt'
+input_file_path = r'D:\repogit\X-seller-8\backend\uploads\StructuredTableData.txt'
+output_file_path = r'D:\repogit\X-seller-8\backend\uploads\CapitalizedPhrases.txt'
 extract_capitalized_phrases(input_file_path, output_file_path)
 
 import re
@@ -158,6 +158,6 @@ def clean_text(input_file_path, output_file_path):
 
     print(f"Text cleaned and saved to {output_file_path}")
 # Example usage
-input_file_path = r'F:\repogit\X-seller-8\backend\uploads\CapitalizedPhrases.txt'
-output_file_path = r'F:\repogit\X-seller-8\backend\uploads\CleanedCapitalizedPhrases.txt'
+input_file_path = r'D:\repogit\X-seller-8\backend\uploads\CapitalizedPhrases.txt'
+output_file_path = r'D:\repogit\X-seller-8\backend\uploads\CleanedCapitalizedPhrases.txt'
 clean_text(input_file_path, output_file_path)
