@@ -68,7 +68,7 @@ function processRawText(inputFilePath, outputFilePath) {
 }
 
 // Paths to input and output files
-const inputFilePath = path.resolve(__dirname, 'F:/repogit/X-seLLer-8/backend/uploads/RawTextExtract.txt');
+const inputFilePath = path.resolve(__dirname, 'F:/repogit/X-seLLer-8/backend/uploads/CleanTextExtract.txt');
 const outputFilePath = path.resolve(__dirname, 'F:/repogit/X-seLLer-8/backend/uploads/StructuredTableData.txt');
 
 // Run the function

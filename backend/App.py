@@ -82,7 +82,7 @@ def main(input_path: str, output_json_path: str, output_csv_path: str):
 
 # Example usage
 if __name__ == "__main__":
-    input_file = 'F:/repogit/X-seller-8/backend/uploads/RawTextExtract.txt'  # Path to the extracted text file
+    input_file = 'F:/repogit/X-seller-8/backend/uploads/CleanTextExtract.txt'  # Path to the extracted text file
 
 
     
