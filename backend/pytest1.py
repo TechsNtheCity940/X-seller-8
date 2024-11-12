@@ -19,10 +19,16 @@ nlp = spacy.load("en_core_web_sm")
 
 # Step 1: Image Preprocessing
 def preprocess_image(image_path):
+    # Load the image in grayscale
     image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+
+    # Denoising
     image = cv2.fastNlMeansDenoising(image, h=30)
+
+    # Binarization
     _, binary_image = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 
+    # Skew Correction
     coords = np.column_stack(np.where(binary_image > 0))
     angle = cv2.minAreaRect(coords)[-1]
     if angle < -45:
@@ -30,13 +36,18 @@ def preprocess_image(image_path):
     else:
         angle = -angle
 
+    # Rotate image to correct skew
     (h, w) = binary_image.shape[:2]
     center = (w // 2, h // 2)
     M = cv2.getRotationMatrix2D(center, angle, 1.0)
     corrected_image = cv2.warpAffine(binary_image, M, (w, h), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
 
-    preprocessed_path = "preprocessed_image.png"
-    cv2.imwrite(preprocessed_path, corrected_image)
+    # Convert to RGB format
+    rgb_image = cv2.cvtColor(corrected_image, cv2.COLOR_GRAY2RGB)
+
+    # Save the preprocessed image
+    preprocessed_path = "F:/repogit/X-seller-8/backend/uploads/BEK_rgb.png"
+    cv2.imwrite(preprocessed_path, rgb_image)
 
     return preprocessed_path
 
