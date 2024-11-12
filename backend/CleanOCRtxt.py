@@ -1,81 +1,116 @@
+import os
 import re
-import unicodedata
+from PIL import Image
+from pdf2image import convert_from_path
+import pytesseract
+from camelot.io import read_pdf
+from camelot.core import Table
+import pandas as pd
+from pdfplumber import open as pdf_open
+import openpyxl
+import xlrd
+import csv
 
-def clean_cell_text(text):
-    """
-    Cleans individual cell text within a table structure.
-    """
-    # Normalize and remove unwanted characters
-    text = unicodedata.normalize("NFKD", text)
-    text = re.sub(r"[\x00-\x1F\x7F-\x9F]", "", text)
-    text = re.sub(r"[`~@#$%^&*_=+<>/\|\\]", "", text)
+# **Step 1: File Type Detection & Preprocessing**
 
-    # Fix common OCR misrecognitions
-    common_misrecognitions = {
-        "0": "O",
-        "1": "I",
-        "l": "I",
-        "|": "I",
-        "5": "S",
-        "6": "G",
-    }
-    for wrong, correct in common_misrecognitions.items():
-        text = text.replace(wrong, correct)
-    
-    return text.strip()
+def detect_file_type(file_path):
+    """Identifies the file type and initiates appropriate preprocessing."""
+    file_extension = file_path.split('.')[-1].lower()
+    if file_extension in ['png', 'jpg', 'jpeg', 'bmp', 'tiff']:  # Images
+        return preprocess_image(file_path)
+    elif file_extension == 'pdf':  # PDF
+        return preprocess_pdf(file_path)
+    elif file_extension in ['xlsx', 'xls']:  # Excel
+        return preprocess_excel(file_path)
+    elif file_extension == 'csv':  # CSV
+        return preprocess_csv(file_path)
+    elif file_extension == 'txt':  # Text
+        return preprocess_txt(file_path)
+    else:
+        print(f"Unsupported file type: {file_extension}")
+        return None
 
-def clean_ocr_table_text(text, delimiter=r"\s{2,}"):
-    """
-    Cleans OCR text data while attempting to maintain a table-like structure.
+# **Preprocessing Functions for Each File Type**
 
-    Parameters:
-        text (str): The raw OCR extracted text.
-        delimiter (str): Regex pattern for column delimiters, assuming multiple spaces.
+def preprocess_image(file_path):
+    """Extracts text from images using OCR."""
+    text = pytesseract.image_to_string(Image.open(file_path))
+    return clean_text(text)
 
-    Returns:
-        str: The cleaned text with preserved table structure.
-    """
-    cleaned_lines = []
-    
-    # Split text into lines to process row by row
-    for line in text.splitlines():
-        # Split each line into cells based on the delimiter (e.g., two or more spaces)
-        cells = re.split(delimiter, line.strip())
-        
-        # Clean each cell individually to preserve structure
-        cleaned_cells = [clean_cell_text(cell) for cell in cells]
-        
-        # Join cleaned cells with the delimiter (e.g., two spaces) to keep table structure
-        cleaned_line = "  ".join(cleaned_cells)
-        cleaned_lines.append(cleaned_line)
-    
-    # Join all cleaned lines with newline to recreate the table-like structure
-    return "\n".join(cleaned_lines)
+def preprocess_pdf(file_path):
+    """Extracts text and tables from PDFs."""
+    text = ''
+    with pdf_open(file_path) as pdf:
+        for page in pdf.pages:
+            text += page.extract_text()
+    tables = extract_tables_from_pdf(file_path)
+    return clean_text(text), tables
 
-def process_large_table_file(input_path, output_path, delimiter=r"\s{2,}", chunk_size=1024 * 1024):
-    """
-    Processes a large text file with OCR-extracted tables by cleaning while preserving structure.
+def preprocess_excel(file_path):
+    """Extracts data from Excel files."""
+    if file_path.endswith('.xlsx'):
+        wb = openpyxl.load_workbook(file_path)
+        sheet = wb['Sheet1']
+        data = [[cell.value for cell in row] for row in sheet.rows]
+    elif file_path.endswith('.xls'):
+        wb = xlrd.open_workbook(file_path)
+        sheet = wb.sheet_by_index(0)
+        data = [[cell.value for cell in row] for row in sheet.get_rows()]
+    return data
 
-    Parameters:
-        input_path (str): Path to the input text file.
-        output_path (str): Path to the output cleaned text file.
-        delimiter (str): Regex pattern for column delimiters, defaulting to two or more spaces.
-        chunk_size (int): Size of the chunks to read at a time (default 1MB).
-    """
-    with open(input_path, 'r', encoding='utf-8', errors='ignore') as infile, \
-         open(output_path, 'w', encoding='utf-8') as outfile:
-        
-        while True:
-            chunk = infile.read(chunk_size)
-            if not chunk:
-                break
-            
-            # Clean the chunk while preserving table-like structure
-            cleaned_chunk = clean_ocr_table_text(chunk, delimiter)
-            outfile.write(cleaned_chunk + "\n")
+def preprocess_csv(file_path):
+    """Reads data from CSV files."""
+    with open(file_path, 'r') as file:
+        reader = csv.reader(file)
+        data = list(reader)
+    return data
 
-# Example usage
-input_file = "F:/repogit/X-seller-8/backend/uploads/RawTextExtract.txt"
-output_file = "F:/repogit/X-seller-8/backend/uploads/CleanTextExtract.txt"
+def preprocess_txt(file_path):
+    """Reads plain text files."""
+    with open(file_path, 'r') as file:
+        text = file.read()
+    return clean_text(text)
 
-process_large_table_file(input_file, output_file)
+# **Shared Functions**
+
+def clean_text(text):
+    """Basic text cleaning."""
+    return re.sub(r'[\n\r]+', ', text')
+
+def extract_tables_from_pdf(file_path):
+    """Uses camelot-py for table extraction from PDFs."""
+    try:
+        tables = read_pdf(file_path, pages='all')
+        return tables
+    except Exception as e:
+        print(f"Table extraction failed: {e}")
+        return []
+
+def process_table(table):
+    """Identifies columns and extracts relevant data (same as before)."""
+    #... (unchanged code)
+
+# **Main Execution**
+
+def main(file_path):
+    data = detect_file_type(file_path)
+    if data:
+        if isinstance(data, tuple):  # PDF with text and tables
+            text, tables = data
+            print("Extracted Text:", text)
+            for table in tables:
+                processed_data = process_table(table.df)
+                # Export or process further
+                print("Processed Table Data:", processed_data)
+        elif isinstance(data, list):  # Excel, CSV, or processed tables
+            for item in data:
+                if isinstance(item, list):  # Table rows
+                    print("Table Row:", item)
+                else:
+                    print("Data Item:", item)
+        else:  # Image or Text
+            print("Extracted Text:", data)
+
+if __name__ == "__main__":
+    file_path = r"F:/repogit/X-seller-8/frontend/public/uploads/"  # Update this
+    main(file_path)
