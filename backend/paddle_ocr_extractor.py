@@ -9,5 +9,5 @@ def extract_text(image_path):
     print(extracted_text)
 
 if __name__ == "__main__":
-    image_path = sys.argv[1]
+    image_path = r"F:\repogit\X-seller-8\frontend\public\testfiles\BEK.png"
     extract_text(image_path)

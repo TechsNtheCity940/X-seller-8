@@ -3,144 +3,129 @@ import numpy as np
 import easyocr
 from PIL import Image
 import pandas as pd
+import json
 from transformers import LayoutLMv3Processor, LayoutLMv3ForTokenClassification
 import torch
 import spacy
+from paddleocr import PaddleOCR
+import os
+
+# Initialize PaddleOCR
+ocr = PaddleOCR(use_angle_cls=True, lang='en')
 
 # Initialize EasyOCR reader
 reader = easyocr.Reader(['en'])
 
 # Load the processor and model with apply_ocr set to False
-processor = LayoutLMv3Processor.from_pretrained("microsoft/layoutlmv3-base", apply_ocr=False)
+processor = LayoutLMv3Processor.from_pretrained("microsoft/layoutlmv3-base", apply_ocr=True)
 model = LayoutLMv3ForTokenClassification.from_pretrained("microsoft/layoutlmv3-base")
 
 # Initialize spaCy for NER
 nlp = spacy.load("en_core_web_sm")
 
-# Step 1: Image Preprocessing
+def resize_image(image_path):
+    try:
+        image = Image.open(image_path)
+        max_size = (2000, 2000)
+        image.thumbnail(max_size, Image.Resampling.LANCZOS)
+        resized_image_path = "resized_image.png"
+        image.save(resized_image_path)
+        return resized_image_path
+    except Exception as e:
+        print(f"Error resizing image: {e}")
+        return image_path
+
 def preprocess_image(image_path):
-    # Load the image in grayscale
-    image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
-
-    # Denoising
-    image = cv2.fastNlMeansDenoising(image, h=30)
-
-    # Binarization
-    _, binary_image = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-
-    # Skew Correction
-    coords = np.column_stack(np.where(binary_image > 0))
-    angle = cv2.minAreaRect(coords)[-1]
-    if angle < -45:
-        angle = -(90 + angle)
-    else:
-        angle = -angle
-
-    # Rotate image to correct skew
-    (h, w) = binary_image.shape[:2]
-    center = (w // 2, h // 2)
-    M = cv2.getRotationMatrix2D(center, angle, 1.0)
-    corrected_image = cv2.warpAffine(binary_image, M, (w, h), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
-
-    # Convert to RGB format
-    rgb_image = cv2.cvtColor(corrected_image, cv2.COLOR_GRAY2RGB)
-
-    # Save the preprocessed image
+    image = cv2.imread(image_path)
+    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
+    enhanced_image = clahe.apply(gray_image)
+    adaptive_thresh = cv2.adaptiveThreshold(
+        enhanced_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, blockSize=11, C=2
+    )
+    blurred = cv2.GaussianBlur(adaptive_thresh, (3, 3), 0)
+    edges = cv2.Canny(blurred, 50, 150)
+    combined = cv2.bitwise_or(adaptive_thresh, edges)
+    rgb_image = cv2.cvtColor(combined, cv2.COLOR_GRAY2RGB)
     preprocessed_path = "F:/repogit/X-seller-8/backend/uploads/BEK_rgb.png"
     cv2.imwrite(preprocessed_path, rgb_image)
-
     return preprocessed_path
 
-# Step 2: Text Extraction with EasyOCR
-def extract_text(image_path):
-    results = reader.readtext(image_path)
-    text_lines = [text for _, text, _ in results]
-    extracted_text = "\n".join(text_lines)
-    return extracted_text, results
+def full_pipeline(image_path):
+    try:
+        image = Image.open(image_path).convert("RGB")
+        ocr_results = ocr.ocr(image_path)
+        if not ocr_results:
+            print(f"Error: No OCR results found for {image_path}")
+            return None
 
-# Step 3: Extract Words and Bounding Boxes
-def extract_words_and_boxes(ocr_results):
-    words = []
-    boxes = []
-
-    for item in ocr_results:
-        bbox, word, confidence = item
-        if not word.strip():
-            continue
-
-        xmin = int(min([point[0] for point in bbox]))
-        ymin = int(min([point[1] for point in bbox]))
-        xmax = int(max([point[0] for point in bbox]))
-        ymax = int(max([point[1] for point in bbox]))
-
-        words.append(word)
-        boxes.append([xmin, ymin, xmax, ymax])
-
-    if not words or not boxes:
-        raise ValueError("No valid words or bounding boxes extracted from OCR results.")
-
-    return words, boxes
-
-# Step 4: Layout Analysis with LayoutLMv3
-def layout_analysis(image_path):
-    image = Image.open(image_path)
-    ocr_text, ocr_results = extract_text(image_path)
-    words, boxes = extract_words_and_boxes(ocr_results)
-
-    encoding = processor(images=image, words=words, boxes=boxes, truncation=True, max_length=512, return_tensors="pt")
-    with torch.no_grad():
+        raw_text = " ".join([result[1][0] for line in ocr_results for result in line])
+        encoding = processor(text=raw_text, images=image, truncation=True, max_length=512, return_tensors="pt")
         outputs = model(**encoding)
+        return raw_text
 
-    return outputs
+    except Exception as e:
+        print(f"Error during processing of {image_path}: {e}")
+        return None
 
-# Step 5: Named Entity Recognition with spaCy
 def extract_entities(text):
     doc = nlp(text)
     entities = {ent.label_: ent.text for ent in doc.ents}
     return entities
 
-# Step 6: Structure Data into DataFrame
 def structure_data(entities):
     data = {
         "Item": entities.get("ITEM", ""),
         "Price": entities.get("MONEY", ""),
         "Ordered": entities.get("DATE", ""),
-        "Delivered": entities.get("DATE", "")
+        "Delivered": entities.get("AMOUNT", "")
     }
     df = pd.DataFrame([data])
     return df
 
-# Full Pipeline
-def full_pipeline(image_path):
-    preprocessed_path = preprocess_image(image_path)
-    extracted_text, _ = extract_text(preprocessed_path)
-    layout_blocks = layout_analysis(preprocessed_path)
-    entities = extract_entities(extracted_text)
-    structured_data = structure_data(entities)
-    return structured_data
+def save_data(dataframe, json_data, raw_text):
+    # Save as CSV
+    dataframe.to_csv("structured_data.csv", index=False)
+    print("Data saved to structured_data.csv.")
 
-# Process a Folder of Images
-import os
+    # Save as JSON
+    with open("structured_data.json", "w") as json_file:
+        json.dump(json_data, json_file, indent=4)
+    print("Data saved to structured_data.json.")
+
+    # Save as TXT
+    with open("structured_data.txt", "w") as txt_file:
+        txt_file.write(raw_text)
+    print("Data saved to structured_data.txt.")
 
 def process_folder(folder_path):
-    all_results = []
+    all_data = []
+    all_json_data = []
+    all_raw_text = []
+
     for filename in os.listdir(folder_path):
         if filename.lower().endswith((".png", ".jpg", ".jpeg", ".tiff", ".bmp")):
             image_path = os.path.join(folder_path, filename)
             print(f"Processing image: {image_path}")
             try:
-                result = full_pipeline(image_path)
-                all_results.append(result)
+                raw_text = full_pipeline(image_path)
+                if raw_text:
+                    entities = extract_entities(raw_text)
+                    structured_df = structure_data(entities)
+                    all_data.append(structured_df)
+                    all_json_data.append(entities)
+                    all_raw_text.append(raw_text)
             except Exception as e:
                 print(f"Error processing {image_path}: {e}")
 
-    if all_results:
-        combined_df = pd.concat(all_results, ignore_index=True)
-        combined_df.to_csv("structured_data.csv", index=False)
-        print("Data saved to structured_data.csv.")
+    if all_data:
+        combined_df = pd.concat(all_data, ignore_index=True)
+        combined_raw_text = "\n\n".join(all_raw_text)
+        save_data(combined_df, all_json_data, combined_raw_text)
     else:
         print("No valid results to save.")
 
 # Example usage
 folder_path = "F:/repogit/X-seller-8/frontend/public/uploads"
 process_folder(folder_path)
+

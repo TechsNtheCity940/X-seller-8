@@ -87,9 +87,17 @@ const generateJsonFromExcel = async (excelPath, jsonPath) => {
 // Main function to execute process chain
 const main = async (filePath) => {
   try {
-    broadcastLog('Starting pdfConversion.py...');
-    await runScript('python', ['pdfConversion.py', filePath, OUTPUT_FOLDER]);
-    broadcastLog('pdfConversion.py completed successfully.');
+    broadcastLog('Starting PDF to PNG Conversion, ensuring all pages are rotated correctly...');
+    await runScript('python', ['1pdfConversion.py', filePath, OUTPUT_FOLDER]);
+    broadcastLog('All files Converted and Rotated successfully.');
+
+    broadcastLog('Starting pytest2.js...');
+    await runScript('node', ['2textExtract.js', OUTPUT_FOLDER]);
+    broadcastLog('Extracted Raw Text successfully.');
+
+    broadcastLog('Building JSON Structure....');
+    await runScript('python', ['3jsonstructure.py', filePath, OUTPUT_FOLDER]);
+    broadcastLog('JSON Structure Built and Saved Successfully.');
 
     broadcastLog('Running fileProcessor.js...');
     await runScript('node', ['fileProcessor.js', OUTPUT_FOLDER]);
@@ -100,11 +108,11 @@ const main = async (filePath) => {
     broadcastLog('Enhanced_fileProcessor.js completed successfully.');
 
     broadcastLog('Running App.py for data parsing...');
-    await runScript('python', ['App.py', path.join(OUTPUT_FOLDER, 'RawTextExtract.txt')]);
+    await runScript('python', ['App.py', path.join(OUTPUT_FOLDER, 'TextExtract.txt')]);
     broadcastLog('App.py completed successfully.');
 
     broadcastLog('Running CleanRawText.py...');
-    await runScript('python', ['CleanRawText.py', path.join(OUTPUT_FOLDER, 'CapitalizedPhrases.txt')]);
+    await runScript('python', ['CleanRawText.py', path.join(OUTPUT_FOLDER, 'Structured_Phrases.txt')]);
     broadcastLog('CleanRawText.py completed successfully.');
 
     broadcastLog('Running priceMatch.py...');
