@@ -60,9 +60,9 @@ def extract_item_prices(item_names, structured_data, extracted_prices, threshold
 
 def main():
     # File paths
-    phrases_file = r"F:/repogit/X-seller-8/backend/uploads/CleanedCapitalizedPhrases.txt"
+    phrases_file = r"F:/repogit/X-seller-8/backend/uploads/Structured_Phrases.txt"
     prices_file = r'F:/repogit/X-seller-8/backend/uploads/ExtractedPrices.txt'
-    structured_file = r'F:/repogit/X-seller-8/backend/uploads/StructuredTableData.txt'
+    structured_file = r'F:/repogit/X-seller-8/backend/uploads/Structured_Data.txt'
     output_excel = r'F:/repogit/X-seller-8/frontend/public/output/Inventory.xlsx'
 
     # Load data from files

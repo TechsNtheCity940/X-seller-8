@@ -316,8 +316,8 @@ const processFiles = async (inputFolder, outputFile) => {
 
 
 // Example usage
-const inputFolder = 'F:/repogit/X-seLLer-8/frontend/public/uploads/output';
-const outputFile = 'F:/repogit/X-seLLer-8/backend/uploads/TextExtract.txt';
+const inputFolder = 'F:/repogit/X-seLLer-8/frontend/public/uploads';
+const outputFile = 'F:/repogit/X-seLLer-8/frontend/public/outputs/Raw_Text2.txt';
 
 processFiles(inputFolder, outputFile).then(() => {
   logger.info('Processing complete.');

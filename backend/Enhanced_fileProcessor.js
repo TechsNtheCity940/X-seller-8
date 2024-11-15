@@ -39,37 +39,57 @@ function parseLine(line) {
     return null; // Return null if parsing fails
 }
 
-// Main function to process the input file and create structured output
-function processRawText(inputFilePath, outputFilePath) {
+// Main function to process all files in a folder
+function processAllFilesInFolder(inputFolderPath, outputFolderPath) {
     try {
-        // Read the input file
-        const rawData = fs.readFileSync(inputFilePath, 'utf-8');
-        const lines = rawData.split('\n');
+        // Ensure the output folder exists
+        if (!fs.existsSync(outputFolderPath)) {
+            fs.mkdirSync(outputFolderPath, { recursive: true });
+        }
 
-        // Process each line and extract data
-        const structuredData = [];
-        lines.forEach(line => {
-            const parsedData = parseLine(line);
-            if (parsedData) {
-                structuredData.push(parsedData);
+        // Read all files in the input folder
+        const files = fs.readdirSync(inputFolderPath);
+
+        files.forEach(file => {
+            const inputFilePath = path.join(inputFolderPath, file);
+
+            // Process only .txt files
+            if (path.extname(file) === '.txt') {
+                const outputFileName = `Structured_${path.basename(file, '.txt')}.txt`;
+                const outputFilePath = path.join(outputFolderPath, outputFileName);
+
+                // Read the input file
+                const rawData = fs.readFileSync(inputFilePath, 'utf-8');
+                const lines = rawData.split('\n');
+
+                // Process each line and extract data
+                const structuredData = [];
+                lines.forEach(line => {
+                    const parsedData = parseLine(line);
+                    if (parsedData) {
+                        structuredData.push(parsedData);
+                    }
+                });
+
+                // Write structured data to the output file
+                const outputLines = structuredData.map(data =>
+                    `${data.itemName}\t${data.price}\t${data.ordered}\t${data.delivered}`
+                ).join('\n');
+                fs.writeFileSync(outputFilePath, outputLines, 'utf-8');
+
+                console.log(`Processed file: ${file} -> Output: ${outputFileName}`);
             }
         });
 
-        // Write structured data to the output file
-        const outputLines = structuredData.map(data => 
-            `${data.itemName}\t${data.price}\t${data.ordered}\t${data.delivered}`
-        ).join('\n');
-        fs.writeFileSync(outputFilePath, outputLines, 'utf-8');
-
-        console.log('Structured data written to:', outputFilePath);
+        console.log('All files processed successfully.');
     } catch (error) {
-        console.error('Error processing file:', error);
+        console.error('Error processing files:', error);
     }
 }
 
-// Paths to input and output files
-const inputFilePath = path.resolve(__dirname, 'F:/repogit/X-seLLer-8/frontend/public/outputs/TextExtract.txt');
-const outputFilePath = path.resolve(__dirname, 'F:/repogit/X-seLLer-8/backend/uploads/StructuredTable.txt');
+// Define input and output folder paths
+const inputFolderPath = path.resolve(__dirname, 'F:/repogit/X-seLLer-8/frontend/public/outputs/');
+const outputFolderPath = path.resolve(__dirname, 'F:/repogit/X-seLLer-8/backend/uploads/');
 
 // Run the function
-processRawText(inputFilePath, outputFilePath);
+processAllFilesInFolder(inputFolderPath, outputFolderPath);

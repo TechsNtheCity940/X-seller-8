@@ -92,16 +92,16 @@ const main = async (filePath) => {
     broadcastLog('All files Converted and Rotated successfully.');
 
     broadcastLog('Starting pytest2.js...');
-    await runScript('node', ['2textExtract.js', OUTPUT_FOLDER]);
+    await runScript('node', ['2textExtract.js', filePath, OUTPUT_FOLDER]);
     broadcastLog('Extracted Raw Text successfully.');
 
     broadcastLog('Building JSON Structure....');
     await runScript('python', ['3jsonstructure.py', filePath, OUTPUT_FOLDER]);
     broadcastLog('JSON Structure Built and Saved Successfully.');
 
-    broadcastLog('Running fileProcessor.js...');
-    await runScript('node', ['fileProcessor.js', OUTPUT_FOLDER]);
-    broadcastLog('fileProcessor.js completed successfully.');
+    //broadcastLog('Running fileProcessor.js...');
+    //await runScript('node', ['fileProcessor.js', OUTPUT_FOLDER]);
+    //broadcastLog('fileProcessor.js completed successfully.');
 
     broadcastLog('Running Enhanced_fileProcessor.js...');
     await runScript('node', ['Enhanced_fileProcessor.js', OUTPUT_FOLDER]);

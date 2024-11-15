@@ -16,7 +16,7 @@ const extractTransport = new winston.transports.File({
     format: winston.format.combine(
         winston.format.printf(({ message }) => {
             // Only log messages containing "Extracted Text"
-            return message.includes('Extracted Text') ? message : false;
+            return message.includes('Text') ? message : True;
         })
     )
 });
@@ -173,7 +173,7 @@ const processFiles = async (inputFolder, outputFile) => {
 
 // Example usage
 const inputFolder = 'F:/repogit/X-seLLer-8/frontend/public/uploads';
-const outputFile = 'F:/repogit/X-seLLer-8/frontend/public/outputs/Raw_Text.txt';
+const outputFile = 'F:/repogit/X-seLLer-8/frontend/public/outputs/Raw_Text1.txt';
 
 processFiles(inputFolder, outputFile).then(() => {
     console.log('Processing complete.');
