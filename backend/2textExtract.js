@@ -9,17 +9,23 @@ const { promisify } = require('util');
 const readFileAsync = promisify(fs.readFile);
 const winston = require('winston');
 
-// Custom transport for saving specific logs to a separate file
 const extractTransport = new winston.transports.File({
     filename: path.join(__dirname, 'logs', 'extracted_text.log'),
     level: 'info',
     format: winston.format.combine(
-        winston.format.printf(({ message }) => {
-            // Only log messages containing "Extracted Text"
-            return message.includes('Text') ? message : True;
+        winston.format.printf((info) => {
+            if (!info.message) {
+                console.error('Undefined message in log entry:', info);
+                return '';
+            }
+            // Only log messages containing "Text"
+            return info.message.includes('Text') ? info.message : '';
         })
-    )
+    ) // Missing comma added here
 });
+
+// Remove redundant block:
+// format: winston.format.combine(...)
 
 // Set up Winston logger with both the default and custom transports
 const logger = winston.createLogger({
@@ -48,14 +54,42 @@ const extractPdfText = async (pdfFilePath) => {
     return data.text;
 };
 
-// Function to extract text from images using Tesseract OCR
 const extractImageText = async (imageFilePath) => {
     try {
-        const { data: { text } } = await tesseract.recognize(imageFilePath, 'eng');
-        return text;
+        // Perform OCR on the image file
+        const { data: { text } } = await tesseract.recognize(imageFilePath, 'eng', {
+            logger: (info) => logger.info(info.message), // Log OCR progress
+        });
+
+        // Parse the raw OCR text into structured data
+        const parsedData = parseInventoryData(text);
+
+        // Log extracted structured data for debugging
+        logger.info(`Extracted Text from ${imageFilePath}: ${JSON.stringify(parsedData, null, 2)}`);
+
+        return parsedData;
     } catch (error) {
         throw new Error(`Error processing image with Tesseract: ${error.message}`);
     }
+};
+
+// Function to parse raw OCR text into structured inventory data
+const parseInventoryData = (rawText) => {
+    const lines = rawText.split('\n'); // Split text into lines
+    const structuredData = [];
+
+    lines.forEach((line) => {
+        const [name, price, quantity] = line.split(','); // Assuming CSV-style data
+        if (name && price && quantity) {
+            structuredData.push({
+                name: name.trim(),
+                price: parseFloat(price.trim()) || 0,
+                quantity: parseInt(quantity.trim(), 10) || 0,
+            });
+        }
+    });
+
+    return structuredData;
 };
 
 // Function to extract text from .docx files
@@ -146,34 +180,30 @@ const determineFileTypeAndExtract = async (filePath) => {
     }
 };
 
-// Main function to process files
 const processFiles = async (inputFolder, outputFile) => {
-    let allText = '';
+    const aggregatedData = [];
     const files = await fs.readdir(inputFolder);
 
     for (const file of files) {
         const filePath = path.join(inputFolder, file);
         
         try {
-            const text = await determineFileTypeAndExtract(filePath);
-            if (text) {
-                // Clean up text and append to allText
-                const cleanedText = text.replace(/[^\w\s]/g, '');
-                allText += cleanedText + '\n';
+            const data = await determineFileTypeAndExtract(filePath);
+            if (data) {
+                aggregatedData.push(...data); // Aggregate structured data
             }
         } catch (error) {
             console.error(`Failed to process ${filePath}: ${error.message}`);
         }
     }
 
-    // Save extracted text to the specified output file
-    await fs.writeFile(outputFile, allText, 'utf-8');
-    console.log(`Text data saved to ${outputFile}`);
+    // Save aggregated structured data to the specified output file
+    await fs.writeFile(outputFile, JSON.stringify(aggregatedData, null, 2), 'utf-8');
+    console.log(`Structured data saved to ${outputFile}`);
 };
 
-// Example usage
 const inputFolder = 'F:/repogit/X-seLLer-8/frontend/public/uploads';
-const outputFile = 'F:/repogit/X-seLLer-8/frontend/public/outputs/Raw_Text1.txt';
+const outputFile = 'F:/repogit/X-seLLer-8/frontend/public/outputs/ParsedItems.json';
 
 processFiles(inputFolder, outputFile).then(() => {
     console.log('Processing complete.');

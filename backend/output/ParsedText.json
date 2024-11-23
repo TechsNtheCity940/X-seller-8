@@ -1,1 +1,247 @@
-[]
+[
+    {
+        "name": "TX Whiskey",
+        "price": 35.19,
+        "quantity": 0
+    },
+    {
+        "name": "Gentleman Jack",
+        "price": 24.09,
+        "quantity": 1
+    },
+    {
+        "name": "Jack Daniels",
+        "price": 26.38,
+        "quantity": 3
+    },
+    {
+        "name": "",
+        "price": 14.99,
+        "quantity": 1
+    },
+    {
+        "name": "Basil Hayden",
+        "price": 41.28,
+        "quantity": 1
+    },
+    {
+        "name": "Jim Bean",
+        "price": 16.68,
+        "quantity": 4
+    },
+    {
+        "name": "Crown",
+        "price": 29.99,
+        "quantity": 4
+    },
+    {
+        "name": "Taaka",
+        "price": 5.55,
+        "quantity": 2
+    },
+    {
+        "name": "Patron Silver",
+        "price": 39.99,
+        "quantity": 2
+    },
+    {
+        "name": "Reposado",
+        "price": 31.79,
+        "quantity": 2
+    },
+    {
+        "name": "Silver",
+        "price": 28.79,
+        "quantity": 7
+    },
+    {
+        "name": "El Toro",
+        "price": 8.76,
+        "quantity": 1
+    },
+    {
+        "name": "Captian Morgan",
+        "price": 17.99,
+        "quantity": 1
+    },
+    {
+        "name": "Boston Peach Schapps",
+        "price": 5.42,
+        "quantity": 2
+    },
+    {
+        "name": "Sutter Homes Cabernet",
+        "price": 5.25,
+        "quantity": 10
+    },
+    {
+        "name": "Sutter Homes Chardonnay",
+        "price": 5.25,
+        "quantity": 4
+    },
+    {
+        "name": "Sutter Homes Moscato",
+        "price": 5.25,
+        "quantity": 2
+    },
+    {
+        "name": "Sutter Homes White Zin",
+        "price": 5.25,
+        "quantity": 2
+    },
+    {
+        "name": "",
+        "price": 5.25,
+        "quantity": 1
+    },
+    {
+        "name": "oz cans",
+        "price": 0.98,
+        "quantity": 0
+    },
+    {
+        "name": "oz cans",
+        "price": 1.18,
+        "quantity": 30
+    },
+    {
+        "name": "oz cans",
+        "price": 0.99,
+        "quantity": 9
+    },
+    {
+        "name": "oz can",
+        "price": 1.04,
+        "quantity": 24
+    },
+    {
+        "name": "oz can",
+        "price": 1.04,
+        "quantity": 120
+    },
+    {
+        "name": "Budweiser Cans",
+        "price": 1.05,
+        "quantity": 12
+    },
+    {
+        "name": "Budweiser Zero Cans",
+        "price": 1.05,
+        "quantity": 0
+    },
+    {
+        "name": "Dos Equis",
+        "price": 1.23,
+        "quantity": 60
+    },
+    {
+        "name": "Corona Extra",
+        "price": 1.29,
+        "quantity": 36
+    },
+    {
+        "name": "Shiner",
+        "price": 1.19,
+        "quantity": 36
+    },
+    {
+        "name": "",
+        "price": 1.43,
+        "quantity": 24
+    },
+    {
+        "name": "Coop Horny Toad",
+        "price": 1.43,
+        "quantity": 6
+    },
+    {
+        "name": "Redbull",
+        "price": 1.63,
+        "quantity": 24
+    },
+    {
+        "name": "Sugar Free Redbull",
+        "price": 1.63,
+        "quantity": 24
+    },
+    {
+        "name": "Redbull Blue",
+        "price": 1.63,
+        "quantity": 24
+    },
+    {
+        "name": "",
+        "price": 9.08,
+        "quantity": 1
+    },
+    {
+        "name": "",
+        "price": 9.08,
+        "quantity": 1
+    },
+    {
+        "name": "Cherries",
+        "price": 14.51,
+        "quantity": 1
+    },
+    {
+        "name": "Cranberry Juice",
+        "price": 1.65,
+        "quantity": 12
+    },
+    {
+        "name": "Orange Juice",
+        "price": 1.89,
+        "quantity": 24
+    },
+    {
+        "name": "Pineapple Juice",
+        "price": 2.16,
+        "quantity": 36
+    },
+    {
+        "name": "Watermelon Syrup",
+        "price": 3.37,
+        "quantity": 6
+    },
+    {
+        "name": "Triple Sec",
+        "price": 2.78,
+        "quantity": 2
+    },
+    {
+        "name": "Sweet and Sour",
+        "price": 0.36,
+        "quantity": 24
+    },
+    {
+        "name": "Ninas Marg mix",
+        "price": 2.54,
+        "quantity": 12
+    },
+    {
+        "name": "Ginger Beer",
+        "price": 0.87,
+        "quantity": 12
+    },
+    {
+        "name": "gingerale",
+        "price": 1.18,
+        "quantity": 14
+    },
+    {
+        "name": "Cases",
+        "price": 56.88,
+        "quantity": 1
+    },
+    {
+        "name": "Tonic Water",
+        "price": 0.69,
+        "quantity": 6
+    },
+    {
+        "name": "Bitters",
+        "price": 4.28,
+        "quantity": 1
+    }
+]

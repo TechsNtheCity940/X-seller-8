@@ -99,9 +99,9 @@ const main = async (filePath) => {
     await runScript('python', ['3jsonstructure.py', filePath, OUTPUT_FOLDER]);
     broadcastLog('JSON Structure Built and Saved Successfully.');
 
-    //broadcastLog('Running fileProcessor.js...');
-    //await runScript('node', ['fileProcessor.js', OUTPUT_FOLDER]);
-    //broadcastLog('fileProcessor.js completed successfully.');
+    broadcastLog('Running fileProcessor.js...');
+    await runScript('node', ['fileProcessor.js', OUTPUT_FOLDER]);
+    broadcastLog('fileProcessor.js completed successfully.');
 
     broadcastLog('Running Enhanced_fileProcessor.js...');
     await runScript('node', ['Enhanced_fileProcessor.js', OUTPUT_FOLDER]);

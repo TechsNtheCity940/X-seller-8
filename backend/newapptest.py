@@ -25,7 +25,7 @@ def extract_pdf_text(pdf_file):
 def extract_pdf_tables(pdf_file):
     tables = camelot.read_pdf(pdf_file, pages='all')
     return tables
-tables = camelot.read_pdf('D:/repogit/X-seller-8/frontend/public/testfiles/TK SSRD.pdf')
+tables = camelot.read_pdf('F:/repogit/X-seller-8/frontend/public/testfiles/TK SSRD.pdf')
 
 tables[0]
 def extract_image_tables(image_file):

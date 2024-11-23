@@ -175,9 +175,9 @@ def save_to_inventory_excel(df, file_name):
     return output_file
 
 # Main processing
-input_folder = "F:/repogit/X-seLLer-8/frontend/public/upload/BEK.png"
-output_file = "F:/repogit/X-seLLer-8/frontend/public/output/1114_newextracted.txt"
-inventory_data_path = "F:/repogit/X-seLLer-8/1114_inventory_data.json"
+input_folder = "F:/repogit/X-seLLer-8/frontend/public/uploads/BEK.png"
+output_file = "F:/repogit/X-seLLer-8/frontend/public/output/1122_newextracted.txt"
+inventory_data_path = "F:/repogit/X-seLLer-8/1122_inventory_data.json"
 
 # Step 1: Process input files to extract text
 process_files(input_folder, output_file)
@@ -198,5 +198,5 @@ inventory_data = df.to_dict(orient='records')
 save_inventory_data(inventory_data, inventory_data_path)
 
 # Step 5: Create an Excel file and copy data
-excel_output_file = "F:/repogit/X-seLLer-8/frontend/public/output/1114_Inventory.xlsx"
+excel_output_file = "F:/repogit/X-seLLer-8/frontend/public/output/1122_Inventory.xlsx"
 save_to_inventory_excel(df, excel_output_file)
