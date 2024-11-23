@@ -1,89 +1,110 @@
-import json
-import os
+import pandas as pd
 import re
+import os
+from rapidfuzz import process, fuzz
 
-# Helper function to parse lines
-def parse_line(line):
-    """
-    Extract relevant information from a line using regex patterns.
-    """
-    line_data = {}
-    # Regex patterns for matching various fields
-    date_pattern = r"\d{2}/\d{2}/\d{4}"
-    money_pattern = r"\$\d+[\.\d+]?"
-    quantity_pattern = r"\bQty\s*:\s*\d+"
-    product_code_pattern = r"\b[A-Z0-9]{5,}\b"
-    product_name_pattern = r"[A-Z][a-zA-Z\s]+(?:[A-Z][a-zA-Z\s]+)*"
+# Function to normalize item names for better comparison
+def normalize_name(name):
+    return re.sub(r'\s+', ' ', re.sub(r'[^\w\s]', '', name.lower())).strip()
 
-    # Extract using patterns
-    date_match = re.search(date_pattern, line)
-    money_match = re.search(money_pattern, line)
-    quantity_match = re.search(quantity_pattern, line)
-    product_code_match = re.search(product_code_pattern, line)
-    product_name_match = re.search(product_name_pattern, line)
+# Function to load lines from a file
+def load_file_lines(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        return [line.strip() for line in file.readlines()]
 
-    # Assign extracted values
-    if date_match:
-        line_data["DATE"] = date_match.group()
-    if money_match:
-        line_data["MONEY"] = money_match.group()
-    if quantity_match:
-        line_data["QUANTITY"] = quantity_match.group().split(":")[-1].strip()
-    if product_code_match:
-        line_data["PRODUCT_CODE"] = product_code_match.group()
-    if product_name_match:
-        line_data["PRODUCT_NAME"] = product_name_match.group()
+# Function to match items with prices, ordered, and delivered quantities using fuzzy matching
+def extract_item_prices(item_names, structured_data, extracted_prices, threshold=85):
+    result = []
+    structured_dict = {}
 
-    return line_data
+    # Normalize structured data into a dictionary
+    for line in structured_data:
+        parts = line.split('\t')
+        if len(parts) >= 4:  # Ensure the line has enough parts for price, ordered, and delivered
+            item_name = normalize_name(parts[0].strip())
+            try:
+                item_price = float(parts[1].strip().replace('$', ''))
+                ordered = int(parts[2].strip())
+                delivered = int(parts[3].strip())
+                structured_dict[item_name] = {'price': item_price, 'ordered': ordered, 'delivered': delivered}
+            except ValueError:
+                continue
 
-# Function to find the next available filename in sequence
-def get_next_output_filename(output_folder):
-    existing_files = [f for f in os.listdir(output_folder) if f.startswith("Structured_Text") and f.endswith(".json")]
-    existing_numbers = []
+    # Iterate over item names to match and extract data
+    for i, item in enumerate(item_names):
+        normalized_item = normalize_name(item)
+        match_data = None
 
-    # Extract numbers from existing filenames
-    for filename in existing_files:
-        number_part = filename[len("Structured_Text"):].replace(".json", "")
-        if number_part.isdigit():
-            existing_numbers.append(int(number_part))
+        # Fuzzy matching to find the best match in structured data
+        best_match = process.extractOne(normalized_item, structured_dict.keys(), scorer=fuzz.ratio)
+        
+        if best_match:
+            match_name, score, _ = best_match
+            if score >= threshold:
+                match_data = structured_dict[match_name]
+        elif i < len(extracted_prices):
+            try:
+                price = float(extracted_prices[i].replace('$', '').strip())
+                match_data = {'price': price, 'ordered': None, 'delivered': None}
+            except ValueError:
+                match_data = None
 
-    # Determine the next available number
-    next_number = max(existing_numbers, default=0) + 1
-    return f"Structured_Text{next_number}.json"
+        if match_data is not None:
+            result.append({
+                'Item Name': item,
+                'Item Price': match_data['price'],
+                'Ordered': match_data['ordered'],
+                'Delivered': match_data['delivered']
+            })
 
-# Main function to process all files in a folder
-def process_all_files_in_folder(input_folder, output_folder):
-    # Ensure the output folder exists
+    return result
+
+def process_folder(folder_path, output_folder):
+    # Iterate over all files in the folder
+    for file_name in os.listdir(folder_path):
+        file_path = os.path.join(folder_path, file_name)
+
+        if os.path.isfile(file_path):
+            try:
+                print(f"Processing file: {file_name}")
+
+                # Define corresponding file paths
+                phrases_file = file_path
+                prices_file = os.path.join(folder_path, "ExtractedPrices.txt")
+                structured_file = os.path.join(folder_path, "Structured_Data.txt")
+
+                # Ensure required files exist
+                if not os.path.exists(prices_file) or not os.path.exists(structured_file):
+                    print(f"Missing associated files for {file_name}. Skipping.")
+                    continue
+
+                # Load data from files
+                item_names = load_file_lines(phrases_file)
+                extracted_prices = load_file_lines(prices_file)
+                structured_data = load_file_lines(structured_file)
+
+                # Extract and match prices with enhanced accuracy, including ordered and delivered quantities
+                matched_data = extract_item_prices(item_names, structured_data, extracted_prices)
+
+                # Create a DataFrame and export to Excel
+                output_excel = os.path.join(output_folder, f"{os.path.splitext(file_name)[0]}_Inventory.xlsx")
+                df = pd.DataFrame(matched_data)
+                df.to_excel(output_excel, index=False, sheet_name='Item Prices')
+
+                print(f"Excel file created at {output_excel}")
+            except Exception as e:
+                print(f"Error processing file {file_name}: {e}")
+
+def main():
+    # Folder paths
+    input_folder = r"F:/repogit/X-seller-8/backend/uploads/"
+    output_folder = r"F:/repogit/X-seller-8/frontend/public/output/"
+
+    # Ensure output folder exists
     os.makedirs(output_folder, exist_ok=True)
 
-    # Iterate through all .txt files in the input folder
-    for file_name in sorted(os.listdir(input_folder)):
-        if file_name.endswith('.txt'):
-            input_file_path = os.path.join(input_folder, file_name)
-            print(f"Processing file: {input_file_path}")
+    # Process all files in the folder
+    process_folder(input_folder, output_folder)
 
-            # Read input file and process lines
-            structured_data = []
-            with open(input_file_path, "r", encoding="utf-8") as file:
-                for line in file:
-                    if line.strip():  # Ignore empty lines
-                        parsed_data = parse_line(line)
-                        if parsed_data:  # Only add non-empty data
-                            structured_data.append(parsed_data)
-
-            # Determine the next output file name
-            output_file_name = get_next_output_filename(output_folder)
-            output_file_path = os.path.join(output_folder, output_file_name)
-
-            # Write output to JSON file
-            with open(output_file_path, "w", encoding="utf-8") as json_file:
-                json.dump(structured_data, json_file, indent=4)
-
-            print(f"Structured data saved to: {output_file_path}")
-
-# Example usage
 if __name__ == "__main__":
-    input_folder = 'F:/repogit/X-seLLer-8/frontend/public/outputs/'  # Folder containing input text files
-    output_folder = 'F:/repogit/X-seLLer-8/backend/uploads/'         # Folder to save JSON outputs
-
-    process_all_files_in_folder(input_folder, output_folder)
+    main()

@@ -73,4 +73,7 @@ def process_all_pdfs_in_folder(folder_path, output_folder):
 # Example usage
 folder_path = r"F:/repogit/X-seller-8/frontend/public/uploads"
 output_folder = r"F:/repogit/X-seller-8/frontend/public/uploads"
-process_all_pdfs_in_folder(folder_path, output_folder)
+process_all_pdfs_in_folder(folder_path, output_folder) 
+# Example usage
+
+#r"F:/repogit/X-seller-8/frontend/public/uploads"

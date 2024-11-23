@@ -112,5 +112,5 @@ def main(file_path):
             print("Extracted Text:", data)
 
 if __name__ == "__main__":
-    file_path = r"F:/repogit/X-seller-8/frontend/public/uploads/"  # Update this
+    file_path = r'F:/repogit/X-seller-8/frontend/testcodes/tetfiles/BEK.png'  # Update this
     main(file_path)
