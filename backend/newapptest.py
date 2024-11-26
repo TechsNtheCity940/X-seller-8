@@ -80,6 +80,6 @@ def process_files(input_folder, output_folder):
     print(f"All processed text saved to {text_output_file}")
 
 # Example usage:
-input_folder = r'F:/repogit/X-seller-8/frontend/public/uploads/invoices 9.24.22.pdf'
+input_folder = r'F:/repogit/X-seller-8/frontend/public/uploads/'
 output_file = r'F:/repogit/X-seller-8/frontend/testcodes/tetfiles/BEKextracted.txt'
 process_files(input_folder, output_file)
