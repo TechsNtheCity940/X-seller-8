@@ -1,60 +1,61 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Bar } from 'react-chartjs-2';
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
-import { Chart, Filler } from 'chart.js';
 
-// Register the Filler plugin
-Chart.register(Filler);
-
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
-
-function InventoryBarChart() {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    const fetchInventoryData = async () => {
-      try {
-        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/output/Inventory.xlsx`);
-        if (!response.ok) {
-          throw new Error('Failed to load inventory data');
-        }
-        const data = await response.json();
-        setInventoryData(data);
-      } catch (error) {
-        console.error('Error loading inventory data:', error);
-        setErrorMsg('Failed to load inventory data');
-      }
-    };
-  
-    fetchInventoryData();
-  }, []);
-
-  const labels = data.map(item => item.itemName);
-  const quantities = data.map(item => item.ordered);
-  const prices = data.map(item => item.price);
-
+const InventoryBarChart = ({ data = [] }) => {
   const chartData = {
-    labels,
+    labels: data.map(item => item.itemName),
     datasets: [
       {
-        label: 'Quantity Ordered',
-        data: quantities,
-        backgroundColor: 'rgba(54, 162, 235, 0.6)',
+        label: 'Ordered Quantity',
+        data: data.map(item => item.ordered),
+        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }
+    ]
+  };
+
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
       },
-      {
-        label: 'Price',
-        data: prices,
-        backgroundColor: 'rgba(255, 99, 132, 0.6)',
+      title: {
+        display: true,
+        text: 'Inventory Quantities'
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        title: {
+          display: true,
+          text: 'Quantity'
+        }
       },
-    ],
+      x: {
+        ticks: {
+          maxRotation: 45,
+          minRotation: 45
+        }
+      }
+    }
   };
 
   return (
     <div className="inventory-bar-chart">
-      <h3>Inventory Data</h3>
-      <Bar data={chartData} />
+      <Bar data={chartData} options={options} />
     </div>
   );
-}
+};
+
+InventoryBarChart.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape({
+    itemName: PropTypes.string,
+    ordered: PropTypes.number
+  }))
+};
 
 export default InventoryBarChart;

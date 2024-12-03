@@ -1,51 +1,53 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const Inventory = () => {
-  const [inventory, setInventory] = useState([]);
-
-  const fetchInventory = async () => {
-    try {
-      const response = await fetch('http://localhost:5000/api/inventory');
-      const data = await response.json();
-      setInventory(Object.values(data));
-    } catch (error) {
-      console.error('Error fetching inventory:', error);
-    }
-  };
-
-  useEffect(() => {
-    fetchInventory();
-    const interval = setInterval(fetchInventory, 5000); // Polling every 5 seconds
-    return () => clearInterval(interval);
-  }, []);
-
+const Inventory = ({ data = [] }) => {
   return (
     <div className="inventory-table">
       <h2>Running Inventory</h2>
       <table>
         <thead>
           <tr>
+            <th>Item #</th>
+            <th>Item Name</th>
             <th>Brand</th>
             <th>Pack Size</th>
             <th>Price</th>
             <th>Ordered</th>
-            <th>Delivered</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
-          {inventory.map((item, index) => (
-            <tr key={index}>
+          {data.map((item, index) => (
+            <tr 
+              key={index}
+              style={item.status === 'Out of stock' ? { backgroundColor: '#ffebee' } : {}}
+            >
+              <td>{item.itemNumber}</td>
+              <td>{item.itemName}</td>
               <td>{item.brand}</td>
               <td>{item.packSize}</td>
-              <td>${item.price.toFixed(2)}</td>
+              <td>${typeof item.price === 'number' ? item.price.toFixed(2) : item.price}</td>
               <td>{item.ordered}</td>
-              <td>{item.delivered}</td>
+              <td>{item.status}</td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
   );
+};
+
+Inventory.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape({
+    itemNumber: PropTypes.string,
+    itemName: PropTypes.string,
+    brand: PropTypes.string,
+    packSize: PropTypes.string,
+    price: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    ordered: PropTypes.number,
+    status: PropTypes.string
+  }))
 };
 
 export default Inventory;
