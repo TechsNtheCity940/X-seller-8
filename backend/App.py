@@ -2,7 +2,10 @@ import json
 import csv
 import os
 import re
-from typing import List, Dict
+from typing import List, Dict, Optional
+import logging
+
+logger = logging.getLogger(__name__)
 
 def parse_text_data(raw_text: str) -> List[Dict[str, str]]:
     parsed_items = []
@@ -83,6 +86,17 @@ def process_all_files_in_folder(input_folder: str, output_json_path: str, output
     save_to_json(combined_data, output_json_path)
     save_to_csv(combined_data, output_csv_path)
     print(f"Data parsed, deduplicated, and saved to {output_json_path} and {output_csv_path}")
+
+class DataProcessor:
+    def __init__(self, config: Dict[str, str]):
+        self.input_folder = config['input_folder']
+        self.output_json = config['output_json']
+        self.output_csv = config['output_csv']
+
+    def validate_paths(self) -> None:
+        """Validate all input and output paths exist."""
+        if not os.path.exists(self.input_folder):
+            raise ValueError(f"Input folder does not exist: {self.input_folder}")
 
 # Example usage
 if __name__ == "__main__":

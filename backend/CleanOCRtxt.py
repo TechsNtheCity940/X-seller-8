@@ -10,6 +10,9 @@ import openpyxl
 import xlrd
 import csv
 from camelot.core import Table
+from pathlib import Path
+from typing import Optional, Dict, Any
+
 # Set up Tesseract OCR path if needed
 pytesseract.pytesseract.tesseract_cmd = r"C:/Users/wonde/AppData/Local/Programs/Tesseract-OCR/tesseract.exe"
 
@@ -140,6 +143,15 @@ def main(file_path):
                 print(row)
         else:  # Image or Text
             print("Extracted Text:", data[:1000])  # Preview text
+
+class OCRCleaner:
+    def __init__(self, config: Dict[str, str]):
+        self.tesseract_path = Path(config['tesseract_path'])
+        self.validate_config()
+
+    def validate_config(self) -> None:
+        if not self.tesseract_path.exists():
+            raise ValueError(f"Tesseract not found at: {self.tesseract_path}")
 
 if __name__ == "__main__":
     file_path = r'F:\repogit\X-seller-8\frontend\public\uploads'  # Update this

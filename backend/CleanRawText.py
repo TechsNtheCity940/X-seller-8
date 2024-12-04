@@ -1,110 +1,150 @@
-import pandas as pd
-import re
 import os
-from rapidfuzz import process, fuzz
+import re
+from pathlib import Path
+from typing import Optional, Dict, Any, List
+from dataclasses import dataclass
+import logging
+from utils.logger import setup_logger
 
-# Function to normalize item names for better comparison
-def normalize_name(name):
-    return re.sub(r'\s+', ' ', re.sub(r'[^\w\s]', '', name.lower())).strip()
+logger = setup_logger("text_cleaner")
 
-# Function to load lines from a file
-def load_file_lines(file_path):
-    with open(file_path, 'r', encoding='utf-8') as file:
-        return [line.strip() for line in file.readlines()]
+@dataclass
+class CleaningConfig:
+    remove_special_chars: bool = True
+    normalize_whitespace: bool = True
+    remove_urls: bool = True
+    remove_emails: bool = True
+    min_word_length: int = 2
+    max_word_length: int = 45
 
-# Function to match items with prices, ordered, and delivered quantities using fuzzy matching
-def extract_item_prices(item_names, structured_data, extracted_prices, threshold=85):
-    result = []
-    structured_dict = {}
+class TextCleaningError(Exception):
+    """Custom exception for text cleaning errors"""
+    pass
 
-    # Normalize structured data into a dictionary
-    for line in structured_data:
-        parts = line.split('\t')
-        if len(parts) >= 4:  # Ensure the line has enough parts for price, ordered, and delivered
-            item_name = normalize_name(parts[0].strip())
-            try:
-                item_price = float(parts[1].strip().replace('$', ''))
-                ordered = int(parts[2].strip())
-                delivered = int(parts[3].strip())
-                structured_dict[item_name] = {'price': item_price, 'ordered': ordered, 'delivered': delivered}
-            except ValueError:
-                continue
+class TextCleaner:
+    def __init__(self, config: CleaningConfig = None):
+        self.config = config or CleaningConfig()
+        self._compile_patterns()
 
-    # Iterate over item names to match and extract data
-    for i, item in enumerate(item_names):
-        normalized_item = normalize_name(item)
-        match_data = None
+    def _compile_patterns(self) -> None:
+        """Compile regex patterns for better performance"""
+        self.patterns = {
+            'url': re.compile(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'),
+            'email': re.compile(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'),
+            'special_chars': re.compile(r'[^a-zA-Z0-9\s.,!?-]'),
+            'whitespace': re.compile(r'\s+')
+        }
 
-        # Fuzzy matching to find the best match in structured data
-        best_match = process.extractOne(normalized_item, structured_dict.keys(), scorer=fuzz.ratio)
+    def clean_text(self, text: str) -> str:
+        """
+        Clean text according to configuration settings.
         
-        if best_match:
-            match_name, score, _ = best_match
-            if score >= threshold:
-                match_data = structured_dict[match_name]
-        elif i < len(extracted_prices):
-            try:
-                price = float(extracted_prices[i].replace('$', '').strip())
-                match_data = {'price': price, 'ordered': None, 'delivered': None}
-            except ValueError:
-                match_data = None
+        Args:
+            text: Input text to clean
+            
+        Returns:
+            Cleaned text
+            
+        Raises:
+            TextCleaningError: If cleaning fails
+        """
+        try:
+            if not text:
+                return ""
 
-        if match_data is not None:
-            result.append({
-                'Item Name': item,
-                'Item Price': match_data['price'],
-                'Ordered': match_data['ordered'],
-                'Delivered': match_data['delivered']
-            })
+            # Apply cleaning steps based on config
+            if self.config.remove_urls:
+                text = self.patterns['url'].sub(' ', text)
+            
+            if self.config.remove_emails:
+                text = self.patterns['email'].sub(' ', text)
+            
+            if self.config.remove_special_chars:
+                text = self.patterns['special_chars'].sub(' ', text)
+            
+            if self.config.normalize_whitespace:
+                text = self.patterns['whitespace'].sub(' ', text)
 
-    return result
+            # Filter words by length
+            words = text.split()
+            words = [w for w in words 
+                    if self.config.min_word_length <= len(w) <= self.config.max_word_length]
+            
+            return ' '.join(words).strip()
+            
+        except Exception as e:
+            raise TextCleaningError(f"Failed to clean text: {str(e)}")
 
-def process_folder(folder_path, output_folder):
-    # Iterate over all files in the folder
-    for file_name in os.listdir(folder_path):
-        file_path = os.path.join(folder_path, file_name)
+    def process_file(self, input_path: Path, output_path: Path) -> None:
+        """Process a single file"""
+        try:
+            logger.info(f"Processing file: {input_path}")
+            
+            with open(input_path, 'r', encoding='utf-8') as f:
+                text = f.read()
+            
+            cleaned_text = self.clean_text(text)
+            
+            with open(output_path, 'w', encoding='utf-8') as f:
+                f.write(cleaned_text)
+                
+            logger.info(f"Cleaned text saved to: {output_path}")
+            
+        except Exception as e:
+            logger.error(f"Failed to process file {input_path}: {e}")
+            raise TextCleaningError(f"File processing failed: {str(e)}")
 
-        if os.path.isfile(file_path):
-            try:
-                print(f"Processing file: {file_name}")
-
-                # Define corresponding file paths
-                phrases_file = file_path
-                prices_file = os.path.join(folder_path, "ExtractedPrices.txt")
-                structured_file = os.path.join(folder_path, "Structured_Data.txt")
-
-                # Ensure required files exist
-                if not os.path.exists(prices_file) or not os.path.exists(structured_file):
-                    print(f"Missing associated files for {file_name}. Skipping.")
-                    continue
-
-                # Load data from files
-                item_names = load_file_lines(phrases_file)
-                extracted_prices = load_file_lines(prices_file)
-                structured_data = load_file_lines(structured_file)
-
-                # Extract and match prices with enhanced accuracy, including ordered and delivered quantities
-                matched_data = extract_item_prices(item_names, structured_data, extracted_prices)
-
-                # Create a DataFrame and export to Excel
-                output_excel = os.path.join(output_folder, f"{os.path.splitext(file_name)[0]}_Inventory.xlsx")
-                df = pd.DataFrame(matched_data)
-                df.to_excel(output_excel, index=False, sheet_name='Item Prices')
-
-                print(f"Excel file created at {output_excel}")
-            except Exception as e:
-                print(f"Error processing file {file_name}: {e}")
-
-def main():
-    # Folder paths
-    input_folder = r"F:/repogit/X-seller-8/backend/uploads/"
-    output_folder = r"F:/repogit/X-seller-8/frontend/public/output/"
-
-    # Ensure output folder exists
-    os.makedirs(output_folder, exist_ok=True)
-
-    # Process all files in the folder
-    process_folder(input_folder, output_folder)
+    def process_directory(self, input_dir: Path, output_dir: Path, 
+                         file_pattern: str = "*.txt") -> List[Dict[str, Any]]:
+        """Process all matching files in a directory"""
+        results = []
+        input_dir = Path(input_dir)
+        output_dir = Path(output_dir)
+        
+        try:
+            output_dir.mkdir(parents=True, exist_ok=True)
+            
+            for input_path in input_dir.glob(file_pattern):
+                output_path = output_dir / f"cleaned_{input_path.name}"
+                
+                try:
+                    self.process_file(input_path, output_path)
+                    results.append({
+                        'file': input_path.name,
+                        'status': 'success',
+                        'output': output_path.name
+                    })
+                except Exception as e:
+                    results.append({
+                        'file': input_path.name,
+                        'status': 'error',
+                        'error': str(e)
+                    })
+                    
+            return results
+            
+        except Exception as e:
+            logger.error(f"Directory processing failed: {e}")
+            raise TextCleaningError(f"Directory processing failed: {str(e)}")
 
 if __name__ == "__main__":
-    main()
+    try:
+        config = CleaningConfig(
+            remove_special_chars=True,
+            normalize_whitespace=True,
+            remove_urls=True,
+            remove_emails=True
+        )
+        
+        cleaner = TextCleaner(config)
+        input_dir = Path("F:/repogit/X-seller-8/frontend/public/uploads")
+        output_dir = Path("F:/repogit/X-seller-8/frontend/public/outputs")
+        
+        results = cleaner.process_directory(input_dir, output_dir)
+        
+        logger.info("Processing completed successfully")
+        logger.info(f"Processed {len(results)} files")
+        
+    except Exception as e:
+        logger.error(f"Application failed: {e}")
+        raise

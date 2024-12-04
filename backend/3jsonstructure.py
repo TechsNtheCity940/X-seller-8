@@ -1,9 +1,11 @@
 import json
 import os
 import re
+from dataclasses import dataclass
+from typing import List, Dict, Optional
 
 # Helper function to parse lines
-def parse_line(line):
+def parse_line(line: str) -> ParsedData:
     """
     Extract relevant information from a line using regex patterns.
     """
@@ -34,7 +36,11 @@ def parse_line(line):
     if product_name_match:
         line_data["PRODUCT_NAME"] = product_name_match.group()
 
-    return line_data
+    try:
+        return ParsedData(**line_data)
+    except Exception as e:
+        logger.error(f"Error parsing line: {e}")
+        return ParsedData()
 
 # Function to find the next available filename in sequence
 def get_next_output_filename(output_folder):

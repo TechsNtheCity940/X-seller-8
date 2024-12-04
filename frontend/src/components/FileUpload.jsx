@@ -1,96 +1,51 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
-import axios from 'axios';
+import { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
+import { uploadFile } from '../services/api';
+import { config } from '../config/config';
+import { toast } from 'react-toastify';
 
 const FileUpload = ({ onFileUpload, onDataUpdate }) => {
   const [file, setFile] = useState(null);
   const [uploadProgress, setUploadProgress] = useState(0);
-  const [errorMsg, setErrorMsg] = useState('');
-  const [logs, setLogs] = useState([]);
-  const textDisplayRef = useRef(null);
-  const wsRef = useRef(null);
 
-  useEffect(() => {
-    // Connect to WebSocket
-    wsRef.current = new WebSocket('ws://localhost:5000');
-    
-    wsRef.current.onmessage = (event) => {
-      const data = JSON.parse(event.data);
-      onDataUpdate(data.payload);
-      addLog(`Received update: ${JSON.stringify(data.payload)}`);
-    };
-
-    wsRef.current.onerror = (error) => {
-      console.error('WebSocket error:', error);
-      setErrorMsg('WebSocket connection error');
-    };
-
-    return () => {
-      if (wsRef.current) {
-        wsRef.current.close();
-      }
-    };
-  }, [onDataUpdate]);
-
-  const addLog = useCallback((message) => {
-    setLogs(prevLogs => [...prevLogs, { message, timestamp: new Date().toISOString() }]);
-    if (textDisplayRef.current) {
-      textDisplayRef.current.scrollTop = textDisplayRef.current.scrollHeight;
+  const validateFile = (file) => {
+    if (!config.uploads.allowedTypes.includes(file.type)) {
+      throw new Error('Invalid file type');
     }
-  }, []);
-
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const fileType = file.type;
-      const validTypes = ['image/png', 'image/jpeg', 'application/pdf', 'text/csv', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
-      
-      if (!validTypes.includes(fileType)) {
-        addLogEntry('Invalid file type');
-        return;
-      }
-
-      setFile(file);
-      onFileUpload(file);
-      addLog(`File selected: ${file.name}`);
+    if (file.size > config.uploads.maxSize) {
+      throw new Error('File too large');
     }
   };
 
-  const handleUpload = async () => {
+  const handleFileChange = (event) => {
+    const selectedFile = event.target.files[0];
+    if (!selectedFile) return;
+
+    try {
+      validateFile(selectedFile);
+      setFile(selectedFile);
+      onFileUpload(selectedFile);
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+
+  const handleUpload = useCallback(async () => {
     if (!file) {
-      setErrorMsg('Please select a file first');
+      toast.error('Please select a file first');
       return;
     }
 
-    const formData = new FormData();
-    formData.append('file', file);
-
     try {
-      addLog('Starting file upload...');
-      const response = await axios.post('http://localhost:5000/process', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        },
-        onUploadProgress: (progressEvent) => {
-          const progress = Math.round((progressEvent.loaded * 100) / progressEvent.total);
-          setUploadProgress(progress);
-          addLog(`Upload progress: ${progress}%`);
-        }
-      });
-
-      addLog('File processed successfully');
-      if (response.data.text) {
-        addLog(`Extracted text: ${response.data.text.substring(0, 100)}...`);
-      }
+      const response = await uploadFile(file, setUploadProgress);
+      onDataUpdate(response.data);
       setUploadProgress(0);
-      setErrorMsg('');
+      toast.success('File processed successfully');
     } catch (error) {
-      console.error('Upload error:', error);
-      setErrorMsg(`Error: ${error.message}`);
-      addLog(`Error during upload: ${error.message}`);
+      toast.error(`Upload failed: ${error.message}`);
       setUploadProgress(0);
     }
-  };
+  }, [file, onDataUpdate]);
 
   return (
     <div className="file-upload">
@@ -100,7 +55,7 @@ const FileUpload = ({ onFileUpload, onDataUpdate }) => {
         <input
           type="file"
           onChange={handleFileChange}
-          accept=".png,.jpg,.jpeg,.pdf,.csv,.xlsx"
+          accept={config.uploads.allowedTypes.join(',')}
           data-testid="file-input"
         />
         <button 
@@ -123,20 +78,6 @@ const FileUpload = ({ onFileUpload, onDataUpdate }) => {
           </div>
         </div>
       )}
-
-      {errorMsg && <div className="error-msg" data-testid="error-message">{errorMsg}</div>}
-      
-      <div className="system-log" ref={textDisplayRef} data-testid="system-log">
-        <h3>System Log:</h3>
-        <div className="log-entries">
-          {logs.map((log, index) => (
-            <div key={index} className="log-entry">
-              <span className="timestamp">{new Date(log.timestamp).toLocaleTimeString()}</span>
-              <span className="message">{log.message}</span>
-            </div>
-          ))}
-        </div>
-      </div>
     </div>
   );
 };

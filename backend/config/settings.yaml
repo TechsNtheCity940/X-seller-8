@@ -1,0 +1,18 @@
+default:
+  pdf_conversion:
+    dpi: 200
+    max_file_size: 52428800  # 50MB
+    allowed_extensions: ['.pdf']
+    temp_dir: 'temp'
+    output_formats: ['png']
+    batch_size: 10
+  security:
+    sanitize_filenames: true
+    validate_content: true
+  monitoring:
+    enable_metrics: true
+    prometheus_port: 9090
+  logging:
+    level: 'INFO'
+    max_file_size: 10485760  # 10MB
+    backup_count: 5 
