@@ -1,0 +1,18 @@
+# Use an official Node.js image for Vite
+FROM node:18-alpine
+
+# Set the working directory
+WORKDIR /app
+
+# Copy package.json and install dependencies
+COPY package*.json ./
+RUN npm install
+
+# Copy the rest of the application code
+COPY . .
+
+# Expose the port used by Vite
+EXPOSE 5173
+
+# Start the Vite development server
+CMD ["npm", "run", "dev"]
