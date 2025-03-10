@@ -1,107 +1,257 @@
-import json
-import csv
+from flask import Flask, request, jsonify, send_file
+from werkzeug.utils import secure_filename
 import os
-import re
-from typing import List, Dict, Optional
 import logging
+from logging.handlers import RotatingFileHandler
+from datetime import datetime
+from pathlib import Path
+import json
+from typing import Optional, List
+import threading
+from queue import Queue
+import time
+
+# Import our modules
+from modules.document_processor import DocumentProcessor
+from modules.data_extractor import DataExtractor
+from modules.database import Database
+from modules.utils import allowed_file, create_directory, get_file_size
+
+# Initialize Flask application
+app = Flask(__name__)
+
+# Configuration
+class Config:
+    UPLOAD_FOLDER = Path("storage/uploads")
+    PROCESSED_FOLDER = Path("storage/processed")
+    LOG_FOLDER = Path("logs")
+    ALLOWED_EXTENSIONS = {'pdf', 'png', 'jpeg', 'jpg', 'tiff', 'xlsx', 'csv', 'docx'}
+    MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # 16MB max file size
+    PROCESSING_TIMEOUT = 300  # 5 minutes
+    BATCH_SIZE = 10  # Number of files to process in parallel
+
+# Create required directories
+for folder in [Config.UPLOAD_FOLDER, Config.PROCESSED_FOLDER, Config.LOG_FOLDER]:
+    create_directory(folder)
+
+# Configure logging
+logging.basicConfig(
+    handlers=[
+        RotatingFileHandler(
+            Config.LOG_FOLDER / 'app.log',
+            maxBytes=10000000,
+            backupCount=5
+        )
+    ],
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
 
 logger = logging.getLogger(__name__)
 
-def parse_text_data(raw_text: str) -> List[Dict[str, str]]:
-    parsed_items = []
+# Initialize components
+document_processor = DocumentProcessor()
+data_extractor = DataExtractor()
+db = Database()
 
-    # Regular expression for parsing item details
-    pattern = re.compile(
-        r"(?P<name>[A-Za-z\s\-'()]+)"
-        r"(?:\s*\d{0,6})?"
-        r"\s+\$?(?P<price>\d{1,2}\.\d{2})"
-        r"(?:\s*(?:per case|per pound)?)?"
-        r"\s+(?P<quantity>\d{1,3})"
-    )
+# Processing queue and status tracking
+processing_queue = Queue()
+processing_status = {}
+processing_thread = None
 
-    for match in pattern.finditer(raw_text):
-        item_name = match.group("name").strip()
-        item_price = float(match.group("price").replace("$", ""))
-        item_quantity = int(match.group("quantity"))
+def process_queue():
+    """Background thread for processing documents"""
+    while True:
+        try:
+            if not processing_queue.empty():
+                batch = []
+                batch_size = min(Config.BATCH_SIZE, processing_queue.qsize())
+                
+                # Collect batch of files
+                for _ in range(batch_size):
+                    if not processing_queue.empty():
+                        batch.append(processing_queue.get())
 
-        # Clean the item name
-        item_name = re.sub(r"\b\d{3,}\b", "", item_name)
-        item_name = re.sub(r"\b(Filled|Outofstock|Case|Status)\b", "", item_name, flags=re.IGNORECASE)
-        item_name = ' '.join(item_name.split())
+                # Process batch in parallel
+                threads = []
+                for file_info in batch:
+                    thread = threading.Thread(
+                        target=process_single_document,
+                        args=(file_info,)
+                    )
+                    thread.start()
+                    threads.append(thread)
 
-        parsed_items.append({
-            "name": item_name,
-            "price": item_price,
-            "quantity": item_quantity,
+                # Wait for all threads to complete
+                for thread in threads:
+                    thread.join()
+
+            time.sleep(1)  # Prevent CPU overuse
+        except Exception as e:
+            logger.error(f"Error in processing queue: {str(e)}", exc_info=True)
+
+def process_single_document(file_info):
+    """Process a single document"""
+    try:
+        file_path = file_info['file_path']
+        status_key = file_info['status_key']
+        
+        processing_status[status_key]['status'] = 'processing'
+        
+        # Process document
+        processed_data = document_processor.process(file_path)
+        extracted_data = data_extractor.extract(processed_data)
+        
+        # Store in database
+        doc_id = db.store_document_data(
+            filename=file_info['filename'],
+            original_path=str(file_path),
+            extracted_data=extracted_data
+        )
+        
+        processing_status[status_key].update({
+            'status': 'completed',
+            'document_id': doc_id,
+            'completion_time': datetime.utcnow().isoformat()
+        })
+        
+    except Exception as e:
+        logger.error(f"Error processing document {file_path}: {str(e)}", exc_info=True)
+        processing_status[status_key].update({
+            'status': 'failed',
+            'error': str(e),
+            'completion_time': datetime.utcnow().isoformat()
         })
 
-    return parsed_items
+# Start processing thread
+processing_thread = threading.Thread(target=process_queue, daemon=True)
+processing_thread.start()
 
-def load_existing_data(file_path: str) -> List[Dict[str, str]]:
-    if os.path.exists(file_path):
-        with open(file_path, 'r') as file:
-            return json.load(file)
-    return []
+@app.route('/health', methods=['GET'])
+def health_check():
+    """Health check endpoint"""
+    return jsonify({
+        "status": "healthy",
+        "timestamp": datetime.utcnow().isoformat(),
+        "queue_size": processing_queue.qsize(),
+        "database_status": "connected" if db.test_connection() else "disconnected"
+    })
 
-def save_to_json(data: List[Dict[str, str]], output_json_path: str):
-    with open(output_json_path, 'w') as file:
-        json.dump(data, file, indent=4)
+@app.route('/upload', methods=['POST'])
+def upload_files():
+    """Handle single or multiple file uploads"""
+    try:
+        if 'files' not in request.files:
+            return jsonify({"error": "No files provided"}), 400
+        
+        files = request.files.getlist('files')
+        if not files:
+            return jsonify({"error": "No files selected"}), 400
 
-def save_to_csv(data: List[Dict[str, str]], output_path: str):
-    with open(output_path, 'w', newline='') as csv_file:
-        writer = csv.DictWriter(csv_file, fieldnames=["name", "price", "quantity"])
-        writer.writeheader()
-        writer.writerows(data)
+        results = []
+        for file in files:
+            if file and allowed_file(file.filename, Config.ALLOWED_EXTENSIONS):
+                filename = secure_filename(file.filename)
+                timestamp = datetime.utcnow().strftime('%Y%m%d_%H%M%S')
+                unique_filename = f"{timestamp}_{filename}"
+                
+                file_path = Config.UPLOAD_FOLDER / unique_filename
+                file.save(file_path)
+                
+                # Generate status key
+                status_key = f"{timestamp}_{filename}"
+                processing_status[status_key] = {
+                    'status': 'queued',
+                    'filename': filename,
+                    'upload_time': datetime.utcnow().isoformat()
+                }
+                
+                # Add to processing queue
+                processing_queue.put({
+                    'file_path': file_path,
+                    'filename': filename,
+                    'status_key': status_key
+                })
+                
+                results.append({
+                    'filename': filename,
+                    'status_key': status_key,
+                    'status': 'queued'
+                })
+            else:
+                results.append({
+                    'filename': file.filename,
+                    'status': 'rejected',
+                    'reason': 'Invalid file type'
+                })
 
-def deduplicate_data(existing_data: List[Dict[str, str]], new_data: List[Dict[str, str]]) -> List[Dict[str, str]]:
-    # Create a set of unique identifiers (e.g., name and price) for existing items
-    existing_identifiers = {(item["name"], item["price"]) for item in existing_data}
+        return jsonify({
+            "message": "Files uploaded successfully",
+            "results": results
+        }), 200
 
-    # Filter new_data to only include items that are not in existing_identifiers
-    unique_new_data = [item for item in new_data if (item["name"], item["price"]) not in existing_identifiers]
+    except Exception as e:
+        logger.error(f"Error in file upload: {str(e)}", exc_info=True)
+        return jsonify({"error": str(e)}), 500
 
-    # Append unique new data to existing data
-    combined_data = existing_data + unique_new_data
-    return combined_data
+@app.route('/status/<status_key>', methods=['GET'])
+def get_status(status_key):
+    """Get processing status for a specific file"""
+    status = processing_status.get(status_key)
+    if not status:
+        return jsonify({"error": "Status key not found"}), 404
+    return jsonify(status), 200
 
-def process_all_files_in_folder(input_folder: str, output_json_path: str, output_csv_path: str):
-    # Load the existing data from JSON file if it exists
-    combined_data = load_existing_data(output_json_path)
+@app.route('/documents', methods=['GET'])
+def get_documents():
+    """Retrieve list of processed documents with optional filtering"""
+    try:
+        # Get query parameters
+        start_date = request.args.get('start_date')
+        end_date = request.args.get('end_date')
+        status = request.args.get('status')
+        
+        documents = db.get_all_documents()
+        
+        # Apply filters if provided
+        if start_date:
+            documents = [d for d in documents if d['processed_at'] >= start_date]
+        if end_date:
+            documents = [d for d in documents if d['processed_at'] <= end_date]
+        if status:
+            documents = [d for d in documents if d.get('status') == status]
+            
+        return jsonify({"documents": documents}), 200
+    except Exception as e:
+        logger.error(f"Error retrieving documents: {str(e)}", exc_info=True)
+        return jsonify({"error": str(e)}), 500
 
-    # Iterate through all .txt files in the input folder
-    for file_name in os.listdir(input_folder):
-        if file_name.endswith('.txt'):
-            input_file_path = os.path.join(input_folder, file_name)
-            print(f"Processing file: {input_file_path}")
+@app.route('/documents/<doc_id>', methods=['GET'])
+def get_document(doc_id):
+    """Retrieve specific document data"""
+    try:
+        document = db.get_document(doc_id)
+        if not document:
+            return jsonify({"error": "Document not found"}), 404
+        return jsonify(document), 200
+    except Exception as e:
+        logger.error(f"Error retrieving document {doc_id}: {str(e)}", exc_info=True)
+        return jsonify({"error": str(e)}), 500
 
-            # Load and parse the text data from the current file
-            with open(input_file_path, 'r', encoding='utf-8') as file:
-                raw_text = file.read()
-            new_data = parse_text_data(raw_text)
+@app.route('/statistics', methods=['GET'])
+def get_statistics():
+    """Get processing statistics"""
+    try:
+        stats = db.get_statistics()
+        stats.update({
+            "queue_size": processing_queue.qsize(),
+            "active_processes": len([s for s in processing_status.values() 
+                                  if s['status'] == 'processing'])
+        })
+        return jsonify(stats), 200
+    except Exception as e:
+        logger.error(f"Error retrieving statistics: {str(e)}", exc_info=True)
+        return jsonify({"error": str(e)}), 500
 
-            # Deduplicate new data against the combined dataset
-            combined_data = deduplicate_data(combined_data, new_data)
-
-    # Save the combined data to JSON and CSV formats
-    save_to_json(combined_data, output_json_path)
-    save_to_csv(combined_data, output_csv_path)
-    print(f"Data parsed, deduplicated, and saved to {output_json_path} and {output_csv_path}")
-
-class DataProcessor:
-    def __init__(self, config: Dict[str, str]):
-        self.input_folder = config['input_folder']
-        self.output_json = config['output_json']
-        self.output_csv = config['output_csv']
-
-    def validate_paths(self) -> None:
-        """Validate all input and output paths exist."""
-        if not os.path.exists(self.input_folder):
-            raise ValueError(f"Input folder does not exist: {self.input_folder}")
-
-# Example usage
-if __name__ == "__main__":
-    input_folder = 'F:/repogit/X-seller-8/frontend/public/outputs/'  # Path to the folder containing input text files
-    output_json = 'F:/repogit/X-seller-8/backend/output/ParsedText.json'   # Path to save JSON output
-    output_csv = 'F:/repogit/X-seller-8/backend/output/ParsedText.csv'     # Path to save CSV output
-
-    process_all_files_in_folder(input_folder, output_json, output_csv)
+if __name__ == '__main__':
+    app.run(debug=False, host='0.0.0.0', port=5000)

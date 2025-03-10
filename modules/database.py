@@ -1,11 +1,35 @@
 from sqlalchemy import create_engine, Column, Integer, String, DateTime, JSON, Float
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.pool import QueuePool
 from datetime import datetime
 import json
 import logging
+import os
+from typing import Optional, Dict, List
+from pydantic import BaseModel, validator
+from urllib.parse import quote_plus
 
 logger = logging.getLogger(__name__)
+
+# Pydantic model for data validation
+class DocumentData(BaseModel):
+    prices: Optional[List[Dict[str, float]]]
+    quantities: Optional[List[Dict[str, float]]]
+    dates: Optional[List[Dict[str, str]]]
+    products: Optional[List[Dict[str, str]]]
+
+    @validator('prices', each_item=True)
+    def validate_prices(cls, v):
+        if 'amount' not in v:
+            raise ValueError('Price must have "amount" field')
+        return v
+
+    @validator('quantities', each_item=True)
+    def validate_quantities(cls, v):
+        if 'value' not in v:
+            raise ValueError('Quantity must have "value" field')
+        return v
 
 Base = declarative_base()
 
@@ -25,21 +49,56 @@ class Document(Base):
     num_products = Column(Integer, default=0)
 
 class Database:
-    def __init__(self, db_url: str):
-        self.engine = create_engine(db_url)
-        Base.metadata.create_all(self.engine)
-        self.Session = sessionmaker(bind=self.engine)
+    def __init__(self):
+        # Use SQLite for local development if no database credentials are provided
+        if not os.getenv('DB_HOST'):
+            self.engine = create_engine(
+                'sqlite:///local.db',
+                connect_args={'check_same_thread': False}
+            )
+        else:
+            # Construct connection string from environment variables for PostgreSQL
+            db_host = os.getenv('DB_HOST', 'localhost')
+            db_port = os.getenv('DB_PORT', '5432')
+            db_name = os.getenv('DB_NAME', 'xseller8')
+            db_user = os.getenv('DB_USER', 'postgres')
+            db_password = quote_plus(os.getenv('DB_PASSWORD', ''))
+            
+            self.engine = create_engine(
+                f'postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}',
+                poolclass=QueuePool,
+                pool_size=5,
+                max_overflow=10,
+                pool_timeout=30,
+                pool_pre_ping=True,
+                pool_recycle=3600,
+                connect_args={
+                    'sslmode': 'require',
+                    'sslrootcert': 'config/ca-certificate.crt'
+                }
+            )
+        
+        try:
+            Base.metadata.create_all(self.engine)
+            self.Session = sessionmaker(bind=self.engine)
+            logger.info("Database connection established successfully")
+        except Exception as e:
+            logger.error(f"Failed to connect to database: {str(e)}")
+            raise
 
     def store_document_data(self, filename: str, original_path: str, extracted_data: dict) -> int:
         """Store document data and return document ID"""
         try:
+            # Validate input data
+            validated_data = DocumentData(**extracted_data)
+            
             session = self.Session()
 
             # Calculate summary statistics
-            total_prices = sum(price['amount'] for price in extracted_data.get('prices', []))
-            total_quantities = sum(qty['value'] for qty in extracted_data.get('quantities', []))
-            num_dates = len(extracted_data.get('dates', []))
-            num_products = len(extracted_data.get('products', []))
+            total_prices = sum(price['amount'] for price in validated_data.prices or [])
+            total_quantities = sum(qty['value'] for qty in validated_data.quantities or [])
+            num_dates = len(validated_data.dates or [])
+            num_products = len(validated_data.products or [])
 
             document = Document(
                 filename=filename,
@@ -164,3 +223,18 @@ class Database:
             if session:
                 session.close()
             raise
+
+    def test_connection(self) -> bool:
+        """Test database connection"""
+        try:
+            session = self.Session()
+            from sqlalchemy import text
+            session.execute(text("SELECT 1"))
+            session.close()
+            logger.info("Database connection test successful")
+            return True
+        except Exception as e:
+            logger.error(f"Database connection test failed: {str(e)}")
+            if session:
+                session.close()
+            return False
