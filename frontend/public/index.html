@@ -1,20 +1,492 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="X-Seller Document Processing System"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>X-Seller Document Processor</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-Seller-8 Inventory Management</title>
+    <!-- Google Font - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Our custom styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">X-Seller-<span>8</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" data-page="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="upload">Upload</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="inventory">Inventory</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="documents">Documents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="assistant">Assistant</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div class="page active" id="home-page">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-7">
+                        <h1 class="hero-title">Restaurant Inventory Management</h1>
+                        <p class="hero-subtitle">Extract, organize, and analyze your restaurant inventory using document scanning technology</p>
+                        <button class="btn btn-light btn-lg mt-3" data-page="upload">Get Started</button>
+                    </div>
+                    <div class="col-md-5 d-none d-md-block">
+                        <img src="logo.png" alt="X-Seller-8 Logo" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Summary -->
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4">
+                <div class="d-flex align-items-center mb-3 mb-md-0">
+                    <h3 class="mb-0 me-3">Current Month</h3>
+                    <div class="badge bg-primary p-2" id="home-current-month">March 2025</div>
+                </div>
+                <button id="home-start-new-month" class="btn btn-warning">
+                    <i class="bi bi-calendar-plus"></i> Start New Month
+                </button>
+            </div>
+            
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="stats-number" id="processed-docs-count">0</div>
+                            <div class="stats-label">Documents Processed</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="stats-number" id="products-count">0</div>
+                            <div class="stats-label">Products</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="stats-number" id="total-value">$0</div>
+                            <div class="stats-label">Total Inventory Value</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="stats-number" id="total-quantity">0</div>
+                            <div class="stats-label">Total Items</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <span>Recent Documents</span>
+                            <span class="badge bg-secondary">Current Month</span>
+                        </div>
+                        <div class="card-body">
+                            <div id="recent-documents">
+                                <div class="text-center py-4">
+                                    <div class="text-muted">No documents processed yet</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            Quick Actions
+                        </div>
+                        <div class="card-body">
+                            <div class="d-grid gap-3">
+                                <button class="btn btn-primary" data-page="upload">
+                                    <i class="bi bi-upload"></i> Upload New Document
+                                </button>
+                                <button class="btn btn-outline-primary" data-page="inventory">
+                                    <i class="bi bi-list-check"></i> View Inventory
+                                </button>
+                                <button class="btn btn-outline-primary" data-page="assistant">
+                                    <i class="bi bi-chat-dots"></i> Ask Assistant
+                                </button>
+                                <div class="dropdown">
+                                    <button class="btn btn-outline-primary dropdown-toggle w-100" type="button" id="downloadDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-download"></i> Download Reports
+                                    </button>
+                                    <ul class="dropdown-menu w-100" aria-labelledby="downloadDropdown">
+                                        <li><a class="dropdown-item" href="#" id="download-inventory">Complete Inventory</a></li>
+                                        <li><a class="dropdown-item" href="#" id="download-food-inventory">Food Inventory</a></li>
+                                        <li><a class="dropdown-item" href="#" id="download-alcohol-inventory">Alcohol Inventory</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload Page -->
+    <div class="page" id="upload-page">
+        <div class="container">
+            <h2 class="mb-4">Upload Documents</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <input type="file" id="file-input" style="display: none;" multiple accept=".pdf,.png,.jpg,.jpeg,.xlsx,.csv,.docx,.txt">
+                            <div class="upload-area" id="upload-area">
+                                <div class="upload-icon">
+                                    <i class="bi bi-cloud-arrow-up"></i>
+                                </div>
+                                <h4>Drag & Drop Files Here</h4>
+                                <p class="text-muted">or click to browse for files</p>
+                                <p class="text-muted small">PDF, PNG, JPG, XLSX, CSV, DOCX, TXT</p>
+                                <button class="btn btn-primary mt-2">Select Files</button>
+                            </div>
+                            <div class="upload-progress">
+                                <div class="progress mb-3">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"></div>
+                                </div>
+                                <div id="upload-status" class="text-center"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mt-4" id="processing-status-card" style="display: none;">
+                        <div class="card-header">
+                            Processing Status
+                        </div>
+                        <div class="card-body">
+                            <div id="processing-status">
+                                <div class="d-flex align-items-center">
+                                    <div class="spinner-border text-primary" role="status"></div>
+                                    <span class="ms-2">Processing document...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Current Month
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div class="badge bg-primary p-2" id="upload-current-month">March 2025</div>
+                                <button id="upload-start-new-month" class="btn btn-sm btn-warning">
+                                    <i class="bi bi-calendar-plus"></i> Start New Month
+                                </button>
+                            </div>
+                            <p class="small text-muted">
+                                All uploaded documents will be processed for the current month. 
+                                Start a new month when you're ready to begin tracking the next month's inventory.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            Tips for Best Results
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <strong>Clear Images</strong>: Ensure scanned documents are clear and well-lit
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Original Files</strong>: Use original PDF invoices when possible
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Categorization</strong>: The system will automatically categorize items as food or alcohol
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Verification</strong>: Always verify extracted data for accuracy
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inventory Page -->
+    <div class="page" id="inventory-page">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4">
+                <div class="d-flex align-items-center mb-3 mb-md-0">
+                    <h2 class="mb-0 me-3">Inventory Management</h2>
+                    <div class="badge bg-primary p-2" id="current-month">March 2025</div>
+                </div>
+                <div class="d-flex flex-column flex-md-row">
+                    <button id="start-new-month" class="btn btn-warning mb-2 mb-md-0 me-md-2">
+                        <i class="bi bi-calendar-plus"></i> Start New Month
+                    </button>
+                    <div class="btn-group">
+                        <button id="download-food-inventory" class="btn btn-outline-success">
+                            <i class="bi bi-download"></i> Food Inventory
+                        </button>
+                        <button id="download-alcohol-inventory" class="btn btn-outline-danger">
+                            <i class="bi bi-download"></i> Alcohol Inventory
+                        </button>
+                        <button id="download-inventory" class="btn btn-outline-primary">
+                            <i class="bi bi-download"></i> All Items
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-8">
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="bi bi-search"></i>
+                        </span>
+                        <input type="text" class="form-control" id="inventory-search" placeholder="Search inventory...">
+                        <button class="btn btn-outline-secondary" type="button">Search</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-select" id="inventory-filter">
+                        <option value="all">All Items</option>
+                        <option value="food">Food Only</option>
+                        <option value="alcohol">Alcohol Only</option>
+                        <option value="in-stock">In Stock</option>
+                        <option value="low-stock">Low Stock</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Month history selector -->
+            <div class="mb-4 collapse" id="month-history">
+                <div class="card">
+                    <div class="card-header">
+                        Month History
+                    </div>
+                    <div class="card-body">
+                        <div class="row" id="month-list">
+                            <div class="col-md-3 mb-2">
+                                <div class="card month-history-card active">
+                                    <div class="card-body p-2">
+                                        <h6 class="mb-1">March 2025</h6>
+                                        <small class="text-muted">Current</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="card month-history-card">
+                                    <div class="card-body p-2">
+                                        <h6 class="mb-1">February 2025</h6>
+                                        <small class="text-muted">78 items</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <div class="card month-history-card">
+                                    <div class="card-body p-2">
+                                        <h6 class="mb-1">January 2025</h6>
+                                        <small class="text-muted">82 items</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Toggle month history button -->
+            <div class="mb-4">
+                <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#month-history">
+                    <i class="bi bi-calendar3"></i> View Month History
+                </button>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Inventory Items
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Item Name</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Pack Size</th>
+                                    <th scope="col">Delivered</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="inventory-table-body">
+                                <!-- Inventory items will be loaded here -->
+                                <tr>
+                                    <td colspan="8" class="text-center py-4">
+                                        <div class="text-muted">Loading inventory data...</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Documents Page -->
+    <div class="page" id="documents-page">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="mb-0">Processed Documents</h2>
+                <div class="d-flex align-items-center">
+                    <div class="badge bg-primary p-2 me-2" id="docs-current-month">March 2025</div>
+                    <button id="docs-start-new-month" class="btn btn-sm btn-warning">
+                        <i class="bi bi-calendar-plus"></i> Start New Month
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            Document History
+                        </div>
+                        <div class="card-body">
+                            <div id="document-list">
+                                <!-- Documents will be loaded here -->
+                                <div class="text-center py-4">
+                                    <div class="text-muted">Loading documents...</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Document Details
+                        </div>
+                        <div class="card-body" id="document-details">
+                            <div class="text-center py-4">
+                                <div class="text-muted">Select a document to view details</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assistant Page -->
+    <div class="page" id="assistant-page">
+        <div class="container">
+            <h2 class="mb-4">Inventory Assistant</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-header">
+                            Chat with your Assistant
+                        </div>
+                        <div class="card-body">
+                            <div class="chat-container" id="chat-messages">
+                                <div class="bot-message message">
+                                    Hello! I'm your inventory assistant. How can I help you today?
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <div class="input-group">
+                                    <input type="text" class="form-control chat-input" id="chat-input" placeholder="Type your message...">
+                                    <button class="btn btn-primary" id="send-message">Send</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Assistant Capabilities
+                        </div>
+                        <div class="card-body">
+                            <div class="list-group">
+                                <div class="list-group-item d-flex gap-2">
+                                    <i class="bi bi-search"></i>
+                                    <div>
+                                        <h5 class="mb-1">Find Inventory Items</h5>
+                                        <p class="mb-0 text-muted">Ask about specific products in your inventory</p>
+                                    </div>
+                                </div>
+                                <div class="list-group-item d-flex gap-2">
+                                    <i class="bi bi-calculator"></i>
+                                    <div>
+                                        <h5 class="mb-1">Calculate Costs</h5>
+                                        <p class="mb-0 text-muted">Get totals and averages for inventory costs</p>
+                                    </div>
+                                </div>
+                                <div class="list-group-item d-flex gap-2">
+                                    <i class="bi bi-clipboard-data"></i>
+                                    <div>
+                                        <h5 class="mb-1">Inventory Insights</h5>
+                                        <p class="mb-0 text-muted">Get summaries and analytics about your inventory</p>
+                                    </div>
+                                </div>
+                                <div class="list-group-item d-flex gap-2">
+                                    <i class="bi bi-question-circle"></i>
+                                    <div>
+                                        <h5 class="mb-1">Help & Guidance</h5>
+                                        <p class="mb-0 text-muted">Ask about how to use the system</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap & External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Our application script -->
+    <script src="main.js"></script>
+
+</body>
 </html>

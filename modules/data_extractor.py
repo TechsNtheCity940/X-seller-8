@@ -3,7 +3,6 @@ import pandas as pd
 from datetime import datetime
 import logging
 from typing import Dict, List, Any
-import spacy
 from price_parser import Price
 import numpy as np
 
@@ -11,14 +10,19 @@ logger = logging.getLogger(__name__)
 
 class DataExtractor:
     def __init__(self):
-        # Load spaCy model for entity recognition
+        # Initialize NLP fallback mode
+        self.use_fallback = True
         try:
-            self.nlp = spacy.load("en_core_web_sm")
-        except:
-            logger.warning("Downloading spaCy model...")
-            import subprocess
-            subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
-            self.nlp = spacy.load("en_core_web_sm")
+            # Attempt to use spaCy if available
+            import spacy
+            try:
+                self.nlp = spacy.load("en_core_web_sm")
+                self.use_fallback = False
+                logger.info("Using spaCy for NLP processing")
+            except:
+                logger.warning("spaCy model not found, using fallback mode")
+        except ImportError:
+            logger.warning("spaCy not installed, using fallback extraction methods")
 
     def extract(self, processed_data: Dict) -> Dict[str, Any]:
         """
@@ -99,27 +103,36 @@ class DataExtractor:
         if not text.strip():
             return
 
-        # Process with spaCy
-        doc = self.nlp(text)
+        if not self.use_fallback:
+            # Process with spaCy if available
+            import spacy
+            doc = self.nlp(text)
 
-        # Extract dates
-        dates = self._extract_dates(text, doc)
-        extracted_data["dates"].extend(dates)
+            # Extract dates
+            dates = self._extract_dates(text, doc)
+            extracted_data["dates"].extend(dates)
 
-        # Extract prices
+            # Extract products
+            products = self._extract_products(doc)
+            extracted_data["products"].extend(products)
+        else:
+            # Fallback mode - simpler extraction without spaCy
+            dates = self._extract_dates_fallback(text)
+            extracted_data["dates"].extend(dates)
+            
+            products = self._extract_products_fallback(text)
+            extracted_data["products"].extend(products)
+
+        # Extract prices (doesn't require spaCy)
         prices = self._extract_prices(text)
         extracted_data["prices"].extend(prices)
 
-        # Extract quantities
+        # Extract quantities (doesn't require spaCy)
         quantities = self._extract_quantities(text)
         extracted_data["quantities"].extend(quantities)
 
-        # Extract products
-        products = self._extract_products(doc)
-        extracted_data["products"].extend(products)
-
     def _extract_dates(self, text: str, doc) -> List[Dict]:
-        """Extract dates from text using multiple methods"""
+        """Extract dates from text using spaCy and regex"""
         dates = []
         
         # Use spaCy's DATE entities
@@ -130,6 +143,16 @@ class DataExtractor:
                     "type": "spacy_date"
                 })
 
+        # Also use regex patterns
+        regex_dates = self._extract_dates_fallback(text)
+        dates.extend(regex_dates)
+
+        return dates
+    
+    def _extract_dates_fallback(self, text: str) -> List[Dict]:
+        """Extract dates using regular expressions only"""
+        dates = []
+        
         # Regular expression patterns for various date formats
         date_patterns = [
             (r'\d{1,2}/\d{1,2}/\d{2,4}', 'mm/dd/yyyy'),
@@ -192,7 +215,7 @@ class DataExtractor:
         return quantities
 
     def _extract_products(self, doc) -> List[Dict]:
-        """Extract product mentions from text"""
+        """Extract product mentions from text using spaCy"""
         products = []
         
         # Use spaCy's PRODUCT entities
@@ -203,4 +226,36 @@ class DataExtractor:
                     "type": ent.label_
                 })
 
+        return products
+    
+    def _extract_products_fallback(self, text: str) -> List[Dict]:
+        """Extract product mentions using heuristics"""
+        products = []
+        
+        # Simple heuristic: Look for capitalized words that might be products
+        # This is a very basic approach and will need refinement
+        lines = text.split('\n')
+        for line in lines:
+            # Skip short lines or lines that are just numbers
+            if len(line.strip()) < 5 or line.strip().isdigit():
+                continue
+                
+            # Look for potential product names using capitalization patterns
+            words = line.split()
+            for i, word in enumerate(words):
+                if word and word[0].isupper() and len(word) > 3:
+                    # Try to capture multi-word product names
+                    product_name = word
+                    j = i + 1
+                    while j < len(words) and (words[j][0].isupper() if words[j] else False):
+                        product_name += " " + words[j]
+                        j += 1
+                    
+                    # Avoid adding just single words unless they're very likely products
+                    if " " in product_name or len(product_name) > 5:
+                        products.append({
+                            "name": product_name,
+                            "type": "heuristic"
+                        })
+        
         return products

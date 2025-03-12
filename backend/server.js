@@ -88,29 +88,54 @@ app.get('/download/:filePath', (req, res) => {
   }
 });
 
+// Import integration script
+const integration = require('./integration');
+
 app.get('/api/inventory', async (req, res) => {
   try {
-    const updatedInventoryFile = path.join(__dirname, 'frontend/public/output/UpdatedFoodInventory.xlsx');
-    const inventoryData = await fs.readFile(updatedInventoryFile);
+    // Try to load from inventory_data.json first
+    const inventoryFilePath = path.join(__dirname, 'inventory_data.json');
+    
+    let inventoryData;
+    
+    if (fs.existsSync(inventoryFilePath)) {
+      // File exists, read it
+      inventoryData = await fs.readJSON(inventoryFilePath);
+      logger.info(`Loaded inventory data from ${inventoryFilePath}`);
+    } else {
+      // File doesn't exist, try to sync with Flask or create mock data
+      try {
+        logger.info('Inventory data file not found. Attempting to sync with Flask backend...');
+        inventoryData = await integration.syncInventoryData();
+      } catch (syncError) {
+        logger.warn(`Failed to sync with Flask backend: ${syncError.message}`);
+        logger.info('Creating mock inventory data as fallback...');
+        inventoryData = await integration.createMockInventoryFile();
+      }
+    }
 
-    // Use pandas or a library like `xlsx` in Node.js to read and parse the Excel file to JSON
-    const XLSX = require('xlsx');
-    const workbook = XLSX.read(inventoryData, { type: 'buffer' });
-    const sheetName = workbook.SheetNames[0];
-    const jsonData = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
-
-    res.json(jsonData);
+    res.json(inventoryData);
   } catch (error) {
     logger.error(`Failed to fetch inventory data: ${error.message}`);
     res.status(500).send('Error fetching inventory data.');
   }
 });
 
-// Initialize OpenAI
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-  baseURL: 'https://integrate.api.nvidia.com/v1',
-});
+// Initialize OpenAI if API key is available
+let openai = null;
+if (process.env.OPENAI_API_KEY) {
+  try {
+    openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+      baseURL: 'https://integrate.api.nvidia.com/v1',
+    });
+    logger.info('OpenAI client initialized successfully');
+  } catch (error) {
+    logger.error(`Failed to initialize OpenAI client: ${error.message}`);
+  }
+} else {
+  logger.warn('OPENAI_API_KEY not found in environment variables. Chat functionality will be disabled.');
+}
 
 // Chat API Endpoint
 app.post('/api/chat', async (req, res) => {
@@ -118,6 +143,14 @@ app.post('/api/chat', async (req, res) => {
   if (!message) {
     logger.error('Message is required for chat endpoint.');
     return res.status(400).json({ error: 'Message is required' });
+  }
+
+  // Check if OpenAI client is available
+  if (!openai) {
+    return res.status(503).json({ 
+      error: 'Chat service unavailable. OPENAI_API_KEY not configured.',
+      fallbackResponse: 'Chat service is currently unavailable. Please check server configuration.'
+    });
   }
 
   try {
@@ -148,7 +181,11 @@ app.post('/api/update-inventory', async (req, res) => {
       return res.status(400).send('Invalid data format.');
     }
 
-    await updateInventory(newData);
+    // Update inventory data file
+    const inventoryFilePath = path.join(__dirname, 'inventory_data.json');
+    await fs.writeJSON(inventoryFilePath, newData, { spaces: 2 });
+    
+    logger.info(`Updated inventory data with ${newData.length} items`);
     res.status(200).send('Inventory updated successfully.');
   } catch (error) {
     logger.error(`Failed to update inventory: ${error.message}`);
@@ -156,18 +193,48 @@ app.post('/api/update-inventory', async (req, res) => {
   }
 });
 
-app.get('/api/inventory', async (req, res) => {
+// Run the initial data sync on server startup
+(async () => {
   try {
-    const inventory = await fs.readJSON(path.join(__dirname, 'inventory_data.json'));
-    res.json(inventory);
+    const inventoryFilePath = path.join(__dirname, 'inventory_data.json');
+    
+    // Only run initial sync if the file doesn't exist
+    if (!fs.existsSync(inventoryFilePath)) {
+      logger.info('Running initial data synchronization...');
+      
+      try {
+        await integration.syncInventoryData();
+        logger.info('Initial data sync completed successfully');
+      } catch (syncError) {
+        logger.warn(`Initial data sync failed: ${syncError.message}`);
+        logger.info('Creating mock inventory data as fallback...');
+        await integration.createMockInventoryFile();
+      }
+    }
   } catch (error) {
-    logger.error(`Failed to fetch inventory: ${error.message}`);
-    res.status(500).send('Error fetching inventory.');
+    logger.error(`Error during initial setup: ${error.message}`);
   }
-});
+})();
 
 
 // Start the server
-app.listen(PORT, () => {
-  logger.info(`Server is running on port ${PORT}`);
-});
+// Try to find an available port starting from the specified PORT
+function startServer(port) {
+  const server = app.listen(port)
+    .on('error', (err) => {
+      if (err.code === 'EADDRINUSE') {
+        // Port is busy, try the next one
+        logger.warn(`Port ${port} is busy, trying port ${port + 1}...`);
+        startServer(port + 1);
+      } else {
+        logger.error(`Failed to start server: ${err.message}`);
+      }
+    })
+    .on('listening', () => {
+      const address = server.address();
+      logger.info(`Server is running at http://localhost:${address.port}`);
+    });
+}
+
+// Start the server with automatic port selection
+startServer(PORT);

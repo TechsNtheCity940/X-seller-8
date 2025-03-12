@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "itemNumber": "ITEM-1001",
+    "itemName": "Premium Vodka",
+    "brand": "Grey Goose",
+    "packSize": "750 ml",
+    "price": 29.99,
+    "ordered": 12,
+    "confirmed": 12,
+    "status": "In Stock",
+    "dateDelivered": "2025-03-01"
+  },
+  {
+    "id": 2,
+    "itemNumber": "ITEM-1002",
+    "itemName": "Red Wine",
+    "brand": "Barefoot",
+    "packSize": "750 ml",
+    "price": 9.99,
+    "ordered": 24,
+    "confirmed": 20,
+    "status": "In Stock",
+    "dateDelivered": "2025-03-02"
+  },
+  {
+    "id": 3,
+    "itemNumber": "ITEM-1003",
+    "itemName": "Domestic Beer",
+    "brand": "Bud Light",
+    "packSize": "6 pack",
+    "price": 7.99,
+    "ordered": 36,
+    "confirmed": 36,
+    "status": "In Stock",
+    "dateDelivered": "2025-03-03"
+  },
+  {
+    "id": 4,
+    "itemNumber": "ITEM-2001",
+    "itemName": "Fresh Lettuce",
+    "brand": "Organic Farms",
+    "packSize": "1 head",
+    "price": 2.49,
+    "ordered": 20,
+    "confirmed": 18,
+    "status": "In Stock",
+    "dateDelivered": "2025-03-04"
+  },
+  {
+    "id": 5,
+    "itemNumber": "ITEM-2002",
+    "itemName": "Chicken Breast",
+    "brand": "Perdue",
+    "packSize": "2 lb",
+    "price": 8.99,
+    "ordered": 15,
+    "confirmed": 15,
+    "status": "In Stock",
+    "dateDelivered": "2025-03-04"
+  }
+]
